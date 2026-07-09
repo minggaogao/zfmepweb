@@ -4584,6 +4584,121 @@
         }
       }
     </style>
+    <style id="zf-desktop-water-delivery-route-fix-v1">
+      @media (min-width: 1280px) {
+        html body[data-page="water-supply-drainage"],
+        html body[data-page="delivery"] {
+          --zf-route-stage-width: min(1560px, calc(100% - 24px));
+          --zf-route-copy-width: min(1280px, calc(100% - 112px));
+          --zf-route-side-pad: clamp(28px, 2.4vw, 40px);
+        }
+
+        html body[data-page="water-supply-drainage"] main > :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage),
+        html body[data-page="delivery"] main > :is(#fit, #constraints, #integration, #delivery, #team-execution, #process) {
+          width: var(--zf-route-stage-width) !important;
+          max-width: var(--zf-route-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-definition-copy,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-journey-head,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-journey-panel-copy,
+        html body[data-page="water-supply-drainage"] main > #water-logic .water-system-signal-summary-copy,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-intro,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-heading,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-sim-copy,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-copy,
+        html body[data-page="delivery"] main > :is(#fit, #constraints, #integration, #delivery, #team-execution, #process) > .section-copy {
+          width: var(--zf-route-copy-width) !important;
+          max-width: var(--zf-route-copy-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          justify-self: center !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-definition-copy > :is(.eyebrow, h1, .water-system-definition-lead) {
+          width: var(--zf-route-copy-width) !important;
+          max-width: var(--zf-route-copy-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-context-media,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-life-bridge,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-life-bridge-media,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-life-bridge,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-life-bridge-media,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-stage,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-scene,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media,
+        html body[data-page="delivery"] main .delivery-scene-media {
+          width: var(--zf-route-stage-width) !important;
+          max-width: var(--zf-route-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-life-bridge,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-scene {
+          gap: clamp(22px, 2vw, 34px) !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-scene {
+          display: grid !important;
+          grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+          align-items: center !important;
+          padding-left: var(--zf-route-side-pad) !important;
+          padding-right: var(--zf-route-side-pad) !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-copy,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-context-media,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-life-bridge-media,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-life-bridge-media,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media,
+        html body[data-page="delivery"] main .delivery-scene-media {
+          aspect-ratio: 16 / 9 !important;
+          min-height: 0 !important;
+          overflow: hidden !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media {
+          position: relative !important;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+          width: var(--zf-route-stage-width) !important;
+          max-width: var(--zf-route-stage-width) !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-context-media > img,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-life-bridge-media > img,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-life-bridge-media > img,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media > img,
+        html body[data-page="delivery"] main .delivery-scene-media > img {
+          width: 100% !important;
+          height: 100% !important;
+          min-height: 0 !important;
+          object-fit: cover !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <script>
