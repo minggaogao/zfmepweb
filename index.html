@@ -14,6 +14,8 @@
           home: "home",
           philosophy: "philosophy",
           dimensions: "philosophy",
+          "environment-problem": "systems",
+          "environment-logic": "systems",
           climate: "systems",
           systems: "systems",
           "water-supply-drainage": "water-supply-drainage",
@@ -4302,6 +4304,18 @@
           max-width: 100% !important;
         }
 
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene .climate-living-media,
+        html body:is([data-page="climate"], [data-page="systems"]) main > .quiet-system .section-image {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          border-radius: 0 !important;
+          box-sizing: border-box !important;
+        }
+
         html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-stage,
         html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene,
         html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .quiet-system {
@@ -4379,7 +4393,8 @@
 
         html body[data-page="water-supply-drainage"] main #water-system-simulator-entry .water-system-simulator-stage,
         html body[data-page="water-supply-drainage"] main #water-supply-drainage .water-proof-scene,
-        html body[data-page="water-supply-drainage"] main #water-supply-drainage .water-proof-media {
+        html body[data-page="water-supply-drainage"] main #water-supply-drainage .water-proof-media,
+        html body[data-page="water-supply-drainage"] main #water-problem .water-context-media {
           width: 100vw !important;
           max-width: 100vw !important;
           margin-left: calc(50% - 50vw) !important;
@@ -4439,6 +4454,8 @@
           border-radius: 0 !important;
         }
 
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-context-media,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-context-media > img,
         html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media > img {
           width: 100% !important;
           max-width: 100% !important;
@@ -4456,6 +4473,8 @@
           home: "home",
           philosophy: "philosophy",
           dimensions: "philosophy",
+          "environment-problem": "systems",
+          "environment-logic": "systems",
           climate: "systems",
           systems: "systems",
           "water-supply-drainage": "water-supply-drainage",
@@ -4496,7 +4515,7 @@
       <nav class="desktop-nav" aria-label="主导航">
         <a href="#landing">首页</a>
         <a href="#philosophy">理念</a>
-        <a href="#systems">空气</a>
+        <a href="#environment-problem">空气</a>
         <a href="#basement-system">地下室</a>
         <a href="#water-supply-drainage">给排水</a>
         <a href="#delivery">设计交付</a>
@@ -4509,7 +4528,7 @@
       <div class="mobile-menu" id="mobile-menu">
         <a href="#landing">首页</a>
         <a href="#philosophy">理念</a>
-        <a href="#systems">空气</a>
+        <a href="#environment-problem">空气</a>
         <a href="#basement-system">地下室</a>
         <a href="#water-supply-drainage">给排水</a>
         <a href="#delivery">设计交付</a>
@@ -4580,7 +4599,7 @@
             <p class="zf-home-index-card-label"><span>Piping Network</span>管线连接</p>
           </a>
 
-          <a class="zf-home-index-card is-delivery" href="#systems" aria-label="住宅通风与换气内核">
+          <a class="zf-home-index-card is-delivery" href="#environment-problem" aria-label="住宅通风与换气内核">
             <span class="zf-home-index-card-visual" aria-hidden="true">
               <span class="zf-home-index-art"></span>
             </span>
@@ -7034,7 +7053,7 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260709-project-access-lite-v55" defer></script>
+    <script src="script.js?v=20260709-project-access-lite-v56" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");
@@ -7065,7 +7084,12 @@
           const climateLivingScene = document.querySelector("#climate .climate-living-scene");
           const climateLivingMedia = climateLivingScene?.querySelector(".climate-living-media");
           const climateLivingImg = climateLivingMedia?.querySelector("img");
+          const quietSystem = document.querySelector(".quiet-system");
+          const quietSystemMedia = quietSystem?.querySelector(".section-image");
+          const quietSystemImg = quietSystemMedia?.querySelector("img");
 
+          const waterContextMedia = document.querySelector("#water-problem .water-context-media");
+          const waterContextImg = waterContextMedia?.querySelector("img");
           const waterStage = document.querySelector("#water-system-simulator-entry .water-system-simulator-stage");
           const waterStageImg = waterStage?.querySelector(":scope > img");
           const waterPanel = waterStage?.querySelector(".water-system-sim-panel");
@@ -7082,6 +7106,11 @@
             climateLivingScene,
             climateLivingMedia,
             climateLivingImg,
+            quietSystem,
+            quietSystemMedia,
+            quietSystemImg,
+            waterContextMedia,
+            waterContextImg,
             waterStage,
             waterStageImg,
             waterPanel,
@@ -7119,11 +7148,15 @@
             "object-fit": "cover"
           });
 
-          applyStyles([climateStage, climateLivingScene, climateLivingMedia], {
+          applyStyles([climateStage, climateLivingScene, climateLivingMedia, quietSystemMedia], {
             "width": "100vw",
             "max-width": "100vw",
             "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)"
+            "margin-right": "calc(50% - 50vw)",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box",
+            "border-radius": "0"
           });
           applyStyles([climateStage], {
             "min-height": "clamp(760px, 52vw, 980px)",
@@ -7134,7 +7167,26 @@
             "padding-right": "clamp(24px, 2vw, 36px)",
             "box-sizing": "border-box"
           });
-          applyStyles([climateStageImg, climateLivingImg], {
+          applyStyles([climateStageImg, climateLivingImg, quietSystemImg], {
+            "width": "100%",
+            "max-width": "100%",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "height": "100%",
+            "object-fit": "cover"
+          });
+
+          applyStyles([waterContextMedia], {
+            "width": "100vw",
+            "max-width": "100vw",
+            "margin-left": "calc(50% - 50vw)",
+            "margin-right": "calc(50% - 50vw)",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "border-radius": "0"
+          });
+          applyStyles([waterContextImg], {
             "width": "100%",
             "max-width": "100%",
             "min-height": "clamp(760px, 52vw, 980px)",
