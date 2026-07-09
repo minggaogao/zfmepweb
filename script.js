@@ -3965,7 +3965,6 @@ const applyGlobalTypographyLock = () => {
     sceneGap: isMobile ? "22px" : "clamp(28px, 2.8vw, 42px)",
     copyGap: isMobile ? "12px" : "14px"
   };
-
   const airTitleNodes = $$([
     "body[data-page='systems'] #climate > .section-heading h2",
     "body[data-page='systems'] #climate .climate-living-copy h3",
@@ -4186,10 +4185,13 @@ const applyGlobalTypographyLock = () => {
     "flex-direction": "column",
     "align-items": "stretch",
     "gap": airStandard.sceneGap,
-    "width": "100%",
-    "max-width": "100%",
+    "width": isMobile ? "100%" : "100vw",
+    "max-width": isMobile ? "100%" : "100vw",
+    "margin-left": isMobile ? "0" : "calc(50% - 50vw)",
+    "margin-right": isMobile ? "0" : "calc(50% - 50vw)",
     "padding": "0",
-    "margin": "0",
+    "margin-top": "0",
+    "margin-bottom": "0",
     "border": "0",
     "border-radius": "0",
     "background": "transparent",
@@ -4198,12 +4200,15 @@ const applyGlobalTypographyLock = () => {
   });
 
   setLockedStyles(airMediaFrames, {
-    "width": "100%",
-    "max-width": "100%",
+    "width": isMobile ? "100%" : "100vw",
+    "max-width": isMobile ? "100%" : "100vw",
+    "margin-left": isMobile ? "0" : "calc(50% - 50vw)",
+    "margin-right": isMobile ? "0" : "calc(50% - 50vw)",
     "aspect-ratio": "16 / 9",
-    "min-height": "0",
-    "margin": "0",
-    "border-radius": "clamp(22px, 2vw, 30px)",
+    "min-height": isMobile ? "0" : "clamp(760px, 52vw, 980px)",
+    "margin-top": "0",
+    "margin-bottom": "0",
+    "border-radius": isMobile ? "clamp(22px, 2vw, 30px)" : "0",
     "overflow": "hidden",
     "background": "transparent",
     "box-shadow": "none"
@@ -4213,7 +4218,7 @@ const applyGlobalTypographyLock = () => {
     "display": "block",
     "width": "100%",
     "height": "100%",
-    "min-height": "0",
+    "min-height": isMobile ? "0" : "clamp(760px, 52vw, 980px)",
     "object-fit": "cover",
     "object-position": "50% 50%",
     "border-radius": "inherit"
@@ -4767,25 +4772,35 @@ const applyGlobalTypographyLock = () => {
     "flex-direction": "column",
     "align-items": "stretch",
     "gap": waterStandard.sceneGap,
-    "width": "100%",
-    "max-width": "100%",
-    "margin": "0",
-    "padding": "0",
+    "width": isMobile ? "100%" : "100vw",
+    "max-width": isMobile ? "100%" : "100vw",
+    "margin-top": "0",
+    "margin-bottom": "0",
+    "margin-left": isMobile ? "0" : "calc(50% - 50vw)",
+    "margin-right": isMobile ? "0" : "calc(50% - 50vw)",
+    "padding": isMobile ? "0" : "0 clamp(24px, 2vw, 36px)",
     "border": "0",
     "border-radius": "0",
     "background": "transparent",
     "box-shadow": "none",
-    "overflow": "visible"
+    "overflow": "visible",
+    "box-sizing": "border-box"
   });
 
   setLockedStyles(waterMediaFrames, {
-    "width": "100%",
-    "max-width": "100%",
+    "width": isMobile ? "100%" : "100vw",
+    "max-width": isMobile ? "100%" : "100vw",
     "aspect-ratio": "16 / 9",
-    "min-height": "0",
-    "height": "auto",
-    "margin": "0",
-    "border-radius": "clamp(22px, 2vw, 30px)",
+    "min-height": isMobile ? "0" : "clamp(760px, 52vw, 980px)",
+    "height": isMobile ? "auto" : "clamp(760px, 52vw, 980px)",
+    "margin-top": "0",
+    "margin-bottom": "0",
+    "margin-left": isMobile ? "0" : "calc(50% - 50vw)",
+    "margin-right": isMobile ? "0" : "calc(50% - 50vw)",
+    "padding-left": isMobile ? "0" : "clamp(24px, 2vw, 36px)",
+    "padding-right": isMobile ? "0" : "clamp(24px, 2vw, 36px)",
+    "box-sizing": "border-box",
+    "border-radius": isMobile ? "clamp(22px, 2vw, 30px)" : "0",
     "overflow": "hidden",
     "background": "transparent",
     "box-shadow": "none"
@@ -4795,7 +4810,7 @@ const applyGlobalTypographyLock = () => {
     "display": "block",
     "width": "100%",
     "height": "100%",
-    "min-height": "0",
+    "min-height": isMobile ? "0" : "clamp(760px, 52vw, 980px)",
     "object-fit": "cover",
     "object-position": "50% 50%",
     "border-radius": "inherit"

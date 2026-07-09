@@ -33,7 +33,7 @@
     />
     <link rel="preload" as="image" href="images/homepage-hero-final/hero-human.webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css?v=20260616-home-villa-varied" />
-    <link rel="stylesheet" href="launch-polish.css?v=20260709-climate-yellow-fix-v32" />
+    <link rel="stylesheet" href="launch-polish.css?v=20260709-desktop-fullbleed-v33" />
     <link
       rel="preload"
       href="water-scenes-lock.css?v=20260626-water-fix-v77"
@@ -4202,7 +4202,7 @@
 
       @media (min-width: 1280px) {
         html body {
-          --zf-wide-stage-width: calc(100% - 24px);
+          --zf-wide-stage-width: 100vw;
         }
 
         html body[data-page="home"] main > #landing,
@@ -4214,6 +4214,7 @@
         html body main #landing .zf-home-hero-stage,
         html body main #landing .zf-home-index-strip,
         html body main #landing .zf-home-mep-band,
+        html body main #landing .zf-home-closing-stage,
         html body[data-page="home"] main #home > .home-panel,
         html body[data-page="home"] main #home > .home-closing,
         html body .footer-cta-band-inner,
@@ -4222,18 +4223,59 @@
           max-width: none !important;
         }
 
-        html body[data-page="home"] {
+        html body main #landing .zf-home-hero-stage,
+        html body main #landing .zf-home-index-strip,
+        html body main #landing .zf-home-mep-band,
+        html body main #landing .zf-home-closing-stage,
+        html body[data-page="home"] main #home > .home-panel,
+        html body[data-page="home"] main #home > .home-closing,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-stage,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .quiet-system,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-shell,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-stage,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-scene {
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+        }
+
+        html body[data-page="philosophy"] {
           --zf-canon-media-width: var(--zf-wide-stage-width) !important;
         }
 
-        html body[data-page="home"] main #home > .home-panel:is(.home-sanctuary, .home-shift, .home-feelings, .home-mep, .home-courtyard) {
+        html body[data-page="philosophy"] main #home > .home-panel:is(.home-sanctuary, .home-shift, .home-feelings, .home-mep, .home-courtyard) {
           width: var(--zf-wide-stage-width) !important;
           max-width: none !important;
         }
 
-        html body[data-page="home"] main #home > .home-panel :is(.home-sanctuary-media, .home-image) {
+        html body[data-page="philosophy"] main #home > .home-panel {
+          padding-left: clamp(24px, 2vw, 36px) !important;
+          padding-right: clamp(24px, 2vw, 36px) !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="philosophy"] main #home > .home-panel :is(.home-sanctuary-media, .home-image) {
           width: 100% !important;
           max-width: 100% !important;
+        }
+
+        html body[data-page="philosophy"] main #home > .home-panel.home-mep {
+          grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+          align-items: center !important;
+          gap: clamp(28px, 3vw, 46px) !important;
+        }
+
+        html body[data-page="philosophy"] main #home > .home-panel.home-mep .home-image {
+          width: calc(100vw - clamp(24px, 2vw, 36px) * 2) !important;
+          max-width: none !important;
+          justify-self: stretch !important;
+        }
+
+        html body[data-page="philosophy"] main #home > .home-panel.home-mep .home-image img {
+          width: 100% !important;
+          height: auto !important;
+          min-height: clamp(520px, 40vw, 760px) !important;
+          object-fit: cover !important;
         }
 
         html body[data-page="systems"] {
@@ -4260,6 +4302,41 @@
           max-width: 100% !important;
         }
 
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-stage,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .quiet-system {
+          border-radius: 0 !important;
+        }
+
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-stage {
+          min-height: clamp(760px, 52vw, 980px) !important;
+        }
+
+        html body:is([data-page="climate"], [data-page="systems"]) main #climate .climate-stage,
+        html body:is([data-page="climate"], [data-page="systems"]) main #climate .climate-living-scene,
+        html body:is([data-page="climate"], [data-page="systems"]) main .quiet-system {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+        }
+
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-stage .climate-map img,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene .climate-living-media img,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .quiet-system .section-image img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          min-height: clamp(760px, 52vw, 980px) !important;
+          object-fit: cover !important;
+        }
+
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene {
+          padding-left: clamp(24px, 2vw, 36px) !important;
+          padding-right: clamp(24px, 2vw, 36px) !important;
+          box-sizing: border-box !important;
+        }
+
         html body[data-page="systems"] main > #environment-problem.section-shell .air-system-definition-copy,
         html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene {
           width: var(--zf-wide-stage-width) !important;
@@ -4279,6 +4356,95 @@
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-hero {
           margin-top: clamp(14px, 1.8vw, 24px) !important;
+        }
+
+        html body[data-page="water-supply-drainage"] {
+          --water-standard-width: 100vw !important;
+          --water-page-media-width: 100vw !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem,
+        html body[data-page="water-supply-drainage"] main > #water-logic,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage {
+          width: 100vw !important;
+          max-width: none !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+          padding-left: clamp(24px, 2vw, 36px) !important;
+          padding-right: clamp(24px, 2vw, 36px) !important;
+          box-sizing: border-box !important;
+          overflow: visible !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main #water-system-simulator-entry .water-system-simulator-stage,
+        html body[data-page="water-supply-drainage"] main #water-supply-drainage .water-proof-scene,
+        html body[data-page="water-supply-drainage"] main #water-supply-drainage .water-proof-media {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-heading,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-scene-rail,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-intro,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-definition-copy,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-journey-head,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-copy {
+          width: min(1320px, calc(100vw - 72px)) !important;
+          max-width: min(1320px, calc(100vw - 72px)) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-stage {
+          width: 100vw !important;
+          max-width: none !important;
+          min-height: clamp(760px, 52vw, 980px) !important;
+          grid-template-columns: minmax(0, 1fr) clamp(320px, 24vw, 430px) !important;
+          gap: clamp(20px, 2vw, 28px) !important;
+          align-items: stretch !important;
+          padding-left: clamp(24px, 2vw, 36px) !important;
+          padding-right: clamp(24px, 2vw, 36px) !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-stage > img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 100% !important;
+          min-height: clamp(760px, 52vw, 980px) !important;
+          object-fit: cover !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-sim-panel {
+          height: 100% !important;
+          min-height: clamp(760px, 52vw, 980px) !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-scene {
+          width: 100vw !important;
+          max-width: none !important;
+          gap: clamp(22px, 2vw, 34px) !important;
+          padding-left: clamp(24px, 2vw, 36px) !important;
+          padding-right: clamp(24px, 2vw, 36px) !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-height: clamp(760px, 52vw, 980px) !important;
+          border-radius: 0 !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-media > img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 100% !important;
+          min-height: clamp(760px, 52vw, 980px) !important;
+          object-fit: cover !important;
         }
       }
     </style>
@@ -6868,7 +7034,189 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260709-project-access-lite-v54" defer></script>
+    <script src="script.js?v=20260709-project-access-lite-v55" defer></script>
+    <script>
+      (() => {
+        const desktopQuery = window.matchMedia("(min-width: 1280px)");
+
+        const applyStyles = (elements, styles) => {
+          elements.filter(Boolean).forEach((el) => {
+            Object.entries(styles).forEach(([key, value]) => {
+              el.style.setProperty(key, value, "important");
+            });
+          });
+        };
+
+        const clearStyles = (elements, keys) => {
+          elements.filter(Boolean).forEach((el) => {
+            keys.forEach((key) => el.style.removeProperty(key));
+          });
+        };
+
+        const fullBleedKeys = ["width", "max-width", "margin-left", "margin-right", "padding-left", "padding-right", "box-sizing", "min-height", "height", "object-fit", "border-radius", "grid-template-columns", "gap"];
+
+        const runDesktopVisualLock = () => {
+          const homeMep = document.querySelector("#home .home-mep");
+          const homeMepImage = homeMep?.querySelector(".home-image");
+          const homeMepImageTag = homeMepImage?.querySelector("img");
+
+          const climateStage = document.querySelector("#climate .climate-stage");
+          const climateStageImg = climateStage?.querySelector(".climate-map > img");
+          const climateLivingScene = document.querySelector("#climate .climate-living-scene");
+          const climateLivingMedia = climateLivingScene?.querySelector(".climate-living-media");
+          const climateLivingImg = climateLivingMedia?.querySelector("img");
+
+          const waterStage = document.querySelector("#water-system-simulator-entry .water-system-simulator-stage");
+          const waterStageImg = waterStage?.querySelector(":scope > img");
+          const waterPanel = waterStage?.querySelector(".water-system-sim-panel");
+          const waterScenes = Array.from(document.querySelectorAll("#water-supply-drainage .water-proof-scene"));
+          const waterMedia = waterScenes.map((scene) => scene.querySelector(".water-proof-media")).filter(Boolean);
+          const waterMediaImages = waterMedia.map((media) => media.querySelector("img")).filter(Boolean);
+
+          const targets = [
+            homeMep,
+            homeMepImage,
+            homeMepImageTag,
+            climateStage,
+            climateStageImg,
+            climateLivingScene,
+            climateLivingMedia,
+            climateLivingImg,
+            waterStage,
+            waterStageImg,
+            waterPanel,
+            ...waterScenes,
+            ...waterMedia,
+            ...waterMediaImages
+          ];
+
+          if (!desktopQuery.matches) {
+            clearStyles(targets, fullBleedKeys);
+            return;
+          }
+
+          applyStyles([homeMep], {
+            "width": "100vw",
+            "max-width": "100vw",
+            "margin-left": "calc(50% - 50vw)",
+            "margin-right": "calc(50% - 50vw)",
+            "padding-left": "clamp(24px, 2vw, 36px)",
+            "padding-right": "clamp(24px, 2vw, 36px)",
+            "box-sizing": "border-box",
+            "grid-template-columns": "minmax(0, 0.88fr) minmax(0, 1.12fr)",
+            "gap": "clamp(28px, 3vw, 46px)"
+          });
+          applyStyles([homeMepImage], {
+            "width": "100%",
+            "max-width": "100%",
+            "height": "auto"
+          });
+          applyStyles([homeMepImageTag], {
+            "width": "100%",
+            "max-width": "100%",
+            "min-height": "clamp(520px, 40vw, 760px)",
+            "height": "auto",
+            "object-fit": "cover"
+          });
+
+          applyStyles([climateStage, climateLivingScene, climateLivingMedia], {
+            "width": "100vw",
+            "max-width": "100vw",
+            "margin-left": "calc(50% - 50vw)",
+            "margin-right": "calc(50% - 50vw)"
+          });
+          applyStyles([climateStage], {
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "border-radius": "0"
+          });
+          applyStyles([climateLivingScene], {
+            "padding-left": "clamp(24px, 2vw, 36px)",
+            "padding-right": "clamp(24px, 2vw, 36px)",
+            "box-sizing": "border-box"
+          });
+          applyStyles([climateStageImg, climateLivingImg], {
+            "width": "100%",
+            "max-width": "100%",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "height": "100%",
+            "object-fit": "cover"
+          });
+
+          applyStyles([waterStage], {
+            "width": "100vw",
+            "max-width": "100vw",
+            "margin-left": "calc(50% - 50vw)",
+            "margin-right": "calc(50% - 50vw)",
+            "padding-left": "clamp(24px, 2vw, 36px)",
+            "padding-right": "clamp(24px, 2vw, 36px)",
+            "box-sizing": "border-box",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "grid-template-columns": "minmax(0, 1fr) clamp(320px, 24vw, 430px)",
+            "gap": "clamp(20px, 2vw, 28px)"
+          });
+          applyStyles([waterStageImg], {
+            "width": "100%",
+            "max-width": "100%",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "height": "100%",
+            "object-fit": "cover"
+          });
+          applyStyles([waterPanel], {
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "height": "100%"
+          });
+          applyStyles(waterScenes, {
+            "width": "100vw",
+            "max-width": "100vw",
+            "margin-left": "calc(50% - 50vw)",
+            "margin-right": "calc(50% - 50vw)",
+            "padding-left": "clamp(24px, 2vw, 36px)",
+            "padding-right": "clamp(24px, 2vw, 36px)",
+            "box-sizing": "border-box",
+            "gap": "clamp(22px, 2vw, 34px)"
+          });
+          applyStyles(waterMedia, {
+            "width": "100vw",
+            "max-width": "100vw",
+            "margin-left": "calc(50% - 50vw)",
+            "margin-right": "calc(50% - 50vw)",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "border-radius": "0"
+          });
+          applyStyles(waterMediaImages, {
+            "width": "100%",
+            "max-width": "100%",
+            "min-height": "clamp(760px, 52vw, 980px)",
+            "height": "100%",
+            "object-fit": "cover"
+          });
+        };
+
+        const scheduleDesktopVisualLock = () => {
+          const delays = [0, 120, 480, 900, 1600, 2600];
+          delays.forEach((delay) => {
+            window.setTimeout(() => requestAnimationFrame(runDesktopVisualLock), delay);
+          });
+        };
+
+        if (document.readyState !== "loading") {
+          scheduleDesktopVisualLock();
+        } else {
+          document.addEventListener("DOMContentLoaded", scheduleDesktopVisualLock, { once: true });
+        }
+        window.addEventListener("load", scheduleDesktopVisualLock);
+        window.addEventListener("resize", scheduleDesktopVisualLock);
+        window.addEventListener("hashchange", scheduleDesktopVisualLock);
+        document.addEventListener("click", (event) => {
+          if (event.target.closest("[data-water-sim-launch], .water-system-sim-tab, a[href^='#']")) {
+            scheduleDesktopVisualLock();
+          }
+        });
+      })();
+    </script>
 
 </body>
 </html>

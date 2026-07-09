@@ -25985,7 +25985,7 @@ html body main #home :is(.home-shift, .home-feelings, .home-mep, .home-courtyard
 }
 
 html body main #water-supply-drainage {
-  --water-proof-width: min(1280px, calc(100vw - 280px)) !important;
+  --water-proof-width: 100vw !important;
   width: 100% !important;
   max-width: none !important;
   margin-left: 0 !important;
@@ -25995,9 +25995,8 @@ html body main #water-supply-drainage {
 }
 
 html body main #water-supply-drainage .water-proof-heading,
-html body main #water-supply-drainage .water-proof-scene,
 html body main #water-supply-drainage .water-proof-closing {
-  width: var(--water-proof-width) !important;
+  width: min(1280px, calc(100vw - 280px)) !important;
   max-width: 1280px !important;
   min-width: 0 !important;
   margin-left: auto !important;
@@ -26005,10 +26004,17 @@ html body main #water-supply-drainage .water-proof-closing {
 }
 
 html body main #water-supply-drainage .water-proof-scene {
+  width: 100vw !important;
+  max-width: none !important;
   display: block !important;
   grid-template-columns: none !important;
   gap: 0 !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
   margin-top: clamp(64px, 7vw, 104px) !important;
+  padding-left: clamp(24px, 2vw, 36px) !important;
+  padding-right: clamp(24px, 2vw, 36px) !important;
+  box-sizing: border-box !important;
 }
 
 html body main #water-supply-drainage .water-proof-scene:first-of-type {
@@ -26033,19 +26039,21 @@ html body main #water-supply-drainage .water-proof-copy :is(.eyebrow, h3, p) {
 
 html body main #water-supply-drainage .water-proof-media {
   display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 100vw !important;
+  max-width: none !important;
   min-width: 0 !important;
-  margin: 0 auto !important;
+  margin: 0 calc(50% - 50vw) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   overflow: hidden !important;
-  border-radius: 26px !important;
+  border-radius: 0 !important;
 }
 
 html body main #water-supply-drainage .water-proof-media img {
   display: block !important;
   width: 100% !important;
-  height: clamp(420px, 30vw, 600px) !important;
-  max-height: 600px !important;
+  height: clamp(760px, 52vw, 980px) !important;
+  max-height: none !important;
   object-fit: cover !important;
   object-position: center !important;
 }
@@ -26074,9 +26082,21 @@ html body main #water-supply-drainage .water-proof-media img {
   html body main #water-supply-drainage .water-proof-closing {
     width: var(--water-proof-width) !important;
     max-width: var(--water-proof-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body main #water-supply-drainage .water-proof-scene {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   html body main #water-supply-drainage .water-proof-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     border-radius: 22px !important;
   }
 
