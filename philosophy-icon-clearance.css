@@ -1,0 +1,225 @@
+/* Final lock: keep philosophy dimension icon glow rings from being clipped. */
+html body[data-page="philosophy"] main #home > :is(
+  .home-philosophy-intro,
+  .home-hero,
+  .home-sanctuary,
+  .home-shift,
+  .home-feelings,
+  .home-mep,
+  .home-courtyard
+),
+html body[data-page="philosophy"] main #home :is(
+  .home-copy,
+  .home-hero-copy,
+  .home-sanctuary-copy
+) {
+  overflow: visible !important;
+}
+
+html body[data-page="philosophy"] main #home .home-eyebrow {
+  padding-left: 4px !important;
+  overflow: visible !important;
+}
+
+html body[data-page="philosophy"] main :is(
+  #home .home-hero-copy,
+  #home .home-sanctuary-copy,
+  #home .home-copy,
+  #home .home-philosophy-closing,
+  #dimensions > .section-heading,
+  #dimensions .dimension-content,
+  #dimensions .dimension-closing
+) :is(h1, h2, h3, p, blockquote, .home-subtitle, .home-quiet-line, .home-note, .home-philosophy-closing-title) {
+  max-width: 100% !important;
+}
+
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-card,
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-content,
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-title-row {
+  overflow: visible !important;
+}
+
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-title-row {
+  padding-top: 9px !important;
+}
+
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-icon {
+  margin-top: 0 !important;
+}
+
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-title-inline {
+  overflow: visible !important;
+  column-gap: 10px !important;
+}
+
+html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-title-inline .dimension-en {
+  display: inline-block !important;
+  min-width: 2.8em !important;
+  padding-left: 2px !important;
+  overflow: visible !important;
+  font-size: clamp(10px, 0.68vw, 12px) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.08em !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-title-row {
+    padding-top: 9px !important;
+  }
+
+  html body[data-page="philosophy"] main section#dimensions.section-shell .dimension-title-inline .dimension-en {
+    font-size: 10px !important;
+  }
+}
+
+/* 2026-07-06 · Philosophy full-width rhythm lock: no active desktop shrink, with calmer text-to-image spacing. */
+html body[data-page="philosophy"] {
+  --zf-philosophy-full-width: calc(100vw - 64px);
+  --zf-philosophy-first-gap: clamp(30px, 4vw, 56px);
+  --zf-philosophy-section-gap: clamp(72px, 6vw, 104px);
+  --zf-philosophy-copy-media-gap: clamp(28px, 2.8vw, 42px);
+  --zf-philosophy-copy-gap: 14px;
+}
+
+html body[data-page="philosophy"] main #home > :is(
+  .home-philosophy-intro,
+  .home-hero,
+  .home-sanctuary,
+  .home-shift,
+  .home-feelings,
+  .home-mep,
+  .home-courtyard
+),
+html body[data-page="philosophy"] main #dimensions,
+html body[data-page="philosophy"] main #dimensions > .section-heading,
+html body[data-page="philosophy"] main #dimensions .dimension-card,
+html body[data-page="philosophy"] main #dimensions .dimension-closing {
+  width: var(--zf-philosophy-full-width) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html body[data-page="philosophy"] main #home > .home-philosophy-intro {
+  margin-top: var(--zf-philosophy-first-gap) !important;
+}
+
+html body[data-page="philosophy"] main #home > :is(
+  .home-hero,
+  .home-sanctuary,
+  .home-shift,
+  .home-feelings,
+  .home-mep,
+  .home-courtyard
+) {
+  margin-top: var(--zf-philosophy-section-gap) !important;
+}
+
+html body[data-page="philosophy"] main #home :is(
+  .home-philosophy-intro,
+  .home-hero,
+  .home-sanctuary,
+  .home-shift,
+  .home-feelings,
+  .home-mep,
+  .home-courtyard
+) {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zf-philosophy-copy-media-gap) !important;
+  padding: 0 !important;
+}
+
+html body[data-page="philosophy"] main #home :is(
+  .home-copy,
+  .home-hero-copy,
+  .home-sanctuary-copy
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  gap: var(--zf-philosophy-copy-gap) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body[data-page="philosophy"] main #home :is(
+  .home-philosophy-intro figure,
+  .home-hero-media,
+  .home-sanctuary-media,
+  .home-image
+),
+html body[data-page="philosophy"] main #dimensions .dimension-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="philosophy"] main #dimensions {
+  margin-top: var(--zf-philosophy-section-gap) !important;
+}
+
+html body[data-page="philosophy"] main #dimensions > .section-heading {
+  margin-bottom: clamp(34px, 3.4vw, 54px) !important;
+}
+
+html body[data-page="philosophy"] main #dimensions .dimension-card + .dimension-card {
+  margin-top: var(--zf-philosophy-section-gap) !important;
+}
+
+html body[data-page="philosophy"] main #dimensions .dimension-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  gap: var(--zf-philosophy-copy-gap) !important;
+  margin-bottom: var(--zf-philosophy-copy-media-gap) !important;
+}
+
+html body[data-page="philosophy"] main #home .home-philosophy-closing {
+  width: var(--zf-philosophy-full-width) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left !important;
+  justify-items: start !important;
+}
+
+html body[data-page="philosophy"] main #home .home-philosophy-closing > :is(
+  .home-philosophy-closing-title,
+  span,
+  p
+) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+  justify-self: start !important;
+}
+
+html body[data-page="philosophy"] main #home :is(
+  .home-philosophy-intro figure,
+  .home-hero-media,
+  .home-sanctuary-media,
+  .home-image,
+  .dimension-media
+) > img {
+  animation-name: zfSceneImageBreath !important;
+  animation-duration: 18s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: alternate !important;
+  animation-play-state: running !important;
+  transform-origin: 50% 50% !important;
+  will-change: transform !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="philosophy"] {
+    --zf-philosophy-full-width: calc(100vw - 36px);
+    --zf-philosophy-first-gap: 24px;
+    --zf-philosophy-section-gap: 42px;
+    --zf-philosophy-copy-media-gap: 22px;
+    --zf-philosophy-copy-gap: 12px;
+  }
+}

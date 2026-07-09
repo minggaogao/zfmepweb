@@ -1,0 +1,311 @@
+/* Water page standard: PC-first typography and scene rhythm, scoped to the water route only. */
+html body[data-page="water-supply-drainage"] {
+  --water-standard-width: calc(100vw - 64px);
+  --water-title-width: 100%;
+  --water-copy-width: 100%;
+  --water-section-gap: clamp(72px, 6vw, 104px);
+  --water-scene-gap: clamp(28px, 2.8vw, 42px);
+  --water-copy-gap: 14px;
+  --water-radius: clamp(22px, 2vw, 30px);
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem,
+  #water-logic,
+  #water-system-simulator-entry,
+  #water-supply-drainage
+) {
+  width: var(--water-standard-width) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-logic,
+  #water-system-simulator-entry,
+  #water-supply-drainage
+) {
+  margin-top: var(--water-section-gap) !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem .water-system-definition-copy,
+  #water-problem .water-system-journey-head,
+  #water-problem .water-system-journey-panel-copy,
+  #water-logic .water-system-signal-summary-copy,
+  #water-system-simulator-entry .water-system-simulator-intro,
+  #water-system-simulator-entry .water-system-simulator-heading,
+  #water-system-simulator-entry .water-system-sim-copy,
+  #water-supply-drainage .water-proof-copy,
+  #water-supply-drainage .water-proof-closing
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  gap: var(--water-copy-gap) !important;
+  justify-items: start !important;
+  align-content: start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem .eyebrow,
+  #water-problem .water-system-journey-kicker,
+  #water-logic .eyebrow,
+  #water-system-simulator-entry .eyebrow,
+  #water-system-simulator-entry .water-system-sim-kicker,
+  #water-supply-drainage .eyebrow
+) {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 4px !important;
+  overflow: visible !important;
+  color: rgba(31, 72, 67, 0.62) !important;
+  font-family: Inter, "PingFang SC", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 450 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: none !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem h1,
+  #water-problem .water-system-journey-head h2,
+  #water-problem .water-system-journey-panel-copy h3,
+  #water-logic .water-system-signal-summary-copy h2,
+  #water-system-simulator-entry .water-system-simulator-intro h3,
+  #water-system-simulator-entry .water-system-simulator-heading h2,
+  #water-system-simulator-entry .water-system-sim-copy h3,
+  #water-supply-drainage .water-proof-copy h3,
+  #water-supply-drainage .water-proof-closing h3
+) {
+  display: block !important;
+  width: 100% !important;
+  max-width: var(--water-title-width) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  color: #193f39 !important;
+  font-family: "Noto Serif SC", "Songti SC", serif !important;
+  font-size: clamp(24px, 1.62vw, 27px) !important;
+  font-weight: 500 !important;
+  line-height: 1.46 !important;
+  letter-spacing: -0.02em !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  text-wrap: pretty !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) :is(h1, h2, h3) span {
+  display: inline !important;
+  color: inherit !important;
+  font: inherit !important;
+  white-space: normal !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem .water-system-definition-lead,
+  #water-problem .water-system-journey-head p:not(.water-system-journey-kicker),
+  #water-problem .water-system-journey-panel-copy p:not(.eyebrow),
+  #water-logic .water-system-signal-summary-copy p:not(.eyebrow),
+  #water-system-simulator-entry .water-system-simulator-intro p:not(.eyebrow),
+  #water-system-simulator-entry .water-system-simulator-heading p,
+  #water-system-simulator-entry .water-system-sim-copy p:not(.water-system-sim-kicker),
+  #water-supply-drainage .water-proof-copy p:not(.eyebrow),
+  #water-supply-drainage .water-proof-closing p:not(.eyebrow),
+  #water-problem figcaption,
+  #water-system-simulator-entry figcaption
+) {
+  display: block !important;
+  width: 100% !important;
+  max-width: var(--water-copy-width) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  color: rgba(38, 34, 30, 0.72) !important;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: clamp(15px, 0.96vw, 15.5px) !important;
+  font-weight: 400 !important;
+  line-height: 1.92 !important;
+  letter-spacing: 0.008em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  text-wrap: pretty !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem {
+  display: grid !important;
+  gap: var(--water-scene-gap) !important;
+  padding-top: clamp(30px, 4vw, 56px) !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy {
+  gap: var(--water-copy-gap) !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > :is(.eyebrow, h1, .water-system-definition-lead) {
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-lifestyle-ribbon {
+  display: grid !important;
+  grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  border-top: 1px solid rgba(18, 53, 47, 0.12) !important;
+  border-bottom: 1px solid rgba(18, 53, 47, 0.12) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-lifestyle-ribbon > span {
+  display: grid !important;
+  justify-items: center !important;
+  gap: 6px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-lifestyle-ribbon strong {
+  color: #193f39 !important;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-lifestyle-ribbon svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 1.7 !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem .water-system-journey,
+  #water-problem .water-life-bridge,
+  #water-system-simulator-entry .water-life-bridge,
+  #water-supply-drainage .water-proof-scene
+) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--water-scene-gap) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-supply-drainage {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--water-section-gap) !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem .water-context-media,
+  #water-problem .water-life-bridge-media,
+  #water-system-simulator-entry .water-life-bridge-media,
+  #water-system-simulator-entry .water-system-simulator-stage,
+  #water-supply-drainage .water-proof-media
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  border-radius: var(--water-radius) !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(
+  #water-problem .water-context-media > img,
+  #water-problem .water-life-bridge-media > img,
+  #water-system-simulator-entry .water-life-bridge-media > img,
+  #water-system-simulator-entry .water-system-simulator-stage > img,
+  #water-supply-drainage .water-proof-media > img
+) {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: 50% 50% !important;
+  border-radius: inherit !important;
+  animation-name: zfSceneImageBreath !important;
+  animation-duration: 18s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: alternate !important;
+  animation-play-state: running !important;
+  transform-origin: 50% 50% !important;
+  will-change: transform !important;
+}
+
+@media (max-width: 700px) {
+  html body[data-page="water-supply-drainage"] {
+    --water-standard-width: calc(100vw - 36px);
+    --water-section-gap: 42px;
+    --water-scene-gap: 22px;
+    --water-copy-gap: 12px;
+  }
+
+  html body[data-page="water-supply-drainage"] main :is(
+    #water-problem h1,
+    #water-problem .water-system-journey-head h2,
+    #water-problem .water-system-journey-panel-copy h3,
+    #water-logic .water-system-signal-summary-copy h2,
+    #water-system-simulator-entry .water-system-simulator-intro h3,
+    #water-system-simulator-entry .water-system-simulator-heading h2,
+    #water-system-simulator-entry .water-system-sim-copy h3,
+    #water-supply-drainage .water-proof-copy h3,
+    #water-supply-drainage .water-proof-closing h3
+  ) {
+    font-size: clamp(19px, 4.9vw, 22px) !important;
+    line-height: 1.42 !important;
+  }
+
+  html body[data-page="water-supply-drainage"] main #water-problem .water-lifestyle-ribbon {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px 6px !important;
+  }
+}

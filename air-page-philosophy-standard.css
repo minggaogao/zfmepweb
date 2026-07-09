@@ -1,0 +1,405 @@
+/* Air page final standard: align Systems route to the Philosophy page visual language. */
+html body[data-page="systems"] {
+  --air-standard-width: calc(100vw - 64px);
+  --air-title-width: 100%;
+  --air-copy-width: 100%;
+  --air-section-gap: clamp(72px, 6vw, 104px);
+  --air-grid-gap: 34px;
+  --air-scene-gap: clamp(28px, 2.8vw, 42px);
+  --air-copy-gap: 14px;
+  --air-radius: clamp(22px, 2vw, 30px);
+}
+
+html body[data-page="systems"] main :is(
+  #climate,
+  #environment-problem,
+  #environment-logic,
+  #systems
+) {
+  width: var(--air-standard-width) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate > .section-heading,
+  #climate .climate-living-copy,
+  #environment-problem .air-system-definition-copy,
+  #systems .scene-content,
+  #systems .systems-closing
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+html body[data-page="systems"] main #environment-problem.section-shell > .air-system-definition-copy {
+  width: 100% !important;
+  max-width: 100% !important;
+  inline-size: 100% !important;
+  max-inline-size: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate > .section-heading,
+  #environment-problem .air-system-definition-copy,
+  #systems .scene-content,
+  #systems .systems-closing
+) {
+  display: grid !important;
+  gap: var(--air-copy-gap) !important;
+  justify-items: start !important;
+  align-content: start !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate .eyebrow,
+  #environment-problem .eyebrow,
+  #systems .scene-content .eyebrow,
+  #systems .systems-closing-eyebrow,
+  #climate .climate-closing-eyebrow
+) {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 4px !important;
+  overflow: visible !important;
+  color: rgba(31, 72, 67, 0.62) !important;
+  font-family: Inter, "PingFang SC", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 450 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: none !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate > .section-heading h2,
+  #environment-problem .air-system-definition-copy h1,
+  #systems .scene-content h3,
+  #systems .systems-closing h3,
+  #climate .climate-living-copy h3
+) {
+  max-width: var(--air-title-width) !important;
+  margin: 0 !important;
+  color: #193f39 !important;
+  font-family: "Noto Serif SC", "Songti SC", serif !important;
+  font-size: clamp(24px, 1.62vw, 27px) !important;
+  font-weight: 500 !important;
+  line-height: 1.46 !important;
+  letter-spacing: -0.02em !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  text-wrap: pretty !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-system-definition-copy h1 span {
+  display: inline !important;
+  color: inherit !important;
+  font: inherit !important;
+  white-space: normal !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate > .section-heading .lead,
+  #climate > .section-heading .climate-lead-sub,
+  #environment-problem .air-system-definition-lead,
+  #systems .scene-content p:not(.eyebrow),
+  #systems .scene-content .card-quote,
+  #systems .systems-closing p:not(.systems-closing-eyebrow),
+  #climate .climate-living-copy p:not(.climate-closing-eyebrow)
+) {
+  max-width: var(--air-copy-width) !important;
+  margin: 0 !important;
+  color: rgba(38, 34, 30, 0.72) !important;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: clamp(15px, 0.96vw, 15.5px) !important;
+  font-weight: 400 !important;
+  line-height: 1.92 !important;
+  letter-spacing: 0.008em !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  text-wrap: pretty !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate .climate-stage,
+  #environment-problem .air-opening-scene,
+  #systems .system-scene-card .scene-media,
+  #climate .climate-living-media
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border-radius: var(--air-radius) !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main #climate .climate-stage {
+  display: block !important;
+  line-height: normal !important;
+  font-size: initial !important;
+}
+
+html body[data-page="systems"] main #climate .climate-map {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  border-radius: inherit !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate .climate-map > img,
+  #environment-problem .air-opening-scene > img,
+  #systems .system-scene-card .scene-media > img,
+  #climate .climate-living-media > img
+) {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: 50% 50% !important;
+  border-radius: inherit !important;
+}
+
+html body[data-page="systems"] main :is(
+  #climate .climate-stage,
+  #environment-problem .air-opening-scene,
+  #systems .scene-media,
+  #climate .climate-living-media
+) > img {
+  animation-name: zfSceneImageBreath !important;
+  animation-duration: 18s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: alternate !important;
+  animation-play-state: running !important;
+  transform-origin: 50% 50% !important;
+  will-change: transform !important;
+}
+
+html body[data-page="systems"] main #climate {
+  display: grid !important;
+  gap: var(--air-scene-gap) !important;
+  padding-top: clamp(30px, 4vw, 56px) !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading {
+  order: 1 !important;
+}
+
+html body[data-page="systems"] main #climate .climate-stage {
+  order: 2 !important;
+}
+
+html body[data-page="systems"] main #climate .climate-living-scene {
+  order: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--air-scene-gap) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) {
+  margin-top: var(--air-section-gap) !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-system-definition-copy {
+  gap: var(--air-copy-gap) !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-lifestyle-ribbon {
+  width: 100% !important;
+  max-width: var(--air-copy-width) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  border-top: 1px solid rgba(18, 53, 47, 0.12) !important;
+  border-bottom: 1px solid rgba(18, 53, 47, 0.12) !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-lifestyle-ribbon span {
+  display: grid !important;
+  justify-items: center !important;
+  gap: 6px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-lifestyle-ribbon strong {
+  color: #193f39 !important;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-lifestyle-ribbon svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 1.7 !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-opening-scene {
+  margin-top: 0 !important;
+}
+
+html body[data-page="systems"] main #systems {
+  margin-top: var(--air-section-gap) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell > .system-grid,
+html body[data-page="systems"] main #systems .system-grid {
+  display: grid !important;
+  gap: var(--air-grid-gap) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 36px !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card,
+html body[data-page="systems"] main #systems .system-scene-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  inline-size: 100% !important;
+  max-inline-size: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--air-scene-gap) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html body[data-page="systems"] main #systems .system-scene-card::before,
+html body[data-page="systems"] main #systems .system-scene-card::after,
+html body[data-page="systems"] main #systems .scene-media::before,
+html body[data-page="systems"] main #systems .scene-media::after {
+  display: none !important;
+  content: none !important;
+}
+
+html body[data-page="systems"] main #systems .scene-content {
+  order: 1 !important;
+}
+
+html body[data-page="systems"] main #systems .scene-media {
+  order: 2 !important;
+}
+
+html body[data-page="systems"] main #systems :is(.mep-metric-group, .module-grid, .brand-grid, .tool-grid) {
+  order: 3 !important;
+  width: 100% !important;
+  max-width: var(--air-copy-width) !important;
+  margin: 0 !important;
+}
+
+html body[data-page="systems"] main #systems .systems-closing {
+  margin: 0 0 56px !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-standard-width: calc(100vw - 36px);
+    --air-title-width: 100%;
+    --air-copy-width: 100%;
+    --air-section-gap: 42px;
+    --air-grid-gap: 34px;
+    --air-scene-gap: 22px;
+    --air-copy-gap: 12px;
+  }
+
+  html body[data-page="systems"] main :is(
+    #climate > .section-heading h2,
+    #environment-problem .air-system-definition-copy h1,
+    #systems .scene-content h3,
+    #systems .systems-closing h3,
+    #climate .climate-living-copy h3
+  ) {
+    font-size: clamp(19px, 4.9vw, 22px) !important;
+    line-height: 1.42 !important;
+  }
+
+  html body[data-page="systems"] main :is(
+    #climate > .section-heading .lead,
+    #climate > .section-heading .climate-lead-sub,
+    #environment-problem .air-system-definition-lead,
+    #systems .scene-content p:not(.eyebrow),
+    #systems .scene-content .card-quote,
+    #systems .systems-closing p:not(.systems-closing-eyebrow),
+    #climate .climate-living-copy p:not(.climate-closing-eyebrow)
+  ) {
+    font-size: clamp(14px, 3.9vw, 15px) !important;
+    line-height: 1.9 !important;
+  }
+
+  html body[data-page="systems"] main :is(
+    #climate .eyebrow,
+    #environment-problem .eyebrow,
+    #systems .scene-content .eyebrow,
+    #systems .systems-closing-eyebrow,
+    #climate .climate-closing-eyebrow
+  ) {
+    font-size: 12px !important;
+  }
+
+  html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) {
+    margin-top: var(--air-section-gap) !important;
+  }
+}

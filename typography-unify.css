@@ -1,0 +1,1114 @@
+/* 2026-07-01 typography unification
+   Baseline: typography-standard.md / #climate rendered text scale.
+   Keep every rule scoped by route + section so one page cannot leak into another. */
+
+:root {
+  --zf-type-eyebrow: 13px;
+  --zf-type-title: 32px;
+  --zf-type-title-line: 1.23;
+  --zf-type-lead: 20px;
+  --zf-type-lead-line: 1.8;
+  --zf-type-copy: 15.68px;
+  --zf-type-copy-line: 1.86;
+  --zf-type-card-title: 26.88px;
+  --zf-type-card-title-line: 1.28;
+  --zf-type-subtitle: 31px;
+  --zf-type-button: 17px;
+  --zf-type-label: 12px;
+  --zf-type-small: 10px;
+  --zf-type-eyebrow-spacing: 1.2px;
+  --zf-type-title-spacing: -0.64px;
+  --zf-type-card-spacing: -0.27px;
+}
+
+/* Shared chrome, intentionally limited to header only. */
+html body header :is(.site-nav a, .desktop-nav a, .mobile-nav a) {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: 0 !important;
+}
+
+html body header .header-action {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: 0 !important;
+}
+
+/* Climate route: explicit baseline so the reference page is also governed here. */
+html body[data-page="climate"] main #climate :is(.section-heading .eyebrow, .climate-closing-eyebrow, .climate-copy-panel .eyebrow, .climate-explanation .eyebrow) {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="climate"] main #climate .section-heading h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="climate"] main #climate .section-heading .lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="climate"] main #climate :is(.climate-lead-sub, .climate-copy-panel p, .climate-explanation p, .climate-strategy-note, .climate-living-copy p:not(.climate-closing-eyebrow)) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="climate"] main #climate :is(.climate-copy-panel h3, .climate-living-copy h3) {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="climate"] main #climate :is(.climate-strategy-head h3, .climate-explanation h3) {
+  font-size: var(--zf-type-subtitle) !important;
+  line-height: 1.42 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.47px !important;
+}
+
+html body[data-page="climate"] main #climate :is(.climate-field-label, .climate-topic-text, .climate-mode-tabs button) {
+  font-size: var(--zf-type-button) !important;
+  line-height: normal !important;
+  font-weight: 700 !important;
+}
+
+html body[data-page="climate"] main #climate :is(.geo-label, .changsha-pulse, .dew-risk, .mep-mini-icons i, .climate-strategy-card span, .climate-strategy-card em) {
+  font-size: var(--zf-type-label) !important;
+  line-height: 1.72 !important;
+  font-weight: 700 !important;
+}
+
+/* Home route */
+html body[data-page="home"] main #home .home-hero,
+html body[data-page="philosophy"] main #home .home-hero {
+  row-gap: 0 !important;
+}
+
+html body[data-page="home"] main #home .home-hero-copy,
+html body[data-page="philosophy"] main #home .home-hero-copy {
+  margin-bottom: clamp(44px, 4vw, 64px) !important;
+}
+
+html body[data-page="home"] main #home .home-hero-media,
+html body[data-page="philosophy"] main #home .home-hero-media {
+  margin-top: 0 !important;
+}
+
+html body[data-page="home"] main #home :is(.home-eyebrow, .eyebrow) {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="home"] main #home :is(h1, h2) {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="home"] main #home :is(.home-subtitle, .home-quiet-line) {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="home"] main #home :is(.home-note, .home-closing p, .home-feeling-card p, .home-mep-card p) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="home"] main #home :is(.home-feeling-card strong, .home-mep-card strong) {
+  font-size: var(--zf-type-button) !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+}
+
+/* Dimensions route */
+html body[data-page="dimensions"] main #dimensions .section-heading .eyebrow,
+html body[data-page="dimensions"] main #dimensions .dimension-card .eyebrow {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="dimensions"] main #dimensions .section-heading h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="dimensions"] main #dimensions :is(.dimension-card h3, .dimension-bridge-item strong) {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="dimensions"] main #dimensions :is(.dimension-card p, .dimension-bridge-item span) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="dimensions"] main #dimensions :is(.dimension-card li, .tag-list span) {
+  font-size: var(--zf-type-label) !important;
+  line-height: 1.72 !important;
+  font-weight: 600 !important;
+}
+
+/* Water route: opening and logic sections */
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) .eyebrow,
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) :is(.water-system-journey-kicker, .water-system-sim-kicker) {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy h1,
+html body[data-page="water-supply-drainage"] main #water-logic .water-system-signal-summary-copy h2,
+html body[data-page="water-supply-drainage"] main #water-system-simulator-entry .water-system-simulator-heading h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge {
+  display: block !important;
+  width: var(--zf-scene-media-width, var(--zf-canon-media-width, min(calc(100vw - 128px), 145svh, 1280px))) !important;
+  max-width: var(--zf-scene-media-width, var(--zf-canon-media-width, min(calc(100vw - 128px), 145svh, 1280px))) !important;
+  min-width: 0 !important;
+  margin: clamp(44px, 5vw, 76px) auto clamp(48px, 5.4vw, 84px) !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge-media {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge-media img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(500px, 34vw, 680px) !important;
+  max-height: 680px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge figcaption {
+  max-width: 760px !important;
+  margin: 16px 0 0 !important;
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: rgba(20, 63, 58, 0.68) !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-life-bridge--top {
+  margin-top: clamp(42px, 5vw, 78px) !important;
+  margin-bottom: clamp(52px, 6vw, 92px) !important;
+}
+
+@media (max-width: 1200px) {
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge {
+    width: var(--zf-scene-media-width, var(--zf-canon-media-width, min(calc(100vw - 128px), 145svh, 1280px))) !important;
+    max-width: var(--zf-scene-media-width, var(--zf-canon-media-width, min(calc(100vw - 128px), 145svh, 1280px))) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge {
+    width: var(--zf-water-content-width, calc(100vw - 36px)) !important;
+    max-width: var(--zf-water-content-width, calc(100vw - 36px)) !important;
+  }
+
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge-media {
+    border-radius: 22px !important;
+  }
+
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) .water-life-bridge-media img {
+    height: clamp(280px, 72vw, 460px) !important;
+    max-height: 460px !important;
+  }
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry, #water-supply-drainage) :is(.water-system-journey-head h2, .water-system-journey-panel-copy h3, .water-system-simulator-intro h3, .water-proof-copy h3, .water-system-sim-copy h3, .water-accordion-copy h3) {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) :is(p:not(.eyebrow), blockquote, summary, .water-system-sim-text, .water-system-sim-reference p) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-system-simulator-entry) :is(.water-system-journey-step strong, .water-system-sim-tab, button, .button) {
+  font-size: var(--zf-type-button) !important;
+  line-height: normal !important;
+  font-weight: 650 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) :is(.water-lifestyle-ribbon strong, .water-system-sim-risk b, .water-system-sim-panel span, .water-system-sim-metric span, .water-system-sim-progress, small) {
+  font-size: var(--zf-type-label) !important;
+  line-height: 1.72 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-system-simulator-entry .water-system-sim-metric strong {
+  font-size: 23px !important;
+  line-height: 27.14px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.8px !important;
+}
+
+/* Air systems route */
+html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) :is(.eyebrow, .air-system-journey-kicker, .experience-kicker) {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-system-definition-copy h1,
+html body[data-page="systems"] main #environment-logic .image-entry-copy h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="systems"] main #environment-problem .air-system-definition-lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main :is(#environment-problem, #systems) :is(.air-system-journey-head h2, .air-system-unified-note h2, .scene-content h3, .experience-translation h3) {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) :is(p:not(.eyebrow), blockquote, summary, .scene-feeling, .card-quote, .scene-detail-body p) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) :is(.air-lifestyle-ribbon strong, .air-system-journey-rail strong, .air-system-journey-card strong, .air-hvac-stack strong, .tag-list span) {
+  font-size: var(--zf-type-label) !important;
+  line-height: 1.72 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) :is(.air-system-journey-rail i, .air-system-journey-card i, .air-hvac-stack span) {
+  font-size: var(--zf-type-label) !important;
+  line-height: 1.45 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.26px !important;
+}
+
+/* Basement route */
+html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, #basement-problem-signals, #basement-problem, #basement-logic, #basement-lifting, .basement-showcase, #basement-summary) :is(.eyebrow, .basement-journey-kicker, .basement-iphone-section-title) {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-definition-copy h1,
+html body[data-page="basement-system"] main #basement-problem .system-cognition-inner h1,
+html body[data-page="basement-system"] main #basement-logic .image-entry-copy h2,
+html body[data-page="basement-system"] main #basement-lifting .image-entry-copy h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-definition-lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, .basement-showcase, #basement-summary) :is(.basement-journey-head h2, .basement-journey-panel-copy h3, .basement-copy h3, .basement-summary-copy h2, .basement-summary-copy h3, .basement-simulator-intro h3) {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, #basement-problem-signals, #basement-problem, #basement-logic, #basement-lifting, .basement-showcase, #basement-summary) :is(p:not(.eyebrow), blockquote, summary, .basement-alert-summary-copy span) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, #basement-problem-signals, .basement-showcase) :is(.basement-lifestyle-ribbon strong, .basement-journey-step strong, .basement-function-card strong, .basement-scene-statuses span, .basement-scene-titleblock span, .basement-alert-chip strong) {
+  font-size: var(--zf-type-label) !important;
+  line-height: 1.72 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="basement-system"] main .basement-scene-titleblock strong {
+  font-size: var(--zf-type-button) !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Delivery and project-access routes */
+html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) .eyebrow,
+html body[data-page="project-access"] main #project-access .eyebrow {
+  font-size: var(--zf-type-eyebrow) !important;
+  line-height: 18.71px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+}
+
+html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) h2,
+html body[data-page="project-access"] main #project-access h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) :is(p:not(.eyebrow), blockquote, summary, details p),
+html body[data-page="project-access"] main #project-access :is(p:not(.eyebrow), label, input, button, .button) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) :is(.delivery-card h3, .delivery-grid strong),
+html body[data-page="project-access"] main #project-access :is(.access-card strong, .access-actions .button) {
+  font-size: var(--zf-type-button) !important;
+  line-height: 1.35 !important;
+  font-weight: 650 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Mobile keeps the same hierarchy but avoids oversized wrapping. */
+@media (max-width: 900px) {
+  html body[data-page="home"] main #home :is(h1, h2),
+  html body[data-page="dimensions"] main #dimensions :is(h1, h2),
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) :is(h1, h2),
+  html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) :is(h1, h2),
+  html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, #basement-problem-signals, #basement-problem, #basement-logic, #basement-lifting, .basement-showcase, #basement-summary) :is(h1, h2),
+  html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) :is(h1, h2),
+  html body[data-page="project-access"] main #project-access :is(h1, h2) {
+    font-size: clamp(26px, 7vw, 32px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0 !important;
+  }
+
+  html body[data-page="home"] main #home h3,
+  html body[data-page="dimensions"] main #dimensions h3,
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) h3,
+  html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) h3,
+  html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, #basement-problem-signals, #basement-problem, #basement-logic, #basement-lifting, .basement-showcase, #basement-summary) h3,
+  html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) h3,
+  html body[data-page="project-access"] main #project-access h3 {
+    font-size: clamp(22px, 5.6vw, 27px) !important;
+    line-height: 1.34 !important;
+    letter-spacing: 0 !important;
+  }
+
+  html body[data-page="home"] main #home :is(p, blockquote, summary, label, input, button, .button),
+  html body[data-page="dimensions"] main #dimensions :is(p, blockquote, summary, label, input, button, .button),
+  html body[data-page="water-supply-drainage"] main :is(#water-problem, #water-logic, #water-system-simulator-entry, #water-supply-drainage) :is(p, blockquote, summary, label, input, button, .button),
+  html body[data-page="systems"] main :is(#environment-problem, #environment-logic, #systems) :is(p, blockquote, summary, label, input, button, .button),
+  html body[data-page="basement-system"] main :is(#basement-definition, #basement-environment-simulator, #basement-problem-signals, #basement-problem, #basement-logic, #basement-lifting, .basement-showcase, #basement-summary) :is(p, blockquote, summary, label, input, button, .button),
+  html body[data-page="delivery"] main :is(#fit, #constraints, #delivery, #process) :is(p, blockquote, summary, label, input, button, .button),
+  html body[data-page="project-access"] main #project-access :is(p, blockquote, summary, label, input, button, .button) {
+    font-size: 15.5px !important;
+    line-height: 1.78 !important;
+  }
+}
+
+/* Final specificity pass: override older inline locks without leaking across pages. */
+html body[data-page="home"] main section#home.home-entry :is(.home-hero-copy, .home-sanctuary-copy, .home-copy) > :is(h1, h2) {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="home"] main section#home.home-entry .home-hero-copy > .home-subtitle {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="home"] main section#home.home-entry :is(.home-hero-copy, .home-sanctuary-copy, .home-copy) > :is(.home-quiet-line, .home-note) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main section#water-problem.water-route-page .water-system-definition-copy > h1 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="water-supply-drainage"] main section#water-problem.water-route-page .water-system-definition-copy > .water-system-definition-lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="water-supply-drainage"] main section#water-supply-drainage.water-flow-page .water-proof-scene .water-proof-copy > h3,
+html body[data-page="water-supply-drainage"] main section#water-system-simulator-entry .water-system-simulator-intro > h3,
+html body[data-page="water-supply-drainage"] main section#water-problem.water-route-page .water-system-journey-head > h2,
+html body[data-page="water-supply-drainage"] main section#water-problem.water-route-page .water-system-journey-panel-copy > h3 {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="systems"] main section#environment-problem.environment-panel .air-system-definition-copy > h1 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="systems"] main section#environment-problem.environment-panel .air-system-definition-copy > .air-system-definition-lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main section#environment-problem.environment-panel .air-system-journey-head > h2,
+html body[data-page="systems"] main section#environment-logic.logic-panel .image-entry-copy > h2,
+html body[data-page="systems"] main section#systems.systems .system-grid .system-scene-card .scene-content > h3,
+html body[data-page="systems"] main section#systems.systems .experience-translation h3 {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="basement-system"] main section#basement-definition.basement-definition .basement-definition-copy > h1,
+html body[data-page="basement-system"] main section#basement-problem .system-cognition-inner > h1,
+html body[data-page="basement-system"] main section#basement-logic .image-entry-copy > h2,
+html body[data-page="basement-system"] main section#basement-lifting .image-entry-copy > h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="basement-system"] main section#basement-definition.basement-definition .basement-definition-copy > .basement-definition-lead {
+  font-size: var(--zf-type-lead) !important;
+  line-height: var(--zf-type-lead-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="basement-system"] main section.basement-showcase > .basement-copy > h3,
+html body[data-page="basement-system"] main section#basement-definition.basement-definition .basement-journey-head > h2,
+html body[data-page="basement-system"] main section#basement-definition.basement-definition .basement-journey-panel-copy > h3 {
+  font-size: var(--zf-type-card-title) !important;
+  line-height: var(--zf-type-card-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-card-spacing) !important;
+}
+
+html body[data-page="delivery"] main :is(section#fit, section#constraints, section#delivery, section#process) .section-copy > h2,
+html body[data-page="project-access"] main section#project-access .section-copy > h2 {
+  font-size: var(--zf-type-title) !important;
+  line-height: var(--zf-type-title-line) !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+}
+
+html body[data-page="delivery"] main :is(section#fit, section#constraints, section#delivery, section#process) .section-copy > p:not(.eyebrow),
+html body[data-page="project-access"] main section#project-access .section-copy > p:not(.eyebrow) {
+  font-size: var(--zf-type-copy) !important;
+  line-height: var(--zf-type-copy-line) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+
+/* 2026-07-03 · Delivery text color and scale final polish. */
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy :is(.eyebrow, h2, h3, p, blockquote, summary),
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) :is(.delivery-card, .process-card) :is(summary, h3, p, span, strong) {
+  text-shadow: none !important;
+}
+
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy h2 {
+  color: #12352f !important;
+}
+
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy :is(p, blockquote),
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) :is(.delivery-card, .process-card) :is(p, span) {
+  color: rgba(31, 58, 52, 0.76) !important;
+}
+
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy :is(.eyebrow, summary),
+html body[data-page="delivery"] main :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) :is(.delivery-card, .process-card) :is(summary, h3, strong) {
+  color: rgba(22, 61, 53, 0.86) !important;
+}
+
+/* 2026-07-03 · Delivery page stays unframed; process uses small icons, not image blocks. */
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+)::before,
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+)::after,
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy::before {
+  display: none !important;
+  content: none !important;
+}
+
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html body[data-page="delivery"] #delivery .delivery-grid {
+  display: none !important;
+}
+
+/* 2026-07-03 · Tighten delivery narrative so empty pale bands do not read as white blocks. */
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) {
+  padding-top: clamp(8px, 1.2vw, 16px) !important;
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="delivery"] main > :is(
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) {
+  margin-top: clamp(22px, 2.4vw, 34px) !important;
+}
+
+html body[data-page="delivery"] main > :is(
+  #fit,
+  #constraints,
+  #integration,
+  #delivery,
+  #team-execution,
+  #process
+) .section-copy blockquote {
+  margin-top: clamp(16px, 1.7vw, 24px) !important;
+}
+
+html body[data-page="delivery"] .delivery-reveal {
+  margin: clamp(10px, 1.1vw, 14px) 0 clamp(12px, 1.4vw, 18px) !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="delivery"] main > :is(
+    #fit,
+    #constraints,
+    #integration,
+    #delivery,
+    #team-execution,
+    #process
+  ) {
+    padding-top: 10px !important;
+  }
+
+  html body[data-page="delivery"] main > :is(
+    #constraints,
+    #integration,
+    #delivery,
+    #team-execution,
+    #process
+  ) {
+    margin-top: clamp(24px, 7vw, 34px) !important;
+  }
+}
+
+/* 2026-07-03 · Delivery narrative professional scene imagery. */
+html body[data-page="delivery"] .delivery-scene-media {
+  --zf-delivery-scene-width: var(--zf-scene-media-width, var(--zf-canon-media-width, min(1320px, calc(100vw - 120px))));
+  --zf-delivery-section-width: min(980px, calc(100vw - 44px));
+  width: var(--zf-delivery-scene-width) !important;
+  max-width: var(--zf-delivery-scene-width) !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: clamp(20px, 2.8vw, 34px) calc((var(--zf-delivery-section-width) - var(--zf-delivery-scene-width)) / 2) 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(37, 34, 29, 0.1) !important;
+  border-radius: 8px !important;
+  background: rgba(248, 245, 239, 0.72) !important;
+}
+
+html body[data-page="delivery"] .delivery-scene-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+html body[data-page="delivery"] #delivery .delivery-scene-media + .delivery-grid {
+  margin-top: clamp(22px, 2.6vw, 34px) !important;
+}
+
+@media (max-width: 640px) {
+  html body[data-page="delivery"] .delivery-scene-media {
+    aspect-ratio: 4 / 3 !important;
+    margin-top: 18px !important;
+  }
+}
+
+
+/* 2026-07-03 · Global image breathing lock for all primary scene media. */
+@keyframes zfGlobalSceneBreath {
+  0% {
+    transform: scale(1.006);
+    filter: saturate(1.015) contrast(1.005);
+  }
+
+  48% {
+    transform: scale(1.024);
+    filter: saturate(1.045) contrast(1.018);
+  }
+
+  100% {
+    transform: scale(1.012);
+    filter: saturate(1.025) contrast(1.01);
+  }
+}
+
+html body main :is(
+  .breathe-media,
+  .hero-media,
+  .home-hero-media,
+  .home-sanctuary-media,
+  .home-image,
+  .section-image,
+  .dimension-media,
+  .climate-map,
+  .climate-living-media,
+  .image-entry-media,
+  .scene-media,
+  .fit-media,
+  .visual-story-media,
+  .delivery-scene-media,
+  .water-life-bridge-media,
+  .water-proof-media,
+  .water-supply-media,
+  .water-demand-media,
+  .water-support-media,
+  .water-logic-media,
+  .water-flow-media,
+  .water-story-hero,
+  .water-route-support-media,
+  .water-route-control-media,
+  .water-vacation-media,
+  .route-media,
+  .basement-problem-media,
+  .basement-media,
+  .basement-before-reveal
+) {
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+html body main :is(
+  .breathe-media,
+  .hero-media,
+  .home-hero-media,
+  .home-sanctuary-media,
+  .home-image,
+  .section-image,
+  .dimension-media,
+  .climate-map,
+  .climate-living-media,
+  .image-entry-media,
+  .scene-media,
+  .fit-media,
+  .visual-story-media,
+  .delivery-scene-media,
+  .water-life-bridge-media,
+  .water-proof-media,
+  .water-supply-media,
+  .water-demand-media,
+  .water-support-media,
+  .water-logic-media,
+  .water-flow-media,
+  .water-story-hero,
+  .water-route-support-media,
+  .water-route-control-media,
+  .water-vacation-media,
+  .route-media,
+  .basement-problem-media,
+  .basement-media,
+  .basement-before-reveal
+) > img {
+  transform-origin: center center !important;
+  will-change: transform, filter !important;
+  animation-name: zfGlobalSceneBreath !important;
+  animation-duration: 18s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: alternate !important;
+  animation-fill-mode: both !important;
+}
+
+html body main :is(
+  .delivery-scene-media,
+  .visual-story-media,
+  .fit-media,
+  .section-image,
+  .image-entry-media,
+  .scene-media,
+  .water-life-bridge-media,
+  .water-proof-media,
+  .basement-media,
+  .basement-problem-media,
+  .home-image,
+  .home-hero-media,
+  .home-sanctuary-media
+):nth-of-type(2n) > img {
+  animation-duration: 20s !important;
+}
+
+html body main :is(
+  .delivery-scene-media,
+  .visual-story-media,
+  .fit-media,
+  .section-image,
+  .image-entry-media,
+  .scene-media,
+  .water-life-bridge-media,
+  .water-proof-media,
+  .basement-media,
+  .basement-problem-media,
+  .home-image,
+  .home-hero-media,
+  .home-sanctuary-media
+):nth-of-type(3n) > img {
+  animation-duration: 22s !important;
+}
+
+html body main :is(
+  .breathe-media,
+  .hero-media,
+  .home-hero-media,
+  .home-sanctuary-media,
+  .home-image,
+  .section-image,
+  .dimension-media,
+  .climate-map,
+  .climate-living-media,
+  .image-entry-media,
+  .scene-media,
+  .fit-media,
+  .visual-story-media,
+  .delivery-scene-media,
+  .water-life-bridge-media,
+  .water-proof-media,
+  .water-supply-media,
+  .water-demand-media,
+  .water-support-media,
+  .water-logic-media,
+  .water-flow-media,
+  .water-story-hero,
+  .water-route-support-media,
+  .water-route-control-media,
+  .water-vacation-media,
+  .route-media,
+  .basement-problem-media,
+  .basement-media,
+  .basement-before-reveal
+):hover > img {
+  animation-play-state: paused !important;
+  transform: scale(1.028) !important;
+  filter: saturate(1.045) contrast(1.018) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body main :is(
+    .breathe-media,
+    .hero-media,
+    .home-hero-media,
+    .home-sanctuary-media,
+    .home-image,
+    .section-image,
+    .dimension-media,
+    .climate-map,
+    .climate-living-media,
+    .image-entry-media,
+    .scene-media,
+    .fit-media,
+    .visual-story-media,
+    .delivery-scene-media,
+    .water-life-bridge-media,
+    .water-proof-media,
+    .water-supply-media,
+    .water-demand-media,
+    .water-support-media,
+    .water-logic-media,
+    .water-flow-media,
+    .water-story-hero,
+    .water-route-support-media,
+    .water-route-control-media,
+    .water-vacation-media,
+    .route-media,
+    .basement-problem-media,
+    .basement-media,
+    .basement-before-reveal
+  ) > img {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* 2026-07-03 · Final title eyebrow and green ink lock for basement + water pages. */
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > .eyebrow,
+html body[data-page="basement-system"] main #basement-definition .basement-definition-copy > .eyebrow {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 0 clamp(12px, 1.2vw, 16px) !important;
+  color: rgba(18, 53, 47, 0.62) !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--zf-type-eyebrow) !important;
+  font-weight: 600 !important;
+  line-height: 18.71px !important;
+  letter-spacing: var(--zf-type-eyebrow-spacing) !important;
+  text-transform: uppercase !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > h1,
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > h1 span,
+html body[data-page="basement-system"] main #basement-definition .basement-definition-copy > h1,
+html body[data-page="basement-system"] main #basement-definition .basement-definition-copy > h1 span {
+  color: #12352f !important;
+  font-family: var(--font-serif) !important;
+  font-size: var(--zf-type-title) !important;
+  font-weight: 500 !important;
+  line-height: var(--zf-type-title-line) !important;
+  letter-spacing: var(--zf-type-title-spacing) !important;
+  text-wrap: balance !important;
+}
+
+html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > h1 {
+  white-space: normal !important;
+  max-width: 24em !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > .eyebrow,
+  html body[data-page="basement-system"] main #basement-definition .basement-definition-copy > .eyebrow {
+    margin-bottom: 10px !important;
+    font-size: 12.5px !important;
+    line-height: 18px !important;
+  }
+
+  html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > h1,
+  html body[data-page="water-supply-drainage"] main #water-problem .water-system-definition-copy > h1 span,
+  html body[data-page="basement-system"] main #basement-definition .basement-definition-copy > h1,
+  html body[data-page="basement-system"] main #basement-definition .basement-definition-copy > h1 span {
+    font-size: clamp(26px, 7vw, 32px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0 !important;
+  }
+}
+
+/* 2026-07-03 · Basement context images matched to the opening Chinese copy. */
+html body[data-page="basement-system"] main #basement-definition .basement-context-media {
+  display: block !important;
+  width: min(980px, calc(100vw - 44px)) !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: clamp(28px, 3.2vw, 46px) 0 clamp(34px, 3.8vw, 56px) !important;
+  overflow: hidden !important;
+  border-radius: var(--zf-scene-radius, 24px) !important;
+  background: rgba(240, 233, 221, 0.54) !important;
+  box-shadow: 0 26px 70px rgba(35, 30, 22, 0.13) !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-journey .basement-context-media {
+  margin-top: clamp(22px, 2.6vw, 36px) !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-context-media > img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  animation: zfGlobalSceneBreath 18s ease-in-out infinite alternate !important;
+  transform-origin: center center !important;
+  will-change: transform, filter !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="basement-system"] main #basement-definition .basement-context-media {
+    width: calc(100vw - 36px) !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 24px auto 34px !important;
+    border-radius: 18px !important;
+  }
+}

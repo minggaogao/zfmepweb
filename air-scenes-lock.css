@@ -1,0 +1,2441 @@
+/* Air page only: residential HVAC air-environment layout lock. */
+html body[data-page="systems"] {
+  --air-page-media-width: min(1280px, calc(100vw - 100px)) !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem,
+html body[data-page="systems"] main > #environment-logic {
+  display: block !important;
+  min-height: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media {
+  margin-top: clamp(18px, 2vw, 28px) !important;
+  margin-bottom: clamp(34px, 4vw, 56px) !important;
+  order: -1 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .air-system-definition-copy {
+  order: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > :is(.air-system-definition-copy, .image-entry-media),
+html body[data-page="systems"] main > #environment-logic > :is(.image-entry-copy, .image-entry-media),
+html body[data-page="systems"] main > #systems > :is(.system-grid, .experience-translation),
+html body[data-page="systems"] main > #systems .system-scene-card {
+  box-sizing: border-box !important;
+  width: var(--air-page-media-width) !important;
+  max-width: var(--air-page-media-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media,
+html body[data-page="systems"] main > #environment-logic > .image-entry-media,
+html body[data-page="systems"] main > #systems .scene-media {
+  display: block !important;
+  width: var(--air-page-media-width) !important;
+  max-width: var(--air-page-media-width) !important;
+  margin-top: clamp(28px, 3vw, 44px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media img,
+html body[data-page="systems"] main > #environment-logic > .image-entry-media img,
+html body[data-page="systems"] main > #systems .scene-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy > :is(.eyebrow, h1, p),
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head > :is(p, h2),
+html body[data-page="systems"] main > #environment-logic .image-entry-copy > :is(.eyebrow, h2, p, blockquote),
+html body[data-page="systems"] main > #systems .scene-content > :is(.eyebrow, h3, p, blockquote),
+html body[data-page="systems"] main > #systems .scene-detail-body :is(summary, h4, p, span),
+html body[data-page="systems"] main > #systems .experience-translation :is(.experience-kicker, h3, p) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+  max-width: 15em !important;
+  font-size: clamp(34px, 3.2vw, 52px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-opening-brief {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin: clamp(12px, 2vw, 22px) 0 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-opening-brief article {
+  min-width: 0 !important;
+  padding: 18px 0 0 !important;
+  border-top: 1px solid rgba(26, 66, 60, 0.14) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-opening-brief span {
+  display: block !important;
+  margin: 0 0 10px !important;
+  color: #9a7d4d !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-opening-brief strong {
+  display: block !important;
+  color: #133f38 !important;
+  font-size: 17px !important;
+  line-height: 1.68 !important;
+  font-weight: 600 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-lead,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy p,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy blockquote,
+html body[data-page="systems"] main > #systems .scene-content p,
+html body[data-page="systems"] main > #systems .scene-content blockquote,
+html body[data-page="systems"] main > #systems .experience-translation p {
+  max-width: 48em !important;
+  font-size: 16px !important;
+  line-height: 1.86 !important;
+  color: rgba(31, 50, 47, 0.78) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-lead {
+  max-width: 36em !important;
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-lifestyle-ribbon {
+  display: grid !important;
+  grid-template-columns: repeat(9, minmax(64px, 92px)) !important;
+  justify-content: start !important;
+  column-gap: clamp(18px, 2.4vw, 42px) !important;
+  row-gap: 18px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: clamp(20px, 2.5vw, 32px) 0 0 !important;
+  padding: 18px 0 !important;
+  border-top: 1px solid rgba(26, 66, 60, 0.12) !important;
+  border-bottom: 1px solid rgba(26, 66, 60, 0.12) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-lifestyle-ribbon span {
+  display: grid !important;
+  gap: 8px !important;
+  justify-items: center !important;
+  color: #244f48 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-lifestyle-ribbon svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: none !important;
+  stroke: #9a7d4d !important;
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey {
+  margin-top: clamp(34px, 4vw, 58px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+html body[data-page="systems"] main > #systems .scene-content h3,
+html body[data-page="systems"] main > #systems .experience-translation h3 {
+  max-width: 18em !important;
+  font-size: clamp(28px, 2.4vw, 40px) !important;
+  line-height: 1.28 !important;
+  letter-spacing: 0 !important;
+  color: #103f38 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-rail {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(112px, 148px)) !important;
+  justify-content: start !important;
+  column-gap: clamp(28px, 4.2vw, 74px) !important;
+  row-gap: 18px !important;
+  margin-top: clamp(22px, 2.8vw, 36px) !important;
+  padding: 20px 0 !important;
+  border-top: 1px solid rgba(26, 66, 60, 0.12) !important;
+  border-bottom: 1px solid rgba(26, 66, 60, 0.12) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-rail span {
+  display: grid !important;
+  gap: 8px !important;
+  align-content: start !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-rail i {
+  font-style: normal !important;
+  font-size: 12px !important;
+  letter-spacing: 0.14em !important;
+  color: #9a7d4d !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-rail strong {
+  color: #224f47 !important;
+  font-size: 15px !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: clamp(26px, 3vw, 40px) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack article {
+  min-width: 0 !important;
+  padding: 18px 18px 20px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+  border: 1px solid rgba(32, 83, 75, 0.12) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack span {
+  display: block !important;
+  margin-bottom: 10px !important;
+  color: #9a7d4d !important;
+  font-size: 12px !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack strong {
+  display: block !important;
+  color: #113f38 !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack p {
+  margin: 10px 0 0 !important;
+  color: rgba(31, 50, 47, 0.72) !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+html body[data-page="systems"] main > #systems .system-grid {
+  display: grid !important;
+  gap: clamp(56px, 6vw, 92px) !important;
+}
+
+html body[data-page="systems"] main > #systems .section-heading {
+  display: none !important;
+}
+
+html body[data-page="systems"] main > #systems {
+  padding-top: clamp(52px, 6vw, 86px) !important;
+}
+
+html body[data-page="systems"] main > #systems .system-scene-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content {
+  order: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 clamp(18px, 2vw, 28px) !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-media {
+  order: 2 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content .tag-list {
+  justify-content: flex-start !important;
+}
+
+html body[data-page="systems"] main > #systems .mep-metric-group {
+  display: none !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-detail {
+  margin-top: 12px !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-detail > summary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-detail-body {
+  margin-top: 14px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html body[data-page="systems"] main > #systems .module-grid,
+html body[data-page="systems"] main > #systems .brand-grid,
+html body[data-page="systems"] main > #systems .tool-grid {
+  gap: 12px !important;
+  margin-top: 14px !important;
+}
+
+html body[data-page="systems"] main > #systems .module-card,
+html body[data-page="systems"] main > #systems .brand-card,
+html body[data-page="systems"] main > #systems .tool-card {
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html body[data-page="systems"] main > #systems .module-card h4,
+html body[data-page="systems"] main > #systems .brand-card h4,
+html body[data-page="systems"] main > #systems .tool-card h4 {
+  margin: 0 0 6px !important;
+}
+
+html body[data-page="systems"] main > #systems .module-card .tag-list,
+html body[data-page="systems"] main > #systems .brand-card .tag-list,
+html body[data-page="systems"] main > #systems .tool-card .tag-list {
+  margin-top: 10px !important;
+}
+
+html body[data-page="systems"] main > #systems .module-card .tag-list span,
+html body[data-page="systems"] main > #systems .brand-card .tag-list span,
+html body[data-page="systems"] main > #systems .tool-card .tag-list span {
+  background: transparent !important;
+  border: 1px solid rgba(18, 53, 47, 0.1) !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > #systems .experience-translation {
+  margin-top: clamp(70px, 7vw, 110px) !important;
+}
+
+
+html body[data-page="systems"] main > #environment-problem .air-target-matrix {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: clamp(34px, 4vw, 56px) !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-head {
+  max-width: 48em !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-head h2 {
+  max-width: 18em !important;
+  margin: 0 !important;
+  color: #103f38 !important;
+  font-size: clamp(24px, 2vw, 34px) !important;
+  line-height: 1.32 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: 22px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid article {
+  min-width: 0 !important;
+  padding: 18px 18px 20px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+  border: 1px solid rgba(32, 83, 75, 0.12) !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid span {
+  display: block !important;
+  margin-bottom: 10px !important;
+  color: #9a7d4d !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid strong {
+  display: block !important;
+  color: #113f38 !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid p {
+  margin: 10px 0 0 !important;
+  color: rgba(31, 50, 47, 0.72) !important;
+  font-size: 14px !important;
+  line-height: 1.72 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-page-media-width: calc(100vw - 36px) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-lifestyle-ribbon,
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-rail {
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    overflow-x: auto !important;
+    padding-bottom: 10px !important;
+  }
+
+  html body[data-page="systems"] main > #environment-logic .air-hvac-stack {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-opening-brief {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-target-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem > .image-entry-media,
+  html body[data-page="systems"] main > #environment-logic > .image-entry-media,
+  html body[data-page="systems"] main > #systems .scene-media {
+    border-radius: 22px !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+}
+
+
+/* 2026-06-26 air page: keep residential scene images clean, no parameter badges. */
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) .mep-metric-group,
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) .mep-metric-badge {
+  display: none !important;
+}
+
+
+/* 2026-06-26 air page: expandable text rows, no white content blocks. */
+html body[data-page="systems"] main > #environment-problem .air-target-grid,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 22px !important;
+  margin-top: 22px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid details,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack details {
+  min-width: 0 !important;
+  padding: 18px 0 !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(32, 83, 75, 0.16) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid details:nth-last-child(-n + 3),
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack details:nth-last-child(-n + 3) {
+  border-bottom: 1px solid rgba(32, 83, 75, 0.16) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid summary,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack summary {
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  align-items: end !important;
+  gap: 10px !important;
+  cursor: pointer !important;
+  list-style: none !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid summary::-webkit-details-marker,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack summary::-webkit-details-marker {
+  display: none !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid summary::after,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack summary::after {
+  content: "+" !important;
+  color: #9a7d4d !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid details[open] summary::after,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack details[open] summary::after {
+  content: "-" !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid summary span,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack summary span {
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  margin: 0 0 8px !important;
+  color: #9a7d4d !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid summary strong,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack summary strong {
+  display: block !important;
+  color: #113f38 !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-target-grid details > p,
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack details > p {
+  margin: 12px 0 0 !important;
+  max-width: 28em !important;
+  color: rgba(31, 50, 47, 0.72) !important;
+  font-size: 14px !important;
+  line-height: 1.72 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] main > #environment-problem .air-target-grid,
+  html body[data-page="systems"] main > #environment-logic .air-hvac-stack {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-target-grid details,
+  html body[data-page="systems"] main > #environment-logic .air-hvac-stack details {
+    border-bottom: 0 !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-target-grid details:last-child,
+  html body[data-page="systems"] main > #environment-logic .air-hvac-stack details:last-child {
+    border-bottom: 1px solid rgba(32, 83, 75, 0.16) !important;
+  }
+}
+
+
+html body[data-page="systems"] main > #systems .system-grid {
+  gap: clamp(34px, 4.2vw, 58px) !important;
+}
+
+html body[data-page="systems"] main > #systems {
+  padding-top: clamp(34px, 4.4vw, 58px) !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content {
+  margin-bottom: clamp(12px, 1.4vw, 18px) !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content .eyebrow {
+  margin-bottom: 12px !important;
+  line-height: 1.2 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content h3 {
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  line-height: 1.18 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content p,
+html body[data-page="systems"] main > #systems .scene-content .card-quote,
+html body[data-page="systems"] main > #systems .scene-content blockquote {
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  line-height: 1.62 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content .tag-list {
+  margin-top: 12px !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-media {
+  margin-top: 0 !important;
+}
+
+
+/* 2026-06-26 air page: quieter title scale. */
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+  max-width: 17em !important;
+  font-size: clamp(30px, 2.45vw, 42px) !important;
+  line-height: 1.22 !important;
+  font-weight: 650 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+html body[data-page="systems"] main > #environment-problem .air-target-head h2,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+html body[data-page="systems"] main > #systems .scene-content h3,
+html body[data-page="systems"] main > #systems .experience-translation h3 {
+  max-width: 19em !important;
+  font-size: clamp(24px, 1.9vw, 32px) !important;
+  line-height: 1.3 !important;
+  font-weight: 650 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy .eyebrow,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-kicker,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy .eyebrow,
+html body[data-page="systems"] main > #systems .scene-content .eyebrow {
+  font-size: 12px !important;
+  letter-spacing: 0.12em !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+    font-size: clamp(28px, 8vw, 36px) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+  html body[data-page="systems"] main > #environment-problem .air-target-head h2,
+  html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+  html body[data-page="systems"] main > #systems .scene-content h3 {
+    font-size: clamp(23px, 7vw, 30px) !important;
+  }
+}
+
+/* 2026-06-26 air page: residential scenes stay clean, without parameter overlays. */
+html body[data-page="systems"] :is(#environment-problem, #environment-logic, #systems) :is(
+  .mep-metric-group,
+  .mep-metric-badge,
+  .environment-metric-group,
+  .metric-card,
+  .metric-copy,
+  .metric-icon,
+  .metric-label,
+  .metric-value
+) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 2026-06-26 air page: tighten the gap between scene images and the following text section. */
+html body[data-page="systems"] main > #environment-problem {
+  padding-bottom: clamp(28px, 3vw, 44px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media {
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-logic {
+  padding-top: clamp(22px, 2.6vw, 38px) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic > .image-entry-copy {
+  margin-top: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems {
+  padding-top: clamp(36px, 4vw, 58px) !important;
+}
+
+html body[data-page="systems"] main > #systems .system-grid {
+  gap: clamp(38px, 4.2vw, 62px) !important;
+}
+
+
+/* 2026-06-26 air page: 五恒空气环境模拟器，只作用于住宅空气环境系统页 */
+html body[data-page="systems"] #air-simulator-step {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  align-self: start !important;
+  scroll-margin-top: 104px !important;
+}
+
+html body[data-page="systems"] #air-simulator-step .air-environment-simulator-intro,
+html body[data-page="systems"] #air-simulator-step .air-environment-simulator-stage {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  scroll-margin-top: 118px !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro {
+  display: grid;
+  gap: clamp(14px, 1.6vw, 20px);
+  margin-bottom: clamp(22px, 2.8vw, 34px) !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro h3 {
+  margin: 0;
+  max-width: 760px;
+  color: var(--deep-green);
+  font-size: clamp(30px, 3.2vw, 48px);
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro h3 span {
+  display: block;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro > p:not(.eyebrow) {
+  max-width: 850px;
+  margin: 0;
+  color: rgba(12, 55, 49, 0.7);
+  font-size: clamp(16px, 1.25vw, 20px);
+  line-height: 1.8;
+  font-weight: 650;
+}
+
+html body[data-page="systems"] .air-sim-entry-button,
+html body[data-page="systems"] .air-sim-launch {
+  width: fit-content;
+  border: 0;
+  border-radius: 999px;
+  background: #0b3f37;
+  color: #fffdf5;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0;
+  padding: 14px 24px;
+  cursor: pointer;
+}
+
+html body[data-page="systems"] .air-environment-simulator-stage {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: clamp(16px, 1.8vw, 24px);
+  align-items: stretch;
+  overflow: hidden;
+}
+
+html body[data-page="systems"] .air-sim-visual {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #d9d0bd;
+  box-shadow: 0 22px 42px rgba(56, 45, 31, 0.14);
+}
+
+html body[data-page="systems"] .air-sim-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+html body[data-page="systems"] .air-sim-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 26% 36%, rgba(225, 224, 210, 0.24), transparent 32%),
+    linear-gradient(90deg, rgba(28, 35, 31, 0.38), rgba(54, 48, 38, 0.18));
+  opacity: 1;
+  transition: opacity 900ms ease, background 900ms ease;
+}
+
+html body[data-page="systems"] .air-sim-story {
+  position: absolute;
+  left: clamp(18px, 2.4vw, 30px);
+  right: clamp(18px, 2.4vw, 30px);
+  bottom: clamp(18px, 2.4vw, 28px);
+  z-index: 2;
+  max-width: min(540px, 88%);
+  padding: clamp(16px, 1.8vw, 22px);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(20, 33, 29, 0.16), rgba(20, 33, 29, 0.52));
+  backdrop-filter: blur(10px);
+  color: #fffaf0;
+  box-shadow: 0 18px 34px rgba(26, 30, 28, 0.14);
+}
+
+html body[data-page="systems"] .air-sim-story-kicker {
+  margin: 0 0 8px;
+  color: rgba(255, 250, 240, 0.72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+html body[data-page="systems"] .air-sim-story strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(205, 80, 65, 0.32);
+  font-size: 14px;
+  line-height: 1;
+}
+
+html body[data-page="systems"] .air-sim-story [data-air-sim-note] {
+  margin: 12px 0 0;
+  max-width: 34em;
+  color: rgba(255, 250, 240, 0.9);
+  font-size: 15px;
+  line-height: 1.64;
+  font-weight: 520;
+}
+
+html body[data-page="systems"] .air-sim-flowmap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 600ms ease;
+}
+
+html body[data-page="systems"] .air-flow {
+  fill: none;
+  stroke: rgba(151, 231, 210, 0.88);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 10 16;
+  filter: drop-shadow(0 0 10px rgba(121, 224, 201, 0.42));
+  animation: airFlowDash 2.4s linear infinite;
+}
+
+html body[data-page="systems"] .air-flow-b { animation-duration: 3s; opacity: 0.72; }
+html body[data-page="systems"] .air-flow-c { animation-duration: 2.7s; opacity: 0.62; }
+
+@keyframes airFlowDash {
+  to { stroke-dashoffset: -78; }
+}
+
+html body[data-page="systems"] .air-sim-pulse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(142, 235, 212, 0.9);
+  box-shadow: 0 0 18px rgba(142, 235, 212, 0.9);
+  opacity: 0;
+  pointer-events: none;
+}
+
+html body[data-page="systems"] .air-sim-pulse-one { left: 17%; top: 64%; animation: airPulseA 2.8s ease-in-out infinite; }
+html body[data-page="systems"] .air-sim-pulse-two { left: 42%; top: 44%; animation: airPulseB 3.2s ease-in-out infinite; }
+html body[data-page="systems"] .air-sim-pulse-three { left: 69%; top: 58%; animation: airPulseC 3s ease-in-out infinite; }
+
+@keyframes airPulseA { 0%, 100% { opacity: 0; transform: translate(0,0); } 30%, 70% { opacity: 1; } 100% { transform: translate(360px,-150px); } }
+@keyframes airPulseB { 0%, 100% { opacity: 0; transform: translate(0,0); } 30%, 70% { opacity: 1; } 100% { transform: translate(260px,110px); } }
+@keyframes airPulseC { 0%, 100% { opacity: 0; transform: translate(0,0); } 30%, 70% { opacity: 1; } 100% { transform: translate(150px,-90px); } }
+
+html body[data-page="systems"] .air-sim-panel {
+  min-width: 0;
+  border-radius: 22px;
+  padding: clamp(18px, 1.8vw, 24px);
+  background: rgba(252, 247, 239, 0.9);
+  color: #183b34;
+  box-shadow: 0 18px 34px rgba(40, 34, 25, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  order: 1;
+  align-self: start;
+  position: sticky;
+  top: 110px;
+}
+
+html body[data-page="systems"] .air-sim-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+html body[data-page="systems"] .air-sim-panel-head p {
+  margin: 0;
+  color: rgba(24, 59, 52, 0.52);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .04em;
+}
+
+html body[data-page="systems"] .air-sim-metrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  order: 3;
+}
+
+html body[data-page="systems"] .air-sim-panel > .air-sim-launch {
+  align-self: flex-start;
+  order: 2;
+  margin: -2px 0 4px !important;
+}
+
+html body[data-page="systems"] .air-sim-panel-head {
+  order: 1;
+}
+
+html body[data-page="systems"] .air-sim-metric {
+  display: grid;
+  gap: 7px;
+  padding: 14px 14px 15px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(24, 59, 52, 0.08);
+}
+
+html body[data-page="systems"] .air-sim-metric span {
+  color: rgba(24, 59, 52, 0.58);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+html body[data-page="systems"] .air-sim-metric strong {
+  color: #173a33;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.55;
+  letter-spacing: 0;
+  font-weight: 560;
+}
+
+html body[data-page="systems"] .air-sim-launch:disabled {
+  opacity: .72;
+  cursor: default;
+}
+
+html body[data-page="systems"] [data-air-sim-tone="warning"] .air-sim-story strong {
+  background: rgba(211, 144, 58, 0.3);
+}
+
+html body[data-page="systems"] [data-air-sim-tone="warning"] .air-sim-panel {
+  background: rgba(252, 247, 239, 0.95);
+}
+
+html body[data-page="systems"] [data-air-sim-tone="stable"] .air-sim-story strong {
+  background: rgba(65, 150, 111, 0.34);
+}
+
+html body[data-page="systems"] [data-air-sim-state="working"] .air-sim-veil {
+  opacity: .42;
+  background: linear-gradient(90deg, rgba(18, 42, 37, 0.22), rgba(58, 48, 35, 0.08));
+}
+
+html body[data-page="systems"] [data-air-sim-state="working"] .air-sim-flowmap,
+html body[data-page="systems"] [data-air-sim-state="working"] .air-sim-pulse {
+  opacity: 1;
+}
+
+html body[data-page="systems"] [data-air-sim-state="stable"] .air-sim-veil,
+html body[data-page="systems"] [data-air-sim-state="stable"] .air-sim-flowmap,
+html body[data-page="systems"] [data-air-sim-state="stable"] .air-sim-pulse {
+  opacity: 0;
+}
+
+/* 2026-06-26 air simulator: lock image/panel columns against legacy global media rules */
+html body[data-page="systems"] #air-simulator-step .air-environment-simulator-stage > .air-sim-visual {
+  width: auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  justify-self: stretch !important;
+  order: 2;
+}
+
+html body[data-page="systems"] #air-simulator-step .air-environment-simulator-stage > .air-sim-panel {
+  width: auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  justify-self: stretch !important;
+}
+
+html body[data-page="systems"] #air-simulator-step .air-sim-visual > img {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+
+/* 2026-06-27 air page continuation: quieter scale and tighter vertical rhythm. */
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) {
+  min-height: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem {
+  padding-bottom: clamp(14px, 1.8vw, 26px) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic {
+  padding-top: clamp(14px, 1.8vw, 26px) !important;
+  padding-bottom: clamp(26px, 3vw, 42px) !important;
+}
+
+html body[data-page="systems"] main > #systems {
+  padding-top: clamp(26px, 3.2vw, 44px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media,
+html body[data-page="systems"] main > #environment-logic > .image-entry-media,
+html body[data-page="systems"] main > #systems .scene-media {
+  margin-top: clamp(18px, 2.1vw, 30px) !important;
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+  max-width: 18em !important;
+  font-size: clamp(28px, 2.15vw, 36px) !important;
+  line-height: 1.24 !important;
+  font-weight: 640 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+html body[data-page="systems"] main > #environment-problem .air-target-head h2,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+html body[data-page="systems"] main > #systems .scene-content h3,
+html body[data-page="systems"] main > #systems .experience-translation h3,
+html body[data-page="systems"] .air-environment-simulator-intro h3 {
+  max-width: 20em !important;
+  font-size: clamp(22px, 1.65vw, 28px) !important;
+  line-height: 1.32 !important;
+  font-weight: 640 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems .system-grid {
+  gap: clamp(28px, 3.4vw, 46px) !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content {
+  margin-bottom: clamp(10px, 1.2vw, 16px) !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content p,
+html body[data-page="systems"] main > #systems .scene-content .card-quote,
+html body[data-page="systems"] main > #systems .scene-content blockquote {
+  line-height: 1.54 !important;
+  margin-bottom: 9px !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro {
+  gap: 12px !important;
+  margin-bottom: clamp(18px, 2.2vw, 28px) !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro > p:not(.eyebrow) {
+  max-width: 780px !important;
+  font-size: 15px !important;
+  line-height: 1.72 !important;
+  font-weight: 600 !important;
+}
+
+html body[data-page="systems"] .air-sim-entry-button,
+html body[data-page="systems"] .air-sim-launch {
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  font-weight: 720 !important;
+}
+
+html body[data-page="systems"] .air-sim-panel {
+  padding: clamp(16px, 1.8vw, 22px) !important;
+}
+
+html body[data-page="systems"] .air-sim-metrics {
+  grid-template-columns: 1fr !important;
+}
+
+html body[data-page="systems"] .air-sim-story [data-air-sim-note] {
+  font-size: 14px !important;
+  line-height: 1.62 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] .air-environment-simulator-stage {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+    font-size: clamp(26px, 7.4vw, 34px) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+  html body[data-page="systems"] main > #environment-problem .air-target-head h2,
+  html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+  html body[data-page="systems"] main > #systems .scene-content h3,
+  html body[data-page="systems"] .air-environment-simulator-intro h3 {
+    font-size: clamp(21px, 6vw, 27px) !important;
+  }
+
+  html body[data-page="systems"] .air-sim-story {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: none;
+    padding: 14px 16px;
+  }
+
+  html body[data-page="systems"] .air-sim-panel {
+    order: 1 !important;
+    position: relative !important;
+    top: auto !important;
+  }
+
+  html body[data-page="systems"] #air-simulator-step .air-environment-simulator-stage > .air-sim-visual {
+    order: 2 !important;
+  }
+
+  html body[data-page="systems"] .air-sim-metrics {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* 2026-06-27 air page: unify 01-06 path and collapse simulator entry */
+html body[data-page="systems"] main > #environment-problem .air-system-journey-rail {
+  grid-template-columns: repeat(6, minmax(112px, 148px)) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 1.8vw, 22px) !important;
+  margin-top: clamp(18px, 2.2vw, 28px) !important;
+  align-items: start !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card {
+  min-width: 0 !important;
+  border: 1px solid rgba(16, 62, 54, 0.12) !important;
+  border-radius: 22px !important;
+  background: rgba(255, 251, 243, 0.84) !important;
+  box-shadow: 0 12px 24px rgba(46, 38, 26, 0.06) !important;
+  overflow: hidden !important;
+  align-self: start !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > summary {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  cursor: pointer !important;
+  padding: clamp(18px, 2vw, 24px) !important;
+  min-height: 108px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > summary::after {
+  content: "+" !important;
+  color: rgba(12, 55, 49, 0.48) !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+  transition: transform 180ms ease, color 180ms ease !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card[open] > summary::after {
+  transform: rotate(45deg) !important;
+  color: rgba(12, 55, 49, 0.82) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > p,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > .air-environment-simulator-intro,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > .air-environment-simulator-stage {
+  margin-left: clamp(18px, 2vw, 24px) !important;
+  margin-right: clamp(18px, 2vw, 24px) !important;
+  margin-bottom: clamp(18px, 2vw, 24px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details i {
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+  color: rgba(173, 139, 83, 0.94) !important;
+  font-style: normal !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details strong {
+  display: block !important;
+  margin-bottom: 0 !important;
+  color: var(--deep-green) !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details p {
+  margin: 0 !important;
+  color: rgba(12, 55, 49, 0.72) !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-unified-note {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: clamp(26px, 3vw, 40px) !important;
+  padding: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-unified-note > h2 {
+  max-width: 18em !important;
+  margin: 0 !important;
+  color: #103f38 !important;
+  font-size: clamp(24px, 2vw, 34px) !important;
+  line-height: 1.32 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-unified-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(16px, 2vw, 24px) !important;
+  margin-top: clamp(18px, 2.2vw, 28px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-unified-grid article {
+  min-width: 0 !important;
+  padding: 0 0 18px !important;
+  border-top: 1px solid rgba(32, 83, 75, 0.16) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-unified-grid span {
+  display: block !important;
+  margin: 18px 0 10px !important;
+  color: #9a7d4d !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-unified-grid p {
+  margin: 0 !important;
+  color: rgba(31, 50, 47, 0.78) !important;
+  font-size: 15px !important;
+  line-height: 1.82 !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .image-entry-copy > p:not(.eyebrow) {
+  max-width: 42em !important;
+}
+
+html body[data-page="systems"] main > #environment-logic blockquote {
+  margin: 18px 0 0 !important;
+  padding-left: 18px !important;
+  border-left: 2px solid rgba(173, 139, 83, 0.54) !important;
+  color: rgba(31, 50, 47, 0.76) !important;
+  font-size: 16px !important;
+  line-height: 1.72 !important;
+}
+
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 28px !important;
+  margin-top: 28px !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro {
+  margin-top: 2px !important;
+  margin-bottom: clamp(18px, 2.4vw, 28px) !important;
+  padding: clamp(18px, 2.1vw, 24px) !important;
+  border: 1px solid rgba(16, 62, 54, 0.12) !important;
+  border-radius: 24px !important;
+  background: rgba(255, 251, 243, 0.86) !important;
+  box-shadow: 0 14px 28px rgba(46, 38, 26, 0.07) !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-actions {
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+html body[data-page="systems"] #air-simulator-step .air-environment-simulator-stage[hidden] {
+  display: none !important;
+}
+
+html body[data-page="systems"] #air-simulator-step[open] {
+  grid-column: 1 / -1 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-details {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-unified-grid,
+  html body[data-page="systems"] main > #environment-logic .air-hvac-stack {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-details {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > summary {
+    grid-template-columns: auto 1fr !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > summary::after {
+    grid-column: 2 !important;
+    justify-self: end !important;
+  }
+}
+
+/* 2026-06-28 air page hero: keep residential image first, regardless of legacy shared entry-panel ordering. */
+html body[data-page="systems"] main > #environment-problem {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media {
+  order: -1 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .air-system-definition-copy {
+  order: 0 !important;
+}
+
+/* 2026-06-28 air page final containment: quieter text, tighter rhythm, clean scenes. */
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) {
+  width: min(var(--air-page-media-width), calc(100vw - 96px)) !important;
+  max-width: var(--air-page-media-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html body[data-page="systems"] main > #environment-problem {
+  padding-top: clamp(24px, 3vw, 42px) !important;
+  padding-bottom: clamp(10px, 1.4vw, 20px) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic {
+  padding-top: clamp(12px, 1.5vw, 22px) !important;
+  padding-bottom: clamp(18px, 2.2vw, 30px) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic:empty {
+  display: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems {
+  padding-top: clamp(8px, 1.2vw, 16px) !important;
+  padding-bottom: clamp(72px, 8vw, 118px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+  max-width: 17em !important;
+  font-size: clamp(27px, 1.92vw, 34px) !important;
+  line-height: 1.26 !important;
+  font-weight: 620 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-lead,
+html body[data-page="systems"] main > #environment-problem .air-opening-brief strong,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head > p,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy > p:not(.eyebrow),
+html body[data-page="systems"] main > #systems .scene-content .scene-feeling,
+html body[data-page="systems"] main > #systems .scene-content .card-quote,
+html body[data-page="systems"] main > #systems .experience-translation p {
+  font-size: clamp(14px, 1.02vw, 17px) !important;
+  line-height: 1.62 !important;
+  font-weight: 520 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+html body[data-page="systems"] main > #environment-problem .air-target-head h2,
+html body[data-page="systems"] main > #environment-problem .air-system-unified-note > h2,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+html body[data-page="systems"] main > #systems .scene-content h3,
+html body[data-page="systems"] main > #systems .experience-translation h3,
+html body[data-page="systems"] .air-environment-simulator-intro h3 {
+  max-width: 20em !important;
+  font-size: clamp(21px, 1.45vw, 26px) !important;
+  line-height: 1.34 !important;
+  font-weight: 620 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-lifestyle-ribbon {
+  gap: clamp(16px, 2vw, 26px) !important;
+  justify-content: flex-start !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card,
+html body[data-page="systems"] .air-environment-simulator-intro {
+  border: 0 !important;
+  border-top: 1px solid rgba(32, 83, 75, 0.16) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] .air-environment-simulator-intro {
+  padding: clamp(12px, 1.4vw, 18px) 0 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: clamp(12px, 1.8vw, 22px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > summary {
+  min-height: 0 !important;
+  padding: clamp(14px, 1.55vw, 18px) 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > p,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > .air-environment-simulator-intro,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-details .air-system-journey-card > .air-environment-simulator-stage {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem > .image-entry-media,
+html body[data-page="systems"] main > #environment-logic > .image-entry-media,
+html body[data-page="systems"] main > #systems .scene-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+}
+
+html body[data-page="systems"] main > #systems .system-grid {
+  gap: clamp(22px, 2.8vw, 38px) !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content .eyebrow {
+  margin-bottom: 8px !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content h3 {
+  margin-bottom: 8px !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content p,
+html body[data-page="systems"] main > #systems .scene-content .card-quote,
+html body[data-page="systems"] main > #systems .scene-content blockquote {
+  margin-bottom: 8px !important;
+  line-height: 1.5 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-detail {
+  margin-top: 8px !important;
+  border-top: 1px solid rgba(32, 83, 75, 0.14) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-detail summary {
+  padding: 10px 0 !important;
+  color: rgba(17, 63, 56, 0.76) !important;
+  font-size: 13px !important;
+  font-weight: 680 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-detail-body,
+html body[data-page="systems"] main > #systems .module-grid,
+html body[data-page="systems"] main > #systems .module-card {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) :is(.mep-metric-group, .mep-metric-badge, .environment-metric-group, .metric-card, .metric-copy, .metric-icon, .metric-label, .metric-value) {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) {
+    width: min(var(--air-page-media-width), calc(100vw - 40px)) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1 {
+    font-size: clamp(25px, 7vw, 32px) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+  html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+  html body[data-page="systems"] main > #systems .scene-content h3,
+  html body[data-page="systems"] .air-environment-simulator-intro h3 {
+    font-size: clamp(20px, 5.7vw, 26px) !important;
+  }
+}
+
+
+/* 2026-07-01 air layout reset: one rule owns residential air width and alignment. */
+html body[data-page="systems"] {
+  --air-scene-width: min(calc(100vw - 128px), 145svh, 1280px) !important;
+  --air-layout-width: var(--air-scene-width) !important;
+  --air-layout-radius: 24px !important;
+  --air-layout-gap: clamp(28px, 3vw, 42px) !important;
+  --air-copy-width: min(760px, 100%) !important;
+  --air-page-media-width: var(--air-scene-width) !important;
+  --zf-air-standard-width: var(--air-scene-width) !important;
+  --zf-canon-media-width: var(--air-scene-width) !important;
+  --zf-scene-media-width: var(--air-scene-width) !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems).section-shell {
+  width: 100% !important;
+  max-width: none !important;
+  inline-size: 100% !important;
+  max-inline-size: none !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems).section-shell > *,
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems).section-shell :is(
+  .air-system-definition-copy,
+  .image-entry-copy,
+  .image-entry,
+  .image-entry-content,
+  .image-entry-media,
+  .section-image,
+  .system-grid,
+  .system-scene-card,
+  .scene-content,
+  .scene-media,
+  .experience-translation,
+  .air-lifestyle-ribbon,
+  .air-system-journey,
+  .air-system-journey-head,
+  .air-system-journey-rail,
+  .air-system-journey-details,
+  .air-system-unified-note,
+  .air-hvac-stack
+) {
+  width: var(--air-layout-width) !important;
+  max-width: var(--air-layout-width) !important;
+  inline-size: var(--air-layout-width) !important;
+  max-inline-size: var(--air-layout-width) !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems).section-shell :is(
+  .image-entry-media,
+  .section-image,
+  .scene-media
+) {
+  display: block !important;
+  width: var(--air-layout-width) !important;
+  max-width: var(--air-layout-width) !important;
+  inline-size: var(--air-layout-width) !important;
+  max-inline-size: var(--air-layout-width) !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+  border-radius: var(--air-layout-radius) !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems).section-shell :is(
+  .image-entry-media,
+  .section-image,
+  .scene-media
+) > img {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell > .system-grid,
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell > .system-grid {
+  gap: clamp(38px, 4.2vw, 64px) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card {
+  gap: clamp(12px, 1.4vw, 18px) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-content {
+  width: var(--air-scene-width) !important;
+  max-width: var(--air-scene-width) !important;
+  inline-size: var(--air-scene-width) !important;
+  max-inline-size: var(--air-scene-width) !important;
+  order: -1 !important;
+  margin-bottom: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media {
+  width: var(--air-scene-width) !important;
+  max-width: var(--air-scene-width) !important;
+  inline-size: var(--air-scene-width) !important;
+  max-inline-size: var(--air-scene-width) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"] {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"]::before,
+html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"]::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  opacity: 0.38 !important;
+  mix-blend-mode: screen !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"]::before {
+  background:
+    radial-gradient(circle at 24% 44%, rgba(92, 204, 185, 0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 38% 38%, rgba(132, 169, 255, 0.85) 0 2px, transparent 3px),
+    radial-gradient(circle at 52% 47%, rgba(235, 205, 115, 0.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 68% 40%, rgba(154, 224, 160, 0.82) 0 2px, transparent 3px),
+    radial-gradient(circle at 76% 53%, rgba(186, 135, 225, 0.74) 0 2px, transparent 3px);
+  animation: airParticleDrift 13s ease-in-out infinite alternate !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"]::after {
+  background:
+    linear-gradient(105deg, transparent 22%, rgba(195, 225, 220, 0.16) 35%, transparent 48%),
+    linear-gradient(102deg, transparent 34%, rgba(169, 207, 255, 0.12) 46%, transparent 62%);
+  filter: blur(8px) !important;
+  animation: airRibbonDrift 16s ease-in-out infinite alternate !important;
+}
+
+@keyframes airParticleDrift {
+  from {
+    transform: translate3d(-1.2%, 0.6%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.4%, -0.8%, 0) scale(1.02);
+  }
+}
+
+@keyframes airRibbonDrift {
+  from {
+    transform: translate3d(-2%, 0, 0);
+  }
+  to {
+    transform: translate3d(2%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"]::before,
+  html body[data-page="systems"] main > #systems.section-shell .scene-media[data-air-particles="true"]::after {
+    animation: none !important;
+  }
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems).section-shell :is(
+  .eyebrow,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  blockquote,
+  .scene-feeling,
+  .card-quote,
+  .tag-list,
+  .scene-detail,
+  .scene-detail-body,
+  .experience-kicker
+) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-content > :is(
+  .eyebrow,
+  h3,
+  p,
+  blockquote,
+  .tag-list,
+  .scene-detail
+),
+html body[data-page="systems"] main > #environment-problem.section-shell :is(
+  .air-system-definition-copy > .eyebrow,
+  .air-system-definition-copy > h1,
+  .air-system-definition-copy > p,
+  .air-system-journey-head > p,
+  .air-system-journey-head > h2
+),
+html body[data-page="systems"] main > #environment-logic.section-shell .image-entry-copy > :is(
+  .eyebrow,
+  h2,
+  p,
+  blockquote
+) {
+  max-width: var(--air-copy-width) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-content h3 {
+  font-size: clamp(20px, 1.08vw, 24px) !important;
+  line-height: 1.32 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-content p,
+html body[data-page="systems"] main > #systems.section-shell .scene-content blockquote {
+  font-size: clamp(14px, 0.76vw, 16px) !important;
+  line-height: 1.58 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy,
+html body[data-page="systems"] main > #environment-logic.section-shell > .image-entry-copy {
+  width: var(--air-scene-width) !important;
+  max-width: var(--air-scene-width) !important;
+  inline-size: var(--air-scene-width) !important;
+  max-inline-size: var(--air-scene-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell :is(
+  .mep-metric-group,
+  .mep-metric-badge,
+  .environment-metric-group,
+  .metric-card,
+  .metric-copy,
+  .metric-icon,
+  .metric-label,
+  .metric-value,
+  .scene-metrics,
+  .scene-overlay,
+  .scene-stat,
+  .data-panel,
+  .scene-link,
+  .mep-link,
+  .scene-cta,
+  .air-scene-cta
+) {
+  display: none !important;
+}
+
+@media (max-width: 1400px) and (min-width: 901px) {
+  html body[data-page="systems"] {
+    --air-scene-width: min(calc(100vw - 128px), 145svh, 1280px) !important;
+    --air-layout-width: var(--air-scene-width) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-scene-width: calc(100vw - 36px) !important;
+    --air-layout-width: var(--air-scene-width) !important;
+    --air-layout-radius: 18px !important;
+  }
+}
+
+/* 2026-07-01 air opening final: match basement's narrower opening stage. */
+html body[data-page="systems"] {
+  --air-entry-width: min(var(--air-scene-width), 1180px) !important;
+  --air-entry-ribbon-width: min(962px, var(--air-scene-width)) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy {
+  width: var(--air-entry-width) !important;
+  max-width: var(--air-entry-width) !important;
+  inline-size: var(--air-entry-width) !important;
+  max-inline-size: var(--air-entry-width) !important;
+  display: grid !important;
+  gap: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-definition-copy > :is(.eyebrow, h1, p),
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-head > :is(.air-system-journey-kicker, h2, p),
+html body[data-page="systems"] main > #environment-logic.section-shell .image-entry-copy > :is(.eyebrow, h2, p, blockquote) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-definition-copy h1 {
+  max-width: 620px !important;
+  margin-bottom: clamp(14px, 1.8vw, 22px) !important;
+  font-size: clamp(22px, 1.8vw, 28px) !important;
+  line-height: 1.26 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-definition-lead {
+  max-width: 760px !important;
+  margin-bottom: 0 !important;
+  font-size: clamp(13px, 0.92vw, 15px) !important;
+  line-height: 1.76 !important;
+  color: rgba(42, 38, 33, 0.76) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-definition-copy > .eyebrow {
+  margin-bottom: clamp(10px, 1.2vw, 14px) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.14em !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon {
+  width: min(520px, var(--air-entry-width)) !important;
+  max-width: min(520px, var(--air-entry-width)) !important;
+  inline-size: min(520px, var(--air-entry-width)) !important;
+  max-inline-size: min(520px, var(--air-entry-width)) !important;
+  grid-template-columns: repeat(5, 72px) !important;
+  justify-content: start !important;
+  justify-items: center !important;
+  gap: 18px !important;
+  margin: clamp(18px, 2.2vw, 28px) auto clamp(22px, 2.6vw, 34px) 0 !important;
+  padding: 12px 0 10px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon > span {
+  width: 72px !important;
+  min-width: 72px !important;
+  max-width: 72px !important;
+  justify-content: start !important;
+  justify-items: center !important;
+  gap: 7px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon svg {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon strong {
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey,
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-head,
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-rail,
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-details {
+  width: var(--air-entry-width) !important;
+  max-width: var(--air-entry-width) !important;
+  inline-size: var(--air-entry-width) !important;
+  max-inline-size: var(--air-entry-width) !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-logic.section-shell > .image-entry-copy,
+html body[data-page="systems"] main > #environment-logic.section-shell .air-hvac-stack {
+  width: var(--air-entry-width) !important;
+  max-width: var(--air-entry-width) !important;
+  inline-size: var(--air-entry-width) !important;
+  max-inline-size: var(--air-entry-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey {
+  margin-top: 10px !important;
+  margin-bottom: 8px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-head {
+  margin-bottom: 8px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-head h2 {
+  max-width: 14em !important;
+  font-size: clamp(17px, 1.25vw, 22px) !important;
+  line-height: 1.5 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-head p:not(.air-system-journey-kicker) {
+  max-width: 760px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-rail {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: 10px !important;
+  padding: 12px 0 12px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px 32px !important;
+  margin-top: 10px !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-details .air-system-journey-card {
+  padding: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-details .air-system-journey-card > summary {
+  min-height: 58px !important;
+  padding: 12px 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-logic.section-shell {
+  padding-top: clamp(30px, 3.5vw, 48px) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell {
+  padding-top: clamp(44px, 5vw, 72px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene {
+  width: var(--air-entry-width) !important;
+  max-width: var(--air-entry-width) !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background: rgba(18, 53, 47, 0.06) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+html body[data-page="systems"] main > #environment-logic.section-shell .air-state-scene {
+  width: var(--air-entry-width) !important;
+  max-width: var(--air-entry-width) !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: clamp(24px, 3vw, 38px) 0 0 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background: rgba(18, 53, 47, 0.06) !important;
+}
+
+html body[data-page="systems"] main > #environment-logic.section-shell .air-state-scene img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* 2026-07-02 air feeling bridge: make the opening logic land in lived scenes. */
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell {
+  width: 100% !important;
+  max-width: none !important;
+  padding: clamp(38px, 4.5vw, 68px) 0 clamp(46px, 5vw, 76px) !important;
+  background: transparent !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell > .air-feeling-bridge-copy,
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell > .air-feeling-bridge-grid {
+  width: var(--air-entry-width) !important;
+  max-width: var(--air-entry-width) !important;
+  inline-size: var(--air-entry-width) !important;
+  max-inline-size: var(--air-entry-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-bridge-copy {
+  display: grid !important;
+  gap: 14px !important;
+  margin-bottom: clamp(24px, 3vw, 38px) !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-bridge-copy > :is(.eyebrow, h2, p) {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-bridge-copy h2 {
+  max-width: 700px !important;
+  color: #12352f !important;
+  font-size: clamp(24px, 2.1vw, 34px) !important;
+  line-height: 1.36 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-bridge-copy p:not(.eyebrow) {
+  max-width: 760px !important;
+  color: rgba(22, 42, 36, 0.72) !important;
+  font-size: clamp(14px, 1.02vw, 16px) !important;
+  line-height: 1.86 !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-bridge-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: clamp(30px, 4vw, 52px) !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-card {
+  display: grid !important;
+  gap: clamp(18px, 2.3vw, 28px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background: rgba(18, 53, 47, 0.06) !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-card-copy-first {
+  gap: clamp(28px, 3.8vw, 54px) !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-card-copy-first .air-feeling-copy {
+  order: 1 !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-card-copy-first .air-feeling-media {
+  order: 2 !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-copy {
+  display: grid !important;
+  gap: 10px !important;
+  width: min(760px, 100%) !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-copy h3 {
+  max-width: 680px !important;
+  margin: 0 !important;
+  color: #12352f !important;
+  font-size: clamp(21px, 1.75vw, 29px) !important;
+  line-height: 1.42 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-copy p:not(.eyebrow) {
+  max-width: 720px !important;
+  margin: 0 !important;
+  color: rgba(22, 42, 36, 0.72) !important;
+  font-size: clamp(14px, 1vw, 16px) !important;
+  line-height: 1.82 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-entry-width: var(--air-scene-width) !important;
+    --air-entry-ribbon-width: var(--air-scene-width) !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon {
+    width: var(--air-entry-width) !important;
+    max-width: var(--air-entry-width) !important;
+    inline-size: var(--air-entry-width) !important;
+    max-inline-size: var(--air-entry-width) !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 10px 6px !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon > span {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-rail,
+  html body[data-page="systems"] main > #environment-problem.section-shell .air-system-journey-details {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-media {
+    border-radius: 14px !important;
+  }
+
+  html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene {
+    border-radius: 14px !important;
+  }
+
+  html body[data-page="systems"] main > #environment-logic.section-shell .air-state-scene {
+    border-radius: 14px !important;
+  }
+}
+
+/* 2026-07-02 systems page cleanup: unify section rhythm, prevent label overlap, and remove empty heading gaps. */
+html body[data-page="systems"] {
+  --air-systems-section-gap: clamp(56px, 6vw, 92px) !important;
+  --air-systems-block-gap: clamp(24px, 2.7vw, 38px) !important;
+  --air-systems-copy-gap: clamp(12px, 1.4vw, 18px) !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #air-feeling-bridge, #systems).section-shell {
+  padding-top: var(--air-systems-section-gap) !important;
+  padding-bottom: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell {
+  padding-top: clamp(28px, 3vw, 44px) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy,
+html body[data-page="systems"] main > #environment-logic.section-shell > .image-entry-copy,
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell > .air-feeling-bridge-copy,
+html body[data-page="systems"] main > #systems.section-shell > .experience-translation > div {
+  display: grid !important;
+  gap: var(--air-systems-copy-gap) !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene,
+html body[data-page="systems"] main > #environment-logic.section-shell .air-state-scene,
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-media,
+html body[data-page="systems"] main > #systems.section-shell .scene-media {
+  margin-top: var(--air-systems-block-gap) !important;
+}
+
+/* Final lock for the merged Residential Air System route:
+   the first scene block should follow the opening image closely,
+   without inheriting the old climate-to-systems section gap. */
+html body[data-page="systems"] main > #environment-logic:empty {
+  display: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell {
+  padding-top: clamp(10px, 1.2vw, 18px) !important;
+}
+
+html body[data-page="systems"] main > #air-feeling-bridge.section-shell .air-feeling-bridge-copy {
+  margin-bottom: var(--air-systems-block-gap) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell > .section-heading:empty {
+  display: none !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .system-grid {
+  margin-top: 0 !important;
+  row-gap: var(--air-systems-section-gap) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .experience-translation {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  margin-top: var(--air-systems-section-gap) !important;
+  padding: clamp(28px, 3vw, 42px) 0 0 !important;
+  border-top: 1px solid rgba(18, 53, 47, 0.14) !important;
+  border-bottom: 0 !important;
+  background: transparent !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .experience-translation .experience-kicker {
+  display: block !important;
+  margin: 0 0 0.45rem !important;
+  opacity: 0.72 !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .experience-translation h3 {
+  max-width: 13em !important;
+  margin: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .experience-translation p:not(.experience-kicker) {
+  max-width: 36em !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-systems-section-gap: clamp(40px, 9vw, 62px) !important;
+    --air-systems-block-gap: clamp(18px, 4.8vw, 28px) !important;
+    --air-systems-copy-gap: 10px !important;
+  }
+
+  html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #air-feeling-bridge, #systems).section-shell {
+    padding-top: var(--air-systems-section-gap) !important;
+  }
+
+  html body[data-page="systems"] main > #systems.section-shell .experience-translation {
+    padding-top: clamp(22px, 6vw, 30px) !important;
+  }
+}
+
+/* Final systems-page width lock:
+   keep scene images and copy on the same visual measure so scenes no longer
+   read as a left-drifting full-width strip. */
+html body[data-page="systems"] {
+  --air-scene-width: min(980px, calc(100vw - 160px)) !important;
+  --air-layout-width: var(--air-scene-width) !important;
+  --air-page-media-width: var(--air-scene-width) !important;
+  --zf-air-standard-width: var(--air-scene-width) !important;
+  --zf-canon-media-width: var(--air-scene-width) !important;
+  --zf-scene-media-width: var(--air-scene-width) !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell > .system-grid,
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card,
+html body[data-page="systems"] main > #systems.section-shell .scene-content,
+html body[data-page="systems"] main > #systems.section-shell .scene-media {
+  width: var(--air-scene-width) !important;
+  max-width: var(--air-scene-width) !important;
+  inline-size: var(--air-scene-width) !important;
+  max-inline-size: var(--air-scene-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: clamp(14px, 1.6vw, 22px) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  isolation: auto !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card::before,
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .system-scene-card:nth-child(even) .scene-content,
+html body[data-page="systems"] main > #systems.section-shell .scene-content {
+  position: static !important;
+  z-index: auto !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: var(--air-scene-width) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 0 !important;
+  order: 0 !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: hidden !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-media img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+html body[data-page="systems"] main > #systems.section-shell .scene-content {
+  position: static !important;
+  order: 0 !important;
+  flex: 0 0 auto !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: clamp(10px, 1.2vw, 16px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-scene-width: calc(100vw - 36px) !important;
+  }
+}
+
+/* Final typography lock for Residential Air System only:
+   keep all section titles, eyebrows, body copy, and closing copy on one
+   consistent visual scale across this page. */
+html body[data-page="systems"] {
+  --air-page-eyebrow-size: 10px !important;
+  --air-page-title-size: clamp(22px, 1.8vw, 28px) !important;
+  --air-page-title-line: 1.26 !important;
+  --air-page-body-size: clamp(13px, 0.92vw, 15px) !important;
+  --air-page-body-line: 1.78 !important;
+}
+
+html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems) :is(.eyebrow, .air-system-journey-kicker, .systems-closing-eyebrow) {
+  font-size: var(--air-page-eyebrow-size) !important;
+  line-height: 1.42 !important;
+  letter-spacing: 0.12em !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-copy h1,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head h2,
+html body[data-page="systems"] main > #environment-problem .air-target-head h2,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy h2,
+html body[data-page="systems"] main > #systems .scene-content h3,
+html body[data-page="systems"] main > #systems .experience-translation h3,
+html body[data-page="systems"] main > #systems .systems-closing h3 {
+  font-size: var(--air-page-title-size) !important;
+  line-height: var(--air-page-title-line) !important;
+  letter-spacing: -0.01em !important;
+  font-weight: 600 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem .air-system-definition-lead,
+html body[data-page="systems"] main > #environment-problem .air-system-journey-head p,
+html body[data-page="systems"] main > #environment-problem .air-target-grid p,
+html body[data-page="systems"] main > #environment-problem .air-target-grid details > p,
+html body[data-page="systems"] main > #environment-logic .image-entry-copy :is(p, blockquote),
+html body[data-page="systems"] main > #environment-logic .air-hvac-stack :is(p, details > p),
+html body[data-page="systems"] main > #systems .scene-content :is(p, blockquote, .card-quote),
+html body[data-page="systems"] main > #systems .experience-translation p:not(.experience-kicker),
+html body[data-page="systems"] main > #systems .systems-closing p:not(.systems-closing-eyebrow) {
+  font-size: var(--air-page-body-size) !important;
+  line-height: var(--air-page-body-line) !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="systems"] main > #environment-problem.section-shell .air-lifestyle-ribbon strong {
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content .eyebrow {
+  margin-bottom: 10px !important;
+}
+
+html body[data-page="systems"] main > #systems .scene-content h3,
+html body[data-page="systems"] main > #systems .systems-closing h3 {
+  margin-bottom: 10px !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="systems"] {
+    --air-page-title-size: clamp(20px, 5.8vw, 25px) !important;
+    --air-page-body-size: clamp(13px, 3.8vw, 14px) !important;
+  }
+}

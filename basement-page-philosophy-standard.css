@@ -1,0 +1,373 @@
+/* Basement page standard: align the basement route to the Philosophy page rhythm. */
+html body[data-page="basement-system"] {
+  --basement-standard-width: calc(100vw - 64px);
+  --basement-title-width: min(100%, 38em);
+  --basement-copy-width: 100%;
+  --basement-section-gap: clamp(72px, 6vw, 104px);
+  --basement-copy-gap: 14px;
+  --basement-scene-gap: clamp(28px, 2.8vw, 42px);
+  --basement-radius: clamp(22px, 2vw, 30px);
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition,
+  #basement-problem,
+  #basement-logic,
+  #basement-lifting,
+  #basement-sport-layer,
+  #basement-reading-layer,
+  #basement-dining-layer,
+  #basement-tea-room-layer,
+  #basement-cigar-layer,
+  #basement-wine-layer,
+  #basement-game-layer,
+  #basement-party-layer,
+  #basement-meditation-layer,
+  #basement-summary
+) {
+  width: var(--basement-standard-width) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-problem,
+  #basement-logic,
+  #basement-lifting,
+  #basement-sport-layer,
+  #basement-reading-layer,
+  #basement-dining-layer,
+  #basement-tea-room-layer,
+  #basement-cigar-layer,
+  #basement-wine-layer,
+  #basement-game-layer,
+  #basement-party-layer,
+  #basement-meditation-layer,
+  #basement-summary
+) {
+  margin-top: var(--basement-section-gap) !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-problem,
+  #basement-logic,
+  #basement-lifting,
+  #basement-sport-layer,
+  #basement-reading-layer,
+  #basement-dining-layer,
+  #basement-tea-room-layer,
+  #basement-cigar-layer,
+  #basement-wine-layer,
+  #basement-game-layer,
+  #basement-party-layer,
+  #basement-meditation-layer
+) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--basement-scene-gap) !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition .basement-definition-copy,
+  #basement-definition .basement-journey-head,
+  #basement-definition .basement-journey-panel-copy,
+  #basement-problem .system-cognition-inner,
+  #basement-logic .image-entry-copy,
+  #basement-lifting .image-entry-copy,
+  .basement-showcase .basement-copy,
+  #basement-summary .basement-copy,
+  #basement-summary .basement-summary-copy
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  gap: var(--basement-copy-gap) !important;
+  justify-items: start !important;
+  align-content: start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition .basement-definition-copy > .eyebrow,
+  #basement-definition .basement-journey-kicker,
+  #basement-problem .eyebrow,
+  #basement-logic .eyebrow,
+  #basement-lifting .eyebrow,
+  .basement-showcase .eyebrow,
+  #basement-summary .eyebrow
+) {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 4px !important;
+  overflow: visible !important;
+  color: rgba(31, 72, 67, 0.62) !important;
+  font-family: Inter, "PingFang SC", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 450 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: none !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition .basement-definition-copy h1,
+  #basement-definition .basement-journey-head h2,
+  #basement-definition .basement-journey-panel-copy h3,
+  #basement-problem .system-cognition-inner h1,
+  #basement-logic .image-entry-copy h2,
+  #basement-lifting .image-entry-copy h2,
+  .basement-showcase .basement-copy h3,
+  #basement-summary .basement-copy h3,
+  #basement-summary .basement-summary-copy h2,
+  #basement-summary .basement-summary-copy h3
+) {
+  display: block !important;
+  width: 100% !important;
+  max-width: var(--basement-title-width) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  color: #193f39 !important;
+  font-family: "Noto Serif SC", "Songti SC", serif !important;
+  font-size: clamp(24px, 1.62vw, 27px) !important;
+  font-weight: 500 !important;
+  line-height: 1.46 !important;
+  letter-spacing: -0.02em !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  text-wrap: pretty !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition h1 span,
+  #basement-definition h2 span,
+  #basement-definition h3 span,
+  #basement-problem h1 span,
+  #basement-logic h2 span,
+  #basement-lifting h2 span,
+  #basement-summary h3 span
+) {
+  display: inline !important;
+  color: inherit !important;
+  font: inherit !important;
+  white-space: normal !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition .basement-definition-lead,
+  #basement-definition .basement-journey-head p,
+  #basement-definition .basement-journey-panel-copy p:not(.eyebrow),
+  #basement-problem .system-cognition-inner > p:not(.eyebrow),
+  #basement-logic .image-entry-copy p:not(.eyebrow),
+  #basement-logic .image-entry-copy blockquote,
+  #basement-lifting .image-entry-copy p:not(.eyebrow),
+  #basement-lifting .image-entry-copy blockquote,
+  .basement-showcase .basement-copy p:not(.eyebrow),
+  .basement-showcase .basement-copy blockquote,
+  #basement-summary .basement-copy p:not(.eyebrow),
+  #basement-summary .basement-summary-copy p:not(.eyebrow)
+) {
+  display: block !important;
+  width: 100% !important;
+  max-width: var(--basement-copy-width) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  color: rgba(38, 34, 30, 0.72) !important;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: clamp(15px, 0.96vw, 15.5px) !important;
+  font-weight: 400 !important;
+  line-height: 1.92 !important;
+  letter-spacing: 0.008em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  text-wrap: pretty !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition .basement-context-media,
+  #basement-problem .basement-problem-media,
+  #basement-logic .image-entry-media,
+  #basement-lifting .image-entry-media,
+  .basement-showcase .basement-media
+) {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  border-radius: var(--basement-radius) !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="basement-system"] main :is(
+  #basement-definition .basement-context-media > img,
+  #basement-problem .basement-problem-media > img,
+  #basement-logic .image-entry-media > img,
+  #basement-lifting .image-entry-media > img,
+  .basement-showcase .basement-media > img
+) {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: 50% 50% !important;
+  border-radius: inherit !important;
+  animation-name: zfSceneImageBreath !important;
+  animation-duration: 18s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: alternate !important;
+  animation-play-state: running !important;
+  transform-origin: 50% 50% !important;
+  will-change: transform !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition {
+  display: grid !important;
+  gap: var(--basement-scene-gap) !important;
+  padding-top: clamp(30px, 4vw, 56px) !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  border-top: 1px solid rgba(18, 53, 47, 0.12) !important;
+  border-bottom: 1px solid rgba(18, 53, 47, 0.12) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon > span {
+  display: grid !important;
+  justify-items: center !important;
+  gap: 6px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon strong {
+  color: #193f39 !important;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 1.7 !important;
+}
+
+html body[data-page="basement-system"] main #basement-definition .basement-journey {
+  display: grid !important;
+  gap: var(--basement-scene-gap) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body[data-page="basement-system"] main #basement-problem-signals {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="basement-system"] {
+    --basement-standard-width: calc(100vw - 36px);
+    --basement-title-width: 100%;
+    --basement-copy-width: 100%;
+    --basement-section-gap: 42px;
+    --basement-copy-gap: 12px;
+    --basement-scene-gap: 22px;
+  }
+
+  html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 10px 6px !important;
+  }
+
+  html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon strong {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    word-break: keep-all !important;
+  }
+
+  html body[data-page="basement-system"] main #basement-definition .basement-lifestyle-ribbon svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+  html body[data-page="basement-system"] main :is(
+    #basement-definition .basement-definition-copy h1,
+    #basement-definition .basement-journey-head h2,
+    #basement-definition .basement-journey-panel-copy h3,
+    #basement-problem .system-cognition-inner h1,
+    #basement-logic .image-entry-copy h2,
+    #basement-lifting .image-entry-copy h2,
+    .basement-showcase .basement-copy h3,
+    #basement-summary .basement-copy h3,
+    #basement-summary .basement-summary-copy h2,
+    #basement-summary .basement-summary-copy h3
+  ) {
+    font-size: clamp(19px, 4.9vw, 22px) !important;
+    line-height: 1.42 !important;
+  }
+
+  html body[data-page="basement-system"] main :is(
+    #basement-definition .basement-definition-lead,
+    #basement-definition .basement-journey-head p,
+    #basement-definition .basement-journey-panel-copy p:not(.eyebrow),
+    #basement-problem .system-cognition-inner > p:not(.eyebrow),
+    #basement-logic .image-entry-copy p:not(.eyebrow),
+    #basement-logic .image-entry-copy blockquote,
+    #basement-lifting .image-entry-copy p:not(.eyebrow),
+    #basement-lifting .image-entry-copy blockquote,
+    .basement-showcase .basement-copy p:not(.eyebrow),
+    .basement-showcase .basement-copy blockquote,
+    #basement-summary .basement-copy p:not(.eyebrow),
+    #basement-summary .basement-summary-copy p:not(.eyebrow)
+  ) {
+    font-size: clamp(14px, 3.9vw, 15px) !important;
+    line-height: 1.9 !important;
+  }
+}
