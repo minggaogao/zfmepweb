@@ -8233,10 +8233,19 @@
             "height": "100%",
             "object-fit": "cover"
           });
-          applyStyles([...waterBridgeCaptions, ...waterProofCopies], {
+          applyStyles(waterBridgeCaptions, {
             "width": waterCopyWidth,
             "max-width": waterCopyWidth,
             "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box"
+          });
+          applyStyles(waterProofCopies, {
+            "width": waterCopyWidth,
+            "max-width": waterCopyWidth,
+            "margin-left": "24px",
             "margin-right": "auto",
             "padding-left": "0",
             "padding-right": "0",
