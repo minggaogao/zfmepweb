@@ -4699,6 +4699,127 @@
         }
       }
     </style>
+    <style id="zf-desktop-route-isolation-lock-v1">
+      @media (min-width: 1280px) {
+        html body[data-page="home"] {
+          --zf-home-stage-width: min(1560px, calc(100vw - 168px));
+        }
+
+        html body[data-page="home"] main > #landing {
+          width: 100% !important;
+          max-width: none !important;
+        }
+
+        html body[data-page="home"] main #landing .zf-home-hero-stage,
+        html body[data-page="home"] main #landing .zf-home-mep-band,
+        html body[data-page="home"] main #landing .zf-home-closing-stage {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+        }
+
+        html body[data-page="home"] main #landing .zf-home-index-strip,
+        html body[data-page="home"] main #home > .home-panel,
+        html body[data-page="home"] main #home > .home-closing {
+          width: var(--zf-home-stage-width) !important;
+          max-width: var(--zf-home-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="systems"] {
+          --zf-systems-copy-width: min(1280px, calc(100vw - 448px));
+          --zf-systems-stage-width: min(1560px, calc(100vw - 168px));
+        }
+
+        html body[data-page="systems"] main > #climate,
+        html body[data-page="systems"] main > #environment-problem,
+        html body[data-page="systems"] main > #environment-logic,
+        html body[data-page="systems"] main > #systems.section-shell {
+          width: var(--zf-systems-copy-width) !important;
+          max-width: var(--zf-systems-copy-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="systems"] main > #climate :is(.climate-stage, .climate-living-scene, .quiet-system),
+        html body[data-page="systems"] main > #environment-problem .air-opening-scene {
+          width: var(--zf-systems-stage-width) !important;
+          max-width: var(--zf-systems-stage-width) !important;
+          margin-left: calc(50% - min(780px, 50vw - 84px)) !important;
+          margin-right: calc(50% - min(780px, 50vw - 84px)) !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem .air-system-definition-copy {
+          width: var(--zf-systems-copy-width) !important;
+          max-width: var(--zf-systems-copy-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="basement-system"] {
+          --zf-basement-stage-width: min(1664px, calc(100vw - 64px));
+        }
+
+        html body[data-page="basement-system"] main > :is(
+          #basement-definition,
+          #basement-problem,
+          #basement-logic,
+          #basement-lifting,
+          #basement-sport-layer,
+          #basement-reading-layer,
+          #basement-dining-layer,
+          #basement-tea-room-layer,
+          #basement-cigar-layer,
+          #basement-wine-layer,
+          #basement-game-layer,
+          #basement-party-layer,
+          #basement-meditation-layer,
+          #basement-summary
+        ) {
+          width: var(--zf-basement-stage-width) !important;
+          max-width: var(--zf-basement-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="project-access"] {
+          --zf-project-shell-width: min(1248px, calc(100vw - 88px));
+          --zf-project-content-width: min(1192px, calc(100vw - 160px));
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean {
+          width: var(--zf-project-shell-width) !important;
+          max-width: var(--zf-project-shell-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 28px !important;
+          padding-right: 28px !important;
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-hero {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean :is(
+          .project-access-ref-intro,
+          .project-access-ref-section,
+          .project-access-expertise,
+          .project-access-ref-contact-layout,
+          .project-access-expertise-head,
+          .project-access-expertise-grid
+        ) {
+          width: var(--zf-project-content-width) !important;
+          max-width: var(--zf-project-content-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <script>
