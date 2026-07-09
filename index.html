@@ -7125,44 +7125,74 @@
         };
 
         const fullBleedKeys = ["width", "max-width", "margin-left", "margin-right", "padding-left", "padding-right", "box-sizing", "min-height", "height", "object-fit", "border-radius", "grid-template-columns", "gap"];
+        const desktopCopyKeys = ["width", "max-width", "margin-left", "margin-right", "padding-left", "padding-right", "box-sizing", "justify-self", "justify-content"];
 
         const runDesktopVisualLock = () => {
+          const desktopCopyWidth = "min(1480px, calc(100vw - 176px))";
+          const desktopCopyPad = "clamp(28px, 2.4vw, 44px)";
+          const desktopScenePad = "clamp(40px, 3vw, 56px)";
+          const desktopStripWidth = "min(1600px, calc(100vw - 80px))";
+
+          const homeIndexStrip = document.querySelector("#landing .zf-home-index-strip");
           const homeMep = document.querySelector("#home .home-mep");
           const homeMepImage = homeMep?.querySelector(".home-image");
           const homeMepImageTag = homeMepImage?.querySelector("img");
 
+          const climateSection = document.querySelector("#climate");
+          const climateHeading = document.querySelector("#climate > .section-heading");
           const climateStage = document.querySelector("#climate .climate-stage");
           const climateStageImg = climateStage?.querySelector(".climate-map > img");
           const climateLivingScene = document.querySelector("#climate .climate-living-scene");
           const climateLivingMedia = climateLivingScene?.querySelector(".climate-living-media");
           const climateLivingImg = climateLivingMedia?.querySelector("img");
+          const airProblemCopy = document.querySelector("#environment-problem .air-system-definition-copy");
           const quietSystem = document.querySelector(".quiet-system");
           const quietSystemMedia = quietSystem?.querySelector(".section-image");
           const quietSystemImg = quietSystemMedia?.querySelector("img");
 
+          const waterIntroCopy = document.querySelector("#water-problem .water-system-definition-copy");
           const waterContextMedia = document.querySelector("#water-problem .water-context-media");
           const waterContextImg = waterContextMedia?.querySelector("img");
+          const waterSimulatorIntro = document.querySelector("#water-system-simulator-entry .water-system-simulator-intro");
           const waterStage = document.querySelector("#water-system-simulator-entry .water-system-simulator-stage");
           const waterStageImg = waterStage?.querySelector(":scope > img");
           const waterPanel = waterStage?.querySelector(".water-system-sim-panel");
           const waterScenes = Array.from(document.querySelectorAll("#water-supply-drainage .water-proof-scene"));
           const waterMedia = waterScenes.map((scene) => scene.querySelector(".water-proof-media")).filter(Boolean);
           const waterMediaImages = waterMedia.map((media) => media.querySelector("img")).filter(Boolean);
+          const deliveryCopyBlocks = Array.from(
+            document.querySelectorAll(
+              "body[data-page='delivery'] main > :is(#fit, #constraints, #integration, #delivery, #team-execution, #process) .section-copy"
+            )
+          );
+          const desktopCopyTargets = [
+            climateSection,
+            climateHeading,
+            airProblemCopy,
+            waterIntroCopy,
+            waterSimulatorIntro,
+            ...deliveryCopyBlocks
+          ];
 
           const targets = [
+            homeIndexStrip,
             homeMep,
             homeMepImage,
             homeMepImageTag,
+            climateHeading,
             climateStage,
             climateStageImg,
             climateLivingScene,
             climateLivingMedia,
             climateLivingImg,
+            airProblemCopy,
             quietSystem,
             quietSystemMedia,
             quietSystemImg,
+            waterIntroCopy,
             waterContextMedia,
             waterContextImg,
+            waterSimulatorIntro,
             waterStage,
             waterStageImg,
             waterPanel,
@@ -7172,17 +7202,43 @@
           ];
 
           if (!desktopQuery.matches) {
+            clearStyles([homeIndexStrip, climateSection, ...desktopCopyTargets], desktopCopyKeys);
             clearStyles(targets, fullBleedKeys);
             return;
           }
+
+          applyStyles([climateSection], {
+            "justify-content": "center"
+          });
+          applyStyles([homeIndexStrip], {
+            "width": desktopStripWidth,
+            "max-width": desktopStripWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "clamp(20px, 1.6vw, 28px)",
+            "padding-right": "clamp(20px, 1.6vw, 28px)",
+            "box-sizing": "border-box"
+          });
+          applyStyles(desktopCopyTargets, {
+            "width": desktopCopyWidth,
+            "max-width": desktopCopyWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": desktopCopyPad,
+            "padding-right": desktopCopyPad,
+            "box-sizing": "border-box"
+          });
+          applyStyles([climateHeading], {
+            "justify-self": "center"
+          });
 
           applyStyles([homeMep], {
             "width": "100vw",
             "max-width": "100vw",
             "margin-left": "calc(50% - 50vw)",
             "margin-right": "calc(50% - 50vw)",
-            "padding-left": "clamp(24px, 2vw, 36px)",
-            "padding-right": "clamp(24px, 2vw, 36px)",
+            "padding-left": desktopScenePad,
+            "padding-right": desktopScenePad,
             "box-sizing": "border-box",
             "grid-template-columns": "minmax(0, 0.88fr) minmax(0, 1.12fr)",
             "gap": "clamp(28px, 3vw, 46px)"
@@ -7215,8 +7271,8 @@
             "border-radius": "0"
           });
           applyStyles([climateLivingScene], {
-            "padding-left": "clamp(24px, 2vw, 36px)",
-            "padding-right": "clamp(24px, 2vw, 36px)",
+            "padding-left": desktopScenePad,
+            "padding-right": desktopScenePad,
             "box-sizing": "border-box"
           });
           applyStyles([climateStageImg, climateLivingImg, quietSystemImg], {
@@ -7251,8 +7307,8 @@
             "max-width": "100vw",
             "margin-left": "calc(50% - 50vw)",
             "margin-right": "calc(50% - 50vw)",
-            "padding-left": "clamp(24px, 2vw, 36px)",
-            "padding-right": "clamp(24px, 2vw, 36px)",
+            "padding-left": desktopScenePad,
+            "padding-right": desktopScenePad,
             "box-sizing": "border-box",
             "min-height": "clamp(760px, 52vw, 980px)",
             "grid-template-columns": "minmax(0, 1fr) clamp(320px, 24vw, 430px)",
@@ -7274,8 +7330,8 @@
             "max-width": "100vw",
             "margin-left": "calc(50% - 50vw)",
             "margin-right": "calc(50% - 50vw)",
-            "padding-left": "clamp(24px, 2vw, 36px)",
-            "padding-right": "clamp(24px, 2vw, 36px)",
+            "padding-left": desktopScenePad,
+            "padding-right": desktopScenePad,
             "box-sizing": "border-box",
             "gap": "clamp(22px, 2vw, 34px)"
           });
