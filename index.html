@@ -4543,23 +4543,33 @@
           object-fit: cover !important;
         }
 
-        /* 2026-07-10 desktop inset lock: keep copy away from hard left edges */
+        /* 2026-07-10 desktop route lock: project-access keeps a full desktop stage with left-set content */
         html body[data-page="project-access"] main > #project-access.project-access-clean {
-          width: min(1248px, calc(100vw - 88px)) !important;
-          padding-left: 28px !important;
-          padding-right: 28px !important;
+          width: calc(100vw - 24px) !important;
+          max-width: calc(100vw - 24px) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 12px !important;
+          padding-right: 12px !important;
+          box-sizing: border-box !important;
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro,
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-section,
-        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise,
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise {
+          width: min(1280px, calc(100vw - 160px)) !important;
+          max-width: min(1280px, calc(100vw - 160px)) !important;
+          margin-left: 24px !important;
+          margin-right: auto !important;
+        }
+
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-contact-layout,
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-head,
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-grid {
           width: 100% !important;
           max-width: 100% !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro,
@@ -4573,7 +4583,7 @@
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro {
           justify-self: stretch !important;
-          max-width: min(1280px, calc(100% - 48px)) !important;
+          max-width: none !important;
           padding: clamp(44px, 5vw, 72px) 0 clamp(26px, 3vw, 42px) !important;
         }
 
@@ -4595,7 +4605,7 @@
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-head {
           gap: 12px !important;
           justify-items: start !important;
-          max-width: min(1280px, calc(100% - 48px)) !important;
+          max-width: none !important;
           margin-left: 0 !important;
           margin-right: auto !important;
         }
@@ -5110,8 +5120,8 @@
         }
 
         html body[data-page="project-access"] {
-          --zf-project-shell-width: min(1248px, calc(100vw - 88px));
-          --zf-project-content-width: min(1192px, calc(100vw - 160px));
+          --zf-project-shell-width: calc(100vw - 24px);
+          --zf-project-content-width: min(1280px, calc(100vw - 160px));
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean {
@@ -5119,8 +5129,8 @@
           max-width: var(--zf-project-shell-width) !important;
           margin-left: auto !important;
           margin-right: auto !important;
-          padding-left: 28px !important;
-          padding-right: 28px !important;
+          padding-left: 12px !important;
+          padding-right: 12px !important;
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-hero {
@@ -5133,15 +5143,23 @@
         html body[data-page="project-access"] main > #project-access.project-access-clean :is(
           .project-access-ref-intro,
           .project-access-ref-section,
-          .project-access-expertise,
+          .project-access-expertise
+        ) {
+          width: var(--zf-project-content-width) !important;
+          max-width: var(--zf-project-content-width) !important;
+          margin-left: 24px !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean :is(
           .project-access-ref-contact-layout,
           .project-access-expertise-head,
           .project-access-expertise-grid
         ) {
-          width: var(--zf-project-content-width) !important;
-          max-width: var(--zf-project-content-width) !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
       }
     </style>
