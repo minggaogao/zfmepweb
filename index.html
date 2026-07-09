@@ -321,7 +321,7 @@
     </style>
     <style id="zf-home-hero-rebuild-v2">
       html body[data-page="home"] main > #landing {
-        width: min(100vw, 100%) !important;
+        width: 100% !important;
         max-width: none !important;
         padding-top: clamp(14px, 1.4vw, 20px) !important;
         padding-bottom: clamp(28px, 2.8vw, 40px) !important;
@@ -331,7 +331,7 @@
 
       html body main #landing .zf-home-hero-stage {
         position: relative;
-        width: min(1560px, calc(100vw - 24px));
+        width: min(1560px, calc(100% - 24px));
         height: min(860px, calc(100vh - 104px));
         min-height: 700px;
         margin: 0 auto;
@@ -372,19 +372,19 @@
 
       html body main #landing .zf-home-index-strip,
       html body main #landing .zf-home-closing-stage {
-        width: min(1560px, calc(100vw - 24px));
+        width: min(1560px, calc(100% - 24px));
         margin: 0 auto;
       }
 
       html body main #landing .zf-home-index-strip {
         display: grid;
-        grid-template-columns: 1.42fr 0.92fr 0.92fr 0.92fr;
+        grid-template-columns: 1.16fr 0.95fr 0.95fr 0.95fr;
         gap: 10px;
         align-items: stretch;
       }
 
       html body main #landing .zf-home-mep-band {
-        width: min(1560px, calc(100vw - 24px));
+        width: min(1560px, calc(100% - 24px));
         margin: 0 auto;
         padding: clamp(24px, 2.6vw, 34px) clamp(20px, 2.4vw, 36px) clamp(18px, 2.2vw, 24px);
         border-top: 1px solid rgba(203, 210, 206, 0.76);
@@ -7220,10 +7220,11 @@
         const desktopCopyKeys = ["width", "max-width", "margin-left", "margin-right", "padding-left", "padding-right", "box-sizing", "justify-self", "justify-content"];
 
         const runDesktopVisualLock = () => {
-          const desktopCopyWidth = "min(1480px, calc(100vw - 176px))";
-          const desktopCopyPad = "clamp(28px, 2.4vw, 44px)";
-          const desktopScenePad = "clamp(40px, 3vw, 56px)";
-          const desktopStripWidth = "min(1600px, calc(100vw - 80px))";
+          const desktopStageWidth = "min(1560px, calc(100% - 24px))";
+          const desktopCopyWidth = "min(1280px, calc(100% - 112px))";
+          const desktopCopyPad = "clamp(24px, 2vw, 36px)";
+          const desktopScenePad = "clamp(28px, 2.4vw, 40px)";
+          const desktopStripWidth = desktopStageWidth;
 
           const homeIndexStrip = document.querySelector("#landing .zf-home-index-strip");
           const homeMep = document.querySelector("#home .home-mep");
@@ -7321,14 +7322,14 @@
             "box-sizing": "border-box"
           });
           applyStyles([climateHeading], {
-            "justify-self": "center"
+            "justify-self": "stretch"
           });
 
           applyStyles([homeMep], {
-            "width": "100vw",
-            "max-width": "100vw",
-            "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)",
+            "width": desktopStageWidth,
+            "max-width": desktopStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
             "padding-left": desktopScenePad,
             "padding-right": desktopScenePad,
             "box-sizing": "border-box",
@@ -7349,10 +7350,10 @@
           });
 
           applyStyles([climateStage, climateLivingScene, climateLivingMedia, quietSystemMedia], {
-            "width": "100vw",
-            "max-width": "100vw",
-            "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)",
+            "width": desktopStageWidth,
+            "max-width": desktopStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
             "padding-left": "0",
             "padding-right": "0",
             "box-sizing": "border-box",
@@ -7376,10 +7377,10 @@
           });
 
           applyStyles([waterContextMedia], {
-            "width": "100vw",
-            "max-width": "100vw",
-            "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)",
+            "width": desktopStageWidth,
+            "max-width": desktopStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
             "padding-left": "0",
             "padding-right": "0",
             "box-sizing": "border-box",
@@ -7395,10 +7396,10 @@
           });
 
           applyStyles([waterStage], {
-            "width": "100vw",
-            "max-width": "100vw",
-            "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)",
+            "width": desktopStageWidth,
+            "max-width": desktopStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
             "padding-left": desktopScenePad,
             "padding-right": desktopScenePad,
             "box-sizing": "border-box",
@@ -7418,20 +7419,20 @@
             "height": "100%"
           });
           applyStyles(waterScenes, {
-            "width": "100vw",
-            "max-width": "100vw",
-            "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)",
+            "width": desktopStageWidth,
+            "max-width": desktopStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
             "padding-left": desktopScenePad,
             "padding-right": desktopScenePad,
             "box-sizing": "border-box",
             "gap": "clamp(22px, 2vw, 34px)"
           });
           applyStyles(waterMedia, {
-            "width": "100vw",
-            "max-width": "100vw",
-            "margin-left": "calc(50% - 50vw)",
-            "margin-right": "calc(50% - 50vw)",
+            "width": "100%",
+            "max-width": "100%",
+            "margin-left": "0",
+            "margin-right": "0",
             "padding-left": "0",
             "padding-right": "0",
             "box-sizing": "border-box",
