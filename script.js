@@ -3538,8 +3538,8 @@ const setLockedStyles = (elements, styles) => {
 const applyGlobalTypographyLock = () => {
   const isMobile = window.matchMedia("(max-width: 900px)").matches;
   const philosophyRule = {
-    titleWidth: "100%",
-    copyWidth: "100%",
+    titleWidth: isMobile ? "100%" : "min(1616px, calc(100vw - 112px))",
+    copyWidth: isMobile ? "100%" : "min(1616px, calc(100vw - 112px))",
     panelGap: isMobile ? "22px" : "34px",
     copyGap: isMobile ? "12px" : "14px",
     panelMarginTop: isMobile ? "42px" : "86px",
@@ -4651,13 +4651,16 @@ const applyGlobalTypographyLock = () => {
   });
 
   setLockedStyles(waterCopyBlocks, {
-    "width": "100%",
-    "max-width": "100%",
+    "width": waterStandard.copyWidth,
+    "max-width": waterStandard.copyWidth,
     "display": "grid",
     "gap": waterStandard.copyGap,
     "justify-items": "start",
     "align-content": "start",
-    "margin": "0",
+    "margin-left": "auto",
+    "margin-right": "auto",
+    "margin-top": "0",
+    "margin-bottom": "0",
     "padding": "0",
     "border": "0",
     "border-radius": "0",
@@ -5096,6 +5099,19 @@ const applyGlobalTypographyLock = () => {
     "margin": "0",
     "padding": "0",
     "text-align": "left"
+  });
+
+  setLockedStyles($$([
+    "body[data-page='water-supply-drainage'] main > #water-problem .water-system-definition-copy",
+    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-intro",
+    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-heading",
+    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-sim-copy",
+    "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-copy",
+    "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-closing"
+  ].join(", ")), {
+    "padding-left": isMobile ? "0" : "clamp(24px, 2vw, 36px)",
+    "padding-right": isMobile ? "0" : "clamp(24px, 2vw, 36px)",
+    "box-sizing": "border-box"
   });
 
   setLockedStyles($$([

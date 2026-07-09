@@ -4472,6 +4472,46 @@
           min-height: clamp(760px, 52vw, 980px) !important;
           object-fit: cover !important;
         }
+
+        /* 2026-07-10 desktop inset lock: keep copy away from hard left edges */
+        html body[data-page="project-access"] main > #project-access.project-access-clean {
+          width: min(1248px, calc(100vw - 88px)) !important;
+          padding-left: 28px !important;
+          padding-right: 28px !important;
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro,
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-section,
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise,
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-contact-layout,
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-head,
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-grid {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-definition-copy,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-intro,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-heading,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-sim-copy,
+        html body[data-page="water-supply-drainage"] main > #water-supply-drainage .water-proof-copy {
+          width: min(1616px, calc(100vw - 112px)) !important;
+          max-width: min(1616px, calc(100vw - 112px)) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body main #landing .zf-home-index-strip {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+          box-sizing: border-box !important;
+        }
+
+        html body main #landing .zf-home-index-card {
+          min-width: 0 !important;
+        }
       }
     </style>
   </head>
@@ -7065,7 +7105,7 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260709-project-access-lite-v56" defer></script>
+    <script src="script.js?v=20260710-desktop-inset-v1" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");
