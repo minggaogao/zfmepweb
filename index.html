@@ -4214,19 +4214,39 @@
         html body main #landing .zf-home-hero-stage,
         html body main #landing .zf-home-index-strip,
         html body main #landing .zf-home-mep-band,
+        html body[data-page="home"] main #home > .home-panel,
+        html body[data-page="home"] main #home > .home-closing,
         html body .footer-cta-band-inner,
         html body .site-footer.footer-rebuilt {
           width: var(--zf-wide-stage-width) !important;
           max-width: none !important;
         }
 
+        html body[data-page="home"] {
+          --zf-canon-media-width: var(--zf-wide-stage-width) !important;
+        }
+
+        html body[data-page="home"] main #home > .home-panel:is(.home-sanctuary, .home-shift, .home-feelings, .home-mep, .home-courtyard) {
+          width: var(--zf-wide-stage-width) !important;
+          max-width: none !important;
+        }
+
+        html body[data-page="home"] main #home > .home-panel :is(.home-sanctuary-media, .home-image) {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
         html body[data-page="systems"] {
           --systems-scene-fix-width: var(--zf-wide-stage-width) !important;
           --zf-canon-media-width: var(--zf-wide-stage-width) !important;
+          --zf-scene-media-width: var(--zf-wide-stage-width) !important;
         }
 
         html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .section-heading,
         html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-sensory-field,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-stage,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-living-scene,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .quiet-system,
         html body[data-page="systems"] main > #environment-problem,
         html body[data-page="systems"] main > #environment-logic,
         html body[data-page="systems"] main > #systems.section-shell,
@@ -4235,8 +4255,30 @@
           max-width: none !important;
         }
 
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > :is(.climate-stage, .climate-living-scene) :is(.climate-map, .climate-living-media) {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell .air-system-definition-copy,
+        html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene {
+          width: var(--zf-wide-stage-width) !important;
+          max-width: none !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell .air-opening-scene {
+          margin-top: clamp(28px, 2.8vw, 42px) !important;
+        }
+
         html body[data-page="project-access"] main > #project-access.project-access-clean {
           --project-access-width: var(--zf-wide-stage-width) !important;
+          padding-top: clamp(26px, 2.6vw, 40px) !important;
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-hero {
+          margin-top: clamp(14px, 1.8vw, 24px) !important;
         }
       }
     </style>
