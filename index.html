@@ -4761,14 +4761,12 @@
         }
 
         html body[data-page="systems"] {
-          --zf-systems-copy-width: min(1280px, calc(100vw - 448px));
-          --zf-systems-stage-width: min(1560px, calc(100vw - 168px));
+          --zf-systems-copy-width: min(1280px, calc(100vw - 160px));
+          --zf-systems-stage-width: min(1704px, calc(100vw - 24px));
+          --zf-systems-scene-width: min(1560px, calc(100vw - 88px));
         }
 
-        html body[data-page="systems"] main > #climate,
-        html body[data-page="systems"] main > #environment-problem,
-        html body[data-page="systems"] main > #environment-logic,
-        html body[data-page="systems"] main > #systems.section-shell {
+        html body[data-page="systems"] main > #climate {
           width: var(--zf-systems-copy-width) !important;
           max-width: var(--zf-systems-copy-width) !important;
           margin-left: auto !important;
@@ -4776,14 +4774,52 @@
         }
 
         html body[data-page="systems"] main > #climate :is(.climate-stage, .climate-living-scene, .quiet-system),
-        html body[data-page="systems"] main > #environment-problem .air-opening-scene {
+        html body[data-page="systems"] main > #climate :is(.climate-stage, .climate-living-scene, .quiet-system) :is(.climate-map, .climate-living-media, .section-image),
+        html body[data-page="systems"] main > #climate :is(.climate-stage, .climate-living-scene, .quiet-system) :is(.climate-map img, .climate-living-media img, .section-image img) {
           width: var(--zf-systems-stage-width) !important;
           max-width: var(--zf-systems-stage-width) !important;
-          margin-left: calc(50% - min(780px, 50vw - 84px)) !important;
-          margin-right: calc(50% - min(780px, 50vw - 84px)) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="systems"] main > #climate .climate-living-scene {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="systems"] main > :is(#environment-problem, #environment-logic, #systems.section-shell) {
+          width: var(--zf-systems-scene-width) !important;
+          max-width: var(--zf-systems-scene-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
 
         html body[data-page="systems"] main > #environment-problem .air-system-definition-copy {
+          width: var(--zf-systems-copy-width) !important;
+          max-width: var(--zf-systems-copy-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="systems"] main > #systems.section-shell .system-grid,
+        html body[data-page="systems"] main > #systems.section-shell .system-scene-card,
+        html body[data-page="systems"] main > #systems.section-shell .scene-media {
+          width: var(--zf-systems-scene-width) !important;
+          max-width: var(--zf-systems-scene-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem .air-opening-scene {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        html body[data-page="systems"] main > #systems.section-shell .scene-content,
+        html body[data-page="systems"] main > #systems.section-shell .systems-closing {
           width: var(--zf-systems-copy-width) !important;
           max-width: var(--zf-systems-copy-width) !important;
           margin-left: auto !important;
@@ -7528,6 +7564,9 @@
           const desktopCopyPad = "clamp(24px, 2vw, 36px)";
           const desktopScenePad = "clamp(28px, 2.4vw, 40px)";
           const desktopStripWidth = "calc(100vw - 24px)";
+          const systemsStageWidth = "calc(100vw - 24px)";
+          const systemsSceneWidth = "min(1560px, calc(100vw - 88px))";
+          const systemsCopyWidth = "min(1280px, calc(100vw - 160px))";
 
           const homeIndexStrip = document.querySelector("#landing .zf-home-index-strip");
           const homeHeroCopy = document.querySelector("#landing .zf-home-hero-copy");
@@ -7546,10 +7585,19 @@
           const climateLivingScene = document.querySelector("#climate .climate-living-scene");
           const climateLivingMedia = climateLivingScene?.querySelector(".climate-living-media");
           const climateLivingImg = climateLivingMedia?.querySelector("img");
+          const environmentProblem = document.querySelector("#environment-problem");
           const airProblemCopy = document.querySelector("#environment-problem .air-system-definition-copy");
+          const airOpeningScene = environmentProblem?.querySelector(".air-opening-scene");
+          const environmentLogic = document.querySelector("#environment-logic");
           const quietSystem = document.querySelector(".quiet-system");
           const quietSystemMedia = quietSystem?.querySelector(".section-image");
           const quietSystemImg = quietSystemMedia?.querySelector("img");
+          const systemsSection = document.querySelector("#systems.section-shell");
+          const systemsGrid = systemsSection?.querySelector(".system-grid");
+          const systemSceneCards = Array.from(document.querySelectorAll("#systems.section-shell .system-scene-card"));
+          const systemSceneContent = Array.from(document.querySelectorAll("#systems.section-shell .scene-content"));
+          const systemSceneMedia = Array.from(document.querySelectorAll("#systems.section-shell .scene-media"));
+          const systemsClosing = systemsSection?.querySelector(".systems-closing");
 
           const waterIntroCopy = document.querySelector("#water-problem .water-system-definition-copy");
           const waterContextMedia = document.querySelector("#water-problem .water-context-media");
@@ -7589,10 +7637,19 @@
             climateLivingScene,
             climateLivingMedia,
             climateLivingImg,
+            environmentProblem,
             airProblemCopy,
+            airOpeningScene,
+            environmentLogic,
             quietSystem,
             quietSystemMedia,
             quietSystemImg,
+            systemsSection,
+            systemsGrid,
+            systemsClosing,
+            ...systemSceneCards,
+            ...systemSceneContent,
+            ...systemSceneMedia,
             waterIntroCopy,
             waterContextMedia,
             waterContextImg,
@@ -7680,9 +7737,9 @@
             "object-fit": "cover"
           });
 
-          applyStyles([climateStage, climateLivingScene, climateLivingMedia, quietSystemMedia], {
-            "width": desktopStageWidth,
-            "max-width": desktopStageWidth,
+          applyStyles([climateStage, climateLivingScene, climateLivingMedia, quietSystem, quietSystemMedia], {
+            "width": systemsStageWidth,
+            "max-width": systemsStageWidth,
             "margin-left": "auto",
             "margin-right": "auto",
             "padding-left": "0",
@@ -7695,16 +7752,45 @@
             "border-radius": "0"
           });
           applyStyles([climateLivingScene], {
-            "padding-left": desktopScenePad,
-            "padding-right": desktopScenePad,
+            "padding-left": "0",
+            "padding-right": "0",
             "box-sizing": "border-box"
           });
           applyStyles([climateStageImg, climateLivingImg, quietSystemImg], {
-            "width": "100%",
-            "max-width": "100%",
+            "width": systemsStageWidth,
+            "max-width": systemsStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
             "min-height": "clamp(760px, 52vw, 980px)",
             "height": "100%",
             "object-fit": "cover"
+          });
+          applyStyles([environmentProblem, environmentLogic, systemsSection, systemsGrid, ...systemSceneCards, ...systemSceneMedia], {
+            "width": systemsSceneWidth,
+            "max-width": systemsSceneWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box"
+          });
+          applyStyles([airOpeningScene], {
+            "width": "100%",
+            "max-width": "100%",
+            "margin-left": "0",
+            "margin-right": "0",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box"
+          });
+          applyStyles([systemsClosing, ...systemSceneContent], {
+            "width": systemsCopyWidth,
+            "max-width": systemsCopyWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box"
           });
 
           applyStyles([waterContextMedia], {
