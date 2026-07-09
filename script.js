@@ -1647,6 +1647,10 @@ const pageRoutes = {
 };
 
 const routeAliases = {
+  landing: "home",
+  "environment-problem": "systems",
+  "environment-logic": "systems",
+  "air-feeling-bridge": "systems",
   "philosophy-archive": "philosophy",
   "basement-environment-simulator": "basement-system"
 };
@@ -1772,11 +1776,12 @@ const initPageRouter = () => {
       link.setAttribute("aria-current", isActive ? "page" : "false");
     });
     refreshRouteTypography();
+    const isDirectSectionTarget = activeIds.has(raw);
     const isPageRoute = raw === page || Boolean(pageRoutes[raw]) || Boolean(routeAliases[raw]);
-    const targetId = isPageRoute
-      ? routeScrollTargets[page] || activeIds.values().next().value
-      : activeIds.has(raw)
-        ? raw
+    const targetId = isDirectSectionTarget
+      ? raw
+      : isPageRoute
+        ? routeScrollTargets[page] || activeIds.values().next().value
         : routeScrollTargets[page] || activeIds.values().next().value;
     const target = document.getElementById(targetId);
     if (target) {
