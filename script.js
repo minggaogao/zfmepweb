@@ -1648,6 +1648,9 @@ const pageRoutes = {
 
 const routeAliases = {
   landing: "home",
+  air: "systems",
+  water: "water-supply-drainage",
+  "delivery-page": "delivery",
   "environment-problem": "systems",
   "environment-logic": "systems",
   "air-feeling-bridge": "systems",
@@ -1767,8 +1770,10 @@ const initPageRouter = () => {
     });
     navLinks.forEach((link) => {
       const key = link.getAttribute("href")?.replace("#", "");
+      const aliasPage = key ? routeAliases[key] : null;
       const isActive =
         key === page ||
+        aliasPage === page ||
         (page === "home" && key === "landing") ||
         (page === "philosophy" && key === "philosophy") ||
         (page === "dimensions" && key === "philosophy");
