@@ -4884,12 +4884,22 @@
 
         html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media {
           position: relative !important;
-          left: auto !important;
-          transform: none !important;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
           width: var(--zf-water-stage-width) !important;
           max-width: var(--zf-water-stage-width) !important;
-          margin-left: calc(50% - (var(--zf-water-stage-width) / 2)) !important;
-          margin-right: calc(50% - (var(--zf-water-stage-width) / 2)) !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-life-bridge {
+          position: relative !important;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+          width: var(--zf-water-stage-width) !important;
+          max-width: var(--zf-water-stage-width) !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
 
         html body[data-page="water-supply-drainage"] main > #water-problem :is(
@@ -7923,6 +7933,13 @@
             "box-sizing": "border-box",
             "min-height": "clamp(760px, 52vw, 980px)",
             "border-radius": "0"
+          });
+          applyStyles([waterContextMedia, ...waterBridges], {
+            "position": "relative",
+            "left": "50%",
+            "transform": "translateX(-50%)",
+            "margin-left": "0",
+            "margin-right": "0"
           });
           applyStyles([waterContextImg, ...waterBridgeImages], {
             "width": "100%",
