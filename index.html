@@ -31,10 +31,23 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="images/homepage-hero-final/hero-human.webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css?v=20260616-home-villa-varied" />
     <link rel="stylesheet" href="launch-polish.css?v=20260709-climate-yellow-fix-v32" />
-    <link rel="stylesheet" href="water-scenes-lock.css?v=20260626-water-fix-v77" />
-    <link rel="stylesheet" href="air-scenes-lock.css?v=20260705-systems-fix-v10" />
+    <link
+      rel="preload"
+      href="water-scenes-lock.css?v=20260626-water-fix-v77"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="air-scenes-lock.css?v=20260705-systems-fix-v10"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="water-scenes-lock.css?v=20260626-water-fix-v77" /></noscript>
+    <noscript><link rel="stylesheet" href="air-scenes-lock.css?v=20260705-systems-fix-v10" /></noscript>
     <style id="zf-inline-systems-scene-fix-v1">
       html body[data-page="systems"] {
         --systems-scene-fix-width: min(980px, calc(100vw - 160px));
@@ -4186,6 +4199,46 @@
           padding-top: 42px !important;
         }
       }
+
+      @media (min-width: 1280px) {
+        html body {
+          --zf-wide-stage-width: calc(100% - 24px);
+        }
+
+        html body[data-page="home"] main > #landing,
+        html body[data-page="project-access"] main > #project-access {
+          width: 100% !important;
+          max-width: none !important;
+        }
+
+        html body main #landing .zf-home-hero-stage,
+        html body main #landing .zf-home-index-strip,
+        html body main #landing .zf-home-mep-band,
+        html body .footer-cta-band-inner,
+        html body .site-footer.footer-rebuilt {
+          width: var(--zf-wide-stage-width) !important;
+          max-width: none !important;
+        }
+
+        html body[data-page="systems"] {
+          --systems-scene-fix-width: var(--zf-wide-stage-width) !important;
+          --zf-canon-media-width: var(--zf-wide-stage-width) !important;
+        }
+
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .section-heading,
+        html body:is([data-page="climate"], [data-page="systems"]) main > section#climate.climate.section-shell > .climate-sensory-field,
+        html body[data-page="systems"] main > #environment-problem,
+        html body[data-page="systems"] main > #environment-logic,
+        html body[data-page="systems"] main > #systems.section-shell,
+        html body[data-page="project-access"] main > #project-access.project-access-clean {
+          width: var(--zf-wide-stage-width) !important;
+          max-width: none !important;
+        }
+
+        html body[data-page="project-access"] main > #project-access.project-access-clean {
+          --project-access-width: var(--zf-wide-stage-width) !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -4209,7 +4262,7 @@
     </script>
     <header class="site-header" data-header>
       <a class="brand-mark" href="#landing" aria-label="回到首页">
-        <img class="brand-logo-symbol" src="images/zefeng-logo-mark.webp" alt="" />
+        <img class="brand-logo-symbol" src="images/zefeng-logo-mark.webp" alt="" width="700" height="512" decoding="async" />
         <span class="brand-lockup">
           <strong>ZEFENG MEP</strong>
           <small>HIGH-END RESIDENTIAL MEP SYSTEMS</small>
@@ -4269,7 +4322,7 @@
             <div class="zf-home-hero-slides">
               <article class="zf-home-hero-slide zf-slide-human zf-slide-air" data-zf-home-slide data-home-key="home-air" aria-hidden="false">
                 <div class="zf-home-hero-visual" aria-hidden="true">
-                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-human.webp" alt="安静住宅中的人物场景" />
+                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-human.webp" alt="安静住宅中的人物场景" width="1672" height="941" decoding="async" fetchpriority="high" />
                 </div>
                 <div class="zf-home-hero-copy">
                   <p class="zf-home-hero-kicker">ZEFENG MEP</p>
@@ -4280,7 +4333,7 @@
 
               <article class="zf-home-hero-slide zf-slide-architecture zf-slide-water" data-zf-home-slide data-home-key="home-water" aria-hidden="true">
                 <div class="zf-home-hero-visual" aria-hidden="true">
-                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-architecture.webp" alt="建筑与自然环境关系场景" />
+                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-architecture.webp" alt="建筑与自然环境关系场景" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="zf-home-hero-copy">
                   <p class="zf-home-hero-kicker">SPACE AND CLIMATE</p>
@@ -4291,7 +4344,7 @@
 
               <article class="zf-home-hero-slide zf-slide-system zf-slide-order" data-zf-home-slide data-home-key="home-order" aria-hidden="true">
                 <div class="zf-home-hero-visual" aria-hidden="true">
-                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-system.webp" alt="团队协同与设计判断场景" />
+                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-system.webp" alt="团队协同与设计判断场景" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="zf-home-hero-copy">
                   <p class="zf-home-hero-kicker">RESIDENTIAL SYSTEMS</p>
@@ -6557,7 +6610,7 @@
 
       <section id="project-access" class="project-access-clean">
         <figure class="project-access-ref-hero reveal">
-          <img src="images/generated-project-access/project-access-hero-team-photo-v3.webp" alt="高端办公接待空间内，前台顾问正在与客户沟通，后方团队成员在办公室中有序协作" loading="eager" />
+          <img src="images/generated-project-access/project-access-hero-team-photo-v3.webp" alt="高端办公接待空间内，前台顾问正在与客户沟通，后方团队成员在办公室中有序协作" loading="lazy" decoding="async" width="1600" height="700" />
         </figure>
 
         <div class="project-access-ref-intro reveal">
@@ -6570,7 +6623,7 @@
             <div class="project-access-ref-contact-aside">
               <div class="project-access-ref-contact-map">
                 <div class="project-access-ref-map-stage" aria-label="长沙服务地图">
-                  <img class="project-access-ref-map-image" src="images/generated-project-access/amap-changsha-urban-raw.webp" alt="基于高德地图长沙城区视角截取的服务地图，标注岳麓区北辰时光里、雨花区欧亚达国际家居馆与华际天际 A 区三个服务点" loading="lazy" />
+                  <img class="project-access-ref-map-image" src="images/generated-project-access/amap-changsha-urban-raw.webp" alt="基于高德地图长沙城区视角截取的服务地图，标注岳麓区北辰时光里、雨花区欧亚达国际家居馆与华际天际 A 区三个服务点" loading="lazy" decoding="async" width="1680" height="788" />
                   <span class="project-access-ref-map-star is-yuelu" aria-hidden="true">★</span>
                   <span class="project-access-ref-map-star is-yuhua" aria-hidden="true">★</span>
                   <span class="project-access-ref-map-star is-huayin" aria-hidden="true">★</span>
@@ -6727,7 +6780,7 @@
       <div class="footer-col footer-brand">
         <p class="footer-title">关于泽丰</p>
         <div class="footer-brand-lockup">
-          <img class="footer-logo-symbol" src="images/zefeng-logo-mark.webp" alt="" />
+          <img class="footer-logo-symbol" src="images/zefeng-logo-mark.webp" alt="" width="700" height="512" decoding="async" />
           <span>
             <strong>ZEFENG MEP</strong>
             <small>HIGH-END RESIDENTIAL MEP SYSTEMS</small>
