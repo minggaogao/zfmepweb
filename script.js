@@ -1624,7 +1624,7 @@ const pageRoutes = {
   philosophy: ["home", "dimensions"],
   dimensions: ["home", "dimensions"],
   climate: ["climate", "environment-problem", "environment-logic", "air-feeling-bridge", "systems"],
-  "water-supply-drainage": ["water-problem", "water-logic", "water-system-simulator-entry", "water-supply-drainage"],
+  "water-supply-drainage": ["water-problem", "water-logic", "water-supply-drainage"],
   systems: ["climate", "environment-problem", "environment-logic", "systems"],
   "basement-system": [
     "basement-definition",
@@ -4540,7 +4540,6 @@ const applyGlobalTypographyLock = () => {
   const waterSectionNodes = $$([
     "body[data-page='water-supply-drainage'] main > #water-problem",
     "body[data-page='water-supply-drainage'] main > #water-logic",
-    "body[data-page='water-supply-drainage'] main > #water-system-simulator-entry",
     "body[data-page='water-supply-drainage'] main > #water-supply-drainage"
   ].join(", "));
 
@@ -4549,9 +4548,6 @@ const applyGlobalTypographyLock = () => {
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-head h2",
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-panel-copy h3",
     "body[data-page='water-supply-drainage'] #water-logic .water-system-signal-summary-copy h2",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-intro h3",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-heading h2",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-sim-copy h3",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-copy h3",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-closing h3"
   ].join(", "));
@@ -4561,21 +4557,15 @@ const applyGlobalTypographyLock = () => {
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-head p:not(.water-system-journey-kicker)",
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-panel-copy p:not(.eyebrow)",
     "body[data-page='water-supply-drainage'] #water-logic .water-system-signal-summary-copy p:not(.eyebrow)",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-intro p:not(.eyebrow)",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-heading p",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-sim-copy p:not(.water-system-sim-kicker)",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-copy p:not(.eyebrow)",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-closing p:not(.eyebrow)",
-    "body[data-page='water-supply-drainage'] #water-problem figcaption",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry figcaption"
+    "body[data-page='water-supply-drainage'] #water-problem figcaption"
   ].join(", "));
 
   const waterEyebrowNodes = $$([
     "body[data-page='water-supply-drainage'] #water-problem .eyebrow",
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-kicker",
     "body[data-page='water-supply-drainage'] #water-logic .eyebrow",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .eyebrow",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-sim-kicker",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .eyebrow"
   ].join(", "));
 
@@ -4584,9 +4574,6 @@ const applyGlobalTypographyLock = () => {
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-head",
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey-panel-copy",
     "body[data-page='water-supply-drainage'] #water-logic .water-system-signal-summary-copy",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-intro",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-heading",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-sim-copy",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-copy",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-closing"
   ].join(", "));
@@ -4594,23 +4581,18 @@ const applyGlobalTypographyLock = () => {
   const waterSceneNodes = $$([
     "body[data-page='water-supply-drainage'] #water-problem .water-system-journey",
     "body[data-page='water-supply-drainage'] #water-problem .water-life-bridge",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-life-bridge",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-scene"
   ].join(", "));
 
   const waterMediaFrames = $$([
     "body[data-page='water-supply-drainage'] #water-problem .water-context-media",
     "body[data-page='water-supply-drainage'] #water-problem .water-life-bridge-media",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-life-bridge-media",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-stage",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-media"
   ].join(", "));
 
   const waterMediaImages = $$([
     "body[data-page='water-supply-drainage'] #water-problem .water-context-media > img",
     "body[data-page='water-supply-drainage'] #water-problem .water-life-bridge-media > img",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-life-bridge-media > img",
-    "body[data-page='water-supply-drainage'] #water-system-simulator-entry .water-system-simulator-stage > img",
     "body[data-page='water-supply-drainage'] #water-supply-drainage .water-proof-media > img"
   ].join(", "));
 
@@ -4634,7 +4616,7 @@ const applyGlobalTypographyLock = () => {
     "box-sizing": "border-box"
   });
 
-  setLockedStyles($$("body[data-page='water-supply-drainage'] main > #water-logic, body[data-page='water-supply-drainage'] main > #water-system-simulator-entry, body[data-page='water-supply-drainage'] main > #water-supply-drainage"), {
+  setLockedStyles($$("body[data-page='water-supply-drainage'] main > #water-logic, body[data-page='water-supply-drainage'] main > #water-supply-drainage"), {
     "margin-top": waterStandard.sectionGap
   });
 
