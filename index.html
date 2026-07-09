@@ -4573,7 +4573,6 @@
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro,
-        html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-head,
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-contact-right,
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-service-list,
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-contact-lines {
@@ -4582,14 +4581,17 @@
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro {
-          justify-self: stretch !important;
+          justify-self: center !important;
+          justify-items: center !important;
           max-width: none !important;
           padding: clamp(44px, 5vw, 72px) 0 clamp(26px, 3vw, 42px) !important;
+          text-align: center !important;
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-intro p {
           max-width: min(720px, 100%) !important;
-          justify-self: start !important;
+          justify-self: center !important;
+          text-align: center !important;
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-ref-contact-layout {
@@ -4611,7 +4613,8 @@
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-head p {
-          max-width: min(760px, 100%) !important;
+          max-width: none !important;
+          white-space: nowrap !important;
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean .project-access-expertise-label,
