@@ -3142,27 +3142,30 @@ p {
 .flow-line {
   width: 38%;
   height: 120px;
-  border-top: 2px solid rgba(92, 127, 121, 0.42);
+  border-top: 3px solid rgba(38, 232, 186, 0.72);
   border-radius: 55% 45% 0 0;
-  filter: blur(0.2px);
+  box-shadow: 0 0 18px rgba(38, 232, 186, 0.12);
+  filter: blur(0.05px);
   animation: flowDrift 7s ease-in-out infinite alternate;
 }
 
 .flow-north.flow-a { left: 36%; top: 18%; transform: rotate(98deg); }
 .flow-north.flow-b { left: 42%; top: 13%; transform: rotate(108deg); animation-delay: 1s; }
 .flow-north.flow-c { left: 48%; top: 17%; transform: rotate(92deg); animation-delay: 1.8s; }
-.flow-winter.flow-a { left: 41%; top: 15%; border-color: rgba(88, 123, 128, 0.42); transform: rotate(100deg); }
-.flow-winter.flow-b { left: 50%; top: 12%; border-color: rgba(88, 123, 128, 0.36); transform: rotate(88deg); animation-delay: 1.3s; }
+.flow-winter.flow-a { left: 41%; top: 15%; border-color: rgba(114, 210, 255, 0.66); transform: rotate(100deg); }
+.flow-winter.flow-b { left: 50%; top: 12%; border-color: rgba(114, 210, 255, 0.58); transform: rotate(88deg); animation-delay: 1.3s; }
 
 .water-vapor {
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: rgba(92, 127, 121, 0.42);
+  background: rgba(56, 246, 198, 0.78);
   box-shadow:
-    24px 18px 0 rgba(92, 127, 121, 0.24),
-    54px -10px 0 rgba(92, 127, 121, 0.18),
-    86px 28px 0 rgba(92, 127, 121, 0.2);
+    0 0 14px rgba(56, 246, 198, 0.22),
+    24px 18px 0 rgba(56, 246, 198, 0.44),
+    24px 18px 14px rgba(56, 246, 198, 0.12),
+    54px -10px 0 rgba(113, 224, 255, 0.34),
+    86px 28px 0 rgba(56, 246, 198, 0.36);
   animation: vaporRise 5.4s ease-in-out infinite;
 }
 
@@ -3185,9 +3188,10 @@ p {
   top: 38%;
   width: 30%;
   aspect-ratio: 1.25;
-  border: 1px solid rgba(92, 127, 121, 0.22);
+  border: 1.6px solid rgba(72, 228, 193, 0.3);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(92, 127, 121, 0.16), rgba(92, 127, 121, 0.04) 60%, transparent 75%);
+  background: radial-gradient(circle, rgba(72, 228, 193, 0.24), rgba(72, 228, 193, 0.08) 60%, transparent 75%);
+  box-shadow: 0 0 30px rgba(72, 228, 193, 0.08);
 }
 
 .dew-risk {
@@ -3204,10 +3208,11 @@ p {
   top: 35%;
   width: 34%;
   height: 34%;
-  border: 3px solid rgba(184, 155, 94, 0.46);
+  border: 4px solid rgba(255, 189, 69, 0.82);
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-radius: 50%;
+  box-shadow: 0 0 22px rgba(255, 189, 69, 0.14);
   transform: rotate(22deg);
 }
 
@@ -3238,7 +3243,7 @@ p {
 }
 
 .climate-stage[data-climate-mode="winterColdHumid"] .humid-dome {
-  background: radial-gradient(circle, rgba(88, 123, 128, 0.2), rgba(88, 123, 128, 0.05) 62%, transparent 76%);
+  background: radial-gradient(circle, rgba(114, 210, 255, 0.28), rgba(114, 210, 255, 0.08) 62%, transparent 76%);
 }
 
 @keyframes pulseRing {
@@ -3247,8 +3252,8 @@ p {
 }
 
 @keyframes flowDrift {
-  from { opacity: 0.55; translate: 0 -8px; }
-  to { opacity: 0.9; translate: 0 8px; }
+  from { opacity: 0.68; translate: 0 -8px; }
+  to { opacity: 1; translate: 0 8px; }
 }
 
 @keyframes vaporRise {
@@ -7064,6 +7069,54 @@ body .water-supply .water-supply-copy .cinematic-detail summary {
   to {
     transform: translate(-50%, -50%) scale(1.08);
   }
+}
+
+/* 2026-07-10 final climate flow lift: keep airflow / vapor overlays vivid above older rules */
+.climate-stage .flow-line {
+  border-top-color: rgba(38, 232, 186, 0.72) !important;
+  border-top-width: 3px !important;
+  box-shadow: 0 0 18px rgba(38, 232, 186, 0.12) !important;
+  filter: blur(0.05px) !important;
+}
+
+.climate-stage .flow-winter.flow-a,
+.climate-stage .flow-winter.flow-b {
+  border-top-color: rgba(114, 210, 255, 0.66) !important;
+}
+
+.climate-stage .water-vapor {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(56, 246, 198, 0.78) !important;
+  box-shadow:
+    0 0 14px rgba(56, 246, 198, 0.22),
+    24px 18px 0 rgba(56, 246, 198, 0.44),
+    24px 18px 14px rgba(56, 246, 198, 0.12),
+    54px -10px 0 rgba(113, 224, 255, 0.34),
+    86px 28px 0 rgba(56, 246, 198, 0.36) !important;
+  filter: blur(0.18px) !important;
+}
+
+.climate-stage[data-climate-mode="summerHotHumid"] .water-vapor,
+.climate-stage[data-climate-mode="springDamp"] .water-vapor {
+  opacity: 0.82 !important;
+}
+
+.climate-stage .humid-dome {
+  border-color: rgba(72, 228, 193, 0.3) !important;
+  background: radial-gradient(circle, rgba(72, 228, 193, 0.24), rgba(72, 228, 193, 0.08) 60%, transparent 75%) !important;
+  box-shadow: 0 0 30px rgba(72, 228, 193, 0.08) !important;
+}
+
+.climate-stage[data-climate-mode="winterColdHumid"] .humid-dome {
+  background: radial-gradient(circle, rgba(114, 210, 255, 0.28), rgba(114, 210, 255, 0.08) 62%, transparent 76%) !important;
+}
+
+.climate-stage .comfort-arc {
+  border-width: 4px !important;
+  border-top-color: rgba(255, 189, 69, 0.82) !important;
+  border-left-color: rgba(255, 189, 69, 0.82) !important;
+  box-shadow: 0 0 22px rgba(255, 189, 69, 0.14) !important;
 }
 
 .dewpoint-panel {

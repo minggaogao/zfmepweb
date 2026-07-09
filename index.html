@@ -34,8 +34,8 @@
       rel="stylesheet"
     />
     <link rel="preload" as="image" href="images/homepage-hero-final/hero-human.webp" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20260616-home-villa-varied" />
-    <link rel="stylesheet" href="launch-polish.css?v=20260709-desktop-fullbleed-v33" />
+    <link rel="stylesheet" href="styles.css?v=20260710-footer-flow-v1" />
+    <link rel="stylesheet" href="launch-polish.css?v=20260710-footer-flow-v1" />
     <link
       rel="preload"
       href="water-scenes-lock.css?v=20260626-water-fix-v77"
@@ -1858,12 +1858,12 @@
         isolation: isolate !important;
         overflow: visible !important;
         display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        gap: clamp(30px, 3vw, 54px) !important;
+        grid-template-columns: minmax(300px, 1.32fr) repeat(3, minmax(180px, 0.9fr)) !important;
+        gap: clamp(28px, 2.8vw, 48px) !important;
         align-items: start !important;
         width: min(1560px, calc(100vw - 24px)) !important;
         margin: 0 auto 26px !important;
-        padding: clamp(42px, 4.5vw, 60px) 0 12px !important;
+        padding: clamp(42px, 4.5vw, 60px) clamp(26px, 3vw, 40px) 12px !important;
         border: 0 !important;
         border-radius: 0 !important;
         background: transparent !important;
@@ -1895,7 +1895,7 @@
         pointer-events: none !important;
         z-index: 0 !important;
         overflow: hidden !important;
-        opacity: 0.34 !important;
+        opacity: 0.58 !important;
       }
 
       html body .site-footer.footer-rebuilt .footer-atmosphere::before {
@@ -1927,13 +1927,14 @@
         bottom: 18% !important;
         width: 48% !important;
         height: 104px !important;
-        border: 1.4px solid rgba(93, 184, 234, 0.24) !important;
+        border: 2px solid rgba(78, 212, 255, 0.52) !important;
         border-left-color: transparent !important;
         border-right-color: transparent !important;
-        border-bottom-color: rgba(93, 184, 234, 0.12) !important;
+        border-bottom-color: rgba(78, 212, 255, 0.24) !important;
         transform: rotate(-6deg) !important;
-        filter: blur(0.15px) !important;
-        opacity: 0.92 !important;
+        box-shadow: 0 0 22px rgba(78, 212, 255, 0.16) !important;
+        filter: blur(0.05px) !important;
+        opacity: 1 !important;
         animation: footerRibbonFloatA 12.8s ease-in-out infinite !important;
       }
 
@@ -1942,13 +1943,14 @@
         bottom: 33% !important;
         width: 34% !important;
         height: 62px !important;
-        border: 1.2px solid rgba(86, 211, 169, 0.2) !important;
+        border: 1.8px solid rgba(102, 255, 193, 0.42) !important;
         border-left-color: transparent !important;
         border-right-color: transparent !important;
-        border-top-color: rgba(86, 211, 169, 0.08) !important;
+        border-top-color: rgba(102, 255, 193, 0.16) !important;
         transform: rotate(3deg) !important;
-        filter: blur(0.25px) !important;
-        opacity: 0.84 !important;
+        box-shadow: 0 0 18px rgba(102, 255, 193, 0.12) !important;
+        filter: blur(0.08px) !important;
+        opacity: 0.96 !important;
       }
 
       html body .site-footer.footer-rebuilt .footer-atmosphere span:nth-child(3) {
@@ -1970,13 +1972,14 @@
         bottom: 8% !important;
         width: 46% !important;
         height: 76px !important;
-        border: 1.15px solid rgba(86, 170, 255, 0.18) !important;
+        border: 1.7px solid rgba(83, 165, 255, 0.34) !important;
         border-left-color: transparent !important;
         border-right-color: transparent !important;
-        border-top-color: rgba(86, 170, 255, 0.07) !important;
+        border-top-color: rgba(83, 165, 255, 0.14) !important;
         transform: rotate(-4deg) !important;
-        filter: blur(0.35px) !important;
-        opacity: 0.72 !important;
+        box-shadow: 0 0 20px rgba(83, 165, 255, 0.1) !important;
+        filter: blur(0.1px) !important;
+        opacity: 0.86 !important;
       }
 
       html body .site-footer.footer-rebuilt .footer-atmosphere span:nth-child(5) {
@@ -1998,13 +2001,14 @@
         top: 10% !important;
         width: 56% !important;
         height: 86px !important;
-        border: 1.35px solid rgba(255, 108, 108, 0.22) !important;
+        border: 1.9px solid rgba(255, 88, 88, 0.38) !important;
         border-left-color: transparent !important;
         border-right-color: transparent !important;
-        border-top-color: rgba(255, 108, 108, 0.07) !important;
+        border-top-color: rgba(255, 88, 88, 0.15) !important;
         transform: rotate(7deg) !important;
-        filter: blur(0.2px) !important;
-        opacity: 0.82 !important;
+        box-shadow: 0 0 18px rgba(255, 88, 88, 0.12) !important;
+        filter: blur(0.08px) !important;
+        opacity: 0.94 !important;
         animation: footerRibbonFloatB 15.6s ease-in-out infinite !important;
       }
 
@@ -2027,13 +2031,14 @@
         bottom: 8% !important;
         width: 48% !important;
         height: 72px !important;
-        border: 1.2px solid rgba(90, 232, 175, 0.22) !important;
+        border: 1.8px solid rgba(83, 255, 199, 0.38) !important;
         border-left-color: transparent !important;
         border-right-color: transparent !important;
-        border-top-color: rgba(90, 232, 175, 0.08) !important;
+        border-top-color: rgba(83, 255, 199, 0.14) !important;
         transform: rotate(-3deg) !important;
-        filter: blur(0.25px) !important;
-        opacity: 0.78 !important;
+        box-shadow: 0 0 20px rgba(83, 255, 199, 0.12) !important;
+        filter: blur(0.08px) !important;
+        opacity: 0.9 !important;
       }
 
       html body .site-footer.footer-rebuilt .footer-atmosphere span:nth-child(9) {
@@ -2069,13 +2074,14 @@
         bottom: 30% !important;
         width: 52% !important;
         height: 94px !important;
-        border: 1.25px solid rgba(70, 199, 255, 0.2) !important;
+        border: 1.9px solid rgba(76, 205, 255, 0.4) !important;
         border-left-color: transparent !important;
         border-right-color: transparent !important;
-        border-bottom-color: rgba(70, 199, 255, 0.07) !important;
+        border-bottom-color: rgba(76, 205, 255, 0.16) !important;
         transform: rotate(-9deg) !important;
-        filter: blur(0.15px) !important;
-        opacity: 0.8 !important;
+        box-shadow: 0 0 24px rgba(76, 205, 255, 0.14) !important;
+        filter: blur(0.05px) !important;
+        opacity: 0.96 !important;
         animation: footerRibbonFloatC 18.4s ease-in-out infinite !important;
       }
 
