@@ -4653,6 +4653,13 @@
           margin-right: auto !important;
         }
 
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-definition-copy,
+        html body[data-page="water-supply-drainage"] main > #water-problem .water-system-journey-head,
+        html body[data-page="water-supply-drainage"] main > #water-system-simulator-entry .water-system-simulator-intro {
+          margin-left: 24px !important;
+          margin-right: auto !important;
+        }
+
         html body main #landing .zf-home-index-strip {
           padding-left: 16px !important;
           padding-right: 16px !important;
@@ -4761,10 +4768,12 @@
 
         html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media {
           position: relative !important;
-          left: 50% !important;
-          transform: translateX(-50%) !important;
-          width: var(--zf-route-stage-width) !important;
-          max-width: var(--zf-route-stage-width) !important;
+          left: auto !important;
+          transform: none !important;
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
 
         html body[data-page="water-supply-drainage"] main > #water-problem .water-context-media > img,
@@ -4964,22 +4973,22 @@
 
         html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media {
           position: relative !important;
-          left: 50% !important;
-          transform: translateX(-50%) !important;
-          width: var(--zf-water-stage-width) !important;
-          max-width: var(--zf-water-stage-width) !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
+          left: auto !important;
+          transform: none !important;
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
 
         html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-life-bridge {
           position: relative !important;
-          left: 50% !important;
-          transform: translateX(-50%) !important;
-          width: var(--zf-water-stage-width) !important;
-          max-width: var(--zf-water-stage-width) !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
+          left: auto !important;
+          transform: none !important;
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
 
         html body[data-page="water-supply-drainage"] main > #water-problem :is(
@@ -7869,6 +7878,7 @@
           const systemsClosing = systemsSection?.querySelector(".systems-closing");
 
           const waterIntroCopy = document.querySelector("#water-problem .water-system-definition-copy");
+          const waterJourneyHead = document.querySelector("#water-problem .water-system-journey-head");
           const waterProblemSection = document.querySelector("#water-problem");
           const waterContextMedia = document.querySelector("#water-problem .water-context-media");
           const waterContextImg = waterContextMedia?.querySelector("img");
@@ -7907,6 +7917,7 @@
             climateHeading,
             airProblemCopy,
             waterIntroCopy,
+            waterJourneyHead,
             waterSimulatorIntro,
             ...deliveryCopyBlocks
           ];
@@ -7940,6 +7951,7 @@
             ...systemSceneMedia,
             waterProblemSection,
             waterIntroCopy,
+            waterJourneyHead,
             waterContextMedia,
             waterContextImg,
             ...waterBridges,
@@ -8105,8 +8117,8 @@
             "box-sizing": "border-box"
           });
           applyStyles([waterContextMedia, ...waterBridges, ...waterBridgeMedia], {
-            "width": waterStageWidth,
-            "max-width": waterStageWidth,
+            "width": "calc(100vw - 48px)",
+            "max-width": "calc(100vw - 48px)",
             "margin-left": "auto",
             "margin-right": "auto",
             "padding-left": "0",
@@ -8117,10 +8129,10 @@
           });
           applyStyles([waterContextMedia, ...waterBridges], {
             "position": "relative",
-            "left": "50%",
-            "transform": "translateX(-50%)",
-            "margin-left": "0",
-            "margin-right": "0"
+            "left": "auto",
+            "transform": "none",
+            "margin-left": "auto",
+            "margin-right": "auto"
           });
           applyStyles([waterContextImg, ...waterBridgeImages], {
             "width": "100%",
@@ -8184,10 +8196,10 @@
             "min-height": "clamp(760px, 52vw, 980px)",
             "border-radius": "0"
           });
-          applyStyles([waterIntroCopy, waterSimulatorIntro], {
+          applyStyles([waterIntroCopy, waterJourneyHead, waterSimulatorIntro], {
             "width": waterCopyWidth,
             "max-width": waterCopyWidth,
-            "margin-left": "auto",
+            "margin-left": "24px",
             "margin-right": "auto",
             "padding-left": "0",
             "padding-right": "0",
