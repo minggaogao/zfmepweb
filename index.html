@@ -5121,7 +5121,7 @@
 
         html body[data-page="project-access"] {
           --zf-project-shell-width: calc(100vw - 24px);
-          --zf-project-content-width: min(1280px, calc(100vw - 160px));
+          --zf-project-content-width: calc(100% - 24px);
         }
 
         html body[data-page="project-access"] main > #project-access.project-access-clean {
@@ -5147,7 +5147,7 @@
         ) {
           width: var(--zf-project-content-width) !important;
           max-width: var(--zf-project-content-width) !important;
-          margin-left: 24px !important;
+          margin-left: auto !important;
           margin-right: auto !important;
         }
 
