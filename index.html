@@ -38,7 +38,7 @@
     />
     <link rel="preload" as="image" href="images/homepage-hero-final/hero-human.webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css?v=20260710-footer-flow-v1" />
-    <link rel="stylesheet" href="launch-polish.css?v=20260710-footer-flow-v1" />
+    <link rel="stylesheet" href="launch-polish.css?v=20260710-air-hard-reset-v2" />
     <link
       rel="preload"
       href="water-scenes-lock.css?v=20260626-water-fix-v77"
@@ -47,12 +47,12 @@
     />
     <link
       rel="preload"
-      href="air-scenes-lock.css?v=20260705-systems-fix-v10"
+      href="air-scenes-lock.css?v=20260710-air-hard-reset-v2"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript><link rel="stylesheet" href="water-scenes-lock.css?v=20260626-water-fix-v77" /></noscript>
-    <noscript><link rel="stylesheet" href="air-scenes-lock.css?v=20260705-systems-fix-v10" /></noscript>
+    <noscript><link rel="stylesheet" href="air-scenes-lock.css?v=20260710-air-hard-reset-v2" /></noscript>
     <style id="zf-inline-systems-scene-fix-v1">
       html body[data-page="systems"] {
         --systems-scene-fix-width: min(980px, calc(100vw - 160px));
@@ -5766,11 +5766,12 @@
         }
       }
     </style>
-    <style id="zf-air-page-final-lock-v2">
+    <style id="zf-air-page-final-lock-v3">
       @media (min-width: 1280px) {
         html body[data-page="systems"] {
           --zf-air-final-stage-width: calc(100vw - 48px);
           --zf-air-final-copy-width: calc(100vw - 48px);
+          --zf-air-final-measure: min(1180px, calc(100vw - 48px));
         }
 
         html body[data-page="systems"] main > #climate,
@@ -5822,32 +5823,6 @@
           margin-right: 24px !important;
         }
 
-        html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy {
-          width: 100% !important;
-          max-width: 100% !important;
-          inline-size: 100% !important;
-          max-inline-size: 100% !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-        }
-
-        html body[data-page="systems"] main > #environment-problem.section-shell > .air-opening-scene {
-          width: 100% !important;
-          max-width: 100% !important;
-          inline-size: 100% !important;
-          max-inline-size: 100% !important;
-          margin: 24px 0 0 0 !important;
-          box-sizing: border-box !important;
-        }
-
-        html body[data-page="systems"] main > #environment-problem.section-shell > .air-opening-scene > img {
-          display: block !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          height: auto !important;
-          object-fit: cover !important;
-        }
-
         html body[data-page="systems"] main > #climate > .section-heading .lead,
         html body[data-page="systems"] main > #climate > .section-heading .climate-lead-sub,
         html body[data-page="systems"] main > #climate .climate-living-copy p,
@@ -5893,6 +5868,51 @@
         html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel .section-image > img,
         html body[data-page="systems"] main > #environment-problem .air-opening-scene > img,
         html body[data-page="systems"] main > #systems.section-shell .scene-media > img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          object-fit: cover !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy,
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-opening-scene {
+          width: var(--zf-air-final-stage-width) !important;
+          max-width: var(--zf-air-final-stage-width) !important;
+          inline-size: var(--zf-air-final-stage-width) !important;
+          max-inline-size: var(--zf-air-final-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy {
+          display: block !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy > :is(.eyebrow, h1, p, .air-lifestyle-ribbon) {
+          width: var(--zf-air-final-measure) !important;
+          max-width: var(--zf-air-final-measure) !important;
+          margin-left: 0 !important;
+          margin-right: auto !important;
+          text-align: left !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-opening-scene {
+          margin-top: 24px !important;
+          overflow: hidden !important;
+        }
+
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-opening-scene > img {
+          display: block !important;
           width: 100% !important;
           max-width: 100% !important;
           height: auto !important;
@@ -6873,31 +6893,31 @@
             <span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 14h28" /><path d="M14 20c5-3 15-3 20 0" /><path d="M14 27c5-3 15-3 20 0" /><path d="M14 34c5-3 15-3 20 0" /></svg><strong>无风感</strong></span>
             <span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 16h28" /><path d="M14 22h20" /><path d="M17 28h14" /><path d="M20 34h8" /></svg><strong>安静</strong></span>
           </div>
-          <figure class="air-opening-scene">
-            <img src="images/generated-air-scenes-v2/air-v2-opening-clean-living.webp" alt="湖南高层住宅开阔客厅与茶室生活场景，室内清爽干净安静，没有传统空调设备感" loading="lazy" />
-            <aside class="scene-air-phone scene-air-phone-static scene-air-phone-static--opening" data-theme="light" data-align="right" aria-label="住宅空气参数">
-              <span class="scene-air-phone-notch" aria-hidden="true"></span>
-              <div class="scene-air-phone-topbar">
-                <span>Indoor Air</span>
-                <strong>Stable</strong>
-              </div>
-              <div class="scene-air-phone-hero">
-                <span>露点 / RH</span>
-                <strong>15.4℃ · 51%</strong>
-              </div>
-              <div class="scene-air-phone-grid">
-                <div><span>温度</span><strong>24.1℃</strong></div>
-                <div><span>含水量</span><strong>8.9 g/kg</strong></div>
-                <div><span>PM2.5</span><strong>6 μg/m³</strong></div>
-                <div><span>CO₂</span><strong>728 ppm</strong></div>
-                <div><span>VOC</span><strong>0.21 mg/m³</strong></div>
-                <div><span>换气</span><strong>1.1 ACH</strong></div>
-              </div>
-              <p>起居空气以低风感、低噪与露点稳定维持连续舒适。</p>
-              <span class="scene-air-phone-home" aria-hidden="true"></span>
-            </aside>
-          </figure>
         </div>
+        <figure class="air-opening-scene reveal">
+          <img src="images/generated-air-scenes-v2/air-v2-opening-clean-living.webp" alt="湖南高层住宅开阔客厅与茶室生活场景，室内清爽干净安静，没有传统空调设备感" loading="lazy" />
+          <aside class="scene-air-phone scene-air-phone-static scene-air-phone-static--opening" data-theme="light" data-align="right" aria-label="住宅空气参数">
+            <span class="scene-air-phone-notch" aria-hidden="true"></span>
+            <div class="scene-air-phone-topbar">
+              <span>Indoor Air</span>
+              <strong>Stable</strong>
+            </div>
+            <div class="scene-air-phone-hero">
+              <span>露点 / RH</span>
+              <strong>15.4℃ · 51%</strong>
+            </div>
+            <div class="scene-air-phone-grid">
+              <div><span>温度</span><strong>24.1℃</strong></div>
+              <div><span>含水量</span><strong>8.9 g/kg</strong></div>
+              <div><span>PM2.5</span><strong>6 μg/m³</strong></div>
+              <div><span>CO₂</span><strong>728 ppm</strong></div>
+              <div><span>VOC</span><strong>0.21 mg/m³</strong></div>
+              <div><span>换气</span><strong>1.1 ACH</strong></div>
+            </div>
+            <p>起居空气以低风感、低噪与露点稳定维持连续舒适。</p>
+            <span class="scene-air-phone-home" aria-hidden="true"></span>
+          </aside>
+        </figure>
       </section>
 
       <section class="system-cognition-logic section-shell image-entry-panel environment-panel logic-panel" id="environment-logic">
@@ -8448,7 +8468,7 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260710-desktop-inset-v1" defer></script>
+    <script src="script.js?v=20260710-air-hard-reset-v2" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");
