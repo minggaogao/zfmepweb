@@ -74,7 +74,8 @@ html body[data-page="philosophy"] main section#dimensions.section-shell .dimensi
 
 /* 2026-07-06 · Philosophy full-width rhythm lock: no active desktop shrink, with calmer text-to-image spacing. */
 html body[data-page="philosophy"] {
-  --zf-philosophy-full-width: calc(100vw - 64px);
+  --zf-philosophy-full-width: calc(100vw - 72px);
+  --zf-philosophy-text-width: min(1328px, calc(100vw - 112px));
   --zf-philosophy-first-gap: clamp(30px, 4vw, 56px);
   --zf-philosophy-section-gap: clamp(72px, 6vw, 104px);
   --zf-philosophy-copy-media-gap: clamp(28px, 2.8vw, 42px);
@@ -141,6 +142,22 @@ html body[data-page="philosophy"] main #home :is(
   gap: var(--zf-philosophy-copy-gap) !important;
   margin: 0 !important;
   padding: 0 !important;
+  justify-items: start !important;
+  align-content: start !important;
+  text-align: left !important;
+}
+
+html body[data-page="philosophy"] main #home :is(
+  .home-copy,
+  .home-hero-copy,
+  .home-sanctuary-copy
+) > :is(.home-eyebrow, h1, h2, p, .home-note, .home-subtitle, .home-quiet-line) {
+  width: var(--zf-philosophy-text-width) !important;
+  max-width: var(--zf-philosophy-text-width) !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+  justify-self: start !important;
 }
 
 html body[data-page="philosophy"] main #home :is(
@@ -191,6 +208,8 @@ html body[data-page="philosophy"] main #home .home-philosophy-closing > :is(
   span,
   p
 ) {
+  width: var(--zf-philosophy-text-width) !important;
+  max-width: var(--zf-philosophy-text-width) !important;
   margin-left: 0 !important;
   margin-right: auto !important;
   text-align: left !important;
@@ -217,6 +236,7 @@ html body[data-page="philosophy"] main #home :is(
 @media (max-width: 900px) {
   html body[data-page="philosophy"] {
     --zf-philosophy-full-width: calc(100vw - 36px);
+    --zf-philosophy-text-width: 100%;
     --zf-philosophy-first-gap: 24px;
     --zf-philosophy-section-gap: 42px;
     --zf-philosophy-copy-media-gap: 22px;
