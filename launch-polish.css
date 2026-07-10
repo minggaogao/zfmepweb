@@ -26503,60 +26503,11 @@ html body[data-page="basement-system"] #basement-definition .basement-context-me
   object-position: center center !important;
 }
 
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label {
-  position: absolute !important;
-  z-index: 3 !important;
-  display: grid !important;
-  gap: 2px !important;
-  min-width: 132px !important;
-  max-width: 180px !important;
-  padding: 0 !important;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label strong {
-  font-size: clamp(13px, 0.92vw, 15px) !important;
-  line-height: 1.45 !important;
-  color: #fdf8f0 !important;
-  font-weight: 600 !important;
-  text-shadow:
-    0 1px 2px rgba(17, 24, 22, 0.82),
-    0 0 12px rgba(17, 24, 22, 0.28) !important;
-}
-
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label em {
-  font-size: clamp(11px, 0.8vw, 13px) !important;
-  line-height: 1.45 !important;
-  color: rgba(253, 248, 240, 0.88) !important;
-  font-style: normal !important;
-  letter-spacing: 0.04em !important;
-  text-shadow:
-    0 1px 2px rgba(17, 24, 22, 0.76),
-    0 0 10px rgba(17, 24, 22, 0.24) !important;
-}
-
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--waterproof { left: 1.9% !important; top: 28.5% !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--drainage { left: 1.8% !important; top: 46.5% !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--barrier { left: 4.1% !important; top: 62.5% !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--thermal { right: 3.4% !important; top: 9.6% !important; text-align: right !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--lightwell { left: 26.4% !important; top: 17.8% !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--airpath { right: 1.8% !important; top: 41.6% !important; text-align: right !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--lowdrain { left: 45.2% !important; bottom: 16.6% !important; }
-html body[data-page="basement-system"] #basement-definition .basement-diagram-label--sump { right: 3.3% !important; bottom: 6.2% !important; text-align: right !important; }
-
 @media (max-width: 900px) {
   html body[data-page="basement-system"] #basement-definition .basement-context-media--ground {
     width: 100% !important;
     max-width: 100% !important;
     border-radius: 22px !important;
-  }
-
-  html body[data-page="basement-system"] #basement-definition .basement-diagram-label {
-    min-width: 96px !important;
-    max-width: 126px !important;
-    padding: 8px 9px !important;
   }
 }
 
