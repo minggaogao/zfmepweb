@@ -5781,8 +5781,8 @@
           min-height: 0 !important;
           height: auto !important;
           overflow: visible !important;
-          width: min(1680px, calc(100vw - 80px)) !important;
-          max-width: min(1680px, calc(100vw - 80px)) !important;
+          width: min(1680px, calc(100vw - 96px)) !important;
+          max-width: min(1680px, calc(100vw - 96px)) !important;
           margin-left: auto !important;
           margin-right: auto !important;
         }
@@ -5791,6 +5791,7 @@
           width: 100% !important;
           height: auto !important;
           min-height: 0 !important;
+          max-height: none !important;
           object-fit: contain !important;
           object-position: center center !important;
           display: block !important;
@@ -6578,8 +6579,8 @@
             <div class="water-service-item"><span class="water-service-icon" style="--service-accent:#7f7cda;--service-accent-2:#47459f;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 19h8" /><path d="M8 11h8" /><path d="M12 5v10" /><path d="M15.5 14.5 12 18l-3.5-3.5" /><rect x="5" y="3" width="14" height="18" rx="2" /></svg></span><strong>污水提升</strong></div>
             <div class="water-service-item"><span class="water-service-icon" style="--service-accent:#5f8aef;--service-accent-2:#2c57b6;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18h12" /><path d="M8 18v-5" /><path d="M16 18v-8" /><path d="M12 18V9" /><path d="M9 8.5 12 5l3 3.5" /></svg></span><strong>雨水提升</strong></div>
           </div>
-          <figure class="water-context-media water-context-media--diagram reveal">
-            <img src="images/water-philosophy-european-diagram-master.png" alt="高端别墅给排水系统剖面主图，展示市政入户、前置过滤、中央净水、软水、增压、热水回水、排水立管、通气立管与低位污水提升的系统秩序" loading="lazy" />
+          <figure class="water-context-media water-context-media--diagram reveal" style="aspect-ratio:auto;min-height:0;height:auto;overflow:visible;width:min(1680px,calc(100vw - 96px));max-width:min(1680px,calc(100vw - 96px));margin-left:auto;margin-right:auto;">
+            <img src="images/water-philosophy-european-diagram-display.png" alt="高端别墅给排水系统剖面主图，展示市政入户、前置过滤、中央净水、软水、增压、热水回水、排水立管、通气立管与低位污水提升的系统秩序" loading="lazy" style="width:100%;height:auto;min-height:0;max-height:none;object-fit:contain;object-position:center center;display:block;" />
           </figure>
           <div class="water-lifestyle-ribbon" aria-label="住宅水系统生活场景">
             <span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8s10 11 10 19a10 10 0 0 1-20 0C14 19 24 8 24 8Z" /><path d="M19 29c1 3 3 4.5 6 4.5" /></svg><strong>饮水</strong></span>
@@ -8848,7 +8849,7 @@
             "padding-right": "0",
             "box-sizing": "border-box"
           });
-          applyStyles([waterContextMedia, ...waterBridges, ...waterBridgeMedia], {
+          applyStyles([waterBridges, ...waterBridgeMedia].flat(), {
             "width": "calc(100vw - 48px)",
             "max-width": "calc(100vw - 48px)",
             "margin-left": "auto",
@@ -8859,19 +8860,45 @@
             "min-height": "clamp(760px, 52vw, 980px)",
             "border-radius": "0"
           });
-          applyStyles([waterContextMedia, ...waterBridges], {
+          applyStyles([waterBridges].flat(), {
             "position": "relative",
             "left": "auto",
             "transform": "none",
             "margin-left": "auto",
             "margin-right": "auto"
           });
-          applyStyles([waterContextImg, ...waterBridgeImages], {
+          applyStyles([waterBridgeImages].flat(), {
             "width": "100%",
             "max-width": "100%",
             "min-height": "clamp(760px, 52vw, 980px)",
             "height": "100%",
             "object-fit": "cover"
+          });
+          applyStyles([waterContextMedia], {
+            "width": "min(1680px, calc(100vw - 96px))",
+            "max-width": "min(1680px, calc(100vw - 96px))",
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box",
+            "min-height": "0",
+            "height": "auto",
+            "aspect-ratio": "auto",
+            "overflow": "visible",
+            "border-radius": "0",
+            "position": "relative",
+            "left": "auto",
+            "transform": "none"
+          });
+          applyStyles([waterContextImg], {
+            "width": "100%",
+            "max-width": "100%",
+            "min-height": "0",
+            "height": "auto",
+            "max-height": "none",
+            "object-fit": "contain",
+            "object-position": "center center"
           });
           applyStyles(waterBridgeCaptions, {
             "width": waterCopyWidth,
