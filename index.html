@@ -603,16 +603,28 @@
       }
     </style>
     <style id="zf-climate-service-matrix-v1">
+      html body[data-page="systems"] main > #climate > .section-heading,
+      html body[data-page="climate"] main > #climate > .section-heading {
+        width: calc(100vw - 72px) !important;
+        max-width: calc(100vw - 72px) !important;
+        margin: 0 0 clamp(22px, 2.1vw, 30px) calc(50% - 50vw + 36px) !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        order: 1 !important;
+      }
+
       html body[data-page="systems"] main > #climate .climate-service-matrix,
       html body[data-page="climate"] main > #climate .climate-service-matrix {
         width: calc(100vw - 72px) !important;
         max-width: calc(100vw - 72px) !important;
         margin: clamp(26px, 2.4vw, 34px) 0 clamp(34px, 2.8vw, 40px) calc(50% - 50vw + 36px) !important;
         display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
         column-gap: clamp(18px, 1.45vw, 24px) !important;
         row-gap: clamp(12px, 1vw, 16px) !important;
         box-sizing: border-box !important;
+        order: 2 !important;
       }
 
       html body[data-page="systems"] main > #climate .climate-service-item,
@@ -682,6 +694,13 @@
       }
 
       @media (max-width: 1180px) {
+        html body[data-page="systems"] main > #climate > .section-heading,
+        html body[data-page="climate"] main > #climate > .section-heading {
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          margin-left: calc(50% - 50vw + 24px) !important;
+        }
+
         html body[data-page="systems"] main > #climate .climate-service-matrix,
         html body[data-page="climate"] main > #climate .climate-service-matrix {
           width: calc(100vw - 48px) !important;
@@ -692,6 +711,13 @@
       }
 
       @media (max-width: 760px) {
+        html body[data-page="systems"] main > #climate > .section-heading,
+        html body[data-page="climate"] main > #climate > .section-heading {
+          width: calc(100vw - 36px) !important;
+          max-width: calc(100vw - 36px) !important;
+          margin-left: calc(50% - 50vw + 18px) !important;
+        }
+
         html body[data-page="systems"] main > #climate .climate-service-matrix,
         html body[data-page="climate"] main > #climate .climate-service-matrix {
           width: calc(100vw - 36px) !important;
@@ -724,6 +750,14 @@
           max-width: none !important;
           margin-left: calc(50% - 50vw) !important;
           margin-right: calc(50% - 50vw) !important;
+        }
+
+        html body[data-page="systems"] main > section#climate.climate.section-shell > .section-heading,
+        html body[data-page="climate"] main > section#climate.climate.section-shell > .section-heading {
+          width: calc(100vw - 72px) !important;
+          max-width: calc(100vw - 72px) !important;
+          margin-left: calc(50% - 50vw + 36px) !important;
+          margin-right: 0 !important;
         }
 
         html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-stage,
@@ -4745,6 +4779,13 @@
         text-align: left !important;
       }
 
+      html[data-page="systems"] body main > #climate > .section-heading {
+        width: calc(100vw - 72px) !important;
+        max-width: calc(100vw - 72px) !important;
+        margin-left: calc(50% - 50vw + 36px) !important;
+        margin-right: 0 !important;
+      }
+
       html[data-page="systems"] body main > #climate :is(h1, h2, h3),
       html[data-page="basement-system"] body main > #basement-definition :is(h1, h2, h3),
       html[data-page="water-supply-drainage"] body main > #water-problem :is(h1, h2, h3),
@@ -5372,10 +5413,10 @@
         }
 
         html body[data-page="systems"] main > #climate {
-          width: var(--zf-systems-copy-width) !important;
-          max-width: var(--zf-systems-copy-width) !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
+          width: 100vw !important;
+          max-width: none !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
         }
 
         html body[data-page="systems"] main > #climate :is(.climate-stage, .climate-living-scene, .quiet-system),
@@ -6041,7 +6082,7 @@
 
       <!-- Locked section: #dimensions. Do not modify content/layout unless explicitly requested. -->
       <section class="dimensions section-shell" id="dimensions" data-section-locked="true" data-lock-note="User approved and frozen">
-        <div class="section-heading reveal">
+        <div class="section-heading reveal" style="width:calc(100vw - 72px);max-width:calc(100vw - 72px);margin:0 0 clamp(22px, 2.1vw, 30px) calc(50% - 50vw + 36px);padding:0;box-sizing:border-box;text-align:left;">
           <p class="eyebrow">Residential MEP Four Dimensions</p>
           <h2>住宅 MEP 四维度</h2>
           <p class="lead">MEP 即 Mechanical / Electrical / Plumbing，指住宅中的暖通、给排水、强弱电等机电系统。<br />而间接理解，就是我们熟知的住宅空气、水、光、声，是衡量住宅品质的四个重要维度。</p>
