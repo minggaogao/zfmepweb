@@ -5777,17 +5777,19 @@
     <style id="zf-water-diagram-crop-fix-v1">
       @media (min-width: 901px) {
         html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media.water-context-media--diagram {
-          aspect-ratio: 1840 / 910 !important;
+          aspect-ratio: auto !important;
           min-height: 0 !important;
-          overflow: hidden !important;
+          height: auto !important;
+          overflow: visible !important;
         }
 
         html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media.water-context-media--diagram > img {
           width: 100% !important;
-          height: 100% !important;
+          height: auto !important;
           min-height: 0 !important;
-          object-fit: cover !important;
+          object-fit: contain !important;
           object-position: center center !important;
+          display: block !important;
         }
       }
     </style>
@@ -6573,15 +6575,7 @@
             <div class="water-service-item"><span class="water-service-icon" style="--service-accent:#5f8aef;--service-accent-2:#2c57b6;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18h12" /><path d="M8 18v-5" /><path d="M16 18v-8" /><path d="M12 18V9" /><path d="M9 8.5 12 5l3 3.5" /></svg></span><strong>雨水提升</strong></div>
           </div>
           <figure class="water-context-media water-context-media--diagram reveal">
-            <img src="images/water-philosophy-european-diagram-v3.webp" alt="高端别墅给排水系统剖面主图，展示市政入户、前置过滤、中央净水、软水、增压、热水回水、排水立管、通气立管与低位污水提升的系统秩序" loading="lazy" />
-            <span class="water-diagram-label water-diagram-label--inlet"><strong>入户与前置</strong><em>Inlet / Pre-Filter</em></span>
-            <span class="water-diagram-label water-diagram-label--treatment"><strong>中央处理</strong><em>Central Treatment</em></span>
-            <span class="water-diagram-label water-diagram-label--booster"><strong>稳压增压</strong><em>Booster Set</em></span>
-            <span class="water-diagram-label water-diagram-label--hotwater"><strong>热水与回水</strong><em>Hot Water Loop</em></span>
-            <span class="water-diagram-label water-diagram-label--fixtures"><strong>末端用水</strong><em>Fixtures</em></span>
-            <span class="water-diagram-label water-diagram-label--samefloor"><strong>同层排水</strong><em>Same-Floor Drainage</em></span>
-            <span class="water-diagram-label water-diagram-label--stack"><strong>排水 / 通气立管</strong><em>Drain / Vent Stack</em></span>
-            <span class="water-diagram-label water-diagram-label--lift"><strong>低位提升</strong><em>Sewage Lift</em></span>
+            <img src="images/water-philosophy-european-diagram-v4.webp" alt="高端别墅给排水系统剖面主图，展示市政入户、前置过滤、中央净水、软水、增压、热水回水、排水立管、通气立管与低位污水提升的系统秩序" loading="lazy" />
           </figure>
           <div class="water-lifestyle-ribbon" aria-label="住宅水系统生活场景">
             <span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8s10 11 10 19a10 10 0 0 1-20 0C14 19 24 8 24 8Z" /><path d="M19 29c1 3 3 4.5 6 4.5" /></svg><strong>饮水</strong></span>
