@@ -5774,6 +5774,23 @@
         }
       }
     </style>
+    <style id="zf-water-diagram-crop-fix-v1">
+      @media (min-width: 901px) {
+        html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media.water-context-media--diagram {
+          aspect-ratio: 1840 / 910 !important;
+          min-height: 0 !important;
+          overflow: hidden !important;
+        }
+
+        html body[data-page="water-supply-drainage"] main > #water-problem > .water-system-definition-copy > .water-context-media.water-context-media--diagram > img {
+          width: 100% !important;
+          height: 100% !important;
+          min-height: 0 !important;
+          object-fit: cover !important;
+          object-position: center center !important;
+        }
+      }
+    </style>
     <style id="zf-air-page-final-lock-v3">
       @media (min-width: 1280px) {
         html body[data-page="systems"] {
