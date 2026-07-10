@@ -5769,8 +5769,8 @@
     <style id="zf-air-page-final-lock-v2">
       @media (min-width: 1280px) {
         html body[data-page="systems"] {
-          --zf-air-final-stage-width: min(1560px, calc(100vw - 48px));
-          --zf-air-final-copy-width: min(1280px, calc(100vw - 48px));
+          --zf-air-final-stage-width: calc(100vw - 48px);
+          --zf-air-final-copy-width: calc(100vw - 48px);
         }
 
         html body[data-page="systems"] main > #climate,
@@ -5778,8 +5778,8 @@
         html body[data-page="systems"] main > #environment-logic,
         html body[data-page="systems"] main > #systems.section-shell,
         html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel {
-          width: var(--zf-air-final-stage-width) !important;
-          max-width: var(--zf-air-final-stage-width) !important;
+          width: 100% !important;
+          max-width: 100% !important;
           margin-left: auto !important;
           margin-right: auto !important;
           box-sizing: border-box !important;
@@ -5802,6 +5802,35 @@
           padding-right: 0 !important;
           box-sizing: border-box !important;
           text-align: left !important;
+        }
+
+        html body[data-page="systems"] main > section#climate.climate.section-shell > .section-heading,
+        html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-service-matrix,
+        html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-stage,
+        html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-living-scene,
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel,
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-system-definition-copy,
+        html body[data-page="systems"] main > #environment-problem.section-shell > .air-opening-scene,
+        html body[data-page="systems"] main > #systems.section-shell .scene-content,
+        html body[data-page="systems"] main > #systems.section-shell .scene-media,
+        html body[data-page="systems"] main > #systems.section-shell .systems-closing {
+          width: auto !important;
+          max-width: none !important;
+          inline-size: auto !important;
+          max-inline-size: none !important;
+          margin-left: 24px !important;
+          margin-right: 24px !important;
+        }
+
+        html body[data-page="systems"] main > #climate > .section-heading .lead,
+        html body[data-page="systems"] main > #climate > .section-heading .climate-lead-sub,
+        html body[data-page="systems"] main > #climate .climate-living-copy p,
+        html body[data-page="systems"] main > #environment-problem .air-system-definition-copy p:not(.eyebrow),
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel .section-copy p:not(.eyebrow),
+        html body[data-page="systems"] main > #systems.section-shell .scene-content p,
+        html body[data-page="systems"] main > #systems.section-shell .scene-content blockquote,
+        html body[data-page="systems"] main > #systems.section-shell .systems-closing p {
+          max-width: 52em !important;
         }
 
         html body[data-page="systems"] main > #climate > .section-heading :is(.eyebrow, h2, .lead, .climate-lead-sub),
@@ -8416,6 +8445,7 @@
         const desktopCopyKeys = ["width", "max-width", "margin-left", "margin-right", "padding-left", "padding-right", "box-sizing", "justify-self", "justify-content"];
 
         const runDesktopVisualLock = () => {
+          const currentPage = document.documentElement.dataset.page || document.body.dataset.page || "";
           const desktopStageWidth = "min(1560px, calc(100% - 24px))";
           const desktopCopyWidth = "min(1280px, calc(100% - 112px))";
           const desktopCopyPad = "clamp(24px, 2vw, 36px)";
@@ -8562,9 +8592,39 @@
             ...deliverySceneImages
           ];
 
+          const systemsTargets = [
+            climateSection,
+            climateHeading,
+            climateStage,
+            climateStageImg,
+            climateLivingScene,
+            climateLivingCopy,
+            climateLivingMedia,
+            climateLivingImg,
+            environmentProblem,
+            airProblemCopy,
+            airOpeningScene,
+            environmentLogic,
+            quietSystem,
+            quietSystemMedia,
+            quietSystemImg,
+            systemsSection,
+            systemsGrid,
+            systemsClosing,
+            ...systemSceneCards,
+            ...systemSceneContent,
+            ...systemSceneMedia
+          ];
+
           if (!desktopQuery.matches) {
             clearStyles([homeIndexStrip, climateSection, ...desktopCopyTargets], desktopCopyKeys);
             clearStyles(targets, fullBleedKeys);
+            return;
+          }
+
+          if (currentPage === "systems") {
+            clearStyles([climateSection, climateHeading, airProblemCopy, climateLivingCopy, quietSystem?.querySelector(".section-copy"), systemsClosing, ...systemSceneContent], desktopCopyKeys);
+            clearStyles(systemsTargets, fullBleedKeys);
             return;
           }
 
