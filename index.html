@@ -5766,6 +5766,85 @@
         }
       }
     </style>
+    <style id="zf-air-page-final-lock-v2">
+      @media (min-width: 1280px) {
+        html body[data-page="systems"] {
+          --zf-air-final-stage-width: min(1560px, calc(100vw - 48px));
+          --zf-air-final-copy-width: min(1280px, calc(100vw - 48px));
+        }
+
+        html body[data-page="systems"] main > #climate,
+        html body[data-page="systems"] main > #environment-problem,
+        html body[data-page="systems"] main > #environment-logic,
+        html body[data-page="systems"] main > #systems.section-shell,
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel {
+          width: var(--zf-air-final-stage-width) !important;
+          max-width: var(--zf-air-final-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="systems"] main > #climate > .section-heading,
+        html body[data-page="systems"] main > #climate > .climate-service-matrix,
+        html body[data-page="systems"] main > #climate .climate-living-copy,
+        html body[data-page="systems"] main > #environment-problem .air-system-definition-copy,
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel .section-copy,
+        html body[data-page="systems"] main > #systems.section-shell .scene-content,
+        html body[data-page="systems"] main > #systems.section-shell .systems-closing {
+          width: var(--zf-air-final-copy-width) !important;
+          max-width: var(--zf-air-final-copy-width) !important;
+          inline-size: var(--zf-air-final-copy-width) !important;
+          max-inline-size: var(--zf-air-final-copy-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          box-sizing: border-box !important;
+          text-align: left !important;
+        }
+
+        html body[data-page="systems"] main > #climate > .section-heading :is(.eyebrow, h2, .lead, .climate-lead-sub),
+        html body[data-page="systems"] main > #climate .climate-living-copy > :is(p, h3),
+        html body[data-page="systems"] main > #environment-problem .air-system-definition-copy > :is(.eyebrow, h1, p),
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel .section-copy > :is(.eyebrow, h2, p, blockquote),
+        html body[data-page="systems"] main > #systems.section-shell .scene-content > :is(.eyebrow, h3, p, blockquote),
+        html body[data-page="systems"] main > #systems.section-shell .systems-closing > :is(p, h3) {
+          margin-left: 0 !important;
+          margin-right: auto !important;
+          text-align: left !important;
+        }
+
+        html body[data-page="systems"] main > #climate .climate-stage,
+        html body[data-page="systems"] main > #climate .climate-living-scene,
+        html body[data-page="systems"] main > #climate .climate-map,
+        html body[data-page="systems"] main > #climate .climate-living-media,
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel .section-image,
+        html body[data-page="systems"] main > #environment-problem .air-opening-scene,
+        html body[data-page="systems"] main > #systems.section-shell .system-grid,
+        html body[data-page="systems"] main > #systems.section-shell .system-scene-card,
+        html body[data-page="systems"] main > #systems.section-shell .scene-media {
+          width: var(--zf-air-final-stage-width) !important;
+          max-width: var(--zf-air-final-stage-width) !important;
+          inline-size: var(--zf-air-final-stage-width) !important;
+          max-inline-size: var(--zf-air-final-stage-width) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+        }
+
+        html body[data-page="systems"] main > #climate .climate-map > img,
+        html body[data-page="systems"] main > #climate .climate-living-media > img,
+        html body[data-page="systems"] main > section.quiet-system.section-shell.cinematic-panel .section-image > img,
+        html body[data-page="systems"] main > #environment-problem .air-opening-scene > img,
+        html body[data-page="systems"] main > #systems.section-shell .scene-media > img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          object-fit: cover !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <script>
@@ -6732,18 +6811,6 @@
           <p class="eyebrow">Residential Air System</p>
           <h1><span>好空气，是家里一直舒服的底色。</span></h1>
           <p class="air-system-definition-lead">当高湿与高露点被真正回应之后，空气系统才开始进入生活本身。它不是只把温度压下去，而是把湿气、闷感、异味、噪声和直吹感一起收住，让室内慢慢回到清爽、安静、呼吸自然的状态。</p>
-          <div class="air-service-matrix reveal" aria-label="住宅空气系统业务范围">
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#f2994a;--service-accent-2:#b9681a;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v8" /><path d="M8 8.5c1.3-1.8 2.7-2.7 4-2.7s2.7.9 4 2.7" /><path d="M7 20h10" /><path d="M9 16h6" /><path d="M18 8c1.3 1 2 2.2 2 3.7" /></svg></span><strong>制热供热</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#27b0c9;--service-accent-2:#0d7085;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h7" /><path d="M11 8c1.7 1.2 2.6 2.6 2.6 4.2S12.7 15.2 11 16.4" /><path d="M16 6.5c2 1.6 3 3.4 3 5.5s-1 3.9-3 5.5" /></svg></span><strong>通风换气</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#2ea7aa;--service-accent-2:#15606c;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s4.5 5 4.5 8.7A4.5 4.5 0 1 1 7.5 11.7C7.5 8 12 3 12 3Z" /><path d="M5 18h14" /><path d="M8 21h8" /></svg></span><strong>除湿控制</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#ff8570;--service-accent-2:#c14931;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v6l3 2" /><circle cx="12" cy="12" r="7" /><path d="M12 2v2" /></svg></span><strong>恒温系统</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#5f8aef;--service-accent-2:#2c57b6;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s4 4.7 4 8a4 4 0 1 1-8 0c0-3.3 4-8 4-8Z" /><path d="M16.5 5.5c1.8.6 3 2 3 3.9" /><path d="M7 19h10" /></svg></span><strong>恒湿系统</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#7a86f0;--service-accent-2:#4544b1;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M8 8h8" /><path d="M8 16h8" /><path d="M4 9v6" /><path d="M20 9v6" /></svg></span><strong>恒洁系统</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#70895d;--service-accent-2:#3f5d33;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 15V9" /><path d="M11 17V7" /><path d="M15 16v-8" /><path d="M19 13v-2" /><path d="M4 20h16" /></svg></span><strong>恒静系统</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#3f9589;--service-accent-2:#205d57;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14c2.5-4 5.5-6 8-6s5.5 2 8 6" /><path d="M4 17h16" /><path d="M7 20h10" /></svg></span><strong>地暖系统</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#3fa6d7;--service-accent-2:#1a6589;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14v10H5z" /><path d="M9 17v2" /><path d="M15 17v2" /><path d="M8 11h8" /></svg></span><strong>空调系统</strong></div>
-            <div class="air-service-item"><span class="air-service-icon" style="--service-accent:#7f7cda;--service-accent-2:#47459f;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17c2.2-5.2 4.9-8.7 8.2-10.5" /><path d="M9 7c2.2.3 4 1.2 5.4 2.8" /><path d="M5 19h14" /></svg></span><strong>五恒系统</strong></div>
-          </div>
           <div class="air-lifestyle-ribbon" aria-label="住宅空气系统生活感受">
             <span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 34V16l12-6 12 6v18" /><path d="M17 21h14M17 27h14" /></svg><strong>清爽</strong></span>
             <span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 9s9 11 9 18a9 9 0 0 1-18 0C15 20 24 9 24 9Z" /><path d="M19 31h10" /></svg><strong>干爽</strong></span>
@@ -8354,9 +8421,9 @@
           const desktopCopyPad = "clamp(24px, 2vw, 36px)";
           const desktopScenePad = "clamp(28px, 2.4vw, 40px)";
           const desktopStripWidth = "calc(100vw - 24px)";
-          const systemsStageWidth = "calc(100vw - 24px)";
-          const systemsSceneWidth = "min(1560px, calc(100vw - 88px))";
-          const systemsCopyWidth = "min(1280px, calc(100vw - 160px))";
+          const systemsStageWidth = "min(1560px, calc(100vw - 48px))";
+          const systemsSceneWidth = "min(1560px, calc(100vw - 48px))";
+          const systemsCopyWidth = "min(1280px, calc(100vw - 48px))";
           const waterStageWidth = "calc(100vw - 24px)";
           const waterCopyWidth = "min(1280px, calc(100vw - 160px))";
           const waterInsetPad = "12px";
@@ -8379,6 +8446,7 @@
           const climateStage = document.querySelector("#climate .climate-stage");
           const climateStageImg = climateStage?.querySelector(".climate-map > img");
           const climateLivingScene = document.querySelector("#climate .climate-living-scene");
+          const climateLivingCopy = climateLivingScene?.querySelector(".climate-living-copy");
           const climateLivingMedia = climateLivingScene?.querySelector(".climate-living-media");
           const climateLivingImg = climateLivingMedia?.querySelector("img");
           const environmentProblem = document.querySelector("#environment-problem");
@@ -8501,7 +8569,7 @@
           }
 
           applyStyles([climateSection], {
-            "justify-content": "center"
+            "justify-content": "stretch"
           });
           applyStyles([homeIndexStrip], {
             "width": desktopStripWidth,
@@ -8533,6 +8601,13 @@
             "box-sizing": "border-box"
           });
           applyStyles([climateHeading], {
+            "width": systemsStageWidth,
+            "max-width": systemsStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box",
             "justify-self": "stretch"
           });
 
@@ -8616,8 +8691,18 @@
             "box-sizing": "border-box"
           });
           applyStyles([systemsClosing, ...systemSceneContent], {
-            "width": systemsCopyWidth,
-            "max-width": systemsCopyWidth,
+            "width": systemsStageWidth,
+            "max-width": systemsStageWidth,
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "padding-left": "0",
+            "padding-right": "0",
+            "box-sizing": "border-box"
+          });
+
+          applyStyles([airProblemCopy, climateLivingCopy, quietSystem?.querySelector(".section-copy")].filter(Boolean), {
+            "width": systemsStageWidth,
+            "max-width": systemsStageWidth,
             "margin-left": "auto",
             "margin-right": "auto",
             "padding-left": "0",
