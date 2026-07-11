@@ -9060,24 +9060,39 @@
           });
         };
 
-        const scheduleDesktopVisualLock = () => {
-          const delays = [0, 120, 480, 900, 1600, 2600];
+        let desktopVisualLockTimers = [];
+        const clearDesktopVisualLockTimers = () => {
+          desktopVisualLockTimers.forEach((timer) => window.clearTimeout(timer));
+          desktopVisualLockTimers = [];
+        };
+
+        const scheduleDesktopVisualLock = (mode = "default") => {
+          clearDesktopVisualLockTimers();
+          const delays =
+            mode === "route"
+              ? [0, 140]
+              : mode === "resize"
+                ? [0, 180]
+                : [0, 120, 420];
           delays.forEach((delay) => {
-            window.setTimeout(() => requestAnimationFrame(runDesktopVisualLock), delay);
+            const timer = window.setTimeout(() => {
+              requestAnimationFrame(runDesktopVisualLock);
+            }, delay);
+            desktopVisualLockTimers.push(timer);
           });
         };
 
         if (document.readyState !== "loading") {
-          scheduleDesktopVisualLock();
+          scheduleDesktopVisualLock("default");
         } else {
-          document.addEventListener("DOMContentLoaded", scheduleDesktopVisualLock, { once: true });
+          document.addEventListener("DOMContentLoaded", () => scheduleDesktopVisualLock("default"), { once: true });
         }
-        window.addEventListener("load", scheduleDesktopVisualLock);
-        window.addEventListener("resize", scheduleDesktopVisualLock);
-        window.addEventListener("hashchange", scheduleDesktopVisualLock);
+        window.addEventListener("load", () => scheduleDesktopVisualLock("default"));
+        window.addEventListener("resize", () => scheduleDesktopVisualLock("resize"));
+        window.addEventListener("hashchange", () => scheduleDesktopVisualLock("route"));
         document.addEventListener("click", (event) => {
-          if (event.target.closest("[data-water-sim-launch], .water-system-sim-tab, a[href^='#']")) {
-            scheduleDesktopVisualLock();
+          if (event.target.closest("[data-water-sim-launch], .water-system-sim-tab")) {
+            scheduleDesktopVisualLock("default");
           }
         });
       })();

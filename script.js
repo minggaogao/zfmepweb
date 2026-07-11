@@ -5198,9 +5198,19 @@ initAccessForms();
 applyGlobalTypographyLock();
 
 $$("[data-temp], [data-rh], [data-dew-input]").forEach((input) => input.addEventListener("input", updateDewTool));
-window.addEventListener("resize", () => window.setTimeout(applyGlobalTypographyLock, 60));
-window.addEventListener("hashchange", () => window.setTimeout(applyGlobalTypographyLock, 60));
+let typographyLockTimer = null;
+const scheduleTypographyLock = (delay = 60) => {
+  if (typographyLockTimer) {
+    window.clearTimeout(typographyLockTimer);
+  }
+  typographyLockTimer = window.setTimeout(() => {
+    typographyLockTimer = null;
+    requestAnimationFrame(applyGlobalTypographyLock);
+  }, delay);
+};
+
+window.addEventListener("resize", () => scheduleTypographyLock(80));
+window.addEventListener("hashchange", () => scheduleTypographyLock(40));
 window.addEventListener("load", () => {
-  window.setTimeout(applyGlobalTypographyLock, 120);
-  window.setTimeout(applyGlobalTypographyLock, 420);
+  scheduleTypographyLock(120);
 }, { once: true });
