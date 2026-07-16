@@ -2681,6 +2681,20 @@ p {
   min-height: 46px;
 }
 
+.air-system-actions {
+  align-items: flex-start;
+  margin-top: 18px;
+}
+
+.air-system-actions-note {
+  display: block;
+  max-width: 42rem;
+  color: rgba(31, 72, 67, 0.66);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
 .route-inline-form {
   margin-top: 8px;
 }
@@ -2692,6 +2706,289 @@ p {
 
 .route-inline-form .access-card p {
   padding: 0;
+}
+
+.five-constant-page {
+  background:
+    radial-gradient(circle at top left, rgba(196, 170, 108, 0.12), transparent 24%),
+    linear-gradient(180deg, #fcf8f1 0%, #f6f1e7 22%, #f4efe8 100%);
+}
+
+.five-section {
+  padding: 0 24px 28px;
+}
+
+.five-section-shell {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: clamp(30px, 4vw, 48px);
+  border: 1px solid rgba(18, 53, 47, 0.09);
+  border-radius: 30px;
+  background: rgba(255, 252, 246, 0.76);
+  box-shadow: 0 24px 64px rgba(18, 53, 47, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+.five-section.accent .five-section-shell {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(184, 155, 94, 0.1), transparent 30%),
+    rgba(255, 251, 244, 0.92);
+}
+
+.five-section.deep .five-section-shell {
+  background:
+    linear-gradient(135deg, rgba(21, 51, 49, 0.96), rgba(24, 67, 62, 0.94)),
+    rgba(21, 51, 49, 0.96);
+  border-color: rgba(184, 155, 94, 0.18);
+  box-shadow: 0 34px 86px rgba(18, 53, 47, 0.16);
+}
+
+.five-section.deep .five-section-head h2,
+.five-section.deep .five-section-head p,
+.five-section.deep .five-card h3,
+.five-section.deep .five-card p,
+.five-section.deep .five-card-tag,
+.five-section.deep .five-split-callout strong,
+.five-section.deep .five-split-callout span {
+  color: rgba(248, 245, 239, 0.95);
+}
+
+.five-section.deep .five-card {
+  border-color: rgba(196, 170, 108, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.five-section.final {
+  padding-bottom: clamp(64px, 8vw, 100px);
+}
+
+.five-section-head {
+  max-width: 860px;
+  margin-bottom: 26px;
+}
+
+.five-section-head h2 {
+  margin: 0;
+  color: var(--deep);
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 3.6vw, 54px);
+  font-weight: 500;
+  line-height: 1.14;
+}
+
+.five-section-head p {
+  margin: 14px 0 0;
+  color: #514941;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.five-band-grid,
+.five-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.five-band-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.five-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.five-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.five-grid.five-outcomes {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.five-band-card,
+.five-card,
+.five-step {
+  border: 1px solid rgba(18, 53, 47, 0.09);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  padding: 22px 22px 24px;
+}
+
+.five-band-card strong,
+.five-card h3,
+.five-step h3 {
+  color: var(--deep);
+  font-family: var(--font-serif);
+}
+
+.five-band-card strong {
+  display: block;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.five-band-card p,
+.five-card p,
+.five-step p {
+  margin: 10px 0 0;
+  color: #5f564d;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.five-card h3,
+.five-step h3 {
+  margin: 10px 0 0;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+.five-card-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(184, 155, 94, 0.12);
+  color: rgba(138, 111, 55, 0.96);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.five-note {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 20px 22px;
+  border-left: 3px solid rgba(184, 155, 94, 0.7);
+  border-radius: 0 18px 18px 0;
+  background: rgba(255, 251, 244, 0.8);
+}
+
+.five-note strong {
+  color: var(--deep);
+  font-size: 15px;
+  letter-spacing: 0.03em;
+}
+
+.five-note p {
+  margin: 0;
+  color: #514941;
+  line-height: 1.85;
+}
+
+.five-card.climate {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 241, 231, 0.82));
+}
+
+.five-split-callout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.five-split-callout > div {
+  padding: 24px;
+  border: 1px solid rgba(196, 170, 108, 0.18);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.five-split-callout span,
+.five-split-callout strong {
+  display: block;
+}
+
+.five-split-callout span {
+  margin-bottom: 10px;
+  color: rgba(231, 219, 194, 0.82);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.five-split-callout strong {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.five-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.five-step {
+  position: relative;
+  padding-top: 62px;
+}
+
+.five-step span {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  color: rgba(184, 155, 94, 0.95);
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.five-final-actions {
+  margin-top: 22px;
+}
+
+.five-feature-visual,
+.five-scene-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(18, 53, 47, 0.09);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 18px 48px rgba(18, 53, 47, 0.08);
+}
+
+.five-feature-visual {
+  margin-top: 8px;
+}
+
+.five-feature-visual.secondary {
+  margin-top: 22px;
+}
+
+.five-feature-visual img,
+.five-scene-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.five-feature-visual figcaption,
+.five-scene-card figcaption {
+  padding: 16px 18px 18px;
+  color: #544c43;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.five-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.five-visual-grid.three-up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.five-scene-card.compact figcaption {
+  min-height: 72px;
 }
 
 @media (max-width: 720px) {
@@ -2712,6 +3009,17 @@ p {
   .route-media {
     order: 2;
     min-height: clamp(320px, 70vw, 520px);
+  }
+
+  .five-band-grid,
+  .five-grid.three,
+  .five-grid.two,
+  .five-grid.five-outcomes,
+  .five-steps,
+  .five-split-callout,
+  .five-visual-grid,
+  .five-visual-grid.three-up {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2737,6 +3045,21 @@ p {
 
   .route-meta {
     grid-template-columns: 1fr;
+  }
+
+  .five-section {
+    padding-inline: 14px;
+    padding-bottom: 18px;
+  }
+
+  .five-section-shell {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .five-card h3,
+  .five-step h3 {
+    font-size: 22px;
   }
 }
 
