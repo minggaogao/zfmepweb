@@ -638,6 +638,27 @@
         border-bottom: 1px solid rgba(27, 82, 76, 0.12) !important;
       }
 
+      html body[data-page="systems"] main > #climate a.climate-service-item,
+      html body[data-page="climate"] main > #climate a.climate-service-item {
+        color: inherit !important;
+        text-decoration: none !important;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          opacity 180ms ease !important;
+      }
+
+      html body[data-page="systems"] main > #climate a.climate-service-item:hover,
+      html body[data-page="climate"] main > #climate a.climate-service-item:hover {
+        transform: translateY(-1px) !important;
+        border-bottom-color: rgba(27, 82, 76, 0.28) !important;
+      }
+
+      html body[data-page="systems"] main > #climate a.climate-service-item:hover strong,
+      html body[data-page="climate"] main > #climate a.climate-service-item:hover strong {
+        color: rgba(9, 92, 116, 0.96) !important;
+      }
+
       html body[data-page="systems"] main > #climate .climate-service-icon,
       html body[data-page="climate"] main > #climate .climate-service-icon {
         flex: 0 0 28px !important;
@@ -6402,7 +6423,7 @@
           <p class="climate-lead-sub">高湿先让身体感到闷、黏、沉，久而久之也会让空间出现返潮、结露、发霉与异味。因此，住宅空气系统真正要处理的，是湿负荷、绝对湿度、露点与二氧化碳浓度，也是住宅小气候被建立起来的起点。</p>
         </div>
         <div class="climate-service-matrix reveal" aria-label="湖南住宅空气系统业务范围">
-          <div class="climate-service-item"><span class="climate-service-icon" style="--service-accent:#2ca9bb;--service-accent-2:#0e6e83;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h6" /><path d="M11 8c1.8 1.2 2.8 2.6 2.8 4.2S12.8 15.2 11 16.4" /><path d="M15.5 6.4C18 8.1 19 10 19 12s-1 3.9-3.5 5.6" /><path d="M8 20h8" /></svg></span><strong>五恒系统</strong></div>
+          <a class="climate-service-item" href="five-constant-system/" aria-label="打开五恒系统专栏"><span class="climate-service-icon" style="--service-accent:#2ca9bb;--service-accent-2:#0e6e83;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h6" /><path d="M11 8c1.8 1.2 2.8 2.6 2.8 4.2S12.8 15.2 11 16.4" /><path d="M15.5 6.4C18 8.1 19 10 19 12s-1 3.9-3.5 5.6" /><path d="M8 20h8" /></svg></span><strong>五恒系统</strong></a>
           <div class="climate-service-item"><span class="climate-service-icon" style="--service-accent:#2fb9ba;--service-accent-2:#156d77;" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2" /><path d="M7 12h4" /><path d="M13 12h4" /><path d="M8 17v2" /><path d="M16 17v2" /></svg></span><strong>DOAS 系统</strong></div>
           <div class="climate-service-item"><span class="climate-service-icon" style="--service-accent:#57c6cc;--service-accent-2:#1a7c86;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 7v10" /><path d="M18 7v10" /><path d="M9 9h6" /><path d="M9 15h6" /><path d="M10 5h4" /><path d="M10 19h4" /></svg></span><strong>温湿去耦</strong></div>
           <div class="climate-service-item"><span class="climate-service-icon" style="--service-accent:#5e8cf0;--service-accent-2:#2a57b7;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s4 4.7 4 8a4 4 0 1 1-8 0c0-3.3 4-8 4-8Z" /><path d="M17 18c0-2.1-2.1-3.8-5-3.8" /><path d="M7 19h6" /></svg></span><strong>露点控制</strong></div>
