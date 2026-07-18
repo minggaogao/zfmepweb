@@ -8,7 +8,7 @@
     <title>DOAS 五恒住宅专栏 | ZEFENG MEP</title>
     <link rel="stylesheet" href="../styles.css?v=20260718-14" />
     <link rel="stylesheet" href="../launch-polish.css?v=20260718-14" />
-    <link rel="stylesheet" href="./five-constant-polish.css?v=20260718-15" />
+    <link rel="stylesheet" href="./five-constant-polish.css?v=20260718-16" />
   </head>
   <body class="five-atlas-page doas-book-page fc-page">
     <main class="fc-main">
@@ -783,6 +783,22 @@
         proofCards.forEach((card) => {
           card.setAttribute("aria-pressed", "false");
           card.addEventListener("click", (event) => activateProofCard(card, event));
+        });
+
+        const foldCueCards = document.querySelectorAll([
+          ".fc-outcomes article[data-topic]",
+          ".fc-value-spectrum article[data-topic]",
+          ".fc-parameter-selector button",
+          ".fc-delivery-selector button",
+          ".fc-proof-list button"
+        ].join(","));
+        foldCueCards.forEach((card) => {
+          card.classList.add("fc-click-card");
+          if (card.querySelector(":scope > .fc-fold-cue")) return;
+          const cue = document.createElement("span");
+          cue.className = "fc-fold-cue";
+          cue.setAttribute("aria-hidden", "true");
+          card.append(cue);
         });
       })();
     </script>

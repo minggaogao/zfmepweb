@@ -2163,6 +2163,108 @@ html body.fc-page .fc-outcomes article.is-selected {
   border-top: 1px solid rgba(14,95,90,.13);
 }
 
+/* A restrained folded corner makes every expandable card legible as an action. */
+.fc-click-card {
+  --fold-tone: #639f99;
+}
+
+html body.fc-page .fc-outcomes .fc-click-card { --fold-tone: var(--outcome); }
+html body.fc-page .fc-delivery-selector .fc-click-card { --fold-tone: var(--delivery-tone); }
+html body.fc-page .fc-parameter-selector .fc-click-card { --fold-tone: var(--button-tone); }
+html body.fc-page .fc-proof-list .fc-click-card { --fold-tone: var(--proof-accent); }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(1) { --fold-tone: #43aaa2; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(2) { --fold-tone: #5797ce; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(3) { --fold-tone: #68aa76; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(4) { --fold-tone: #4f9d76; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(5) { --fold-tone: #7b79b4; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(6) { --fold-tone: #d1a24e; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(7) { --fold-tone: #cd7d70; }
+html body.fc-page .fc-value-spectrum .fc-click-card:nth-child(8) { --fold-tone: #b9913e; }
+
+html body.fc-page .fc-click-card > .fc-fold-cue {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0 18px 0 0;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.08) 0 48%, rgba(255,255,255,.9) 49% 54%, color-mix(in srgb, var(--fold-tone) 45%, white) 55% 100%);
+  box-shadow: -5px 6px 13px color-mix(in srgb, var(--fold-tone) 17%, transparent);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  opacity: .84;
+  pointer-events: none;
+  transform-origin: 100% 0;
+  transition: width .3s ease, height .3s ease, opacity .3s ease, filter .3s ease;
+}
+
+html body.fc-page .fc-click-card > .fc-fold-cue::before,
+html body.fc-page .fc-click-card > .fc-fold-cue::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 7px;
+  width: 9px;
+  height: 1.5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--fold-tone) 82%, #243548);
+  transform-origin: center;
+  transition: transform .3s ease, top .3s ease, right .3s ease;
+}
+
+html body.fc-page .fc-click-card > .fc-fold-cue::after {
+  transform: rotate(90deg);
+}
+
+html body.fc-page .fc-click-card:hover > .fc-fold-cue,
+html body.fc-page .fc-click-card:focus-visible > .fc-fold-cue {
+  width: 42px;
+  height: 42px;
+  opacity: 1;
+  filter: saturate(1.15) drop-shadow(-4px 7px 9px color-mix(in srgb, var(--fold-tone) 24%, transparent));
+}
+
+html body.fc-page .fc-click-card:hover > .fc-fold-cue::before,
+html body.fc-page .fc-click-card:hover > .fc-fold-cue::after,
+html body.fc-page .fc-click-card:focus-visible > .fc-fold-cue::before,
+html body.fc-page .fc-click-card:focus-visible > .fc-fold-cue::after {
+  top: 12px;
+  right: 8px;
+}
+
+html body.fc-page .fc-click-card.is-selected > .fc-fold-cue,
+html body.fc-page .fc-click-card.is-active > .fc-fold-cue {
+  width: 42px;
+  height: 42px;
+  opacity: 1;
+  filter: saturate(1.16);
+}
+
+html body.fc-page .fc-click-card.is-selected > .fc-fold-cue::after,
+html body.fc-page .fc-click-card.is-active > .fc-fold-cue::after {
+  transform: rotate(0deg);
+}
+
+html body.fc-page .fc-click-card.is-selected > .fc-fold-cue::before,
+html body.fc-page .fc-click-card.is-active > .fc-fold-cue::before {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body.fc-page .fc-click-card > .fc-fold-cue,
+  html body.fc-page .fc-click-card > .fc-fold-cue::before,
+  html body.fc-page .fc-click-card > .fc-fold-cue::after {
+    transition: none;
+  }
+}
+
 @media (max-width: 1180px) {
   .fc-system-compare,
   .fc-operation-boundary,
