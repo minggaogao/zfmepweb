@@ -448,7 +448,7 @@ const sceneSystems = [
     en: "Master Bedroom",
     sceneType: "quiet",
     image: "images/generated-air-scenes-v2/air-v2-master-bedroom-night.webp",
-    alt: "湖南高档住宅主卧夜景场景，卧室克制温和，睡眠环境安静稳定，没有传统空调设备感",
+    alt: "湖南高端住宅主卧夜景场景，卧室克制温和，睡眠环境安静稳定，没有传统空调设备感",
     feeling: "卧室空气最重要的，不是存在感，而是让 CO2、湿度、温度均匀性与背景噪声一起退到身体感知之外，睡眠才会完整。",
     quote: "夜里真正好的空气，是让身体只感到修复，而感受不到系统。",
     tags: ["睡眠新风", "低风感", "恒湿", "低噪运行"],
@@ -619,7 +619,7 @@ const sceneSystems = [
     quote: "当空气退到背景，材料与细节才会被完整保存。",
     thinking: "收藏与音乐空间的空气价值，在于同时控制湿度波动、颗粒物与运行噪声，让材料保护与停留体验成为同一件事。",
     image: "images/generated-air-scenes-v2/air-v2-music-collection.webp",
-    alt: "湖南高档住宅静态停留空间，空气背景安静、洁净、稳定",
+    alt: "湖南高端住宅静态停留空间，空气背景安静、洁净、稳定",
     sceneType: "living",
     tags: ["恒湿", "低尘过滤", "低噪背景"],
     airStats: {
@@ -693,7 +693,7 @@ const sceneSystems = [
     quote: "空气稳定下来，长时间停留才不会越坐越闷。",
     thinking: "当长时间停留与设备发热并存，住宅空气系统应同时处理 CO2、显热、湿度与风噪，让清爽感保持克制、持续且无打扰。",
     image: "images/generated-air-scenes-v2/air-v2-esports-room.webp",
-    alt: "湖南高档住宅高强度停留空间，显热、CO2 与风噪被稳定控制",
+    alt: "湖南高端住宅高强度停留空间，显热、CO2 与风噪被稳定控制",
     sceneType: "living",
     tags: ["显热处理", "CO2 控制", "低噪", "无直吹"],
     airStats: {
@@ -730,7 +730,7 @@ const sceneSystems = [
     quote: "当呼吸能够完整，空气往往已经先退到了后面。",
     thinking: "这类空间的空气应优先稳定低风速、低噪、表面温度与湿度，让身体在慢节奏里始终放松，而不是被送风与波动打扰。",
     image: "images/generated-air-scenes-v2/air-v2-meditation-yoga.webp",
-    alt: "湖南高档住宅低活动量停留空间，空气平顺、干爽、低噪、没有干扰",
+    alt: "湖南高端住宅低活动量停留空间，空气平顺、干爽、低噪、没有干扰",
     sceneType: "quiet",
     tags: ["低风速", "低噪", "恒湿", "表面温和"],
     airStats: {
@@ -767,7 +767,7 @@ const sceneSystems = [
     quote: "厨房空气真正要解决的，是边界，而不只是风量。",
     thinking: "开放厨房更需要把补风、排烟、热湿负荷与气味控制同步组织，让厨房空气的压力停留在边界之内，不外溢到客餐厅背景。",
     image: "images/generated-air-scenes-v2/air-v2-kitchen-comfort.webp",
-    alt: "湖南高档住宅开放厨房空间，补风、排烟、热湿与气味边界清楚稳定",
+    alt: "湖南高端住宅开放厨房空间，补风、排烟、热湿与气味边界清楚稳定",
     sceneType: "living",
     tags: ["补排风平衡", "热湿控制", "气味边界", "局部降温"],
     airStats: {
