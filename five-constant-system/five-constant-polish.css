@@ -1,4 +1,9 @@
 /* Page-local compatibility rules loaded after the legacy site overrides. */
+html body.fc-page .fc-main {
+  width: min(1920px, calc(100% - 48px));
+  max-width: none;
+}
+
 html body.fc-page .fc-consult .button.primary,
 html body.fc-page .fc-consult .button.primary:link,
 html body.fc-page .fc-consult .button.primary:visited {
@@ -53,10 +58,11 @@ html body.fc-page .fc-nav a[aria-current="location"] {
 
 /* Immersive editorial opening: architecture is the canvas, not a side illustration. */
 html body.fc-page .fc-hero {
+  --fc-hero-height: clamp(720px, calc(100svh - 210px), 920px);
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 720px;
+  min-height: var(--fc-hero-height);
   margin-top: 34px;
   overflow: hidden;
   border-radius: 30px;
@@ -66,7 +72,7 @@ html body.fc-page .fc-hero {
 
 html body.fc-page .fc-hero-track {
   position: relative;
-  min-height: 720px;
+  min-height: var(--fc-hero-height);
 }
 
 html body.fc-page .fc-hero-slide {
@@ -74,7 +80,7 @@ html body.fc-page .fc-hero-slide {
   inset: 0;
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 720px;
+  min-height: var(--fc-hero-height);
   opacity: 0;
   visibility: hidden;
   transform: scale(1.015);
@@ -91,7 +97,7 @@ html body.fc-page .fc-hero-slide.is-active {
 
 html body.fc-page .fc-hero-visual {
   grid-area: 1 / 1;
-  min-height: 720px;
+  min-height: var(--fc-hero-height);
   border-radius: 0;
   box-shadow: none;
 }
@@ -113,7 +119,7 @@ html body.fc-page .fc-hero-visual::after {
 }
 
 html body.fc-page .fc-hero-visual img {
-  min-height: 720px;
+  min-height: var(--fc-hero-height);
   object-position: center;
 }
 
@@ -519,7 +525,7 @@ html body.fc-page .fc-consult {
   border-radius: 30px;
   background:
     linear-gradient(90deg, rgba(5,12,14,.95) 0%, rgba(5,12,14,.88) 37%, rgba(5,12,14,.42) 59%, rgba(5,12,14,.1) 100%),
-    url("../images/residential-climate-assessment-premium-20260718.png") center / cover no-repeat;
+    url("../images/residential-climate-assessment-premium-20260718.jpg") center / cover no-repeat;
   box-shadow: 0 34px 84px rgba(7, 19, 21, .22);
   color: #fff;
 }
@@ -1005,7 +1011,7 @@ html body.fc-page .fc-delivery article > p {
     padding: 42px 24px;
     background:
       linear-gradient(180deg, rgba(5,12,14,.38), rgba(5,12,14,.94) 62%),
-      url("../images/residential-climate-assessment-premium-20260718.png") 68% center / cover no-repeat;
+      url("../images/residential-climate-assessment-premium-20260718.jpg") 68% center / cover no-repeat;
   }
   html body.fc-page .fc-consult > * {
     width: 100%;
