@@ -1,0 +1,1026 @@
+/* Page-local compatibility rules loaded after the legacy site overrides. */
+html body.fc-page .fc-consult .button.primary,
+html body.fc-page .fc-consult .button.primary:link,
+html body.fc-page .fc-consult .button.primary:visited {
+  background: #fff !important;
+  color: #102f2c !important;
+  -webkit-text-fill-color: #102f2c !important;
+}
+
+html body.fc-page .fc-consult .button.primary:hover,
+html body.fc-page .fc-consult .button.primary:focus-visible {
+  background: #e8f0ed !important;
+  color: #102f2c !important;
+  -webkit-text-fill-color: #102f2c !important;
+}
+
+html body.fc-page .fc-nav a.is-current,
+html body.fc-page .fc-nav a[aria-current="location"] {
+  color: #0e5f5a !important;
+}
+
+/* Five-color identity: a restrained cue on the opening screen. */
+.fc-hero-spectrum {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: -8px;
+}
+
+.fc-hero-spectrum span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #53605e;
+  font-size: 12px;
+  font-weight: 720;
+  letter-spacing: .08em;
+}
+
+.fc-hero-spectrum i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--fc-tone);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--fc-tone) 13%, transparent);
+}
+
+.fc-hero-spectrum .is-warm { --fc-tone: #e0a94c; }
+.fc-hero-spectrum .is-humid { --fc-tone: #4c9aca; }
+.fc-hero-spectrum .is-air { --fc-tone: #55b7ad; }
+.fc-hero-spectrum .is-clean { --fc-tone: #78aa7b; }
+.fc-hero-spectrum .is-quiet { --fc-tone: #7c79ae; }
+
+/* Immersive editorial opening: architecture is the canvas, not a side illustration. */
+html body.fc-page .fc-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 720px;
+  margin-top: 34px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #101817;
+  box-shadow: 0 32px 90px rgba(13, 28, 27, .2);
+}
+
+html body.fc-page .fc-hero-track {
+  position: relative;
+  min-height: 720px;
+}
+
+html body.fc-page .fc-hero-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 720px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.015);
+  transition: opacity .85s ease, transform 1.4s ease, visibility 0s linear .85s;
+}
+
+html body.fc-page .fc-hero-slide.is-active {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition-delay: 0s;
+}
+
+html body.fc-page .fc-hero-visual {
+  grid-area: 1 / 1;
+  min-height: 720px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html body.fc-page .fc-hero-visual::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 15, 15, .88) 0%, rgba(8, 15, 15, .67) 30%, rgba(8, 15, 15, .13) 57%, rgba(8, 15, 15, .04) 100%),
+    linear-gradient(180deg, rgba(4, 11, 12, .08), rgba(4, 11, 12, .16));
+  pointer-events: none;
+}
+
+html body.fc-page .fc-hero-visual::after {
+  inset: 64% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(5, 13, 13, .55));
+}
+
+html body.fc-page .fc-hero-visual img {
+  min-height: 720px;
+  object-position: center;
+}
+
+html body.fc-page .fc-hero-copy {
+  position: relative;
+  z-index: 3;
+  grid-area: 1 / 1;
+  align-self: center;
+  width: min(520px, 46%);
+  padding: 74px 0 74px 60px;
+  color: #fff;
+}
+
+html body.fc-page .fc-hero h1 {
+  max-width: 7em;
+  color: #fff;
+  font-size: clamp(58px, 6vw, 86px);
+  line-height: 1.02;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+
+html body.fc-page .fc-hero-slide:first-child h1 {
+  max-width: none;
+  font-size: clamp(52px, 4.7vw, 72px);
+  white-space: nowrap;
+}
+
+html body.fc-page .fc-hero h2 {
+  max-width: 7em;
+  margin: 0;
+  color: #fff;
+  font: 400 clamp(52px, 5.4vw, 78px)/1.08 "Songti SC","STSong",serif;
+  letter-spacing: -.045em;
+}
+
+html body.fc-page .fc-hero .fc-kicker {
+  color: #8ed5cb;
+}
+
+html body.fc-page .fc-hero-lead {
+  max-width: 16em;
+  color: rgba(255,255,255,.94);
+  font-size: 22px;
+  line-height: 1.62;
+}
+
+html body.fc-page .fc-hero-body {
+  max-width: 31em;
+  color: rgba(255,255,255,.7);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+html body.fc-page .fc-hero-spectrum span {
+  color: rgba(255,255,255,.84);
+}
+
+html body.fc-page .fc-hero-spectrum i {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--fc-tone) 22%, transparent);
+}
+
+html body.fc-page .fc-hero .button.primary {
+  border-color: #fff;
+  background: #fff;
+  color: #123b37 !important;
+  -webkit-text-fill-color: #123b37 !important;
+}
+
+html body.fc-page .fc-hero .button.ghost {
+  border-color: rgba(255,255,255,.52);
+  background: rgba(255,255,255,.06);
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  backdrop-filter: blur(10px);
+}
+
+html body.fc-page .fc-hero-visual figcaption {
+  z-index: 3;
+  left: auto;
+  right: 34px;
+  bottom: 30px;
+  justify-items: end;
+  text-align: right;
+}
+
+html body.fc-page .fc-hero-visual figcaption strong {
+  font: 500 17px/1.4 inherit;
+  letter-spacing: .05em;
+}
+
+html body.fc-page .fc-hero-visual figcaption span {
+  color: rgba(255,255,255,.65);
+  font-size: 10px;
+  letter-spacing: .16em;
+}
+
+.fc-hero-controls {
+  position: absolute;
+  z-index: 8;
+  right: 34px;
+  bottom: 28px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.fc-hero-arrow,
+.fc-hero-dots button {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.fc-hero-arrow {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 50%;
+  background: rgba(5,15,15,.3);
+  color: #fff;
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.fc-hero-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.fc-hero-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border-radius: 99px;
+  background: rgba(255,255,255,.42);
+  transition: width .25s ease, background .25s ease;
+}
+
+.fc-hero-dots button.is-active {
+  width: 25px;
+  background: #8ed5cb;
+}
+
+/* Five outcomes as a connected residential climate spectrum. */
+html body.fc-page .fc-outcomes {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, calc((100% - 96px) / 5));
+  justify-content: space-between;
+  width: 100%;
+  max-width: none;
+  gap: 24px;
+  margin-inline: 0;
+  padding-right: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+html body.fc-page .fc-outcomes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e2aa45, #51a6cf 25%, #4bb7ad 50%, #75aa77 75%, #7774ad);
+  opacity: .9;
+}
+
+html body.fc-page .fc-outcomes article {
+  --outcome: #4bb7ad;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 16px;
+  min-height: 350px;
+  padding: 22px 18px 20px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--outcome) 22%, white);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 84% 13%, color-mix(in srgb, var(--outcome) 19%, transparent), transparent 31%),
+    linear-gradient(155deg, color-mix(in srgb, var(--outcome) 8%, white), rgba(255,255,255,.96));
+  box-shadow: 0 16px 42px rgba(24, 50, 47, .07);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+html body.fc-page .fc-outcomes article:nth-child(n) {
+  grid-column: auto;
+  max-width: none;
+}
+
+html body.fc-page .fc-outcomes article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 58px color-mix(in srgb, var(--outcome) 16%, transparent);
+}
+
+html body.fc-page .fc-outcomes .outcome-warm { --outcome: #dfa744; }
+html body.fc-page .fc-outcomes .outcome-humid { --outcome: #4f9fcb; }
+html body.fc-page .fc-outcomes .outcome-air { --outcome: #4bb7ad; }
+html body.fc-page .fc-outcomes .outcome-clean { --outcome: #70a975; }
+html body.fc-page .fc-outcomes .outcome-quiet { --outcome: #7774ad; }
+
+html body.fc-page .fc-outcomes img {
+  width: 82px;
+  height: 82px;
+  padding: 7px;
+  object-fit: contain;
+  border-radius: 26px;
+  background: rgba(255,255,255,.74);
+  filter: saturate(1.12) contrast(1.03);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--outcome) 18%, transparent);
+}
+
+html body.fc-page .fc-outcomes article > div {
+  display: grid;
+  gap: 10px;
+}
+
+html body.fc-page .fc-outcomes strong {
+  color: #172927;
+  font: 500 29px/1.2 "Songti SC","STSong",serif;
+}
+
+html body.fc-page .fc-outcomes p {
+  min-height: 6.4em;
+  margin: 0;
+  color: #52605e;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+html body.fc-page .fc-outcomes small {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+html body.fc-page .fc-outcomes small b {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--outcome) 13%, white);
+  color: color-mix(in srgb, var(--outcome) 65%, #1b3532);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+@media (max-width: 1040px) and (min-width: 761px) {
+  html body.fc-page .fc-outcomes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  html body.fc-page .fc-outcomes article {
+    min-height: 320px;
+  }
+}
+
+/* Evidence panel: the reading order is title, explanation, then five measurable results. */
+html body.fc-page .fc-proof {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 104px;
+  padding: 48px 48px 38px;
+  border: 1px solid rgba(34, 92, 85, .11);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 96% 0%, rgba(82, 172, 161, .13), transparent 28%),
+    linear-gradient(135deg, #f3f8f6, #fbfaf5 64%);
+}
+
+html body.fc-page .fc-proof > div:first-child {
+  display: grid;
+  gap: 14px;
+  max-width: 780px;
+}
+
+html body.fc-page .fc-proof h2 {
+  margin-bottom: 0;
+}
+
+html body.fc-page .fc-proof-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+html body.fc-page .fc-proof-list button {
+  --proof-accent: #4faaa0;
+  --pulse-x: 50%;
+  --pulse-y: 50%;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  min-height: 156px;
+  padding: 20px 18px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--proof-accent) 24%, white);
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 90% 5%, color-mix(in srgb, var(--proof-accent) 24%, transparent), transparent 34%),
+    rgba(255,255,255,.72);
+  box-shadow: 0 16px 32px rgba(26, 67, 62, .07);
+  color: #203c38;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+html body.fc-page .fc-proof-list button:nth-child(2) { --proof-accent: #4f8fbd; }
+html body.fc-page .fc-proof-list button:nth-child(3) { --proof-accent: #7a75ad; }
+html body.fc-page .fc-proof-list button:nth-child(4) { --proof-accent: #d1a24e; }
+html body.fc-page .fc-proof-list button:nth-child(5) { --proof-accent: #6b9d74; }
+
+html body.fc-page .fc-proof-list button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--proof-accent), transparent);
+  opacity: .5;
+}
+
+html body.fc-page .fc-proof-list button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: var(--pulse-x);
+  top: var(--pulse-y);
+  width: 12px;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--proof-accent) 65%, white);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+html body.fc-page .fc-proof-list button:hover,
+html body.fc-page .fc-proof-list button:focus-visible,
+html body.fc-page .fc-proof-list button.is-selected {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--proof-accent) 52%, white);
+  box-shadow: 0 22px 42px color-mix(in srgb, var(--proof-accent) 17%, transparent);
+  outline: none;
+}
+
+html body.fc-page .fc-proof-list button.is-activated::after {
+  animation: fc-proof-pulse .72s ease-out;
+}
+
+html body.fc-page .fc-proof-list span {
+  color: var(--proof-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+html body.fc-page .fc-proof-list strong {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+html body.fc-page .fc-proof-list small {
+  color: #62716e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@keyframes fc-proof-pulse {
+  0% { opacity: .85; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(24); }
+}
+
+html body.fc-page .fc-proof > .fc-note {
+  grid-column: auto;
+  margin: 28px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(14,95,90,.1);
+}
+
+/* Bespoke assessment CTA: architectural diagnosis instead of a flat green poster. */
+html body.fc-page .fc-consult {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 600px;
+  margin-top: 96px;
+  padding: 72px 64px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 177, 167, .2);
+  border-radius: 30px;
+  background:
+    linear-gradient(90deg, rgba(5,12,14,.95) 0%, rgba(5,12,14,.88) 37%, rgba(5,12,14,.42) 59%, rgba(5,12,14,.1) 100%),
+    url("../images/residential-climate-assessment-premium-20260718.png") center / cover no-repeat;
+  box-shadow: 0 34px 84px rgba(7, 19, 21, .22);
+  color: #fff;
+}
+
+html body.fc-page .fc-consult::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(4,11,13,.5));
+  pointer-events: none;
+}
+
+html body.fc-page .fc-consult > * {
+  width: min(570px, 52%);
+}
+
+html body.fc-page .fc-consult .fc-kicker {
+  color: #82d1c8;
+}
+
+html body.fc-page .fc-consult h2 {
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1.32;
+  text-wrap: balance;
+}
+
+html body.fc-page .fc-consult > p {
+  color: rgba(255,255,255,.72);
+}
+
+html body.fc-page .fc-consult-gain {
+  border-color: rgba(130, 209, 200, .26);
+}
+
+html body.fc-page .fc-consult-gain span {
+  color: #82d1c8;
+}
+
+/* Reduce the two longest chapters after the visual upgrade. */
+html body.fc-page #fc-climate,
+html body.fc-page #fc-values {
+  gap: 30px;
+}
+
+html body.fc-page #fc-climate .fc-four article {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+html body.fc-page #fc-values {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Case wall: visual proof of a mature national application network. */
+html body.fc-page .fc-case-grid {
+  gap: 18px;
+  border-top: 0;
+}
+
+html body.fc-page .fc-case-grid article {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(28, 73, 68, .11);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(21, 48, 45, .08);
+}
+
+html body.fc-page .fc-case-grid article + article {
+  padding-left: 0;
+  border-left: 1px solid rgba(28, 73, 68, .11);
+}
+
+html body.fc-page .fc-case-grid figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+html body.fc-page .fc-case-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+html body.fc-page .fc-case-grid article:hover img {
+  transform: scale(1.025);
+}
+
+.fc-case-copy {
+  display: grid;
+  gap: 14px;
+  padding: 24px 24px 26px;
+}
+
+html body.fc-page .fc-case-grid h3 {
+  font-size: 23px;
+  line-height: 1.48;
+}
+
+html body.fc-page .fc-case-grid p {
+  margin: 0;
+  color: rgba(39,50,58,.7);
+  font-size: 13px;
+  line-height: 1.78;
+}
+
+.fc-case-reach {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  padding: 25px 30px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #153c38, #215d56 58%, #32776d);
+  color: #fff;
+}
+
+.fc-case-reach span {
+  color: #9dd9d1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.fc-case-reach strong {
+  font-size: 17px;
+  letter-spacing: .04em;
+}
+
+/* Interactive value cards: restrained scan, pulse and selected state. */
+html body.fc-page .fc-value-spectrum article {
+  --pulse-x: 50%;
+  --pulse-y: 50%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transform: translateY(0);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+}
+
+html body.fc-page .fc-value-spectrum article::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -45%;
+  bottom: -45%;
+  left: -42%;
+  width: 30%;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.72), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+
+html body.fc-page .fc-value-spectrum article::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: var(--pulse-x);
+  top: var(--pulse-y);
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(.3);
+  pointer-events: none;
+}
+
+html body.fc-page .fc-value-spectrum article:hover,
+html body.fc-page .fc-value-spectrum article:focus-visible,
+html body.fc-page .fc-value-spectrum article.is-selected {
+  transform: translateY(-5px);
+  filter: saturate(1.06);
+  box-shadow: 0 22px 48px rgba(31, 77, 72, .14);
+}
+
+html body.fc-page .fc-value-spectrum article:focus-visible {
+  box-shadow: 0 0 0 3px rgba(71, 166, 156, .28), 0 22px 48px rgba(31, 77, 72, .14);
+}
+
+html body.fc-page .fc-value-spectrum article.is-activated::before {
+  animation: fc-card-scan .72s ease-out;
+}
+
+html body.fc-page .fc-value-spectrum article.is-activated::after {
+  animation: fc-card-pulse .7s ease-out;
+}
+
+html body.fc-page .fc-value-spectrum article.is-activated strong {
+  animation: fc-card-title .55s ease-out;
+}
+
+html body.fc-page .fc-value-spectrum article.is-activated > span {
+  animation: fc-card-index .55s ease-out;
+}
+
+@keyframes fc-card-scan {
+  0% { left: -42%; opacity: 0; }
+  22% { opacity: .8; }
+  100% { left: 116%; opacity: 0; }
+}
+
+@keyframes fc-card-pulse {
+  0% { opacity: .72; transform: translate(-50%,-50%) scale(.35); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(22); }
+}
+
+@keyframes fc-card-title {
+  0%,100% { transform: translateX(0); }
+  45% { transform: translateX(5px); }
+}
+
+@keyframes fc-card-index {
+  0%,100% { letter-spacing: .14em; opacity: .72; }
+  45% { letter-spacing: .28em; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body.fc-page .fc-value-spectrum article,
+  html body.fc-page .fc-value-spectrum article::before,
+  html body.fc-page .fc-value-spectrum article::after,
+  html body.fc-page .fc-value-spectrum article strong,
+  html body.fc-page .fc-value-spectrum article > span {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Delivery workflow: six responsive process cards with technical feedback. */
+html body.fc-page .fc-delivery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  border-top: 0;
+}
+
+html body.fc-page .fc-delivery article {
+  --delivery-tone: #55b7ad;
+  --pulse-x: 50%;
+  --pulse-y: 50%;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 240px;
+  padding: 26px 28px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--delivery-tone) 23%, white);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--delivery-tone) 20%, transparent), transparent 30%),
+    linear-gradient(150deg, color-mix(in srgb, var(--delivery-tone) 9%, white), rgba(255,255,255,.97));
+  cursor: pointer;
+  outline: none;
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+}
+
+html body.fc-page .fc-delivery article:nth-child(1) { --delivery-tone: #4eb5ab; }
+html body.fc-page .fc-delivery article:nth-child(2) { --delivery-tone: #579fd0; }
+html body.fc-page .fc-delivery article:nth-child(3) { --delivery-tone: #817db5; }
+html body.fc-page .fc-delivery article:nth-child(4) { --delivery-tone: #d4a44d; }
+html body.fc-page .fc-delivery article:nth-child(5) { --delivery-tone: #d98468; }
+html body.fc-page .fc-delivery article:nth-child(6) { --delivery-tone: #6d9e74; }
+
+html body.fc-page .fc-delivery article + article {
+  padding-left: 28px;
+  border-left: 1px solid color-mix(in srgb, var(--delivery-tone) 23%, white);
+}
+
+html body.fc-page .fc-delivery article::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -45%;
+  bottom: -45%;
+  left: -42%;
+  width: 30%;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.78), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+
+html body.fc-page .fc-delivery article::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: var(--pulse-x);
+  top: var(--pulse-y);
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(.3);
+  pointer-events: none;
+}
+
+html body.fc-page .fc-delivery article:hover,
+html body.fc-page .fc-delivery article:focus-visible,
+html body.fc-page .fc-delivery article.is-selected {
+  transform: translateY(-5px);
+  filter: saturate(1.06);
+  box-shadow: 0 22px 48px color-mix(in srgb, var(--delivery-tone) 18%, transparent);
+}
+
+html body.fc-page .fc-delivery article.is-activated::before {
+  animation: fc-card-scan .72s ease-out;
+}
+
+html body.fc-page .fc-delivery article.is-activated::after {
+  animation: fc-card-pulse .7s ease-out;
+}
+
+html body.fc-page .fc-delivery article.is-activated strong {
+  animation: fc-card-title .55s ease-out;
+}
+
+html body.fc-page .fc-delivery article > span {
+  color: color-mix(in srgb, var(--delivery-tone) 74%, #173431);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+html body.fc-page .fc-delivery article > strong {
+  color: #182b29;
+  font: 500 28px/1.3 "Songti SC","STSong",serif;
+}
+
+html body.fc-page .fc-delivery article > p {
+  margin: 0;
+  color: rgba(39,50,58,.72);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  html body.fc-page .fc-delivery {
+    grid-template-columns: 1fr;
+  }
+  html body.fc-page .fc-delivery article {
+    min-height: 0;
+  }
+}
+
+/* The technical chapter now reads as two illustrated stories, not empty cards. */
+#fc-science {
+  position: relative;
+  margin-inline: -28px;
+  padding: 54px 28px 46px;
+  overflow: hidden;
+  border-top: 0;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 4% 8%, rgba(84, 184, 174, .13), transparent 25%),
+    radial-gradient(circle at 94% 92%, rgba(224, 169, 76, .13), transparent 28%),
+    linear-gradient(145deg, #f4faf8 0%, #fbfaf5 52%, #f6f8fb 100%);
+}
+
+#fc-science .fc-section-head {
+  padding-inline: 20px;
+}
+
+#fc-science .fc-science-grid {
+  gap: 22px;
+}
+
+#fc-science .fc-science-grid article {
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 47, 44, .09);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 22px 55px rgba(23, 55, 51, .08);
+}
+
+#fc-science .fc-science-grid figure {
+  border: 0;
+  border-radius: 0;
+  background: #eef6f4;
+}
+
+#fc-science .fc-science-grid img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.fc-science-copy {
+  display: grid;
+  gap: 12px;
+  padding: 25px 28px 28px;
+}
+
+.fc-science-index {
+  color: #0e746e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.science-dewpoint .fc-science-index {
+  color: #b26e34;
+}
+
+.fc-science-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.fc-science-tags span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e9f5f2;
+  color: #176b66;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.science-dewpoint .fc-science-tags span {
+  background: #fbf0df;
+  color: #94602f;
+}
+
+#fc-science .fc-authority,
+#fc-science .fc-note {
+  margin-inline: 20px;
+}
+
+@media (max-width: 760px) {
+  .fc-hero-spectrum { gap: 9px 14px; }
+  html body.fc-page .fc-hero { min-height: 720px; margin-top: 18px; border-radius: 22px; }
+  html body.fc-page .fc-hero-track,
+  html body.fc-page .fc-hero-slide { min-height: 720px; }
+  html body.fc-page .fc-hero-visual,
+  html body.fc-page .fc-hero-visual img { min-height: 720px; }
+  html body.fc-page .fc-hero-visual img { object-position: 61% center; }
+  html body.fc-page .fc-hero-visual::before {
+    background: linear-gradient(180deg, rgba(7,14,14,.38), rgba(7,14,14,.25) 35%, rgba(7,14,14,.82) 73%, rgba(7,14,14,.94));
+  }
+  html body.fc-page .fc-hero-copy {
+    align-self: end;
+    width: auto;
+    padding: 46px 24px 48px;
+  }
+  html body.fc-page .fc-hero h1 { font-size: 50px; }
+  html body.fc-page .fc-hero-slide:first-child h1 {
+    font-size: 42px;
+    white-space: nowrap;
+  }
+  html body.fc-page .fc-hero h2 { font-size: 46px; }
+  html body.fc-page .fc-hero-lead { font-size: 19px; }
+  html body.fc-page .fc-hero-visual figcaption { display: none; }
+  .fc-hero-controls { right: 22px; bottom: 18px; }
+  html body.fc-page .fc-outcomes { grid-template-columns: 1fr; }
+  html body.fc-page .fc-outcomes article,
+  html body.fc-page .fc-outcomes article:nth-child(n) {
+    grid-column: auto;
+    min-height: 0;
+  }
+  html body.fc-page .fc-proof {
+    padding: 30px 22px;
+  }
+  html body.fc-page .fc-proof-list {
+    grid-template-columns: 1fr;
+  }
+  html body.fc-page .fc-proof-list button {
+    min-height: 0;
+  }
+  html body.fc-page .fc-consult {
+    min-height: 680px;
+    padding: 42px 24px;
+    background:
+      linear-gradient(180deg, rgba(5,12,14,.38), rgba(5,12,14,.94) 62%),
+      url("../images/residential-climate-assessment-premium-20260718.png") 68% center / cover no-repeat;
+  }
+  html body.fc-page .fc-consult > * {
+    width: 100%;
+  }
+  .fc-case-reach {
+    display: grid;
+    padding: 22px;
+  }
+  #fc-science {
+    margin-inline: -8px;
+    padding: 38px 16px 34px;
+    border-radius: 22px;
+  }
+  #fc-science .fc-section-head,
+  #fc-science .fc-authority,
+  #fc-science .fc-note { margin-inline: 0; padding-inline: 0; }
+  .fc-science-copy { padding: 21px 20px 24px; }
+}

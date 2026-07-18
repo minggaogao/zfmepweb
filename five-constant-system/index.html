@@ -3,650 +3,428 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="DOAS 五恒系统专栏，从传统住宅系统边界、热舒适、露点控制、标准依据与长沙气候出发，解释高品质住宅室内气候的底层逻辑与实现路径。"
-    />
+    <meta name="description" content="泽风机电 DOAS 五恒住宅专栏：从长沙湿热气候、住宅环境目标、露点控制与空气主线出发，解释五恒系统如何被设计、验证与长期交付。" />
     <meta name="robots" content="index, follow" />
-    <title>DOAS 五恒系统专栏 | ZEFENG MEP</title>
+    <title>DOAS 五恒住宅专栏 | ZEFENG MEP</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../launch-polish.css" />
+    <link rel="stylesheet" href="./five-constant-polish.css" />
   </head>
-  <body class="five-atlas-page doas-book-page">
-    <main class="five-atlas-main doas-book-main">
-      <header class="five-atlas-topbar doas-book-topbar">
-        <a class="brand-mark" href="../" aria-label="回到首页">
+  <body class="five-atlas-page doas-book-page fc-page">
+    <main class="fc-main">
+      <header class="five-atlas-topbar fc-topbar">
+        <a class="brand-mark" href="../" aria-label="回到泽风机电首页">
           <img class="brand-logo-symbol" src="../images/zefeng-logo-mark.webp" alt="" />
-          <span class="brand-lockup">
-            <strong>ZEFENG MEP</strong>
-            <small>HIGH-END RESIDENTIAL MEP SYSTEMS</small>
-          </span>
+          <span class="brand-lockup"><strong>ZEFENG MEP</strong><small>HIGH-END RESIDENTIAL MEP SYSTEMS</small></span>
         </a>
-        <a class="five-atlas-back" href="../index.html#systems">返回空气页</a>
+        <a class="five-atlas-back" href="../index.html#systems">返回空气系统</a>
       </header>
 
-      <section class="doas-book-hero">
-        <section class="doas-book-prologue" aria-label="我的五恒住宅序章">
-          <div class="doas-book-prologue-copy">
-            <p class="doas-book-kicker">A HOME WITH ITS OWN INDOOR CLIMATE</p>
-            <h1>我的五恒住宅。</h1>
-            <div class="doas-book-prologue-lines">
-              <p>进到家，城市的声音还在身后。</p>
-              <p>车流、人声、热浪、潮气与尘粒，停在门外。</p>
-              <p>迎接我的不是一阵冷风。</p>
-              <p>而是一个健康、安静、可以让身体恢复的家。</p>
-              <p>空气是新鲜的，温度是柔和的。</p>
-              <p>湿度不再黏着皮肤，呼吸也更容易变得清澈。</p>
-              <p>回南天里，柜体、墙面和被褥不再有湿重感。</p>
-              <p>高温高湿的傍晚，厨房不再像另一个热源。</p>
-              <p>烹饪时的热、油烟和异味，被有组织地带走。</p>
-              <p>卫生间保持负压和排风秩序。</p>
-              <p>潮气与异味，不再向卧室、衣帽间和公共空间蔓延。</p>
-              <p>新装修和家具持续释放的气味，被长期稀释和过滤。</p>
-              <p>门窗关闭，也不等于把浑浊留在家里。</p>
-              <p>夜里，新风仍在更新，卧室却不被风声打扰。</p>
-              <p>睡眠不只是更安静，而是身体慢慢放下戒备。</p>
-              <p>心跳和呼吸逐渐放平，整个人进入一夜的恢复。</p>
-              <p>清晨醒来，没有隔夜的浑浊和异味。</p>
-              <p>空气像被住宅自己整理过，干净、轻盈、安定。</p>
-              <p>老人、孩子和长期在家的家人，被这个稳定的室内气候照顾着。</p>
-            </div>
-            <div class="doas-book-prologue-rule">
-              <span>住进去之后真正被感知的五恒</span>
-              <strong>五恒在我家不是五台设备，而是门关上以后，健康、舒适、安静、洁净与可恢复的睡眠，共同形成的居住底色。</strong>
-            </div>
-          </div>
-        </section>
-        <figure class="doas-book-hero-visual">
-          <img src="../images/five-constant-keyword-hero-final-20260717.png" alt="DOAS 五恒住宅室内环境主视觉" />
-          <figcaption class="doas-book-hero-plate">
-            <span>DOAS WHOLE-HOME COMFORT JOURNAL</span>
-            <strong>五恒住宅</strong>
-            <div class="doas-book-hero-keywords" aria-label="五恒关键词">
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3v9.2a4.2 4.2 0 1 0 4 4.2 4 4 0 0 0-2-3.5V3a2 2 0 1 0-4 0Z" />
-                </svg>
-                恒温
-              </span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3C9.5 7.2 7 10 7 13.3A5 5 0 0 0 17 13.3C17 10 14.5 7.2 12 3Z" />
-                </svg>
-                恒湿
-              </span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 20c4.8-3.2 7-6.5 7-10.5A5.6 5.6 0 0 0 8.8 6.4 5.1 5.1 0 0 0 5 11c0 3.6 2.2 6.4 7 9Z" />
-                </svg>
-                恒氧
-              </span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8.5 8.5 12 5l3.5 3.5L19 12l-3.5 3.5L12 19l-3.5-3.5L5 12l3.5-3.5Z" />
-                  <path d="m10.3 12 1.1 1.1 2.4-2.4" />
-                </svg>
-                恒洁
-              </span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 14c1.2 0 1.2-4 2.4-4s1.2 8 2.4 8 1.2-12 2.4-12 1.2 12 2.4 12 1.2-8 2.4-8 1.2 4 2.4 4" />
-                </svg>
-                恒静
-              </span>
-            </div>
-          </figcaption>
-        </figure>
-        <div class="doas-book-hero-copy">
-          <h1>五恒品质住宅的<br />五个“恒”。</h1>
-          <p class="doas-book-hero-tags">恒湿、恒温、恒氧、恒洁、恒静，共同构成住宅室内气候的完整结果。</p>
-          <p class="doas-book-hero-summary">
-            五恒并非某一门派的营销语汇。它首先是对住宅热、湿、洁净、新鲜空气与声环境的完整目标定义，随后才是系统如何被组织、被验证、被长期运行。
-          </p>
-          <div class="doas-book-constant-icons" aria-label="五恒品质住宅的五个恒">
-            <figure>
-              <img src="../images/doas-constant-icon-humidity-web.png" alt="恒湿图标" loading="lazy" decoding="async" />
-              <figcaption>
-                <em>Humidity Control</em>
-                <strong>恒湿</strong>
-                <span>让空气中的水汽保持在适合长期停留的区间，不用低温掩盖潮湿，也不让露点风险进入围护结构和室内表面。</span>
-              </figcaption>
-            </figure>
-            <figure>
-              <img src="../images/doas-constant-icon-temperature-web.png" alt="恒温图标" loading="lazy" decoding="async" />
-              <figcaption>
-                <em>Thermal Stability</em>
-                <strong>恒温</strong>
-                <span>不只是空调显示温度达标，而是空气温度、表面温度与空间热环境保持连续稳定，减少忽冷忽热和局部不适。</span>
-              </figcaption>
-            </figure>
-            <figure>
-              <img src="../images/doas-constant-icon-oxygen-web.png" alt="恒氧图标" loading="lazy" decoding="async" />
-              <figcaption>
-                <em>Fresh Air Supply</em>
-                <strong>恒氧</strong>
-                <span>通过持续、有组织的新风与空气更新，控制室内二氧化碳和滞留感，让住宅长时间关闭门窗也保持清醒、轻松。</span>
-              </figcaption>
-            </figure>
-            <figure>
-              <img src="../images/doas-constant-icon-clean-web.png" alt="恒洁图标" loading="lazy" decoding="async" />
-              <figcaption>
-                <em>Clean Air</em>
-                <strong>恒洁</strong>
-                <span>洁净不是短时净化，而是新风、过滤、压力组织与排风协同，使颗粒物、异味和污染物持续处于可控状态。</span>
-              </figcaption>
-            </figure>
-            <figure>
-              <img src="../images/doas-constant-icon-quiet-web.png" alt="恒静图标" loading="lazy" decoding="async" />
-              <figcaption>
-                <em>Acoustic Quiet</em>
-                <strong>恒静</strong>
-                <span>系统存在感应被压低，送风、除湿、换气与末端运行都不应以明显风感和设备噪声来交换舒适。</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
+      <nav class="fc-nav" aria-label="本页目录">
+        <a href="#fc-climate">住宅问题</a>
+        <a href="#fc-outcomes">五恒结果</a>
+        <a href="#fc-values">生活价值</a>
+        <a href="#fc-system">系统路线</a>
+        <a href="#fc-science">科学依据</a>
+        <a href="#fc-delivery">设计交付</a>
+        <a href="#fc-cases">区域案例</a>
+        <a href="#fc-consult">项目评估</a>
+      </nav>
 
-      <section class="doas-book-section doas-book-origin">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">ORIGIN &amp; AUTHORITIES</p>
-          <h2>五恒并非凭空出现，<br />它来自住宅室内气候本身的科学边界。</h2>
-        </div>
-        <div class="doas-book-origin-grid">
-          <div class="doas-book-origin-copy">
-            <p class="doas-book-origin-lead">
-              严格地说，国际标准并不以“五恒”作为一个营销名词来定义住宅系统。它们讨论的是更底层、也更可验证的环境变量：热舒适、湿环境、通风与室内空气质量、颗粒物与污染物控制、背景噪声，以及潮湿和霉菌风险。所谓五恒，应该是这些变量在住宅里共同成立后的结果表达，而不是先有名词，再反向寻找设备组合。
-            </p>
-            <div class="doas-book-origin-points" aria-label="五恒来源关键变量">
-              <article>
-                <span>Thermal Comfort</span>
-                <strong>热舒适不是单一温度，而是人与环境之间的热平衡。</strong>
-                <p>ASHRAE 55 与 ISO 7730 所采用的 PMV/PPD 思路，源自 P.O. Fanger（房格尔）教授的人体热舒适研究；空气温度、平均辐射温度、相对湿度、气流速度、代谢率与着衣量共同决定人体热感觉。</p>
-              </article>
-              <article>
-                <span>Ventilation &amp; IAQ</span>
-                <strong>新风不是“有风”，而是空气被持续更新、稀释与过滤。</strong>
-                <p>ASHRAE 62.2、WELL Air 与 GB/T 18883 将通风、CO₂、颗粒物、化学污染物和异味控制纳入室内空气质量的判断框架。</p>
-              </article>
-              <article>
-                <span>Moisture Safety</span>
-                <strong>湿度控制不只是体感干爽，更关系露点、结露与霉菌风险。</strong>
-                <p>WHO 对室内潮湿和霉菌风险有明确关注；在长沙这类高湿地区，湿环境必须从“相对湿度”进一步落实到含湿量、露点与表面温度安全。</p>
-              </article>
-              <article>
-                <span>Sound &amp; Stability</span>
-                <strong>高品质住宅还要把噪声、气流扰动与长期稳定性纳入同一目标。</strong>
-                <p>WELL Sound 与 EN 16798-1 的室内环境参数说明，舒适并非只看冷热，而要同时考虑声环境、空气品质和热环境的连续性。</p>
-              </article>
-            </div>
-            <div class="doas-book-origin-equation">
-              <span>从标准到住宅结果</span>
-              <strong>热舒适 + 湿环境安全 + 空气质量 + 声环境 + 稳定控制 = 五恒品质住宅的室内气候。</strong>
-            </div>
-          </div>
-          <aside class="doas-book-source-shelf" aria-label="五恒系统参考标准与权威来源">
-            <figure class="doas-book-source-cover tall">
-              <img src="../images/authority-sources/ashrae-standard-55-2023-cover-web.jpg" alt="ANSI/ASHRAE Standard 55-2023 标准封面" loading="lazy" decoding="async" />
-              <figcaption>
-                <span>ASHRAE 55</span>
-                <strong>Thermal Environmental Conditions</strong>
-              </figcaption>
-            </figure>
-            <figure class="doas-book-source-cover tall">
-              <img src="../images/authority-sources/ashrae-standard-62-2-cover-web.jpg" alt="ANSI/ASHRAE Standard 62.2 标准封面" loading="lazy" decoding="async" />
-              <figcaption>
-                <span>ASHRAE 62.2</span>
-                <strong>Residential Ventilation &amp; IAQ</strong>
-              </figcaption>
-            </figure>
-            <div class="doas-book-source-mark well">
-              <div class="doas-book-source-icons">
-                <img src="../images/authority-sources/well-air-web.png" alt="WELL Air 图标" loading="lazy" decoding="async" />
-                <img src="../images/authority-sources/well-comfort-web.png" alt="WELL Comfort 图标" loading="lazy" decoding="async" />
+      <section class="fc-hero" aria-roledescription="轮播" aria-label="五恒住宅核心价值">
+        <div class="fc-hero-track">
+          <article class="fc-hero-slide is-active" aria-hidden="false">
+            <div class="fc-hero-copy">
+              <p class="fc-kicker">A HOME WITH ITS OWN INDOOR CLIMATE</p>
+              <h1>我的五恒住宅</h1>
+              <p class="fc-hero-lead">门窗关闭以后，住宅依然温和、干爽、新鲜、洁净、安静。</p>
+              <div class="fc-hero-spectrum" aria-label="五恒环境目标">
+                <span class="is-warm"><i></i>恒温</span><span class="is-humid"><i></i>恒湿</span><span class="is-air"><i></i>恒氧</span><span class="is-clean"><i></i>恒洁</span><span class="is-quiet"><i></i>恒静</span>
               </div>
-              <span>WELL Building Standard</span>
-              <strong>Air / Thermal Comfort / Sound</strong>
+              <p class="fc-hero-body">五恒不是五台设备，而是一套可以被身体感知、也可以被数据验证的住宅室内气候。</p>
+              <div class="fc-actions"><a class="button primary" href="#fc-system">了解系统逻辑</a><a class="button ghost" href="#fc-consult">预约住宅气候评估</a></div>
             </div>
-            <div class="doas-book-source-mark">
-              <img src="../images/authority-sources/who-logo-blue.svg" alt="World Health Organization 标识" loading="lazy" decoding="async" />
-              <span>WHO Guidelines</span>
-              <strong>Indoor Air Quality: Dampness and Mould</strong>
+            <figure class="fc-hero-visual"><img src="../images/five-constant-hero-premium-20260718.png" width="1672" height="941" alt="木地板、亚麻布艺与柔和室内气候构成的五恒住宅" /><figcaption><strong>让住宅，拥有自己的气候</strong><span>WHOLE-HOME INDOOR CLIMATE</span></figcaption></figure>
+          </article>
+          <article class="fc-hero-slide" aria-hidden="true">
+            <div class="fc-hero-copy">
+              <p class="fc-kicker">A BREATHING HOME</p>
+              <h2>会呼吸的家</h2>
+              <p class="fc-hero-lead">雨天留在窗外，清新、干爽和安静留在室内。</p>
+              <div class="fc-hero-spectrum"><span class="is-humid"><i></i>湿度舒爽</span><span class="is-air"><i></i>持续新风</span><span class="is-clean"><i></i>洁净空气</span></div>
+              <p class="fc-hero-body">洁净空气缓缓经过人的停留区域，潮气、异味和浑浊空气被有序带离。</p>
+              <div class="fc-actions"><a class="button primary" href="#fc-values">感受生活价值</a><a class="button ghost" href="#fc-consult">预约住宅气候评估</a></div>
             </div>
-            <div class="doas-book-source-mark">
-              <img src="../images/authority-sources/iso-logo-web.png" alt="ISO 标识" loading="lazy" decoding="async" />
-              <span>ISO 7730</span>
-              <strong>PMV / PPD 与人体热舒适评价</strong>
+            <figure class="fc-hero-visual"><img src="../images/five-constant-hero-breathing-20260718.png" width="1672" height="941" alt="亚麻窗帘、自然木地板与柔和洁净空气构成的会呼吸住宅" loading="eager" /><figcaption><strong>让每一次呼吸，都更接近自然</strong><span>FRESH · DRY · CLEAN</span></figcaption></figure>
+          </article>
+          <article class="fc-hero-slide" aria-hidden="true">
+            <div class="fc-hero-copy">
+              <p class="fc-kicker">A FOUR-SEASON GENTLE HOME</p>
+              <h2>四季温和的家</h2>
+              <p class="fc-hero-lead">不靠一阵强风，也能让卧室保持温和、安静与稳定。</p>
+              <div class="fc-hero-spectrum"><span class="is-warm"><i></i>温度稳定</span><span class="is-humid"><i></i>湿度舒适</span><span class="is-quiet"><i></i>安静睡眠</span></div>
+              <p class="fc-hero-body">木材、亚麻和柔和表面温度共同包裹身体，让夏季清凉、冬季温暖都保持低存在感。</p>
+              <div class="fc-actions"><a class="button primary" href="#fc-science">了解舒适科学</a><a class="button ghost" href="#fc-consult">预约住宅气候评估</a></div>
             </div>
-            <div class="doas-book-source-mark text-only">
-              <span>EN 16798-1</span>
-              <strong>Thermal environment / IAQ / lighting / acoustics</strong>
+            <figure class="fc-hero-visual"><img src="../images/five-constant-hero-four-season-20260718.png" width="1672" height="941" alt="木饰面、亚麻床品与柔和光线构成的四季温和卧室" loading="eager" /><figcaption><strong>四季稳定，睡眠自然更深</strong><span>GENTLE · STABLE · QUIET</span></figcaption></figure>
+          </article>
+        </div>
+        <div class="fc-hero-controls" aria-label="轮播控制">
+          <button class="fc-hero-arrow is-prev" type="button" aria-label="上一张">←</button>
+          <div class="fc-hero-dots">
+            <button class="is-active" type="button" aria-label="显示第 1 张" aria-current="true"></button>
+            <button type="button" aria-label="显示第 2 张"></button>
+            <button type="button" aria-label="显示第 3 张"></button>
+          </div>
+          <button class="fc-hero-arrow is-next" type="button" aria-label="下一张">→</button>
+        </div>
+      </section>
+
+      <section class="fc-section" id="fc-climate">
+        <header class="fc-section-head">
+          <p class="fc-kicker">CHANGSHA RESIDENTIAL CLIMATE</p>
+          <h2>五恒的起点，不是设备偏好，<br />而是长沙住宅长期面对的复合环境。</h2>
+          <p>冷暖只是表层。高含湿量、露点拖尾、冬季湿冷、关窗后的空气更新与噪声矛盾，才是住宅室内气候难以长期稳定的原因。</p>
+        </header>
+        <figure class="fc-wide-image">
+          <img src="../images/doas-climate-hunan-premium-20260718.png" width="1672" height="941" alt="湖南四季湿热、梅雨高湿与冬季湿冷进入住宅后由系统协同处理的示意" loading="lazy" decoding="async" />
+        </figure>
+        <div class="fc-four">
+          <article><span>01</span><strong>梅雨与返潮</strong><p>室外含湿量持续偏高，开窗并不能解决潮湿，反而可能把湿负荷带入室内。</p></article>
+          <article><span>02</span><strong>高温高湿</strong><p>温度降下来了，汗液蒸发和体感仍可能不轻盈；低温不等于干爽。</p></article>
+          <article><span>03</span><strong>冬季湿冷</strong><p>空气、墙面与窗边表面温度共同影响体感，地面温暖并不自动等于全身舒适。</p></article>
+          <article><span>04</span><strong>关窗矛盾</strong><p>住宅越追求安静、密闭与高品质装修，越需要持续、有组织的空气更新。</p></article>
+        </div>
+        <div class="fc-compare">
+          <div>
+            <p class="fc-kicker">THE OLD WAY</p>
+            <h3>设备分别有效，结果却未必汇聚。</h3>
+            <p>空调处理显热，地暖改善冬季脚感，普通新风完成换气；但湿度、露点、压差、过滤、噪声与分空间控制经常被分散处理。</p>
+          </div>
+          <figure><img src="../images/doas-traditional-boundary-premium-20260718.png" width="1672" height="941" alt="传统空调、地暖和普通新风分别运行但未形成完整室内气候的住宅示意" loading="lazy" decoding="async" /></figure>
+        </div>
+      </section>
+
+      <section class="fc-section" id="fc-outcomes">
+        <header class="fc-section-head">
+          <p class="fc-kicker">FIVE VERIFIABLE OUTCOMES</p>
+          <h2>五恒不是五台设备，<br />而是五项可以验收的环境结果。</h2>
+        </header>
+        <figure class="fc-wide-image"><img src="../images/doas-five-outcomes-premium-20260718.png" width="1672" height="941" alt="恒温、恒湿、恒氧、恒洁与恒静在同一住宅中协同形成五恒环境结果" loading="lazy" decoding="async" /></figure>
+        <div class="fc-outcomes">
+          <article class="outcome-warm"><img src="../images/doas-constant-icon-temperature-web.png" alt="" /><div><strong>恒温</strong><p>空气温度与表面温度连续稳定，减少冷热波动、局部冷感与强风感。</p><small><b>室温</b><b>垂直温差</b><b>表面温度</b></small></div></article>
+          <article class="outcome-humid"><img src="../images/doas-constant-icon-humidity-web.png" alt="" /><div><strong>恒湿</strong><p>主动处理潜热和含湿量，让露点远离冷表面与围护结构风险区。</p><small><b>相对湿度</b><b>含湿量</b><b>室内露点</b></small></div></article>
+          <article class="outcome-air"><img src="../images/doas-constant-icon-oxygen-web.png" alt="" /><div><strong>恒氧</strong><p>持续有组织地更新空气，以新风量和CO₂趋势判断通风是否真正有效。</p><small><b>设计新风量</b><b>CO₂趋势</b></small></div></article>
+          <article class="outcome-clean"><img src="../images/doas-constant-icon-clean-web.png" alt="" /><div><strong>恒洁</strong><p>通过过滤、压力组织和排风协同，持续控制颗粒物、异味与污染迁移。</p><small><b>PM2.5</b><b>过滤等级</b><b>房间压差</b></small></div></article>
+          <article class="outcome-quiet"><img src="../images/doas-constant-icon-quiet-web.png" alt="" /><div><strong>恒静</strong><p>系统低存在感运行，不以明显噪声和送风扰动交换其他四项结果。</p><small><b>背景噪声</b><b>末端声级</b><b>风速</b></small></div></article>
+        </div>
+        <p class="fc-note">以上为设计与验收的指标框架，不是脱离项目条件的统一承诺值。具体目标应结合建筑围护结构、人员密度、房间用途、室外气候和末端路线校核。</p>
+      </section>
+
+      <section class="fc-value-section" id="fc-values">
+        <header class="fc-value-head">
+          <p class="fc-kicker">THE VALUE OF FIVE-CONSTANT LIVING</p>
+          <h2>系统最终交付的，<br />是更完整的居住价值。</h2>
+          <p>技术路线不应只停留在设备图纸里。它最终要转化成四季温和、湿度舒爽、无明显直吹、空气洁净、环境安静，以及可感知、可管理的日常体验。</p>
+        </header>
+        <div class="fc-value-spectrum" aria-label="五恒住宅八项生活价值">
+          <article class="tone-cyan"><span>01</span><strong>四季温和</strong><p>冷热连续而柔和，减少房间之间和垂直方向的明显温差。</p></article>
+          <article class="tone-blue"><span>02</span><strong>湿度舒爽</strong><p>温度与湿度分别处理，不用过度降温掩盖空气中的水汽。</p></article>
+          <article class="tone-mint"><span>03</span><strong>少直吹感</strong><p>让人体主要停留区域远离高速冷风和局部热风扰动。</p></article>
+          <article class="tone-green"><span>04</span><strong>洁净新鲜</strong><p>持续过滤、补充与组织新风，把污染物和异味有序带走。</p></article>
+          <article class="tone-indigo"><span>05</span><strong>安静睡眠</strong><p>将设备、风口与管路噪声作为设计目标，而不是入住后的补救。</p></article>
+          <article class="tone-amber"><span>06</span><strong>空间简洁</strong><p>设备与末端服从室内设计，让环境系统保持低存在感。</p></article>
+          <article class="tone-coral"><span>07</span><strong>智能感知</strong><p>温湿度、CO₂和空气状态持续可见，控制不再只靠主观感受。</p></article>
+          <article class="tone-gold"><span>08</span><strong>长期可管</strong><p>运行策略、维护计划和远程服务共同决定系统能否长久稳定。</p></article>
+        </div>
+
+        <article class="fc-value-feature fc-value-feature-season">
+          <figure><img src="../images/doas-value-four-season-windless-20260718.png" width="1672" height="941" alt="夏季清凉与冬季温暖共同形成无明显直吹的稳定居住环境示意" loading="lazy" decoding="async" /></figure>
+          <div>
+            <p class="fc-kicker">A WINDLESS FOUR-SEASON HOME</p>
+            <h3>不靠一阵强风，<br />也能让身体感到温和。</h3>
+            <p>传统空调主要依靠空气高速循环完成换热，人体容易感知出风温度、风速和局部温差。五恒住宅强调空气温度、表面温度、湿度与末端共同协同，让冷热不必以强烈风感出现。</p>
+            <ul><li>夏季不以过低温度换干爽</li><li>冬季同时关注空气与表面温度</li><li>卧室夜间降低风感和系统存在感</li></ul>
+          </div>
+        </article>
+
+        <article class="fc-value-feature fc-value-feature-air">
+          <div>
+            <p class="fc-kicker">A BREATHING HOME</p>
+            <h3>干净空气从低处进入，<br />浑浊与潮气被有序带离。</h3>
+            <p>空气组织决定了新风是否真正经过人的呼吸区域。项目可根据建筑条件采用适合的送回风与排风路线，使洁净空气先服务于卧室和公共空间，再将热湿、异味和污染物引向排风区域。</p>
+            <div class="fc-air-data">
+              <span><strong>温度</strong><small>连续趋势</small></span>
+              <span><strong>湿度</strong><small>露点判断</small></span>
+              <span><strong>CO₂</strong><small>通风有效性</small></span>
+              <span><strong>颗粒物</strong><small>过滤结果</small></span>
             </div>
-            <div class="doas-book-source-mark text-only cn">
-              <span>中国标准语境</span>
-              <strong>GB/T 18883-2022、GB/T 50785 等室内空气质量与热湿环境依据</strong>
+          </div>
+          <figure><img src="../images/doas-value-breathing-home-20260718.png" width="1672" height="941" alt="低位洁净送风、上部有序排风和环境数据感知的会呼吸住宅示意" loading="lazy" decoding="async" /></figure>
+        </article>
+        <p class="fc-value-source">价值表达参考慧科技五恒系统官方体系，并结合长沙、衡阳等湖南地区的高湿气候和住宅项目设计逻辑重新组织。具体温湿度、能耗、风速与过滤目标以项目设计条件和厂家技术文件为准。</p>
+      </section>
+
+      <section class="fc-section fc-system" id="fc-system">
+        <header class="fc-section-head">
+          <p class="fc-kicker">DOAS SYSTEM ROUTE</p>
+          <h2>先建立空气主线，<br />再让冷热末端各司其职。</h2>
+          <p>DOAS 独立新风系统把新风、过滤、潜热和露点控制集中到空气主线；风盘、冷梁、地暖或地面调温等末端按项目条件协同，而不是继续叠加互不理解的设备。</p>
+        </header>
+        <figure class="fc-wide-image fc-diagram"><img src="../images/doas-system-route-premium-20260718.png" width="1672" height="941" alt="DOAS新风除湿、过滤、露点控制与住宅冷热末端协同运行的系统路线" loading="lazy" decoding="async" /></figure>
+        <ol class="fc-flow">
+          <li><span>01</span><strong>定义目标</strong><p>先确认温湿度、新风、洁净、噪声和分空间使用目标。</p></li>
+          <li><span>02</span><strong>建立空气主线</strong><p>组织室外空气、过滤、新风除湿、送风、回排风与压差。</p></li>
+          <li><span>03</span><strong>控制潜热与露点</strong><p>将湿负荷从显热处理中解耦，避免以过度降温代替除湿。</p></li>
+          <li><span>04</span><strong>匹配冷热末端</strong><p>根据建筑、层高、装修和使用习惯选择合适的末端组合。</p></li>
+          <li><span>05</span><strong>分空间运行</strong><p>卧室、公共区、厨房与卫生间按负荷和压力关系分别控制。</p></li>
+        </ol>
+      </section>
+
+      <section class="fc-section" id="fc-science">
+        <header class="fc-section-head">
+          <p class="fc-kicker">COMFORT SCIENCE</p>
+          <h2>舒适不是一个温度数字，<br />露点也不是只属于工程师的概念。</h2>
+        </header>
+        <div class="fc-science-grid">
+          <article class="science-thermal">
+            <figure><img src="../images/doas-science-thermal-comfort-20260718.png" width="1536" height="864" alt="住宅中空气温度、表面辐射、湿度、气流、着衣和代谢共同影响人体热舒适" loading="lazy" decoding="async" /></figure>
+            <div class="fc-science-copy">
+              <span class="fc-science-index">01 · THERMAL BALANCE</span>
+              <h3>人体热平衡</h3>
+              <p>空气温度、平均辐射温度、湿度、气流速度、着衣量和代谢率共同决定体感。空调显示温度达标，不等于舒适已经成立。</p>
+              <div class="fc-science-tags"><span>空气温度</span><span>辐射温度</span><span>湿度</span><span>气流</span><span>着衣</span><span>代谢</span></div>
             </div>
-          </aside>
+          </article>
+          <article class="science-dewpoint">
+            <figure><img src="../images/doas-science-dewpoint-safety-20260718.png" width="1536" height="864" alt="湖南高湿气候下住宅窗墙、风口与冷表面的露点和结露风险示意" loading="lazy" decoding="async" /></figure>
+            <div class="fc-science-copy">
+              <span class="fc-science-index">02 · DEW-POINT SAFETY</span>
+              <h3>露点安全</h3>
+              <p>当空气或表面温度接近露点，冷表面、风口和围护结构的结露风险上升。高湿地区必须同时管理温度与空气中的水汽。</p>
+              <div class="fc-science-tags"><span>含湿量</span><span>表面温度</span><span>冷桥</span><span>结露风险</span></div>
+            </div>
+          </article>
         </div>
-        <p class="doas-book-source-note">
-          注：本页使用标准名称与官方公开视觉作为技术依据索引；五恒不是上述标准的原文术语，而是住宅室内环境目标在中文语境中的综合表达。
-        </p>
+        <aside class="fc-authority">
+          <div><span>ASHRAE 55 / ISO 7730</span><strong>人体热舒适与 PMV / PPD 评价框架</strong></div>
+          <div><span>ASHRAE 62.2 / GB/T 18883</span><strong>住宅通风与室内空气质量</strong></div>
+          <div><span>WHO / WELL / EN 16798-1</span><strong>潮湿霉菌、空气、声环境与综合室内环境</strong></div>
+        </aside>
+        <p class="fc-note">“五恒”不是上述标准的原文术语，而是住宅室内环境目标在中文语境中的综合表达。标准用于建立设计边界和验证方法，不替代具体项目计算。</p>
       </section>
 
-      <section class="doas-book-intro">
-        <p>
-          当五恒被放回标准和人体舒适的底层变量之后，问题不应马上跳到设备门派。更重要的是先回到住宅本身：室外环境怎样进入家里，传统配置曾经解决了什么，又在哪些长期停留的时刻露出边界。只有这条链条成立，五恒才不是一个被包装出来的概念，而是居住体验自然提出的要求。
-        </p>
-      </section>
-
-      <section class="doas-book-section doas-book-problem">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">OUTDOOR PRESSURE &amp; INDOOR PROBLEMS</p>
-          <h2>五恒的起点不是设备，<br />而是住宅长期面对的室外压力与室内环境问题。</h2>
-        </div>
-        <figure class="doas-book-problem-hero">
-          <img
-            src="../images/doas-problem-scenes/outdoor-pressure-indoor-problem-web.jpg"
-            alt="室外高湿、颗粒物、噪声、异味进入住宅后转化为室内健康、舒适和长期稳定问题"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-problem-lead">
-          <p>
-            对长沙住宅而言，室外环境并不温和：夏季高温高湿、梅雨期含湿量高、过渡季湿度拖尾明显，冬季又存在湿冷体感；同时，城市空气中的颗粒物、花粉、异味与室外噪声，会在开窗通风时直接进入室内。住宅越追求安静、密闭和高品质装修，室内越需要一套有组织的空气与湿环境管理，而不是仅依赖开窗和单一设备。
-          </p>
-        </div>
-        <div class="doas-book-pressure-strip" aria-label="室外环境进入住宅后的主要压力">
-          <article>
-            <span>高温高湿</span>
-            <strong>热负荷之外，还有持续潜热负荷。</strong>
-            <p>空气温度下降以后，水汽仍可能滞留；闷、黏、出汗不爽，往往不是温度单独造成。</p>
-          </article>
-          <article>
-            <span>湿冷与结露</span>
-            <strong>冬季不只冷，还可能是表面温度低、含湿量高。</strong>
-            <p>湿冷会放大冷感，露点靠近室内表面时，还会带来结露、霉斑和柜体潮湿风险。</p>
-          </article>
-          <article>
-            <span>室外空气扰动</span>
-            <strong>开窗可以换气，但也引入颗粒物、噪声和不可控湿度。</strong>
-            <p>花粉、PM、异味、交通噪声与湿空气一起进入，住宅环境会随室外波动而波动。</p>
-          </article>
-          <article>
-            <span>住宅内部污染</span>
-            <strong>装修、家具、烹饪、清洁和人员活动会持续释放污染物。</strong>
-            <p>CO₂、VOC、颗粒物、异味与水汽都在室内产生，不能只靠偶尔开窗解决。</p>
-          </article>
-        </div>
-        <div class="doas-book-health-comfort">
-          <div>
-            <span>健康维度</span>
-            <strong>空气是否新鲜、洁净、干燥安全。</strong>
-            <p>需要关注 CO₂、颗粒物、VOC、异味、过滤、通风效率、霉菌与潮湿风险。健康问题的特点是长期、累积、隐蔽，不一定马上产生强烈不适，却会持续影响居住环境质量。</p>
-            <figure>
-              <img
-                src="../images/doas-problem-scenes/health-dimension-web.jpg"
-                alt="健康维度室内空气质量示意，包含 CO2、PM2.5、VOC 和霉菌风险"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          </div>
-          <div>
-            <span>舒适维度</span>
-            <strong>身体是否稳定、轻松、没有被设备打扰。</strong>
-            <p>需要关注空气温度、平均辐射温度、相对湿度、露点、气流速度、背景噪声和空间温差。舒适问题的特点是即时、直接、身体会马上感受到闷、潮、冷、湿冷、直吹或噪声。</p>
-            <figure>
-              <img
-                src="../images/doas-problem-scenes/comfort-dimension-web.jpg"
-                alt="舒适维度人体对闷、潮、冷、湿冷、直吹和噪声的感受"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          </div>
-        </div>
-        <div class="doas-book-problem-rule">
-          <span>问题成立之后，才讨论系统</span>
-          <strong>传统暖通不是没有价值，而是多数系统只解决健康或舒适中的一部分变量；高品质住宅需要的是两条线同时成立。</strong>
+      <section class="fc-section" id="fc-delivery">
+        <header class="fc-section-head">
+          <p class="fc-kicker">FROM DESIGN TO COMMISSIONING</p>
+          <h2>真正的五恒，<br />发生在设计、施工与调试的连续交付里。</h2>
+          <p>设备采购只是其中一环。住宅围护结构、湿负荷、风量平衡、管线路由、噪声控制、控制逻辑和现场调试，必须由同一组环境目标贯穿。</p>
+        </header>
+        <figure class="fc-wide-image"><img src="../images/doas-project-delivery-commissioning-20260718.png" alt="工程师在高端住宅内进行空气系统检测与交付调试" loading="lazy" decoding="async" /></figure>
+        <div class="fc-delivery">
+          <article><span>01</span><strong>项目诊断</strong><p>读取户型、朝向、围护结构、人员与使用场景，识别湿负荷和空气风险。</p></article>
+          <article><span>02</span><strong>系统设计</strong><p>确定新风量、除湿能力、冷热末端、分区策略、排风与压差关系。</p></article>
+          <article><span>03</span><strong>机电深化</strong><p>协调层高、风管水管、检修、风口、设备机房和室内设计边界。</p></article>
+          <article><span>04</span><strong>施工配合</strong><p>核验关键节点、保温气密、冷凝水、消声与设备安装条件。</p></article>
+          <article><span>05</span><strong>调试验证</strong><p>测量风量、温湿度、CO₂、噪声、压差和控制逻辑，不以“设备启动”代替交付。</p></article>
+          <article><span>06</span><strong>长期维护</strong><p>形成滤网、排水、传感器和设备维护计划，让设计结果能够持续。</p></article>
         </div>
       </section>
 
-      <section class="doas-book-section doas-book-systems">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">LIFE BEFORE WHOLE-HOME CLIMATE</p>
-          <h2>住宅之所以需要五恒，<br />往往是从一次次不舒服的居住经验里被推出来的。</h2>
-        </div>
-        <div class="doas-book-old-home-story" aria-label="传统住宅居住体验自述">
-          <div class="doas-book-old-home-lead">
-            <span>过去我家的住宅</span>
-            <strong>不是没有空调、地暖和新风，而是每一种设备都只在自己的范围里工作。</strong>
-          </div>
-          <div class="doas-book-old-home-lines">
-            <p>以前回家，第一感觉不是放松，而是先判断今天家里闷不闷、潮不潮、有没有异味。</p>
-            <p>潮湿天，家里像被一层看不见的水汽包住。地面不一定有水，却总觉得脚下发黏；衣柜打开时，被褥和衣物带着湿重的气味。</p>
-            <p>梅雨季更明显，墙角、柜体背板和地下空间总让人不放心。除湿机可以接一桶水，却很难让整个家真正变得轻盈。</p>
-            <p>夏天最热的时候，空调要调到 23°C 才觉得不闷。刚开始是凉下来了，可半夜又会被冷醒，肩颈发紧，空气却仍然不够清爽。</p>
-            <p>客厅人一多，温度显示没有变，身体却开始发黏、发沉；开大风量会吵，会直吹，关小一点又觉得空气停在那里。</p>
-            <p>厨房做饭时，热、油烟、湿气和气味叠在一起。饭还没吃完，人已经觉得燥、闷、累，烹饪变成了一段需要忍耐的时间。</p>
-            <p>卫生间排风开着，异味和潮气仍可能慢慢散出来；衣帽间、走廊和卧室门口，有时也会留下说不清的湿味。</p>
-            <p>新风开着的时候，心理上觉得空气在换；但门窗关久了，卧室还是会有滞留感。夜里不想开窗，又担心空气越睡越浑。</p>
-            <p>冬天开了暖，脚下是暖的，墙面、窗边和角落却还是带着冷意。</p>
-            <p>人在沙发上坐久了，身体并没有真正放松，只是从“冷”变成了“勉强不冷”。</p>
-            <p>老人怕冷，孩子怕闷，长期在家的人对异味、潮气和噪声更敏感。一个房间舒服，不代表整个家都稳定。</p>
-            <p>这些不舒服单独看都不算严重，合在一起却会慢慢消耗居住品质。</p>
-            <p>传统系统各自有效，但它们没有把空气、湿度、温度、洁净和安静组织成一个整体。</p>
-          </div>
-        </div>
-        <figure class="doas-book-system-hero">
-          <img
-            src="../images/doas-traditional-boundary/traditional-hvac-boundary-web.jpg"
-            alt="传统暖通的边界：普通空调、地暖、普通新风和两联供解决局部任务，但不等于完整室内气候"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-statement">
-          <span>传统系统的共同边界</span>
-          <strong>问题不在于传统系统没有价值，而在于冷、热、换气、除湿、过滤和静音经常被分散处理；居住者感受到的，却是同一个房间里同时发生的闷、潮、冷、吵、浑浊和不稳定。</strong>
-        </div>
-        <div class="doas-book-system-strip">
+      <section class="fc-section fc-cases" id="fc-cases">
+        <header class="fc-section-head">
+          <p class="fc-kicker">NATIONWIDE RESIDENTIAL APPLICATIONS</p>
+          <h2>从全国成熟应用，<br />到湖南本地住宅持续落地。</h2>
+          <p>五恒系统已经在全国多座城市、不同住宅形态中形成长期应用。泽风将成熟的系统经验带入长沙、衡阳及湖南其他地区，让高湿气候下的住宅环境拥有更完整的本地设计与交付能力。</p>
+        </header>
+        <div class="fc-case-grid">
           <article>
-            <span>普通空调</span>
-            <strong>主要解决显热与空气温度</strong>
-            <p>温度可以下降，但高湿季节的潜热、露点、气流直吹、启停波动与新风品质，通常不在它的核心控制边界内。</p>
+            <figure><img src="../images/case-national-urban-residences-20260718.png" width="1672" height="941" alt="全国多城市高层大平层五恒住宅应用场景" loading="lazy" decoding="async" /></figure>
+            <div class="fc-case-copy">
+              <div class="fc-case-meta"><span>全国多城</span><em>大平层 · 改善型住宅</em></div>
+              <h3>成熟系统经验，已经进入更多城市住宅。</h3>
+              <p>南京、上海、杭州、宁波、合肥等城市的住宅应用，为不同围护结构、空间尺度和家庭使用方式积累了持续经验。</p>
+            </div>
           </article>
           <article>
-            <span>地暖</span>
-            <strong>主要改善冬季地面热感</strong>
-            <p>脚下温暖可以改善冬季体感，但它不解决夏季除湿、新风、颗粒物、CO₂ 和全年空气更新问题。</p>
+            <figure><img src="../images/case-national-low-density-20260718.png" width="1672" height="941" alt="全国别墅、合院和多层低密住宅五恒应用场景" loading="lazy" decoding="async" /></figure>
+            <div class="fc-case-copy">
+              <div class="fc-case-meta"><span>全国低密住宅</span><em>别墅 · 合院 · 多层住宅</em></div>
+              <h3>从单层舒适，走向整栋住宅的气候秩序。</h3>
+              <p>多楼层、地下空间、挑空客厅与庭院边界，需要分层分区、空气组织、排风关系和维护条件共同成立。</p>
+            </div>
           </article>
           <article>
-            <span>普通新风</span>
-            <strong>主要完成换气与污染物稀释</strong>
-            <p>有新风不等于舒适空气。若没有温湿处理、过滤等级、气流组织与噪声控制，新风本身也可能带来潮湿、冷风感或设备存在感。</p>
-          </article>
-          <article>
-            <span>两联供</span>
-            <strong>主要优化冷热源与末端表达</strong>
-            <p>冷热末端更柔和，并不等于温湿解耦已经成立。若缺少独立新风除湿主线，长沙高湿与湿冷仍会限制舒适上限。</p>
+            <figure><img src="../images/case-hunan-residences-20260718.png" width="1672" height="941" alt="长沙、衡阳及湖南地区高湿气候住宅五恒应用场景" loading="lazy" decoding="async" /></figure>
+            <div class="fc-case-copy">
+              <div class="fc-case-meta"><span>湖南本地</span><em>长沙 · 衡阳 · 更多城市</em></div>
+              <h3>全国经验，在湖南高湿气候中完成本地化落地。</h3>
+              <p>围绕梅雨高湿、过渡季回潮、冬季湿冷和长期关窗空气品质，形成更符合湖南住宅的设计与交付重点。</p>
+            </div>
           </article>
         </div>
-        <div class="doas-book-gap-matrix" aria-label="传统住宅系统未自然覆盖的环境目标">
-          <div>
-            <span>Temperature</span>
-            <strong>温度可达标</strong>
-            <p>但温度达标不等于人体热平衡成立。</p>
-          </div>
-          <div>
-            <span>Humidity</span>
-            <strong>湿度未必受控</strong>
-            <p>潮、闷、湿冷，本质上常常来自含湿量与露点。</p>
-          </div>
-          <div>
-            <span>Fresh Air</span>
-            <strong>换气不等于清醒</strong>
-            <p>CO₂、异味和空气更新效率需要持续组织。</p>
-          </div>
-          <div>
-            <span>Clean Air</span>
-            <strong>过滤不等于洁净</strong>
-            <p>颗粒物、压力关系与污染源控制需要协同。</p>
-          </div>
-          <div>
-            <span>Acoustics</span>
-            <strong>运行不应被感知</strong>
-            <p>风声、设备噪声与气流扰动会直接降低高级感。</p>
-          </div>
-        </div>
-        <div class="doas-book-missing-line">
-          <span>为什么需要五恒</span>
-          <strong>五恒不是把设备继续叠加，而是把住宅从“局部设备能力”提升到“整体室内气候结果”：先定义环境目标，再反推系统架构。</strong>
-        </div>
+        <div class="fc-case-reach"><span>成熟应用网络</span><strong>全国多城经验 × 湖南本地设计 × 住宅全周期交付</strong></div>
       </section>
 
-      <section class="doas-book-section doas-book-outcomes">
-        <div class="doas-book-section-head narrow">
-          <p class="doas-book-kicker">ENVIRONMENTAL OUTCOMES</p>
-          <h2>五恒的重点不在“名词数量”，<br />而在室内环境是否真的形成五项结果。</h2>
+      <section class="fc-proof">
+        <div>
+          <p class="fc-kicker">PROJECT EVIDENCE</p>
+          <h2>我们用运行结果，<br />而不是设备数量证明系统。</h2>
         </div>
-        <figure class="doas-book-outcome-hero">
-          <img
-            src="../images/doas-outcome-logic/five-constant-outcome-logic-web.jpg"
-            alt="五恒是健康与舒适目标系统化后的室内气候结果，而不是设备名称"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-outcome-list">
-          <div>
-            <span>恒温</span>
-            <strong>热环境连续稳定</strong>
-            <p>空气温度与表面温度不再剧烈波动。</p>
-          </div>
-          <div>
-            <span>恒湿</span>
-            <strong>湿负荷与露点受控</strong>
-            <p>不再用低温掩盖潮湿，也不让结露风险进入室内。</p>
-          </div>
-          <div>
-            <span>恒氧</span>
-            <strong>空气持续新鲜</strong>
-            <p>换气建立在洁净与压力组织之上，而不只是送入室外空气。</p>
-          </div>
-          <div>
-            <span>恒洁</span>
-            <strong>洁净度长期可感</strong>
-            <p>颗粒物、异味与滞留感被持续压低，而不是短时改善。</p>
-          </div>
-          <div>
-            <span>恒静</span>
-            <strong>设备低存在感运行</strong>
-            <p>舒适不依赖明显的风感与设备噪声来提醒自身存在。</p>
-          </div>
+        <div class="fc-proof-list">
+          <button type="button"><span>01</span><strong>温湿度与露点</strong><small>连续趋势记录</small></button>
+          <button type="button"><span>02</span><strong>CO₂ 与新风量</strong><small>卧室空气验证</small></button>
+          <button type="button"><span>03</span><strong>声环境检测</strong><small>末端与背景噪声</small></button>
+          <button type="button"><span>04</span><strong>风量与压差</strong><small>房间平衡记录</small></button>
+          <button type="button"><span>05</span><strong>跨季运行复核</strong><small>梅雨 · 高湿 · 冬季</small></button>
         </div>
+        <p class="fc-note">每套项目在交付阶段形成温湿度、露点、风量、空气品质与声环境记录，让系统表现能够被持续查看、复核与优化。</p>
       </section>
 
-      <section class="doas-book-visual-band">
-        <div class="doas-book-visual-band-copy">
-          <span>FROM OUTCOMES TO COMFORT SCIENCE</span>
-          <strong>五个结果能否成立，<br />首先要回到人体热平衡。</strong>
-          <p>温度、湿度、辐射温度、气流速度与人的状态共同决定身体感受；因此，五恒的判断不能停留在设备是否运行，也不能只看一个温度数字。</p>
+      <section class="fc-consult" id="fc-consult">
+        <p class="fc-kicker">A HOME WITH ITS OWN INDOOR CLIMATE</p>
+        <h2>让住宅，<br />拥有自己的气候</h2>
+        <p>温度、湿度、空气、洁净与安静，不再由彼此分离的设备决定，而是在同一套住宅环境中持续协同。</p>
+        <div class="fc-consult-gain">
+          <span>五恒住宅</span>
+          <strong>温和 · 干爽 · 新鲜 · 洁净 · 安静</strong>
         </div>
-      </section>
-
-      <section class="doas-book-section doas-book-comfort">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">COMFORT SCIENCE</p>
-          <h2>热舒适不是单一温度判断，<br />而是热、湿、辐射、气流、代谢与着衣共同作用的结果。</h2>
-        </div>
-        <figure class="doas-book-comfort-hero">
-          <img
-            src="../images/doas-comfort-science/thermal-comfort-six-variables-web.jpg"
-            alt="人体热舒适六变量图：空气温度、平均辐射温度、相对湿度、气流速度、代谢率和着衣量共同决定热平衡"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-annotation-grid">
-          <article>
-            <span>ASHRAE 55</span>
-            <strong>热舒适应回到环境变量，而非只看空调出风温度。</strong>
-          </article>
-          <article>
-            <span>WELL</span>
-            <strong>舒适不仅是冷热问题，还包含声、空气与长期停留体验。</strong>
-          </article>
-          <article>
-            <span>判断原则</span>
-            <strong>如果平均辐射温度、湿度与气流失衡，单一温度达标并不等于舒适达成。</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="doas-book-section doas-book-dewpoint">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">HUMIDITY &amp; DEW POINT</p>
-          <h2>在长沙，先失控的往往不是温度，<br />而是湿度、含湿量与露点。</h2>
-        </div>
-        <figure class="doas-book-dewpoint-hero">
-          <img
-            src="../images/doas-dewpoint-logic/dewpoint-safety-logic-web.jpg"
-            alt="湿度与露点安全示意：表面温度低于露点可能结露，露点受控才能保持干爽"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-prose compact">
-          <p>
-            湖南住宅尤为如此。空气温度降低之后，体感并不会自动转化为轻盈与干爽；真正起决定作用的是空气中残余水汽的水平、露点是否处于安全区间，以及围护结构表面结露风险是否得到控制。
-          </p>
-        </div>
-        <div class="doas-book-dew-scale">
-          <div>
-            <span>10-16°C</span>
-            <strong>温和、轻盈</strong>
-            <p>干爽、放松，适合长期室内停留。</p>
-          </div>
-          <div>
-            <span>16-21°C</span>
-            <strong>发闷、黏滞</strong>
-            <p>汗液蒸发变慢，空气开始出现“闷”的存在感。</p>
-          </div>
-          <div>
-            <span>≥21°C</span>
-            <strong>湿冷、结露风险升高</strong>
-            <p>空气含湿量偏高，表面易结露，霉菌风险随之增加。</p>
-          </div>
-        </div>
-        <div class="doas-book-ruleband">
-          <span>核心判断</span>
-          <strong>低温并不等于干爽。干爽感的形成，本质上取决于露点安全与含湿量控制。</strong>
-        </div>
-      </section>
-
-      <section class="doas-book-section doas-book-climate">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">CHANGSHA CLIMATE</p>
-          <h2>在长沙，真正复杂的不是冷热本身，<br />而是高湿、高露点与湿冷共同构成的复合问题。</h2>
-        </div>
-        <figure class="doas-book-climate-hero">
-          <img
-            src="../images/doas-changsha-climate/changsha-climate-decoupling-web.jpg"
-            alt="长沙五恒系统的核心是温湿解耦：高湿、高露点、湿冷决定系统不能只看温度"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-season-strip">
-          <article>
-            <span>春季</span>
-            <strong>湿重</strong>
-            <p>通风过程本身可能持续引入水汽，空气不易干净利落。</p>
-          </article>
-          <article>
-            <span>夏季</span>
-            <strong>高温高湿</strong>
-            <p>温度下降后，体感仍可能停留在黏、闷、沉重的状态。</p>
-          </article>
-          <article>
-            <span>冬季</span>
-            <strong>湿冷</strong>
-            <p>表面温度偏低时，环境冷感与湿感容易同时出现。</p>
-          </article>
-          <article>
-            <span>地下空间</span>
-            <strong>返潮风险更高</strong>
-            <p>当地下空间被纳入同一住宅系统后，湿负荷与结露边界更需要前置控制。</p>
-          </article>
-        </div>
-        <div class="doas-book-ruleband pale">
-          <span>长沙气候结论</span>
-          <strong>住宅空气系统的起点不应只停留在冷暖，而应从湿负荷、绝对湿度、露点与二氧化碳浓度出发。</strong>
-        </div>
-      </section>
-
-      <section class="doas-book-climate-band">
-        <div class="doas-book-climate-band-copy">
-          <span>FROM CLIMATE TO SYSTEM ROUTE</span>
-          <strong>气候问题被识别之后，<br />系统路线就不应从末端偏好开始。</strong>
-          <p>长沙住宅的关键不是先讨论是否用某一种末端，而是先建立可持续处理新风、潜热、过滤、露点与 CO₂ 的空气主线。</p>
-        </div>
-      </section>
-
-      <section class="doas-book-section doas-book-route">
-        <div class="doas-book-section-head">
-          <p class="doas-book-kicker">DOAS ROUTE</p>
-          <h2>DOAS 五恒系统的价值，<br />在于先建立空气主线，再组织多末端协同。</h2>
-        </div>
-        <figure class="doas-book-route-hero">
-          <img
-            src="../images/doas-route-architecture/doas-system-architecture-web.jpg"
-            alt="DOAS 五恒系统架构：空气主线加多末端协同，最终形成恒温、恒湿、恒氧、恒洁、恒静"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div class="doas-book-route-flowwide">
-          <article>
-            <span>目标定义</span>
-            <strong>先定义环境目标</strong>
-            <p>先明确温、湿、洁净度、氧与噪声边界，再谈设备组织。</p>
-          </article>
-          <article>
-            <span>空气主线</span>
-            <strong>建立空气主线</strong>
-            <p>以新风、过滤、热回收与必要预处理建立室内空气秩序。</p>
-          </article>
-          <article>
-            <span>潜热露点</span>
-            <strong>处理潜热与露点</strong>
-            <p>先完成除湿、潜热与防结露边界，再讨论更细腻的舒适表达。</p>
-          </article>
-          <article>
-            <span>末端协同</span>
-            <strong>多末端协同</strong>
-            <p>风盘、冷梁、地面调温、局部补风与排风按空间特性协同配置。</p>
-          </article>
-          <article>
-            <span>空间策略</span>
-            <strong>分空间策略</strong>
-            <p>别墅不应被简单处理为一套系统覆盖全部空间，而应按区域目标分层组织。</p>
-          </article>
-        </div>
-        <div class="doas-book-route-note">
-          <span>DOAS 五恒系统</span>
-          <strong>空气主线 + 潜热控制 + 多末端协同 + 分空间策略</strong>
-          <p>关键不在于形式是否单一，而在于整个住宅室内气候是否被稳定、连续且可验证地组织起来。</p>
-        </div>
-      </section>
-
-      <section class="doas-book-closing">
-        <figure class="doas-book-closing-hero">
-          <img
-            src="../images/doas-closing/doas-long-term-order-web.jpg"
-            alt="DOAS 五恒系统不是设备清单，而是室内气候的长期秩序"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <h2>五恒真正改变的，不是设备清单，<br />而是住宅内部被长期感受到的环境秩序。</h2>
-        <p>
-          当环境目标被定义清楚之后，系统选择便不再停留于设备偏好，而会回到热舒适、湿环境、空气质量与长期稳定性的共同成立。DOAS 五恒系统的价值，正在于以更清晰的空气主线，将这些目标转化为可落地、可验证、可长期运行的住宅实现路径。
-        </p>
-        <div class="doas-book-closing-resident" aria-label="我的五恒住宅收束">
-          <span>回到居住本身</span>
-          <strong>住久以后，我不再总是意识到系统的存在。</strong>
-          <p>
-            我更常感受到的，是回家后声音被隔开，空气始终新鲜，夜里睡得更沉，清晨醒来没有闷、潮、浑浊和异味。家人可以在这里久坐、阅读、休息、入睡，而不必反复和冷热、湿气、噪声、灰尘做交换。五恒最终留下来的，不是设备的存在感，而是一个让身体放松、让睡眠修复、让家人被安静照顾的室内气候。
-          </p>
-        </div>
-        <div class="route-actions five-atlas-actions">
-          <a class="button primary" href="../index.html#project-access">预约 DOAS 五恒系统沟通</a>
-          <a class="button ghost" href="../index.html#systems">回到空气系统页</a>
+        <div class="fc-actions">
+          <a class="button primary" href="#fc-climate">了解我的五恒住宅</a>
+          <a class="button ghost" href="../index.html#project-access">预约住宅气候沟通</a>
         </div>
       </section>
     </main>
+    <script>
+      (() => {
+        const links = [...document.querySelectorAll(".fc-nav a[href^='#fc-']")];
+        const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+        const setCurrent = (id) => links.forEach((link) => {
+          const active = link.getAttribute("href") === `#${id}`;
+          link.classList.toggle("is-current", active);
+          if (active) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
+        });
+        const observer = new IntersectionObserver((entries) => {
+          const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (visible) setCurrent(visible.target.id);
+        }, { rootMargin: "-22% 0px -62% 0px", threshold: [0, 0.15, 0.35] });
+        sections.forEach((section) => observer.observe(section));
+
+        const hero = document.querySelector(".fc-hero");
+        const slides = [...hero.querySelectorAll(".fc-hero-slide")];
+        const dots = [...hero.querySelectorAll(".fc-hero-dots button")];
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let current = 0;
+        let timer;
+        const showSlide = (index, restart = true) => {
+          current = (index + slides.length) % slides.length;
+          slides.forEach((slide, i) => {
+            const active = i === current;
+            slide.classList.toggle("is-active", active);
+            slide.setAttribute("aria-hidden", String(!active));
+          });
+          dots.forEach((dot, i) => {
+            const active = i === current;
+            dot.classList.toggle("is-active", active);
+            if (active) dot.setAttribute("aria-current", "true");
+            else dot.removeAttribute("aria-current");
+          });
+          if (restart && !reduceMotion) {
+            clearInterval(timer);
+            timer = setInterval(() => showSlide(current + 1, false), 6500);
+          }
+        };
+        hero.querySelector(".is-prev").addEventListener("click", () => showSlide(current - 1));
+        hero.querySelector(".is-next").addEventListener("click", () => showSlide(current + 1));
+        dots.forEach((dot, i) => dot.addEventListener("click", () => showSlide(i)));
+        hero.addEventListener("mouseenter", () => clearInterval(timer));
+        hero.addEventListener("mouseleave", () => { if (!reduceMotion) showSlide(current); });
+        showSlide(0);
+
+        const valueCards = [...document.querySelectorAll(".fc-value-spectrum article")];
+        const activateValueCard = (card, event) => {
+          valueCards.forEach((item) => {
+            item.classList.toggle("is-selected", item === card);
+            item.setAttribute("aria-pressed", String(item === card));
+          });
+          if (event && "clientX" in event) {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty("--pulse-x", `${event.clientX - rect.left}px`);
+            card.style.setProperty("--pulse-y", `${event.clientY - rect.top}px`);
+          } else {
+            card.style.setProperty("--pulse-x", "50%");
+            card.style.setProperty("--pulse-y", "50%");
+          }
+          card.classList.remove("is-activated");
+          void card.offsetWidth;
+          card.classList.add("is-activated");
+          window.setTimeout(() => card.classList.remove("is-activated"), 760);
+        };
+        valueCards.forEach((card) => {
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          card.setAttribute("aria-pressed", "false");
+          card.addEventListener("click", (event) => activateValueCard(card, event));
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activateValueCard(card);
+            }
+          });
+        });
+
+        const deliveryCards = [...document.querySelectorAll(".fc-delivery article")];
+        const activateDeliveryCard = (card, event) => {
+          deliveryCards.forEach((item) => {
+            item.classList.toggle("is-selected", item === card);
+            item.setAttribute("aria-pressed", String(item === card));
+          });
+          if (event && "clientX" in event) {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty("--pulse-x", `${event.clientX - rect.left}px`);
+            card.style.setProperty("--pulse-y", `${event.clientY - rect.top}px`);
+          }
+          card.classList.remove("is-activated");
+          void card.offsetWidth;
+          card.classList.add("is-activated");
+          window.setTimeout(() => card.classList.remove("is-activated"), 760);
+        };
+        deliveryCards.forEach((card) => {
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          card.setAttribute("aria-pressed", "false");
+          card.addEventListener("click", (event) => activateDeliveryCard(card, event));
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activateDeliveryCard(card);
+            }
+          });
+        });
+
+        const proofCards = [...document.querySelectorAll(".fc-proof-list button")];
+        const activateProofCard = (card, event) => {
+          proofCards.forEach((item) => {
+            const selected = item === card;
+            item.classList.toggle("is-selected", selected);
+            item.setAttribute("aria-pressed", String(selected));
+          });
+          if (event && "clientX" in event) {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty("--pulse-x", `${event.clientX - rect.left}px`);
+            card.style.setProperty("--pulse-y", `${event.clientY - rect.top}px`);
+          }
+          card.classList.remove("is-activated");
+          void card.offsetWidth;
+          card.classList.add("is-activated");
+          window.setTimeout(() => card.classList.remove("is-activated"), 760);
+        };
+        proofCards.forEach((card) => {
+          card.setAttribute("aria-pressed", "false");
+          card.addEventListener("click", (event) => activateProofCard(card, event));
+        });
+      })();
+    </script>
   </body>
 </html>
