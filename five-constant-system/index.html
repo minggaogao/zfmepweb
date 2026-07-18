@@ -6,9 +6,9 @@
     <meta name="description" content="泽风机电 DOAS 五恒住宅专栏：从长沙湿热气候、住宅环境目标、露点控制与空气主线出发，解释五恒系统如何被设计、验证与长期交付。" />
     <meta name="robots" content="index, follow" />
     <title>DOAS 五恒住宅专栏 | ZEFENG MEP</title>
-    <link rel="stylesheet" href="../styles.css?v=20260718-2" />
-    <link rel="stylesheet" href="../launch-polish.css?v=20260718-2" />
-    <link rel="stylesheet" href="./five-constant-polish.css?v=20260718-2" />
+    <link rel="stylesheet" href="../styles.css?v=20260718-14" />
+    <link rel="stylesheet" href="../launch-polish.css?v=20260718-14" />
+    <link rel="stylesheet" href="./five-constant-polish.css?v=20260718-14" />
   </head>
   <body class="five-atlas-page doas-book-page fc-page">
     <main class="fc-main">
@@ -26,6 +26,7 @@
         <a href="#fc-values">生活价值</a>
         <a href="#fc-system">系统路线</a>
         <a href="#fc-science">科学依据</a>
+        <a href="#fc-parameters">环境参数</a>
         <a href="#fc-delivery">设计交付</a>
         <a href="#fc-cases">区域案例</a>
         <a href="#fc-consult">项目评估</a>
@@ -111,12 +112,16 @@
           <h2>五恒不是五台设备，<br />而是五项可以验收的环境结果。</h2>
         </header>
         <figure class="fc-wide-image"><img src="../images/doas-five-outcomes-premium-20260718.jpg" width="1672" height="941" alt="恒温、恒湿、恒氧、恒洁与恒静在同一住宅中协同形成五恒环境结果" loading="lazy" decoding="async" /></figure>
-        <div class="fc-outcomes">
-          <article class="outcome-warm"><img src="../images/doas-constant-icon-temperature-web.png" alt="" /><div><strong>恒温</strong><p>空气温度与表面温度连续稳定，减少冷热波动、局部冷感与强风感。</p><small><b>室温</b><b>垂直温差</b><b>表面温度</b></small></div></article>
-          <article class="outcome-humid"><img src="../images/doas-constant-icon-humidity-web.png" alt="" /><div><strong>恒湿</strong><p>主动处理潜热和含湿量，让露点远离冷表面与围护结构风险区。</p><small><b>相对湿度</b><b>含湿量</b><b>室内露点</b></small></div></article>
-          <article class="outcome-air"><img src="../images/doas-constant-icon-oxygen-web.png" alt="" /><div><strong>恒氧</strong><p>持续有组织地更新空气，以新风量和CO₂趋势判断通风是否真正有效。</p><small><b>设计新风量</b><b>CO₂趋势</b></small></div></article>
-          <article class="outcome-clean"><img src="../images/doas-constant-icon-clean-web.png" alt="" /><div><strong>恒洁</strong><p>通过过滤、压力组织和排风协同，持续控制颗粒物、异味与污染迁移。</p><small><b>PM2.5</b><b>过滤等级</b><b>房间压差</b></small></div></article>
-          <article class="outcome-quiet"><img src="../images/doas-constant-icon-quiet-web.png" alt="" /><div><strong>恒静</strong><p>系统低存在感运行，不以明显噪声和送风扰动交换其他四项结果。</p><small><b>背景噪声</b><b>末端声级</b><b>风速</b></small></div></article>
+        <div class="fc-outcomes" aria-label="选择查看五恒结果">
+          <article class="outcome-warm is-selected" data-topic="outcome-warm"><img src="../images/doas-constant-icon-temperature-web.png" alt="" /><div><strong>恒温</strong><p>空气温度与表面温度连续稳定，减少冷热波动、局部冷感与强风感。</p><small><b>室温</b><b>垂直温差</b><b>表面温度</b></small></div></article>
+          <article class="outcome-humid" data-topic="outcome-humid"><img src="../images/doas-constant-icon-humidity-web.png" alt="" /><div><strong>恒湿</strong><p>主动处理潜热和含湿量，让露点远离冷表面与围护结构风险区。</p><small><b>相对湿度</b><b>含湿量</b><b>室内露点</b></small></div></article>
+          <article class="outcome-air" data-topic="outcome-air"><img src="../images/doas-constant-icon-oxygen-web.png" alt="" /><div><strong>恒氧</strong><p>持续有组织地更新空气，以新风量和CO₂趋势判断通风是否真正有效。</p><small><b>设计新风量</b><b>CO₂趋势</b></small></div></article>
+          <article class="outcome-clean" data-topic="outcome-clean"><img src="../images/doas-constant-icon-clean-web.png" alt="" /><div><strong>恒洁</strong><p>通过过滤、压力组织和排风协同，持续控制颗粒物、异味与污染迁移。</p><small><b>PM2.5</b><b>过滤等级</b><b>房间压差</b></small></div></article>
+          <article class="outcome-quiet" data-topic="outcome-quiet"><img src="../images/doas-constant-icon-quiet-web.png" alt="" /><div><strong>恒静</strong><p>系统低存在感运行，不以明显噪声和送风扰动交换其他四项结果。</p><small><b>背景噪声</b><b>末端声级</b><b>风速</b></small></div></article>
+        </div>
+        <div class="fc-topic-stage fc-outcome-stage" data-topic-stage="outcomes">
+          <div><span>恒温 · THERMAL STABILITY</span><h3>不是永远固定一个数字，而是减少身体能够感知的波动。</h3></div>
+          <dl><div><dt>居住感受</dt><dd>房间之间、上下高度和窗边区域的冷热差异更柔和，减少忽冷忽热与局部冷感。</dd></div><div><dt>系统逻辑</dt><dd>空气温度、表面温度、冷热末端与送风组织共同协同，不依赖一阵高速风完成舒适。</dd></div><div><dt>验证方式</dt><dd>连续记录室温，同时复核垂直温差、平均辐射温度和典型冷表面温度。</dd></div></dl>
         </div>
         <p class="fc-note">以上为设计与验收的指标框架，不是脱离项目条件的统一承诺值。具体目标应结合建筑围护结构、人员密度、房间用途、室外气候和末端路线校核。</p>
       </section>
@@ -127,15 +132,21 @@
           <h2>系统最终交付的，<br />是更完整的居住价值。</h2>
           <p>技术路线不应只停留在设备图纸里。它最终要转化成四季温和、湿度舒爽、无明显直吹、空气洁净、环境安静，以及可感知、可管理的日常体验。</p>
         </header>
-        <div class="fc-value-spectrum" aria-label="五恒住宅八项生活价值">
-          <article class="tone-cyan"><span>01</span><strong>四季温和</strong><p>冷热连续而柔和，减少房间之间和垂直方向的明显温差。</p></article>
-          <article class="tone-blue"><span>02</span><strong>湿度舒爽</strong><p>温度与湿度分别处理，不用过度降温掩盖空气中的水汽。</p></article>
-          <article class="tone-mint"><span>03</span><strong>少直吹感</strong><p>让人体主要停留区域远离高速冷风和局部热风扰动。</p></article>
-          <article class="tone-green"><span>04</span><strong>洁净新鲜</strong><p>持续过滤、补充与组织新风，把污染物和异味有序带走。</p></article>
-          <article class="tone-indigo"><span>05</span><strong>安静睡眠</strong><p>将设备、风口与管路噪声作为设计目标，而不是入住后的补救。</p></article>
-          <article class="tone-amber"><span>06</span><strong>空间简洁</strong><p>设备与末端服从室内设计，让环境系统保持低存在感。</p></article>
-          <article class="tone-coral"><span>07</span><strong>智能感知</strong><p>温湿度、CO₂和空气状态持续可见，控制不再只靠主观感受。</p></article>
-          <article class="tone-gold"><span>08</span><strong>长期可管</strong><p>运行策略、维护计划和远程服务共同决定系统能否长久稳定。</p></article>
+        <div class="fc-value-console">
+          <div class="fc-value-spectrum" aria-label="五恒住宅八项生活价值">
+            <article class="tone-cyan is-selected" data-topic="value-season"><span>01</span><strong>四季温和</strong><p>冷热连续而柔和，减少房间之间和垂直方向的明显温差。</p></article>
+            <article class="tone-blue" data-topic="value-humidity"><span>02</span><strong>湿度舒爽</strong><p>温度与湿度分别处理，不用过度降温掩盖空气中的水汽。</p></article>
+            <article class="tone-mint" data-topic="value-wind"><span>03</span><strong>少直吹感</strong><p>让人体主要停留区域远离高速冷风和局部热风扰动。</p></article>
+            <article class="tone-green" data-topic="value-clean"><span>04</span><strong>洁净新鲜</strong><p>持续过滤、补充与组织新风，把污染物和异味有序带走。</p></article>
+            <article class="tone-indigo" data-topic="value-sleep"><span>05</span><strong>安静睡眠</strong><p>将设备、风口与管路噪声作为设计目标，而不是入住后的补救。</p></article>
+            <article class="tone-amber" data-topic="value-space"><span>06</span><strong>空间简洁</strong><p>设备与末端服从室内设计，让环境系统保持低存在感。</p></article>
+            <article class="tone-coral" data-topic="value-sensing"><span>07</span><strong>智能感知</strong><p>温湿度、CO₂和空气状态持续可见，控制不再只靠主观感受。</p></article>
+            <article class="tone-gold" data-topic="value-manage"><span>08</span><strong>长期可管</strong><p>运行策略、维护计划和远程服务共同决定系统能否长久稳定。</p></article>
+          </div>
+          <div class="fc-topic-stage fc-value-stage" data-topic-stage="values">
+            <div><span>01 · FOUR-SEASON GENTLENESS</span><h3>四季温和，不靠强烈冷热刺激提醒你系统正在工作。</h3></div>
+            <dl><div><dt>生活感受</dt><dd>夏季清凉但不过冷，冬季温暖却不燥热，房间之间的变化更加连续。</dd></div><div><dt>实现方式</dt><dd>空气温度、表面温度、湿度与冷热末端协同，减少单一设备高强度启停。</dd></div><div><dt>观察重点</dt><dd>连续温度趋势、垂直温差、典型表面温度以及不同房间的稳定性。</dd></div></dl>
+          </div>
         </div>
 
         <article class="fc-value-feature fc-value-feature-season">
@@ -166,10 +177,71 @@
       </section>
 
       <section class="fc-section fc-system" id="fc-system">
-        <header class="fc-section-head">
+        <header class="fc-section-head fc-air-soul-head">
+          <p class="fc-kicker">AIR IS THE SOUL OF A HIGH-QUALITY HOME</p>
+          <h2>风，是高品质住宅<br />看不见的灵魂。</h2>
+          <p>人未必看得见空气如何流动，却会直接感到闷不闷、黏不黏、有没有吹风感、空气是否清新，以及夜晚够不够安静。五恒不是五套彼此独立的设备：风系统是贯穿五种结果的公共主线，冷热末端则负责补足表面温度与显热需求。</p>
+        </header>
+
+        <div class="fc-air-backbone" aria-label="风系统与五恒结果的关系">
+          <article class="air-warm"><span>恒温</span><strong>温和送风与分区组织</strong><p>减少局部温差，并与辐射、地暖等冷热末端协同。</p></article>
+          <article class="air-humid"><span>恒湿</span><strong>潜热、含湿量与露点</strong><p>先把水汽处理清楚，避免用过度降温换取干爽。</p></article>
+          <div class="fc-air-core">
+            <i aria-hidden="true"></i>
+            <small>AIR BACKBONE</small>
+            <strong>风</strong>
+            <span>连接五恒的<br />空气主线</span>
+          </div>
+          <article class="air-oxygen"><span>恒氧</span><strong>持续新风与 CO₂ 稀释</strong><p>让洁净室外空气经过人的呼吸区域，而不是只在设备旁循环。</p></article>
+          <article class="air-clean"><span>恒洁</span><strong>过滤、压差与有序排风</strong><p>控制颗粒物、异味与污染迁移，把脏空气送到该离开的地方。</p></article>
+          <article class="air-quiet"><span>恒静</span><strong>低风速与声学控制</strong><p>从风量、风管、风口到机房共同降低风噪与设备存在感。</p></article>
+        </div>
+
+        <div class="fc-doas-intro">
+          <div class="fc-doas-title">
+            <p class="fc-kicker">THE DOAS CORE</p>
+            <h3>五恒最重要的空气主线：DOAS</h3>
+            <p><strong>DOAS（Dedicated Outdoor Air System，独立新风系统）</strong>不是再增加一台普通新风机，而是把室外空气独立处理：按设计风量引入、过滤，并对湿负荷和送风露点进行控制，再与住宅冷热末端协同。</p>
+          </div>
+          <div class="fc-doas-capabilities">
+            <article><span>01</span><strong>独立处理室外空气</strong><p>新风量不再依赖室内循环负荷，以 CO₂、人数和空间用途验证通风是否有效。</p></article>
+            <article><span>02</span><strong>独立处理水汽</strong><p>把潜热与显热解耦，管理含湿量和露点，尤其适合长沙、衡阳等高湿地区。</p></article>
+            <article><span>03</span><strong>组织全屋协同</strong><p>连接送回排风、过滤、压差和末端控制；DOAS 是组织者，但不是脱离冷热末端独自完成五恒。</p></article>
+          </div>
+        </div>
+
+        <div class="fc-system-compare">
+          <div class="fc-system-compare-head">
+            <p class="fc-kicker">NOT ALL AIR SYSTEMS DO THE SAME JOB</p>
+            <h3>都在“送风”，承担的任务并不相同。</h3>
+            <p>看见风口，不等于系统已经处理了新风量、湿负荷与露点。真正的区别，在于空气从哪里来、经过什么处理，以及是否与冷热末端共同受控。</p>
+          </div>
+          <div class="fc-system-compare-grid">
+            <article>
+              <span>01 · COOLING & HEATING</span>
+              <strong>中央空调</strong>
+              <b>主要处理室内冷热负荷</b>
+              <p>以室内循环空气为主，擅长显热处理；持续新风、湿负荷和完整空气品质通常需要其他系统配合。</p>
+            </article>
+            <article>
+              <span>02 · VENTILATION</span>
+              <strong>普通新风</strong>
+              <b>主要完成换气与基础过滤</b>
+              <p>可以更新空气，但在高湿天气下，未必具备独立、稳定的除湿能力和送风露点控制。</p>
+            </article>
+            <article class="is-doas">
+              <span>03 · DEDICATED OUTDOOR AIR</span>
+              <strong>DOAS</strong>
+              <b>独立处理室外空气与湿负荷</b>
+              <p>把新风量、过滤、潜热和露点纳入同一条空气主线，再与地暖、辐射或其他冷热末端协同。</p>
+            </article>
+          </div>
+        </div>
+
+        <header class="fc-section-head fc-route-head">
           <p class="fc-kicker">DOAS SYSTEM ROUTE</p>
           <h2>先建立空气主线，<br />再让冷热末端各司其职。</h2>
-          <p>DOAS 独立新风系统把新风、过滤、潜热和露点控制集中到空气主线；风盘、冷梁、地暖或地面调温等末端按项目条件协同，而不是继续叠加互不理解的设备。</p>
+          <p>当空气的来源、水汽、洁净度与流向被系统化管理，风盘、冷梁、地暖或地面调温等末端才能按项目条件各司其职，而不是继续叠加互不理解的设备。</p>
         </header>
         <figure class="fc-wide-image fc-diagram"><img src="../images/doas-system-route-premium-20260718.jpg" width="1672" height="941" alt="DOAS新风除湿、过滤、露点控制与住宅冷热末端协同运行的系统路线" loading="lazy" decoding="async" /></figure>
         <ol class="fc-flow">
@@ -214,6 +286,97 @@
         <p class="fc-note">“五恒”不是上述标准的原文术语，而是住宅室内环境目标在中文语境中的综合表达。标准用于建立设计边界和验证方法，不替代具体项目计算。</p>
       </section>
 
+      <section class="fc-section fc-parameters-section" id="fc-parameters">
+        <header class="fc-section-head">
+          <p class="fc-kicker">MEASURABLE INDOOR ENVIRONMENT</p>
+          <h2>身体的感受，<br />最终要落到可以连续观察的数值。</h2>
+          <p>同一个“闷、黏、冷、吹、吵”，可能来自完全不同的环境变量。专业判断必须同时看数值、持续时间、空间位置与变化趋势，而不是只看一块面板上的瞬时读数。</p>
+        </header>
+
+        <figure class="fc-wide-image fc-parameters-visual">
+          <img src="../images/indoor-environment-parameters-20260718.jpg" width="1672" height="941" alt="木地板、木饰面与亚麻布艺住宅中的室内环境参数感知" loading="lazy" decoding="async" />
+          <figcaption><span>09</span><strong>项核心参数</strong><small>热 · 湿 · 露点 · 风 · 气 · 尘 · 化学物 · 放射性 · 声</small></figcaption>
+        </figure>
+
+        <div class="fc-parameter-console">
+          <div class="fc-parameter-selector" role="tablist" aria-label="选择查看室内环境参数">
+            <button class="is-active parameter-thermal" type="button" role="tab" aria-selected="true" data-param="thermal"><span>01</span><strong>温度</strong><small>22–28°C</small></button>
+            <button class="parameter-humidity" type="button" role="tab" aria-selected="false" data-param="humidity"><span>02</span><strong>相对湿度</strong><small>40–60% RH</small></button>
+            <button class="parameter-dewpoint" type="button" role="tab" aria-selected="false" data-param="dewpoint"><span>03</span><strong>露点</strong><small>建议 12–16°Cdp</small></button>
+            <button class="parameter-air-speed" type="button" role="tab" aria-selected="false" data-param="speed"><span>04</span><strong>风速</strong><small>≤0.20–0.30m/s</small></button>
+            <button class="parameter-co2" type="button" role="tab" aria-selected="false" data-param="co2"><span>05</span><strong>CO₂</strong><small>≤1000ppm</small></button>
+            <button class="parameter-pm" type="button" role="tab" aria-selected="false" data-param="pm"><span>06</span><strong>PM2.5</strong><small>≤50µg/m³</small></button>
+            <button class="parameter-tvoc" type="button" role="tab" aria-selected="false" data-param="tvoc"><span>07</span><strong>TVOC</strong><small>≤0.60mg/m³</small></button>
+            <button class="parameter-radon" type="button" role="tab" aria-selected="false" data-param="radon"><span>08</span><strong>氡</strong><small>≤300Bq/m³</small></button>
+            <button class="parameter-noise" type="button" role="tab" aria-selected="false" data-param="noise"><span>09</span><strong>噪声</strong><small>夜间 &lt;30dB(A)</small></button>
+          </div>
+
+          <div class="fc-parameter-stage" aria-live="polite">
+            <article class="is-active" role="tabpanel" data-panel="thermal">
+              <header><span>01 · THERMAL</span><h3>温度与表面温度</h3><em>°C</em></header>
+              <div class="fc-param-primary"><b>夏季 22–28</b><b>冬季 16–24</b></div>
+              <div class="fc-param-scale scale-thermal"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体感受</strong>空气温度只代表一部分体感。窗边、墙面和地面的表面温度偏低时，即使温控器显示正常，也可能出现肩背发冷、脚冷或局部不均匀。</p><p><strong>标准与判断</strong>上述区间为 GB/T 18883-2022 季节性要求。工程上还应同步记录垂直温差与平均辐射温度。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="humidity" hidden>
+              <header><span>02 · RELATIVE HUMIDITY</span><h3>相对湿度</h3><em>% RH</em></header>
+              <div class="fc-param-primary"><b>国标夏季 40–80%</b><b>国标冬季 30–60%</b><b>住宅建议 40–60%</b></div>
+              <div class="fc-param-scale scale-moisture"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体感受</strong>相对湿度偏高时皮肤蒸发变慢，容易黏、闷、不干爽；偏低时可能出现口鼻、眼睛与皮肤干燥。</p><p><strong>标准与判断</strong>国标区间来自 GB/T 18883-2022；40–60% RH 是兼顾舒适、干燥感与潮湿风险的住宅运行建议带，不是另一条强制标准。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="dewpoint" hidden>
+              <header><span>03 · DEW POINT</span><h3>露点温度</h3><em>°Cdp</em></header>
+              <div class="fc-param-primary"><b>&lt;12 偏干爽</b><b>12–16 建议运行带</b><b>≥16.8 湿负荷关注</b></div>
+              <div class="fc-param-scale scale-dewpoint"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体感受</strong>露点反映空气实际携带的水汽，不会像相对湿度那样随室温直接波动。露点持续升高时，住宅更容易出现黏闷、冷表面凝露和霉变风险。</p><p><strong>标准与判断</strong>GB/T 18883-2022 未单列住宅露点限值。12–16°Cdp 为五恒住宅建议运行带；约 16.8°Cdp 是 ASHRAE 55 舒适区上部湿度边界参考。任何时候，冷表面温度都应高于室内露点并保留安全余量。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="speed" hidden>
+              <header><span>04 · AIR SPEED</span><h3>人员活动区风速</h3><em>m/s</em></header>
+              <div class="fc-param-primary"><b>夏季 ≤0.30</b><b>冬季 ≤0.20</b></div>
+              <div class="fc-param-scale scale-speed"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体感受</strong>久坐、皮肤裸露或空气偏冷时，较高风速更容易形成吹风感、颈肩不适和局部冷感。</p><p><strong>标准与判断</strong>区间来自 GB/T 18883-2022。应在床、沙发和书桌等人体停留区测量，同时验证新风量不低于 30m³/(h·人)。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="co2" hidden>
+              <header><span>05 · VENTILATION</span><h3>二氧化碳 CO₂</h3><em>ppm</em></header>
+              <div class="fc-param-bands"><b>&lt;800 目标带</b><b>800–1000 关注</b><b>&gt;1000 复核通风</b></div>
+              <div class="fc-param-scale scale-co2"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体感受</strong>升高时常伴随闷、空气不新鲜、注意力下降或困倦，但不代表已达到 CO₂ 毒性浓度。</p><p><strong>标准与判断</strong>GB/T 18883-2022 要求 1 小时平均 ≤1000ppm。它主要验证人员相关污染物是否被有效稀释，不代表全部空气品质。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="pm" hidden>
+              <header><span>06 · PARTICLES</span><h3>细颗粒物 PM2.5</h3><em>µg/m³</em></header>
+              <div class="fc-param-bands"><b>WHO 24h 15</b><b>国标 24h 50</b><b>越低越好</b></div>
+              <div class="fc-param-scale scale-pm"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体反应</strong>颗粒物可能刺激呼吸道；儿童、老人以及哮喘和心肺疾病人群通常更敏感。</p><p><strong>标准与判断</strong>GB/T 18883-2022 为 24 小时平均 ≤50µg/m³；WHO 健康导向值为 24 小时 15µg/m³、年平均 5µg/m³。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="tvoc" hidden>
+              <header><span>07 · CHEMICALS</span><h3>总挥发性有机物 TVOC</h3><em>mg/m³</em></header>
+              <div class="fc-param-bands"><b>≤0.60</b><b>8 小时平均</b><b>结合单项检测</b></div>
+              <div class="fc-param-scale scale-tvoc"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体反应</strong>部分 VOC 暴露可能伴随眼鼻咽刺激、头痛、恶心、疲劳或眩晕，不同化合物毒性差异很大。</p><p><strong>标准与判断</strong>GB/T 18883-2022 要求 8 小时平均 ≤0.60mg/m³。TVOC 总值降低不等于每一种化学物都安全。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="radon" hidden>
+              <header><span>08 · RADON</span><h3>氡气</h3><em>Bq/m³</em></header>
+              <div class="fc-param-bands"><b>WHO 建议 100</b><b>国标 ≤300</b><b>年平均</b></div>
+              <div class="fc-param-scale scale-radon"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体反应</strong>氡无色无味，通常没有可以立即察觉的症状；风险来自长期累积暴露，并与肺癌风险相关。</p><p><strong>标准与判断</strong>GB/T 18883-2022 年平均参考水平 ≤300Bq/m³；WHO 建议在可行时以 100Bq/m³ 为参考水平。</p></div>
+            </article>
+            <article role="tabpanel" data-panel="noise" hidden>
+              <header><span>09 · ACOUSTICS</span><h3>卧室连续背景噪声</h3><em>dB(A)</em></header>
+              <div class="fc-param-bands"><b>夜间 &lt;30</b><b>单次峰值 &lt;45</b><b>越稳定越好</b></div>
+              <div class="fc-param-scale scale-noise"><i></i></div>
+              <div class="fc-param-copy"><p><strong>人体反应</strong>噪声不一定把人完全吵醒，也可能导致入睡困难、睡眠片段化、烦扰和第二天疲劳。</p><p><strong>标准与判断</strong>WHO 建议卧室夜间连续噪声低于 30dB(A)，非连续事件室内峰值尽量低于 45dB(A)。</p></div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="fc-parameter-reading">
+          <strong>看数值，更要看趋势</strong>
+          <p>单点传感器不能代表整套住宅。卧室应关注夜间峰值与人员数量，露点应和冷表面温度一起看，风速要在人体停留区测量，氡和 TVOC 则需要符合采样周期与检测方法。</p>
+        </aside>
+
+        <p class="fc-note fc-parameter-source">主要依据：GB/T 18883-2022《室内空气质量标准》；WHO Global Air Quality Guidelines 2021；WHO Indoor Radon 与 Community Noise 指南；美国 EPA VOC 室内空气资料；NIOSH CO₂ 职业暴露资料。人体感受存在个体差异，本章用于住宅环境设计与沟通，不替代医学诊断。</p>
+      </section>
+
       <section class="fc-section" id="fc-delivery">
         <header class="fc-section-head">
           <p class="fc-kicker">FROM DESIGN TO COMMISSIONING</p>
@@ -221,14 +384,86 @@
           <p>设备采购只是其中一环。住宅围护结构、湿负荷、风量平衡、管线路由、噪声控制、控制逻辑和现场调试，必须由同一组环境目标贯穿。</p>
         </header>
         <figure class="fc-wide-image"><img src="../images/doas-project-delivery-commissioning-20260718.jpg" width="1672" height="941" alt="工程师在高端住宅内进行空气系统检测与交付调试" loading="lazy" decoding="async" /></figure>
-        <div class="fc-delivery">
-          <article><span>01</span><strong>项目诊断</strong><p>读取户型、朝向、围护结构、人员与使用场景，识别湿负荷和空气风险。</p></article>
-          <article><span>02</span><strong>系统设计</strong><p>确定新风量、除湿能力、冷热末端、分区策略、排风与压差关系。</p></article>
-          <article><span>03</span><strong>机电深化</strong><p>协调层高、风管水管、检修、风口、设备机房和室内设计边界。</p></article>
-          <article><span>04</span><strong>施工配合</strong><p>核验关键节点、保温气密、冷凝水、消声与设备安装条件。</p></article>
-          <article><span>05</span><strong>调试验证</strong><p>测量风量、温湿度、CO₂、噪声、压差和控制逻辑，不以“设备启动”代替交付。</p></article>
-          <article><span>06</span><strong>长期维护</strong><p>形成滤网、排水、传感器和设备维护计划，让设计结果能够持续。</p></article>
+        <div class="fc-delivery-console">
+          <div class="fc-delivery-selector" role="tablist" aria-label="选择查看五恒设计交付阶段">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-delivery="diagnosis"><span>01</span><strong>项目诊断</strong><small>识别环境问题</small></button>
+            <button type="button" role="tab" aria-selected="false" data-delivery="design"><span>02</span><strong>系统设计</strong><small>建立完整路线</small></button>
+            <button type="button" role="tab" aria-selected="false" data-delivery="coordination"><span>03</span><strong>机电深化</strong><small>进入空间与节点</small></button>
+            <button type="button" role="tab" aria-selected="false" data-delivery="construction"><span>04</span><strong>施工配合</strong><small>把设计落到现场</small></button>
+            <button type="button" role="tab" aria-selected="false" data-delivery="commissioning"><span>05</span><strong>调试验证</strong><small>用数据完成交付</small></button>
+            <button type="button" role="tab" aria-selected="false" data-delivery="maintenance"><span>06</span><strong>长期维护</strong><small>让结果持续存在</small></button>
+          </div>
+
+          <div class="fc-delivery-stage" aria-live="polite">
+            <article class="is-active" role="tabpanel" data-delivery-panel="diagnosis">
+              <header><span>01 · PROJECT DIAGNOSIS</span><h3>项目诊断</h3><em>从住宅本身出发</em></header>
+              <p class="fc-delivery-lead">在选择设备之前，先判断这套住宅真正面对什么问题，以及家庭希望获得怎样的室内气候。</p>
+              <div class="fc-delivery-detail">
+                <div><small>主要任务</small><strong>读取建筑与生活方式</strong><p>分析户型、朝向、围护结构、层高、人员数量、房间用途和开窗习惯。</p></div>
+                <div><small>关键输出</small><strong>住宅环境风险清单</strong><p>识别显热、湿负荷、露点、空气更新、声环境和设备空间风险。</p></div>
+                <div><small>交付价值</small><strong>先确认问题，再选择路线</strong><p>避免用设备偏好代替项目判断，也避免为不必要的功能增加复杂度。</p></div>
+              </div>
+            </article>
+            <article role="tabpanel" data-delivery-panel="design" hidden>
+              <header><span>02 · SYSTEM DESIGN</span><h3>系统设计</h3><em>把目标变成计算</em></header>
+              <p class="fc-delivery-lead">将“温和、干爽、新鲜、洁净、安静”转化成可以计算、选型和验证的系统条件。</p>
+              <div class="fc-delivery-detail">
+                <div><small>主要任务</small><strong>确定空气与冷热路线</strong><p>计算新风量、湿负荷和冷热负荷，确定分区、排风、压差和末端组合。</p></div>
+                <div><small>关键输出</small><strong>系统原理与设备条件</strong><p>形成设计目标、系统图、主要参数、设备能力和控制策略。</p></div>
+                <div><small>交付价值</small><strong>让所有设备服务同一目标</strong><p>DOAS、冷热末端、排风和控制不再各自运行，而是共同完成住宅气候。</p></div>
+              </div>
+            </article>
+            <article role="tabpanel" data-delivery-panel="coordination" hidden>
+              <header><span>03 · MEP COORDINATION</span><h3>机电深化</h3><em>性能进入真实空间</em></header>
+              <p class="fc-delivery-lead">系统能否安静、简洁、可维护，往往在吊顶、管线、风口和检修节点确定时就已经决定。</p>
+              <div class="fc-delivery-detail">
+                <div><small>主要任务</small><strong>协调层高与管线路由</strong><p>统筹风管、水管、冷凝水、设备机房、风口、阀件和检修空间。</p></div>
+                <div><small>关键输出</small><strong>综合机电深化图</strong><p>明确标高、尺寸、定位、保温、消声、检修和室内设计边界。</p></div>
+                <div><small>交付价值</small><strong>性能与美感不相互牺牲</strong><p>减少现场碰撞、吊顶压低、风口突兀和后期无法检修的问题。</p></div>
+              </div>
+            </article>
+            <article role="tabpanel" data-delivery-panel="construction" hidden>
+              <header><span>04 · CONSTRUCTION SUPPORT</span><h3>施工配合</h3><em>把图纸变成现场质量</em></header>
+              <p class="fc-delivery-lead">五恒的关键质量藏在保温、气密、排水、消声和设备安装条件中，不能只看表面完成度。</p>
+              <div class="fc-delivery-detail">
+                <div><small>主要任务</small><strong>核验关键施工节点</strong><p>检查风管气密、管道保温、冷凝水坡度、存水弯、减振和消声措施。</p></div>
+                <div><small>关键输出</small><strong>现场问题与整改记录</strong><p>对隐蔽工程、设备基础、检修条件和控制接线进行阶段核验。</p></div>
+                <div><small>交付价值</small><strong>问题在封板之前解决</strong><p>降低结露、漏水、噪声、风量不足和后期拆改风险。</p></div>
+              </div>
+            </article>
+            <article role="tabpanel" data-delivery-panel="commissioning" hidden>
+              <header><span>05 · COMMISSIONING</span><h3>调试验证</h3><em>设备启动不等于交付</em></header>
+              <p class="fc-delivery-lead">系统必须在真实房间和真实使用条件下被测量，确认设计目标已经转化为运行结果。</p>
+              <div class="fc-delivery-detail">
+                <div><small>主要任务</small><strong>测量与平衡</strong><p>复核风量、温湿度、露点、CO₂、房间压差、噪声和控制联动。</p></div>
+                <div><small>关键输出</small><strong>调试与验收记录</strong><p>形成设定值、实测值、控制逻辑、问题整改和最终运行状态。</p></div>
+                <div><small>交付价值</small><strong>用结果证明系统</strong><p>不是“机器已经开机”，而是住宅环境可以被持续查看和复核。</p></div>
+              </div>
+            </article>
+            <article role="tabpanel" data-delivery-panel="maintenance" hidden>
+              <header><span>06 · LIFECYCLE SERVICE</span><h3>长期维护</h3><em>交付之后仍可管理</em></header>
+              <p class="fc-delivery-lead">滤网、排水、换热器、传感器和运行策略会随时间变化，长期表现依赖清晰的维护计划。</p>
+              <div class="fc-delivery-detail">
+                <div><small>主要任务</small><strong>建立维护周期</strong><p>根据空气环境和使用时间安排滤网、排水、设备洁净和传感器复核。</p></div>
+                <div><small>关键输出</small><strong>设备与运行档案</strong><p>保留设定、报警、维护、耗材和跨季运行记录。</p></div>
+                <div><small>交付价值</small><strong>让设计结果能够持续</strong><p>家庭知道何时维护、维护什么，也能判断系统表现是否发生变化。</p></div>
+              </div>
+            </article>
+          </div>
         </div>
+        <aside class="fc-operation-boundary">
+          <div>
+            <p class="fc-kicker">LONG-TERM OPERATION</p>
+            <h3>稳定的室内气候，来自可以被维护的系统。</h3>
+            <p>五恒首先解决环境稳定性，不等于在所有住宅、所有设定下都天然节能。围护结构、目标温湿度、家庭人数、室外气候与运行策略共同决定实际能耗。</p>
+          </div>
+          <ul>
+            <li><span>FILTER</span><strong>过滤系统</strong><small>按室外空气、压差和使用时间检查、更换</small></li>
+            <li><span>DRAINAGE</span><strong>排水与换热器</strong><small>定期检查冷凝水、存水弯和设备内部洁净</small></li>
+            <li><span>SENSOR</span><strong>传感器与控制</strong><small>复核温湿度、CO₂ 与控制逻辑是否长期可信</small></li>
+            <li><span>SEASON</span><strong>跨季运行</strong><small>梅雨、高湿、冬季和长期离家采用不同策略</small></li>
+          </ul>
+        </aside>
       </section>
 
       <section class="fc-section fc-cases" id="fc-cases">
@@ -264,6 +499,21 @@
           </article>
         </div>
         <div class="fc-case-reach"><span>成熟应用网络</span><strong>全国多城经验 × 湖南本地设计 × 住宅全周期交付</strong></div>
+        <aside class="fc-case-record">
+          <div>
+            <p class="fc-kicker">A CASE IS A TRACEABLE RECORD</p>
+            <h3>真正有说服力的案例，<br />不止是一张住宅照片。</h3>
+            <p>每个经授权公开的项目，都应逐步补充能够被复核的设计与运行信息。页面不使用缺乏依据的数字作为宣传承诺。</p>
+          </div>
+          <div class="fc-case-record-grid">
+            <span><b>01</b>城市与住宅类型</span>
+            <span><b>02</b>面积、层数与常住人数</span>
+            <span><b>03</b>系统路线与设计目标</span>
+            <span><b>04</b>温湿度与露点趋势</span>
+            <span><b>05</b>CO₂、风量与声环境</span>
+            <span><b>06</b>跨季运行与维护记录</span>
+          </div>
+        </aside>
       </section>
 
       <section class="fc-proof">
@@ -271,14 +521,37 @@
           <p class="fc-kicker">PROJECT EVIDENCE</p>
           <h2>我们用运行结果，<br />而不是设备数量证明系统。</h2>
         </div>
-        <div class="fc-proof-list">
-          <button type="button"><span>01</span><strong>温湿度与露点</strong><small>连续趋势记录</small></button>
-          <button type="button"><span>02</span><strong>CO₂ 与新风量</strong><small>卧室空气验证</small></button>
-          <button type="button"><span>03</span><strong>声环境检测</strong><small>末端与背景噪声</small></button>
-          <button type="button"><span>04</span><strong>风量与压差</strong><small>房间平衡记录</small></button>
-          <button type="button"><span>05</span><strong>跨季运行复核</strong><small>梅雨 · 高湿 · 冬季</small></button>
+        <div class="fc-proof-console">
+          <div class="fc-proof-list">
+            <button class="is-selected" type="button" data-topic="proof-climate"><span>01</span><strong>温湿度与露点</strong><small>连续趋势记录</small></button>
+            <button type="button" data-topic="proof-air"><span>02</span><strong>CO₂ 与新风量</strong><small>卧室空气验证</small></button>
+            <button type="button" data-topic="proof-noise"><span>03</span><strong>声环境检测</strong><small>末端与背景噪声</small></button>
+            <button type="button" data-topic="proof-balance"><span>04</span><strong>风量与压差</strong><small>房间平衡记录</small></button>
+            <button type="button" data-topic="proof-season"><span>05</span><strong>跨季运行复核</strong><small>梅雨 · 高湿 · 冬季</small></button>
+          </div>
+          <div class="fc-topic-stage fc-proof-stage" data-topic-stage="proof">
+            <div><span>01 · THERMAL & MOISTURE RECORD</span><h3>温度达标只是起点，湿度、露点和持续时间必须一起看。</h3></div>
+            <dl><div><dt>记录什么</dt><dd>典型房间的空气温度、相对湿度、室内露点和必要的冷表面温度。</dd></div><div><dt>为什么重要</dt><dd>瞬时读数无法说明梅雨季湿负荷、夜间波动和结露安全是否长期受控。</dd></div><div><dt>如何判断</dt><dd>结合目标区间、持续时间、房间位置和室外气候复核趋势，而不是只截取最好的一刻。</dd></div></dl>
+          </div>
         </div>
         <p class="fc-note">每套项目在交付阶段形成温湿度、露点、风量、空气品质与声环境记录，让系统表现能够被持续查看、复核与优化。</p>
+      </section>
+
+      <section class="fc-fit">
+        <header>
+          <p class="fc-kicker">IS FIVE-CONSTANT RIGHT FOR MY HOME?</p>
+          <h2>什么样的住宅，<br />更值得优先做五恒评估？</h2>
+          <p>面积不是唯一条件。气候、密闭性、家庭人数、生活方式和装修阶段，往往比单纯的平方米更能决定系统价值。</p>
+        </header>
+        <div class="fc-fit-grid">
+          <article><span>高湿气候</span><strong>长沙、衡阳及湖南地区</strong><p>梅雨、高含湿量、冬季湿冷和过渡季回潮更需要独立管理水汽。</p></article>
+          <article><span>住宅形态</span><strong>大平层、别墅与多层住宅</strong><p>面积大、楼层多、功能复杂时，更需要分区、压差和空气路径设计。</p></article>
+          <article><span>生活方式</span><strong>长期关闭门窗</strong><p>追求安静、安全和室内设计完整度时，有组织的新风成为基础条件。</p></article>
+          <article><span>家庭成员</span><strong>儿童、老人或长期居家</strong><p>卧室夜间空气、声环境和长期稳定性值得更连续地观察。</p></article>
+          <article><span>环境目标</span><strong>重视睡眠、空气与低风感</strong><p>如果需求不只是“冷下来”，五恒才有明确的设计意义。</p></article>
+          <article><span>项目阶段</span><strong>建筑、机电或装修前期</strong><p>越早协调设备、管线、层高和风口，越容易兼顾性能与空间美感。</p></article>
+        </div>
+        <p class="fc-fit-note">小面积住宅同样可以评估，但应先判断问题是否需要完整五恒路线，避免为了概念而堆叠系统。</p>
       </section>
 
       <section class="fc-consult" id="fc-consult">
@@ -342,7 +615,52 @@
         hero.addEventListener("mouseleave", () => { if (!reduceMotion) showSlide(current); });
         showSlide(0);
 
+        const topicCopy = {
+          "outcome-warm": ["恒温 · THERMAL STABILITY", "不是永远固定一个数字，而是减少身体能够感知的波动。", ["居住感受", "房间之间、上下高度和窗边区域的冷热差异更柔和，减少忽冷忽热与局部冷感。"], ["系统逻辑", "空气温度、表面温度、冷热末端与送风组织共同协同，不依赖一阵高速风完成舒适。"], ["验证方式", "连续记录室温，同时复核垂直温差、平均辐射温度和典型冷表面温度。"]],
+          "outcome-humid": ["恒湿 · MOISTURE CONTROL", "不是只看相对湿度，而是把空气中的水汽和露点真正管理起来。", ["居住感受", "梅雨季不黏闷，冬季不过度干燥，衣物、柜体与墙角减少返潮和霉变风险。"], ["系统逻辑", "DOAS 独立处理潜热和含湿量，让除湿不再依赖过度降温。"], ["验证方式", "同时观察相对湿度、含湿量、室内露点与冷表面温度之间的安全余量。"]],
+          "outcome-air": ["恒氧 · FRESH-AIR EFFECTIVENESS", "不是制造更多氧气，而是持续稀释人员产生的浑浊空气。", ["居住感受", "卧室夜间和多人聚集时减少闷、困倦与空气不新鲜的感觉。"], ["系统逻辑", "按人数和空间用途组织室外空气，让新风经过人的呼吸区域。"], ["验证方式", "结合设计新风量、实测风量和卧室夜间 CO₂ 趋势判断通风有效性。"]],
+          "outcome-clean": ["恒洁 · CLEAN AIR", "过滤只是第一步，污染物还需要被阻挡、稀释并有序排出。", ["居住感受", "减少颗粒物、异味和不同房间之间的污染迁移，空气更清爽。"], ["系统逻辑", "过滤、新风、排风与房间压差共同建立洁净空气路径。"], ["验证方式", "检查过滤条件、PM2.5 趋势、送排风关系和厨房卫生间压力组织。"]],
+          "outcome-quiet": ["恒静 · ACOUSTIC COMFORT", "安静不是关掉系统，而是让系统运行时仍保持低存在感。", ["居住感受", "夜间不被持续低频、风口气流声和设备启停打扰。"], ["系统逻辑", "从设备选型、风速、风管、消声、减振到风口共同控制声源。"], ["验证方式", "在卧室夜间工况下区分背景噪声、设备噪声、风口噪声和室外传入声。"]],
+          "value-season": ["01 · FOUR-SEASON GENTLENESS", "四季温和，不靠强烈冷热刺激提醒你系统正在工作。", ["生活感受", "夏季清凉但不过冷，冬季温暖却不燥热，房间之间的变化更加连续。"], ["实现方式", "空气温度、表面温度、湿度与冷热末端协同，减少单一设备高强度启停。"], ["观察重点", "连续温度趋势、垂直温差、典型表面温度以及不同房间的稳定性。"]],
+          "value-humidity": ["02 · DRY & COMFORTABLE", "真正的干爽，是温度合适时空气中的水汽也被处理清楚。", ["生活感受", "梅雨季皮肤和织物不黏，夏季无需把温度降得很低才获得干爽。"], ["实现方式", "显热与潜热分开处理，以含湿量和露点指导新风除湿。"], ["观察重点", "相对湿度、露点、冷表面安全余量和梅雨季连续运行表现。"]],
+          "value-wind": ["03 · LOW DRAFT", "少直吹感，不等于没有空气流动，而是风在身体周围更温和。", ["生活感受", "沙发、书桌和床边减少高速冷风、颈肩冷感和明显送风扰动。"], ["实现方式", "控制送风温差、风速、风口位置和人体活动区空气组织。"], ["观察重点", "人员停留区风速、送风温度、风口覆盖范围和不同工况下的体感。"]],
+          "value-clean": ["04 · FRESH & CLEAN", "新鲜空气应该先服务人的呼吸区域，再把潮气与异味有序带走。", ["生活感受", "关窗后仍保持空气更新，卧室和公共空间减少浑浊与异味。"], ["实现方式", "室外空气经过过滤和处理后送入洁净区，再由回排风路径带离污染物。"], ["观察重点", "新风量、CO₂、PM2.5、过滤状态以及厨房卫生间排风关系。"]],
+          "value-sleep": ["05 · QUIET SLEEP", "好的系统在夜里继续工作，却不需要用声音证明自己的存在。", ["生活感受", "减少入睡干扰、持续低频噪声和风口声带来的睡眠片段化。"], ["实现方式", "低风速设计、设备减振、管路消声和夜间运行策略共同成立。"], ["观察重点", "卧室背景噪声、设备启停峰值、末端声级和夜间典型工况。"]],
+          "value-space": ["06 · CLEAN INTERIOR", "环境系统应该服从空间，而不是让空间迁就设备。", ["生活感受", "风口、面板和设备存在感更低，室内保持完整、自然和简洁。"], ["实现方式", "在装修前期完成机电深化，协调吊顶、风口、检修和设备空间。"], ["观察重点", "层高、检修可达性、风口比例、设备隐藏方式与长期维护边界。"]],
+          "value-sensing": ["07 · VISIBLE ENVIRONMENT", "感知不是为了显示更多数字，而是让系统知道何时应该做什么。", ["生活感受", "无需频繁手动调节，也能知道卧室空气、湿度和系统状态是否正常。"], ["实现方式", "温湿度、CO₂ 与关键设备状态进入统一控制逻辑。"], ["观察重点", "传感器位置、数据趋势、控制响应、异常提醒和长期校准。"]],
+          "value-manage": ["08 · LIFECYCLE MANAGEMENT", "高品质不只发生在交付当天，还要在多年运行后依然可维护。", ["生活感受", "家庭知道何时维护、维护什么，系统异常也更容易被及时发现。"], ["实现方式", "建立滤网、排水、换热器、传感器与跨季运行计划。"], ["观察重点", "维护记录、耗材周期、报警、设定变化和跨季运行复核。"]],
+          "proof-climate": ["01 · THERMAL & MOISTURE RECORD", "温度达标只是起点，湿度、露点和持续时间必须一起看。", ["记录什么", "典型房间的空气温度、相对湿度、室内露点和必要的冷表面温度。"], ["为什么重要", "瞬时读数无法说明梅雨季湿负荷、夜间波动和结露安全是否长期受控。"], ["如何判断", "结合目标区间、持续时间、房间位置和室外气候复核趋势，而不是只截取最好的一刻。"]],
+          "proof-air": ["02 · AIR & VENTILATION", "CO₂ 与实测新风量一起，才能说明卧室空气是否真正被更新。", ["记录什么", "卧室夜间 CO₂ 趋势、房间人数、送风量和必要的室外背景值。"], ["为什么重要", "设备标称风量不等于空气已经有效到达人的呼吸区域。"], ["如何判断", "结合人员数量、持续时间、设计风量和房间空气路径复核。"]],
+          "proof-noise": ["03 · ACOUSTIC TEST", "声环境必须在系统真实运行、卧室真实安静的条件下检测。", ["记录什么", "卧室背景噪声、设备运行声、风口声和启停峰值。"], ["为什么重要", "白天听不出的低频和风噪，夜间可能成为最明显的系统存在感。"], ["如何判断", "区分室外传入声、建筑背景声和机电系统自身噪声来源。"]],
+          "proof-balance": ["04 · AIRFLOW & PRESSURE", "每个风口有风，不等于整套住宅的空气关系已经平衡。", ["记录什么", "各房间送回排风量、关键房间压差和门开启关闭时的变化。"], ["为什么重要", "风量失衡可能导致异味迁移、新风短路、噪声和房间冷热不均。"], ["如何判断", "按设计工况逐房间测量，并复核厨房、卫生间和洁净区之间的压力关系。"]],
+          "proof-season": ["05 · SEASONAL REVIEW", "一次调试只能证明当时，跨季复核才能说明系统是否长期适应住宅。", ["记录什么", "梅雨、高温高湿、过渡季和冬季典型时段的环境与运行数据。"], ["为什么重要", "湿负荷、冷热需求和家庭使用方式会随季节显著变化。"], ["如何判断", "比较不同季节的趋势、设定、能耗和维护情况，持续优化运行策略。"]]
+        };
+        const renderTopic = (stage, key) => {
+          const copy = topicCopy[key];
+          if (!stage || !copy) return;
+          stage.innerHTML = `<div><span>${copy[0]}</span><h3>${copy[1]}</h3></div><dl>${copy.slice(2).map((item) => `<div><dt>${item[0]}</dt><dd>${item[1]}</dd></div>`).join("")}</dl>`;
+          stage.classList.remove("is-refreshing");
+          void stage.offsetWidth;
+          stage.classList.add("is-refreshing");
+        };
+
+        const outcomeCards = [...document.querySelectorAll(".fc-outcomes article[data-topic]")];
+        const outcomeStage = document.querySelector('[data-topic-stage="outcomes"]');
+        outcomeCards.forEach((card) => {
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          const activate = () => {
+            outcomeCards.forEach((item) => item.classList.toggle("is-selected", item === card));
+            renderTopic(outcomeStage, card.dataset.topic);
+          };
+          card.addEventListener("click", activate);
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activate(); }
+          });
+        });
+
         const valueCards = [...document.querySelectorAll(".fc-value-spectrum article")];
+        const valueStage = document.querySelector('[data-topic-stage="values"]');
         const activateValueCard = (card, event) => {
           valueCards.forEach((item) => {
             item.classList.toggle("is-selected", item === card);
@@ -360,6 +678,7 @@
           void card.offsetWidth;
           card.classList.add("is-activated");
           window.setTimeout(() => card.classList.remove("is-activated"), 760);
+          renderTopic(valueStage, card.dataset.topic);
         };
         valueCards.forEach((card) => {
           card.setAttribute("role", "button");
@@ -374,36 +693,70 @@
           });
         });
 
-        const deliveryCards = [...document.querySelectorAll(".fc-delivery article")];
-        const activateDeliveryCard = (card, event) => {
-          deliveryCards.forEach((item) => {
-            item.classList.toggle("is-selected", item === card);
-            item.setAttribute("aria-pressed", String(item === card));
-          });
-          if (event && "clientX" in event) {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty("--pulse-x", `${event.clientX - rect.left}px`);
-            card.style.setProperty("--pulse-y", `${event.clientY - rect.top}px`);
-          }
-          card.classList.remove("is-activated");
-          void card.offsetWidth;
-          card.classList.add("is-activated");
-          window.setTimeout(() => card.classList.remove("is-activated"), 760);
-        };
-        deliveryCards.forEach((card) => {
-          card.setAttribute("role", "button");
-          card.setAttribute("tabindex", "0");
-          card.setAttribute("aria-pressed", "false");
-          card.addEventListener("click", (event) => activateDeliveryCard(card, event));
-          card.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              activateDeliveryCard(card);
+        const parameterTabs = [...document.querySelectorAll(".fc-parameter-selector button")];
+        const parameterPanels = [...document.querySelectorAll(".fc-parameter-stage [data-panel]")];
+        const parameterStage = document.querySelector(".fc-parameter-stage");
+        const showParameter = (key) => {
+          parameterTabs.forEach((tab) => {
+            const active = tab.dataset.param === key;
+            tab.classList.toggle("is-active", active);
+            tab.setAttribute("aria-selected", String(active));
+            if (active && parameterStage) {
+              parameterStage.style.setProperty("--param-tone", getComputedStyle(tab).getPropertyValue("--button-tone"));
             }
           });
+          parameterPanels.forEach((panel) => {
+            const active = panel.dataset.panel === key;
+            panel.hidden = !active;
+            panel.classList.toggle("is-active", active);
+          });
+        };
+        parameterTabs.forEach((tab, index) => {
+          tab.addEventListener("click", () => showParameter(tab.dataset.param));
+          tab.addEventListener("keydown", (event) => {
+            if (!["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp"].includes(event.key)) return;
+            event.preventDefault();
+            const direction = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : -1;
+            const target = parameterTabs[(index + direction + parameterTabs.length) % parameterTabs.length];
+            target.focus();
+            showParameter(target.dataset.param);
+          });
         });
+        showParameter("thermal");
+
+        const deliveryTabs = [...document.querySelectorAll(".fc-delivery-selector button")];
+        const deliveryPanels = [...document.querySelectorAll(".fc-delivery-stage [data-delivery-panel]")];
+        const deliveryStage = document.querySelector(".fc-delivery-stage");
+        const showDelivery = (key) => {
+          deliveryTabs.forEach((tab) => {
+            const active = tab.dataset.delivery === key;
+            tab.classList.toggle("is-active", active);
+            tab.setAttribute("aria-selected", String(active));
+            if (active && deliveryStage) {
+              deliveryStage.style.setProperty("--delivery-stage-tone", getComputedStyle(tab).getPropertyValue("--delivery-tone"));
+            }
+          });
+          deliveryPanels.forEach((panel) => {
+            const active = panel.dataset.deliveryPanel === key;
+            panel.hidden = !active;
+            panel.classList.toggle("is-active", active);
+          });
+        };
+        deliveryTabs.forEach((tab, index) => {
+          tab.addEventListener("click", () => showDelivery(tab.dataset.delivery));
+          tab.addEventListener("keydown", (event) => {
+            if (!["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp"].includes(event.key)) return;
+            event.preventDefault();
+            const direction = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : -1;
+            const target = deliveryTabs[(index + direction + deliveryTabs.length) % deliveryTabs.length];
+            target.focus();
+            showDelivery(target.dataset.delivery);
+          });
+        });
+        showDelivery("diagnosis");
 
         const proofCards = [...document.querySelectorAll(".fc-proof-list button")];
+        const proofStage = document.querySelector('[data-topic-stage="proof"]');
         const activateProofCard = (card, event) => {
           proofCards.forEach((item) => {
             const selected = item === card;
@@ -419,6 +772,7 @@
           void card.offsetWidth;
           card.classList.add("is-activated");
           window.setTimeout(() => card.classList.remove("is-activated"), 760);
+          renderTopic(proofStage, card.dataset.topic);
         };
         proofCards.forEach((card) => {
           card.setAttribute("aria-pressed", "false");
