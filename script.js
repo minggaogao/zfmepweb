@@ -1620,7 +1620,7 @@ const renderWaterScenePhones = () => {
 };
 
 const pageRoutes = {
-  home: ["landing"],
+  home: ["landing", "home"],
   philosophy: ["home", "dimensions"],
   dimensions: ["home", "dimensions"],
   climate: ["climate", "environment-problem", "environment-logic", "air-feeling-bridge", "systems"],
@@ -1648,6 +1648,7 @@ const pageRoutes = {
 
 const routeAliases = {
   landing: "home",
+  "philosophy-life": "philosophy",
   air: "systems",
   water: "water-supply-drainage",
   "delivery-page": "delivery",
@@ -1655,7 +1656,19 @@ const routeAliases = {
   "environment-logic": "systems",
   "air-feeling-bridge": "systems",
   "philosophy-archive": "philosophy",
-  "basement-environment-simulator": "basement-system"
+  "water-problem": "water-supply-drainage",
+  "water-logic": "water-supply-drainage",
+  "basement-environment-simulator": "basement-system",
+  "basement-problem": "basement-system",
+  "basement-logic": "basement-system",
+  "basement-lifting": "basement-system",
+  "basement-sport-layer": "basement-system",
+  integration: "delivery",
+  "team-execution": "delivery",
+  process: "delivery",
+  "project-access-contact": "project-access",
+  "project-access-network": "project-access",
+  "project-access-expertise-title": "project-access"
 };
 
 const routeScrollTargets = {
@@ -1710,8 +1723,14 @@ const initPageRouter = () => {
   const refreshRouteTypography = () => {
     if (typeof applyGlobalTypographyLock !== "function") return;
     applyGlobalTypographyLock();
+    if (typeof applyPageCohesionInlineLock === "function") {
+      applyPageCohesionInlineLock();
+    }
     requestAnimationFrame(() => {
       applyGlobalTypographyLock();
+      if (typeof applyPageCohesionInlineLock === "function") {
+        applyPageCohesionInlineLock();
+      }
     });
   };
 
@@ -1781,9 +1800,15 @@ const initPageRouter = () => {
       link.setAttribute("aria-current", isActive ? "page" : "false");
     });
     refreshRouteTypography();
+    const directHashTarget = document.getElementById(raw);
     const isDirectSectionTarget = activeIds.has(raw);
     const isPageRoute = raw === page || Boolean(pageRoutes[raw]) || Boolean(routeAliases[raw]);
-    const targetId = isDirectSectionTarget
+    const isCanonicalPageRoute = raw === page;
+    const targetId = isCanonicalPageRoute
+      ? routeScrollTargets[page] || activeIds.values().next().value
+      : directHashTarget && routeAliases[raw] === page
+      ? raw
+      : isDirectSectionTarget
       ? raw
       : isPageRoute
         ? routeScrollTargets[page] || activeIds.values().next().value
@@ -3053,19 +3078,370 @@ const initWeather = async () => {
   }
 };
 
+const navigationArchitecture = {
+  philosophy: {
+    kicker: "RESIDENTIAL MEP PHILOSOPHY",
+    title: "住宅真正的品质，始于看不见的环境秩序",
+    description: "从身体感受与长期居住出发，理解空气、水、光、声如何共同支撑住宅。",
+    tone: "philosophy",
+    guide: [
+      ["#philosophy", "住宅与生命", "理解住宅机电为什么值得被认真对待"],
+      ["#dimensions", "MEP 四维度", "从空气、水、光、声建立整体认知"]
+    ],
+    specialLabel: "专题规划",
+    specials: [
+      { title: "住宅机电价值", note: "理念专题", status: "foundation", href: "#philosophy" },
+      { title: "住宅光环境", note: "光与昼夜节律", status: "foundation", href: "#dimensions" },
+      { title: "住宅声环境", note: "安静与声学边界", status: "foundation", href: "#dimensions" }
+    ]
+  },
+  air: {
+    kicker: "INDOOR CLIMATE SYSTEM",
+    title: "好空气，不只是一项设备功能",
+    description: "温度、湿度、露点、洁净、含氧感与安静，需要被一套完整的空气逻辑共同组织。",
+    tone: "air",
+    guide: [
+      ["#air", "空气系统总览", "从湖南气候进入住宅空气问题"],
+      ["#environment-problem", "生活感受", "理解闷、黏、直吹、异味与噪声"],
+      ["#environment-logic", "系统逻辑", "看空气如何被连续稳定地组织"],
+      ["#systems", "应用场景", "查看住宅不同空间的运行状态"]
+    ],
+    specialLabel: "专业专栏",
+    specials: [
+      { title: "五恒住宅系统", note: "完整专题 · 已上线", status: "live", href: "five-constant-system/index.html" },
+      { title: "DOAS 新风系统", note: "新风与湿度管理", status: "foundation", href: "five-constant-system/index.html#fc-system" },
+      { title: "露点与除湿控制", note: "湖南高湿住宅专题", status: "foundation", href: "five-constant-system/index.html#fc-parameters" }
+    ]
+  },
+  basement: {
+    kicker: "BASEMENT ENVIRONMENT",
+    title: "让地下空间重新回到住宅状态",
+    description: "防水、防潮、空气、温湿度、排水与围护边界共同成立，地下室才适合长期生活。",
+    tone: "basement",
+    guide: [
+      ["#basement-system", "地下空间认知", "先理解地下室为什么容易失衡"],
+      ["#basement-problem", "环境问题", "潮、霉、闷、异味与压迫感"],
+      ["#basement-logic", "系统逻辑", "围护、空气、水汽和排水协同"],
+      ["#basement-sport-layer", "生活场景", "运动、阅读、会客与收藏空间"]
+    ],
+    specialLabel: "专业专栏",
+    specials: [
+      { title: "高端住宅地下室", note: "完整环境系统", status: "foundation", href: "#basement-system" },
+      { title: "防潮与露点控制", note: "围护与水汽专题", status: "foundation", href: "#basement-logic" },
+      { title: "地下室排水提升", note: "低位排水专题", status: "foundation", href: "#basement-lifting" }
+    ]
+  },
+  water: {
+    kicker: "WATER & DRAINAGE",
+    title: "水在该来的时候从容到达，在该走的时候安静离开",
+    description: "从用水需求出发，组织水质、水压、热水、循环、排水、降噪与长期维护。",
+    tone: "water",
+    guide: [
+      ["#water", "给排水总览", "理解完整住宅水系统的价值"],
+      ["#water-logic", "常见问题", "从生活里的小打断识别系统缺口"],
+      ["#water-supply-drainage", "生活水场景", "厨房、卫浴、庭院与地下空间"]
+    ],
+    specialLabel: "专业专栏",
+    specials: [
+      { title: "高端住宅给排水", note: "完整水系统", status: "foundation", href: "#water" },
+      { title: "全屋净水系统", note: "水质与末端专题", status: "foundation", href: "#water-supply-drainage" },
+      { title: "热水循环与静音排水", note: "体验与声学专题", status: "foundation", href: "#water-supply-drainage" }
+    ]
+  },
+  delivery: {
+    kicker: "DESIGN TO DELIVERY",
+    title: "从设计判断，一直走到长期稳定运行",
+    description: "设计、深化、施工、调试与维护不是分散环节，而是一条必须持续守住的结果链。",
+    tone: "delivery",
+    guide: [
+      ["#delivery-page", "前期诊断", "先理解住宅、家庭与系统目标"],
+      ["#integration", "系统深化", "让机电进入建筑和空间关系"],
+      ["#team-execution", "施工协同", "让图纸判断被准确还原"],
+      ["#process", "调试验收", "以运行数据而不是设备启动交付"]
+    ],
+    specialLabel: "专业专栏",
+    specials: [
+      { title: "住宅机电设计", note: "需求与方案专题", status: "foundation", href: "#delivery-page" },
+      { title: "机电深化与交付", note: "现场协同专题", status: "foundation", href: "#integration" },
+      { title: "调试验收与维护", note: "长期运行专题", status: "foundation", href: "#process" }
+    ]
+  },
+  access: {
+    kicker: "PRIVATE RESIDENTIAL SERVICE",
+    title: "从一套住宅的真实条件开始",
+    description: "项目阶段、建筑条件、生活方式与目标不同，系统路线也应该被重新判断。",
+    tone: "access",
+    guide: [
+      ["#project-access", "服务说明", "了解泽丰的咨询与服务方式"],
+      ["#project-access-contact", "预约咨询", "提交项目基础信息与当前阶段"],
+      ["#project-access-network", "服务网络", "长沙展厅、体验空间与湖南服务"],
+      ["#project-access-expertise-title", "专业能力", "查看系统设计与交付边界"]
+    ],
+    specialLabel: "进一步了解",
+    specials: [
+      { title: "五恒住宅系统", note: "专业专题 · 已上线", status: "live", href: "five-constant-system/index.html" },
+      { title: "住宅案例档案", note: "长沙、衡阳与全国案例", status: "foundation", href: "#project-access-network" },
+      { title: "公众号案例分享", note: "独立内容体系", status: "foundation", href: "#project-access-contact" }
+    ]
+  }
+};
+
+const pageStoryRailData = {
+  philosophy: {
+    label: "住宅理念",
+    items: [["#home", "以人为先"], ["#dimensions", "空气 · 水 · 光 · 声"]]
+  },
+  systems: {
+    label: "室内空气",
+    items: [["#climate", "湖南气候"], ["#environment-problem", "身体感受"], ["#environment-logic", "系统逻辑"], ["#systems", "空间场景"]]
+  },
+  "water-supply-drainage": {
+    label: "住宅水系统",
+    items: [["#water-problem", "用水判断"], ["#water-logic", "系统逻辑"], ["#water-supply-drainage", "生活场景"]]
+  },
+  "basement-system": {
+    label: "地下空间",
+    items: [["#basement-definition", "空间定义"], ["#basement-problem", "环境风险"], ["#basement-logic", "系统协同"], ["#basement-sport-layer", "生活场景"]]
+  },
+  delivery: {
+    label: "设计交付",
+    items: [["#fit", "前期判断"], ["#constraints", "定义生活"], ["#integration", "系统深化"], ["#delivery", "现场落地"], ["#process", "运行结果"]]
+  },
+  "project-access": {
+    label: "专属方案",
+    items: [["#project-access", "服务说明"], ["#project-access-contact", "联系预约"], ["#project-access-network", "服务网络"], ["#project-access-expertise-title", "专业能力"]]
+  }
+};
+
+const initPageStoryRail = () => {
+  const main = $("main");
+  if (!main) return;
+
+  const render = () => {
+    const page = document.body.dataset.page;
+    const data = pageStoryRailData[page];
+    let rail = $("[data-page-story-rail]");
+
+    if (!data) {
+      rail?.remove();
+      return;
+    }
+
+    if (!rail) {
+      rail = document.createElement("nav");
+      rail.className = "zf-page-story-rail";
+      rail.dataset.pageStoryRail = "";
+      rail.setAttribute("aria-label", "本页内容导览");
+      main.prepend(rail);
+    }
+
+    rail.dataset.tone = page;
+    rail.innerHTML = `
+      <strong>${data.label}</strong>
+      <div>
+        ${data.items.map(([href, label], index) => `<a href="${href}"><i>${String(index + 1).padStart(2, "0")}</i><span>${label}</span></a>`).join("")}
+      </div>`;
+  };
+
+  render();
+  window.addEventListener("hashchange", () => requestAnimationFrame(render));
+};
+
 const initNav = () => {
   const button = $(".menu-toggle");
   const menu = $(".mobile-menu");
+  const mobileNav = $("[data-mobile-nav]");
+  const header = $("[data-header]");
+  const desktopNav = $(".desktop-nav");
+  const desktopTriggers = $$("[data-nav-key]", desktopNav);
+  if (!button || !menu || !mobileNav || !header || !desktopNav) return;
+
+  const guideMarkup = (items, mobile = false) =>
+    items
+      .map(
+        ([href, title, note], index) => `
+          <a class="${mobile ? "mobile-nav-guide-link" : "nav-mega-guide-link"}" href="${href}">
+            <i aria-hidden="true">${String(index + 1).padStart(2, "0")}</i>
+            <span>${title}</span>
+            <small>${note}</small>
+            <b aria-hidden="true">↗</b>
+          </a>`
+      )
+      .join("");
+
+  const specialMarkup = (items, mobile = false) =>
+    items
+      .map((item, index) => {
+        const className = `${mobile ? "mobile-nav-special" : "nav-mega-special"} ${item.status === "live" ? "is-live" : "is-foundation"}`;
+        const inner = `
+          <i aria-hidden="true">${String(index + 1).padStart(2, "0")}</i>
+          <span>
+            <strong>${item.title}</strong>
+            <small>${item.note}</small>
+          </span>
+          <em>${item.status === "live" ? "进入专栏" : "进入主题"}</em>`;
+        return `<a class="${className}" href="${item.href}">${inner}</a>`;
+      })
+      .join("");
+
+  const mega = document.createElement("div");
+  mega.className = "nav-mega";
+  mega.dataset.navMega = "";
+  mega.hidden = true;
+  mega.setAttribute("aria-hidden", "true");
+  header.appendChild(mega);
+
+  let activeTrigger = null;
+  let closeTimer = null;
+  let hideTimer = null;
+
+  const closeMega = (immediate = false) => {
+    window.clearTimeout(closeTimer);
+    window.clearTimeout(hideTimer);
+    if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+    activeTrigger = null;
+    mega.classList.remove("is-open");
+    mega.setAttribute("aria-hidden", "true");
+    const finish = () => {
+      if (!mega.classList.contains("is-open")) mega.hidden = true;
+    };
+    if (immediate) finish();
+    else hideTimer = window.setTimeout(finish, 180);
+  };
+
+  const scheduleClose = () => {
+    window.clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(() => closeMega(), 150);
+  };
+
+  const openMega = (trigger) => {
+    const key = trigger.dataset.navKey;
+    const item = navigationArchitecture[key];
+    if (!item) return;
+    window.clearTimeout(closeTimer);
+    window.clearTimeout(hideTimer);
+    if (activeTrigger && activeTrigger !== trigger) {
+      activeTrigger.setAttribute("aria-expanded", "false");
+    }
+    activeTrigger = trigger;
+    trigger.setAttribute("aria-expanded", "true");
+    mega.dataset.tone = item.tone;
+    const sectionNumber = String(Object.keys(navigationArchitecture).indexOf(key) + 1).padStart(2, "0");
+    mega.innerHTML = `
+      <div class="nav-mega-intro">
+        <b class="nav-mega-number" aria-hidden="true">${sectionNumber}</b>
+        <p>${item.kicker}</p>
+        <h2>${item.title}</h2>
+        <span>${item.description}</span>
+      </div>
+      <div class="nav-mega-guide">
+        <p>本页导览</p>
+        <div>${guideMarkup(item.guide)}</div>
+      </div>
+      <aside class="nav-mega-specials">
+        <p>${item.specialLabel}</p>
+        <div>${specialMarkup(item.specials)}</div>
+      </aside>`;
+    mega.hidden = false;
+    mega.setAttribute("aria-hidden", "false");
+    requestAnimationFrame(() => mega.classList.add("is-open"));
+  };
+
+  desktopTriggers.forEach((trigger) => {
+    trigger.addEventListener("mouseenter", () => openMega(trigger));
+    trigger.addEventListener("focus", () => openMega(trigger));
+    trigger.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        openMega(trigger);
+        requestAnimationFrame(() => mega.querySelector("a")?.focus());
+      }
+      if (event.key === "Escape") {
+        closeMega(true);
+        trigger.focus();
+      }
+    });
+  });
+
+  desktopNav.addEventListener("mouseleave", scheduleClose);
+  desktopNav.addEventListener("mouseenter", () => window.clearTimeout(closeTimer));
+  mega.addEventListener("mouseenter", () => window.clearTimeout(closeTimer));
+  mega.addEventListener("mouseleave", scheduleClose);
+  mega.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMega();
+  });
+  header.addEventListener("focusout", (event) => {
+    if (!header.contains(event.relatedTarget)) closeMega();
+  });
+  header.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && activeTrigger) {
+      const trigger = activeTrigger;
+      closeMega(true);
+      trigger.focus();
+    }
+  });
+
+  mobileNav.innerHTML = `
+    <a class="mobile-nav-home" href="#landing"><span>首页</span><small>HOME</small></a>
+    ${Object.entries(navigationArchitecture)
+      .map(([key, item]) => {
+        const mainHref = document.querySelector(`[data-nav-key="${key}"]`)?.getAttribute("href") || "#landing";
+        const mainLabel = document.querySelector(`[data-nav-key="${key}"]`)?.childNodes[0]?.textContent?.trim() || item.title;
+        return `
+          <section class="mobile-nav-section" data-mobile-nav-section="${key}">
+            <div class="mobile-nav-heading">
+              <a href="${mainHref}"><span>${mainLabel}</span><small>${item.kicker}</small></a>
+              <button type="button" aria-expanded="false" aria-label="展开${mainLabel}导航" data-mobile-nav-toggle="${key}">
+                <span aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="mobile-nav-panel" data-mobile-nav-panel="${key}" hidden>
+              <p class="mobile-nav-description">${item.description}</p>
+              <div class="mobile-nav-guide">${guideMarkup(item.guide, true)}</div>
+              <p class="mobile-nav-special-label">${item.specialLabel}</p>
+              <div class="mobile-nav-specials">${specialMarkup(item.specials, true)}</div>
+            </div>
+          </section>`;
+      })
+      .join("")}`;
+
+  const closeMobileMenu = () => {
+    menu.classList.remove("is-open");
+    button.setAttribute("aria-expanded", "false");
+  };
+
   button.addEventListener("click", () => {
     const open = !menu.classList.contains("is-open");
     menu.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
+    if (open) closeMega(true);
   });
-  $$(".mobile-menu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("is-open");
-      button.setAttribute("aria-expanded", "false");
+
+  $$("[data-mobile-nav-toggle]", mobileNav).forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const key = toggle.dataset.mobileNavToggle;
+      const panel = mobileNav.querySelector(`[data-mobile-nav-panel="${key}"]`);
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      $$("[data-mobile-nav-toggle]", mobileNav).forEach((otherToggle) => {
+        const otherKey = otherToggle.dataset.mobileNavToggle;
+        const otherPanel = mobileNav.querySelector(`[data-mobile-nav-panel="${otherKey}"]`);
+        const shouldOpen = otherToggle === toggle && open;
+        otherToggle.setAttribute("aria-expanded", String(shouldOpen));
+        if (otherPanel) otherPanel.hidden = !shouldOpen;
+      });
+      if (open && panel) panel.scrollIntoView({ block: "nearest" });
     });
+  });
+
+  $$("a", mobileNav).forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) {
+      closeMega();
+      closeMobileMenu();
+    }
   });
 };
 
@@ -5113,12 +5489,12 @@ const applyGlobalTypographyLock = () => {
     "body[data-page='water-supply-drainage'] main > #water-problem .water-system-definition-copy h1",
     "body[data-page='delivery'] main > #fit > .section-copy h2"
   ].join(", ")), {
-    "color": "#193f39",
-    "font-family": "\"Noto Serif SC\", \"Songti SC\", serif",
-    "font-size": finalRouteRule.titleSize,
-    "font-weight": "500",
-    "line-height": finalRouteRule.titleLineHeight,
-    "letter-spacing": "-0.02em",
+    "color": "#ffffff",
+    "font-family": "\"SF Pro Display\", \"PingFang SC\", \"Noto Sans SC\", sans-serif",
+    "font-size": isMobile ? "39px" : "clamp(44px, 4.8vw, 76px)",
+    "font-weight": "560",
+    "line-height": "1.08",
+    "letter-spacing": "-0.055em",
     "word-break": "normal",
     "overflow-wrap": "break-word",
     "text-wrap": "pretty",
@@ -5132,7 +5508,7 @@ const applyGlobalTypographyLock = () => {
     "body[data-page='delivery'] main > #fit > .section-copy > p:not(.eyebrow)",
     "body[data-page='delivery'] main > #fit > .section-copy > blockquote"
   ].join(", ")), {
-    "color": "rgba(38, 34, 30, 0.72)",
+    "color": "rgba(255, 255, 255, 0.74)",
     "font-family": "\"PingFang SC\", \"Noto Sans SC\", sans-serif",
     "font-size": finalRouteRule.bodySize,
     "font-weight": "400",
@@ -5150,7 +5526,7 @@ const applyGlobalTypographyLock = () => {
     "body[data-page='water-supply-drainage'] main > #water-problem .eyebrow",
     "body[data-page='delivery'] main > #fit .eyebrow"
   ].join(", ")), {
-    "color": "rgba(31, 72, 67, 0.62)",
+    "color": "#7ce9f2",
     "font-family": "Inter, \"PingFang SC\", sans-serif",
     "font-size": finalRouteRule.eyebrowSize,
     "font-weight": "450",
@@ -5172,6 +5548,122 @@ const applyGlobalTypographyLock = () => {
     "overflow": "hidden"
   });
 
+  setLockedStyles($$("body[data-page='systems'] main #climate > .section-heading h2"), {
+    "max-width": isMobile ? "100%" : "760px",
+    "font-size": isMobile ? "39px" : "clamp(42px, 4.1vw, 64px)"
+  });
+
+  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy"), {
+    "min-height": isMobile ? "0" : "clamp(590px, 49vw, 760px)",
+    "padding": isMobile
+      ? "0 0 38px"
+      : "clamp(46px, 6vw, 92px) 0 clamp(46px, 6vw, 92px) clamp(46px, 6vw, 92px)",
+    "overflow": "hidden",
+    "border-radius": isMobile ? "24px" : "clamp(24px, 2.4vw, 36px)",
+    "color": "#ffffff",
+    "background": "radial-gradient(circle at 8% 12%, rgba(57, 99, 255, 0.24), transparent 28%), #111a2a",
+    "box-shadow": "0 34px 90px rgba(17, 26, 42, 0.16)"
+  });
+
+  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy > :not(figure)"), {
+    "grid-column": "1",
+    "width": isMobile ? "auto" : "min(500px, 100%)",
+    "max-width": isMobile ? "none" : "500px",
+    "margin-left": isMobile ? "28px" : "0",
+    "margin-right": isMobile ? "28px" : "clamp(28px, 4vw, 64px)"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-hero img"), {
+    "position": "absolute",
+    "inset": "0",
+    "display": "block",
+    "width": "100%",
+    "height": "100%",
+    "max-height": "none",
+    "object-fit": "cover"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1"), {
+    "color": "#ffffff",
+    "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
+    "font-size": isMobile ? "42px" : "clamp(44px, 5vw, 74px)",
+    "font-weight": "560",
+    "line-height": "1.05",
+    "letter-spacing": "-0.055em"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro p"), {
+    "max-width": "580px",
+    "margin": "24px 0 0",
+    "color": "rgba(255, 255, 255, 0.72)",
+    "font-size": isMobile ? "14px" : "clamp(14px, 1.1vw, 17px)",
+    "line-height": "1.8"
+  });
+};
+
+const applyPageCohesionInlineLock = () => {
+  const compact = window.matchMedia("(max-width: 760px)").matches;
+
+  setLockedStyles($$("body[data-page='systems'] main #climate > .section-heading h2"), {
+    "max-width": compact ? "100%" : "760px",
+    "font-size": compact ? "39px" : "clamp(42px, 4.1vw, 64px)",
+    "line-height": "1.08"
+  });
+
+  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy"), {
+    "min-height": compact ? "0" : "clamp(590px, 49vw, 760px)",
+    "padding": compact
+      ? "0 0 38px"
+      : "clamp(46px, 6vw, 92px) 0 clamp(46px, 6vw, 92px) clamp(46px, 6vw, 92px)",
+    "overflow": "hidden",
+    "border-radius": compact ? "24px" : "clamp(24px, 2.4vw, 36px)",
+    "color": "#ffffff",
+    "background": "radial-gradient(circle at 8% 12%, rgba(57, 99, 255, 0.24), transparent 28%), #111a2a",
+    "box-shadow": "0 34px 90px rgba(17, 26, 42, 0.16)"
+  });
+
+  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy > :not(figure)"), {
+    "grid-column": "1",
+    "width": compact ? "auto" : "min(500px, 100%)",
+    "max-width": compact ? "none" : "500px",
+    "margin-left": compact ? "28px" : "0",
+    "margin-right": compact ? "28px" : "clamp(28px, 4vw, 64px)"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-hero img"), {
+    "position": "absolute",
+    "inset": "0",
+    "display": "block",
+    "width": "100%",
+    "height": "100%",
+    "max-height": "none",
+    "object-fit": "cover"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1"), {
+    "color": "#ffffff",
+    "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
+    "font-size": compact ? "42px" : "clamp(44px, 5vw, 74px)",
+    "font-weight": "560",
+    "line-height": "1.05",
+    "letter-spacing": "-0.055em"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1 span"), {
+    "display": "block",
+    "margin-top": "12px",
+    "color": "#7ee9dd",
+    "font-size": "12px",
+    "letter-spacing": "0.12em"
+  });
+
+  setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro p"), {
+    "max-width": "580px",
+    "margin": "24px 0 0",
+    "color": "rgba(255, 255, 255, 0.72)",
+    "font-size": compact ? "14px" : "clamp(14px, 1.1vw, 17px)",
+    "line-height": "1.8"
+  });
 };
 
 renderDimensions();
@@ -5188,6 +5680,7 @@ initReveal();
 initBasementJourney();
 initWaterJourney();
 initPageRouter();
+initPageStoryRail();
 initBasementAlerts();
 initBasementSimulator();
 initAirEnvironmentSimulator();
@@ -5196,6 +5689,7 @@ initAdaptiveText();
 lockWaterRouteLayout();
 initAccessForms();
 applyGlobalTypographyLock();
+applyPageCohesionInlineLock();
 
 $$("[data-temp], [data-rh], [data-dew-input]").forEach((input) => input.addEventListener("input", updateDewTool));
 let typographyLockTimer = null;
@@ -5205,7 +5699,10 @@ const scheduleTypographyLock = (delay = 60) => {
   }
   typographyLockTimer = window.setTimeout(() => {
     typographyLockTimer = null;
-    requestAnimationFrame(applyGlobalTypographyLock);
+    requestAnimationFrame(() => {
+      applyGlobalTypographyLock();
+      applyPageCohesionInlineLock();
+    });
   }, delay);
 };
 

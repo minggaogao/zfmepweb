@@ -1,0 +1,78 @@
+/* Desktop mega navigation — complete text, balanced columns, viewport-safe placement. */
+@media (min-width: 1121px) {
+  html body .site-header > .nav-mega {
+    right: clamp(16px, 3vw, 40px) !important;
+    left: auto !important;
+    width: min(1040px, calc(100vw - 32px)) !important;
+    min-height: 0 !important;
+    grid-template-columns:
+      minmax(270px, 0.96fr)
+      minmax(390px, 1.36fr)
+      minmax(250px, 0.92fr) !important;
+    padding: 18px !important;
+    overflow: hidden !important;
+  }
+
+  html body .site-header .nav-mega-intro,
+  html body .site-header .nav-mega-guide {
+    padding: 24px !important;
+  }
+
+  html body .site-header .nav-mega-specials {
+    padding: 18px !important;
+  }
+
+  html body .site-header .nav-mega-intro > p {
+    margin-bottom: clamp(42px, 4vw, 62px) !important;
+  }
+
+  html body .site-header .nav-mega-intro h2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px !important;
+    font-size: clamp(21px, 1.75vw, 24px) !important;
+    line-height: 1.42 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    text-wrap: balance !important;
+  }
+
+  html body .site-header .nav-mega-intro > span {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  html body .site-header .nav-mega-guide-link > span,
+  html body .site-header .nav-mega-guide-link > small,
+  html body .site-header .nav-mega-special strong,
+  html body .site-header .nav-mega-special small {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  html body .site-header .nav-mega-special em {
+    flex: 0 0 auto !important;
+  }
+}
+
+@media (min-width: 1121px) and (max-width: 1200px) {
+  html body .site-header > .nav-mega {
+    right: 16px !important;
+    grid-template-columns:
+      minmax(250px, 0.92fr)
+      minmax(370px, 1.34fr)
+      minmax(240px, 0.9fr) !important;
+  }
+
+  html body .site-header .nav-mega-intro,
+  html body .site-header .nav-mega-guide {
+    padding: 21px !important;
+  }
+
+  html body .site-header .nav-mega-specials {
+    padding: 15px !important;
+  }
+}

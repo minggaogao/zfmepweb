@@ -1,0 +1,96 @@
+/* Air page hero — final cascade lock, loaded after all shared page styles. */
+html body[data-page="systems"] main #climate > .section-heading {
+  position: relative !important;
+  display: grid !important;
+  align-content: end !important;
+  justify-items: start !important;
+  min-height: clamp(590px, 46vw, 720px) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: clamp(52px, 6vw, 88px) !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 34px !important;
+  color: #fff !important;
+  text-align: left !important;
+  background: #0a111c !important;
+  box-shadow: 0 34px 90px rgba(19, 32, 59, 0.19) !important;
+  isolation: isolate !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -2 !important;
+  inset: 0 !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  background: url("images/air-page-hero-premium-20260720.jpg") center center / cover no-repeat !important;
+  transform: scale(1.01) !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  inset: 0 !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  background:
+    linear-gradient(90deg, rgba(7, 13, 23, 0.96) 0%, rgba(7, 13, 23, 0.82) 36%, rgba(7, 13, 23, 0.28) 64%, rgba(7, 13, 23, 0.04) 100%),
+    linear-gradient(0deg, rgba(7, 13, 23, 0.72) 0%, rgba(7, 13, 23, 0.08) 55%, rgba(7, 13, 23, 0.14) 100%) !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading > h2 {
+  max-width: 700px !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font: 560 clamp(52px, 5vw, 76px)/1.08 "SF Pro Display", "PingFang SC", sans-serif !important;
+  letter-spacing: -0.055em !important;
+  word-break: keep-all !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading > h2 span {
+  color: #d8f3f4 !important;
+  font: inherit !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading > .lead {
+  max-width: 590px !important;
+  margin: 24px 0 0 !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  font: 400 clamp(16px, 1.2vw, 19px)/1.72 "SF Pro Text", "PingFang SC", sans-serif !important;
+}
+
+html body[data-page="systems"] main #climate > .section-heading > .climate-lead-sub {
+  max-width: 570px !important;
+  margin: 8px 0 0 !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+}
+
+@media (max-width: 760px) {
+  html body[data-page="systems"] main #climate > .section-heading {
+    min-height: 680px !important;
+    padding: 34px 24px 30px !important;
+    border-radius: 24px !important;
+  }
+
+  html body[data-page="systems"] main #climate > .section-heading::before {
+    background-position: 42% center !important;
+  }
+
+  html body[data-page="systems"] main #climate > .section-heading::after {
+    background:
+      linear-gradient(90deg, rgba(7, 13, 23, 0.92), rgba(7, 13, 23, 0.47)),
+      linear-gradient(0deg, rgba(7, 13, 23, 0.94) 0%, rgba(7, 13, 23, 0.48) 58%, rgba(7, 13, 23, 0.22) 100%) !important;
+  }
+
+  html body[data-page="systems"] main #climate > .section-heading > h2 {
+    max-width: 100% !important;
+    font-size: 39px !important;
+    word-break: keep-all !important;
+  }
+}

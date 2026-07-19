@@ -17,14 +17,26 @@
           air: "systems",
           "environment-problem": "systems",
           "environment-logic": "systems",
-          climate: "systems",
           systems: "systems",
+          climate: "systems",
           water: "water-supply-drainage",
+          "water-problem": "water-supply-drainage",
+          "water-logic": "water-supply-drainage",
           "water-supply-drainage": "water-supply-drainage",
           "basement-system": "basement-system",
+          "basement-problem": "basement-system",
+          "basement-logic": "basement-system",
+          "basement-lifting": "basement-system",
+          "basement-sport-layer": "basement-system",
           "delivery-page": "delivery",
           delivery: "delivery",
-          "project-access": "project-access"
+          integration: "delivery",
+          "team-execution": "delivery",
+          process: "delivery",
+          "project-access": "project-access",
+          "project-access-contact": "project-access",
+          "project-access-network": "project-access",
+          "project-access-expertise-title": "project-access"
         };
         const key = location.hash.replace("#", "") || "home";
         document.documentElement.dataset.page = routes[key] || "home";
@@ -38,7 +50,7 @@
     />
     <link rel="preload" as="image" href="images/homepage-hero-final/hero-human.webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css?v=20260710-footer-flow-v1" />
-    <link rel="stylesheet" href="launch-polish.css?v=20260719-footer-signature" />
+    <link rel="stylesheet" href="launch-polish.css?v=20260719-navigation-visual-v2" />
     <link
       rel="preload"
       href="water-scenes-lock.css?v=20260626-water-fix-v77"
@@ -4692,7 +4704,7 @@
         margin-top: 0 !important;
       }
 
-      html body[data-page="home"] main > section:not(#landing),
+      html body[data-page="home"] main > section:not(#landing):not(#home),
       html body[data-page="philosophy"] main > section:not(#home):not(#dimensions),
       html body[data-page="systems"] main > section:not(#climate):not(#environment-problem):not(#environment-logic):not(#systems),
       html body[data-page="water-supply-drainage"] main > section:not(#water-problem):not(#water-logic):not(#water-system-simulator-entry):not(#water-supply-drainage),
@@ -4843,7 +4855,7 @@
         text-transform: none !important;
       }
 
-      html[data-page="home"] body main > section:not(#landing),
+      html[data-page="home"] body main > section:not(#landing):not(#home),
       html[data-page="systems"] body main > section:not(#climate):not(#environment-problem):not(#environment-logic):not(#systems),
       html[data-page="water-supply-drainage"] body main > section:not(#water-problem):not(#water-logic):not(#water-system-simulator-entry):not(#water-supply-drainage),
       html[data-page="basement-system"] body main > section:not(#basement-definition):not(#basement-problem):not(#basement-logic):not(#basement-lifting):not(#basement-sport-layer):not(#basement-reading-layer):not(#basement-dining-layer):not(#basement-tea-room-layer):not(#basement-cigar-layer):not(#basement-wine-layer):not(#basement-game-layer):not(#basement-party-layer):not(#basement-meditation-layer):not(#basement-summary),
@@ -6006,6 +6018,10 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="home-visual-system.css?v=20260719-home-rebuild-v2" />
+    <link rel="stylesheet" href="page-cohesion-system.css?v=20260720-page-cohesion-v7" />
+    <link rel="stylesheet" href="air-page-hero-lock.css?v=20260720-air-hero-v1" />
+    <link rel="stylesheet" href="navigation-mega-lock.css?v=20260720-nav-mega-v1" />
   </head>
   <body>
     <script>
@@ -6066,25 +6082,19 @@
       </div>
       <nav class="desktop-nav" aria-label="主导航">
         <a href="#landing">首页</a>
-        <a href="#philosophy">理念</a>
-        <a href="#air">空气</a>
-        <a href="#basement-system">地下室</a>
-        <a href="#water">给排水</a>
-        <a href="#delivery-page">设计交付</a>
-        <a href="#project-access">专属方案</a>
+        <a href="#philosophy" data-nav-key="philosophy" aria-haspopup="true" aria-expanded="false">理念<span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="#air" data-nav-key="air" aria-haspopup="true" aria-expanded="false">空气<span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="#basement-system" data-nav-key="basement" aria-haspopup="true" aria-expanded="false">地下室<span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="#water" data-nav-key="water" aria-haspopup="true" aria-expanded="false">给排水<span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="#delivery-page" data-nav-key="delivery" aria-haspopup="true" aria-expanded="false">设计交付<span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="#project-access" data-nav-key="access" aria-haspopup="true" aria-expanded="false">专属方案<span class="nav-caret" aria-hidden="true"></span></a>
       </nav>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <span></span>
         <span></span>
       </button>
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="#landing">首页</a>
-        <a href="#philosophy">理念</a>
-        <a href="#air">空气</a>
-        <a href="#basement-system">地下室</a>
-        <a href="#water">给排水</a>
-        <a href="#delivery-page">设计交付</a>
-        <a href="#project-access">专属方案</a>
+      <div class="mobile-menu" id="mobile-menu" aria-label="移动端主导航">
+        <div class="mobile-nav-content" data-mobile-nav></div>
       </div>
     </header>
 
@@ -6101,23 +6111,31 @@
             <div class="zf-home-hero-slides">
               <article class="zf-home-hero-slide zf-slide-human zf-slide-air" data-zf-home-slide data-home-key="home-air" aria-hidden="false">
                 <div class="zf-home-hero-visual" aria-hidden="true">
-                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-human.webp" alt="安静住宅中的人物场景" width="1672" height="941" decoding="async" fetchpriority="high" />
+                  <img class="zf-home-hero-image" src="images/homepage-hero-residential-life-20260719.webp" alt="木地板、木作和亚麻布艺构成的安静住宅生活场景" width="1672" height="941" decoding="async" fetchpriority="high" />
                 </div>
                 <div class="zf-home-hero-copy">
-                  <p class="zf-home-hero-kicker">ZEFENG MEP</p>
-                  <h1 class="zf-home-hero-title">住宅机电系统，隐形却无处不在。</h1>
-                  <p class="zf-home-hero-text">它始终存在，却应在日常使用中尽量无感，只把健康、舒适与安静安静留给生活。</p>
+                  <p class="zf-home-hero-kicker">THE HOME YOU CAN FEEL</p>
+                  <h1 class="zf-home-hero-title">把分散的住宅机电<br />组织成长期稳定的生活</h1>
+                  <p class="zf-home-hero-text">泽丰从空气、水、地下空间和设计交付出发，把设备、管线与控制逻辑组织成一套真正服务于居住的环境系统。</p>
+                  <div class="zf-home-hero-actions">
+                    <a class="is-primary" href="#home-capabilities">查看六条系统主线</a>
+                    <a href="#project-access">预约住宅机电评估</a>
+                  </div>
                 </div>
               </article>
 
               <article class="zf-home-hero-slide zf-slide-architecture zf-slide-water" data-zf-home-slide data-home-key="home-water" aria-hidden="true">
                 <div class="zf-home-hero-visual" aria-hidden="true">
-                  <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-architecture.webp" alt="建筑与自然环境关系场景" width="1672" height="941" loading="lazy" decoding="async" />
+                  <img class="zf-home-hero-image" src="images/home-feelings-night-v4.webp" alt="木地板与布艺家具构成的长沙江景住宅夜间客厅" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="zf-home-hero-copy">
-                  <p class="zf-home-hero-kicker">SPACE AND CLIMATE</p>
-                  <h1 class="zf-home-hero-title">隐形运转的机电系统，才能让生活不被打断。</h1>
-                  <p class="zf-home-hero-text">空气、水、光与声被安静组织之后，居住才会真正连续、稳定而从容。</p>
+                  <p class="zf-home-hero-kicker">INVISIBLE ORDER</p>
+                  <h1 class="zf-home-hero-title">湖南住宅真正难处理的<br />是空气里长期存在的水</h1>
+                  <p class="zf-home-hero-text">高湿、露点与含湿量共同影响身体感受和建筑风险，因此空气系统不能只处理冷与热。</p>
+                  <div class="zf-home-hero-actions">
+                    <a class="is-primary" href="#air">进入空气系统</a>
+                    <a href="#water">了解住宅水环境</a>
+                  </div>
                 </div>
               </article>
 
@@ -6126,9 +6144,13 @@
                   <img class="zf-home-hero-image" src="images/homepage-hero-final/hero-system.webp" alt="团队协同与设计判断场景" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="zf-home-hero-copy">
-                  <p class="zf-home-hero-kicker">RESIDENTIAL SYSTEMS</p>
-                  <h1 class="zf-home-hero-title">好的住宅机电系统，应安静退居生活之后。</h1>
-                  <p class="zf-home-hero-text">它无需被反复察觉，却应持续支撑健康、舒适、安静与长期稳定的居住状态。</p>
+                  <p class="zf-home-hero-kicker">DESIGNED TO LAST</p>
+                  <h1 class="zf-home-hero-title">设计图只是开始<br />运行结果才是交付</h1>
+                  <p class="zf-home-hero-text">前期判断、系统深化、现场协同与调试复核缺一不可，最终应交付可被感知、也能被验证的居住结果。</p>
+                  <div class="zf-home-hero-actions">
+                    <a class="is-primary" href="#delivery-page">查看设计交付体系</a>
+                    <a href="#project-access">提交项目信息</a>
+                  </div>
                 </div>
               </article>
             </div>
@@ -6136,185 +6158,290 @@
           </section>
         </div>
 
-        <div class="zf-home-index-strip reveal" aria-label="首页机电视觉母题">
-          <a class="zf-home-index-card is-feature is-philosophy" href="#philosophy" aria-label="现代建筑线条">
-            <span class="zf-home-index-card-visual" aria-hidden="true">
-              <span class="zf-home-index-art"></span>
-            </span>
-            <p class="zf-home-index-card-label"><span>Architectural Order</span>建筑秩序</p>
-          </a>
-
-          <a class="zf-home-index-card is-proposal" href="#water" aria-label="机电管道连接">
-            <span class="zf-home-index-card-visual" aria-hidden="true">
-              <span class="zf-home-index-art"></span>
-            </span>
-            <p class="zf-home-index-card-label"><span>Piping Network</span>管线连接</p>
-          </a>
-
-          <a class="zf-home-index-card is-delivery" href="#air" aria-label="住宅通风与换气内核">
-            <span class="zf-home-index-card-visual" aria-hidden="true">
-              <span class="zf-home-index-art"></span>
-            </span>
-            <p class="zf-home-index-card-label"><span>Invisible Airflow</span>隐形气流</p>
-          </a>
-
-          <a class="zf-home-index-card is-case" href="#delivery-page" aria-label="机电设备间秩序">
-            <span class="zf-home-index-card-visual" aria-hidden="true">
-              <span class="zf-home-index-art"></span>
-            </span>
-            <p class="zf-home-index-card-label"><span>System Core</span>设备内核</p>
-          </a>
-        </div>
-
-        <div class="zf-home-mep-band reveal" aria-label="公司属性主题过渡">
-          <div class="zf-home-mep-band-list">
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><path d="M8 34 24 10l16 24"/><path d="M15 34V22h18v12"/><path d="M20 27h8"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>Project</strong> <span>/ 项目</span></p>
-            </div>
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><path d="M10 14h28"/><path d="M10 24h19"/><path d="M10 34h14"/><path d="M34 21.5 38 25.5l-9 9"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>Services</strong> <span>/ 服务</span></p>
-            </div>
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><rect x="9" y="12" width="30" height="24" rx="4"/><path d="M16 20h16"/><path d="M16 28h10"/><path d="m30 28 3 3 5-6"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>System</strong> <span>/ 系统</span></p>
-            </div>
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><rect x="11" y="11" width="26" height="26" rx="4"/><path d="M17 19h14"/><path d="M17 25h14"/><path d="M17 31h8"/><path d="M24 11V7"/><path d="M18 11V7"/><path d="M30 11V7"/><path d="M24 41v-4"/><path d="M18 41v-4"/><path d="M30 41v-4"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>Equipment</strong> <span>/ 设备</span></p>
-            </div>
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><circle cx="13" cy="24" r="4"/><circle cx="35" cy="14" r="4"/><circle cx="35" cy="34" r="4"/><path d="M17 24h8"/><path d="M27.5 22 32 17.5"/><path d="M27.5 26 32 30.5"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>Method</strong> <span>/ 方法</span></p>
-            </div>
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><path d="M11 31h8l5 6 13-18"/><path d="M29 19h8"/><path d="M31 13h6v24H11V13h11"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>Delivery</strong> <span>/ 交付</span></p>
-            </div>
-            <div class="zf-home-mep-band-item">
-              <span class="zf-home-mep-band-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><path d="M24 10v28"/><path d="M10 24h28"/><path d="M15 15c2.8 0 5 2.2 5 5"/><path d="M33 15c-2.8 0-5 2.2-5 5"/><path d="M15 33c2.8 0 5-2.2 5-5"/><path d="M33 33c-2.8 0-5-2.2-5-5"/></svg>
-              </span>
-              <p class="zf-home-mep-band-label"><strong>Support</strong> <span>/ 维保</span></p>
-            </div>
+        <section class="zf-home-system-reveal reveal" aria-labelledby="zf-system-reveal-title">
+          <figure class="zf-home-system-reveal-media">
+            <img src="images/doas-system-route-premium-20260718.jpg" alt="住宅剖面中的空气、温湿与机电系统路径" loading="lazy" />
+          </figure>
+          <div class="zf-home-system-reveal-shade" aria-hidden="true"></div>
+          <div class="zf-home-system-reveal-copy">
+            <p>ONE HOME · ONE SYSTEM LOGIC</p>
+            <h2 id="zf-system-reveal-title">一套住宅机电<br />应该先有总逻辑，再有设备</h2>
+            <span>泽丰先判断建筑条件和生活目标，再协调空气、水、空间与控制边界，避免每个专业各自正确、组合之后却不好居住。</span>
           </div>
-        </div>
-
-        <div class="zf-home-closing-stage reveal" aria-label="首页收束画面">
-          <span class="zf-home-closing-orbit" aria-hidden="true"></span>
-          <span class="zf-home-closing-grid" aria-hidden="true"></span>
-          <span class="zf-home-closing-flow" aria-hidden="true"></span>
-          <div class="zf-home-closing-copy">
-            <p class="zf-home-closing-kicker">Invisible Systems, Elevated Living</p>
-            <h2>看不见的MEP系统，决定了居住环境的质量。</h2>
+          <div class="zf-home-system-reveal-logic" aria-label="住宅机电价值逻辑">
+            <div><small>01 · 边界</small><strong>先看住宅本身的条件</strong><span>气候、朝向、围护与生活方式</span></div>
+            <div><small>02 · 协同</small><strong>再统一各专业的关系</strong><span>空气、水、空间、设备与控制</span></div>
+            <div><small>03 · 运行</small><strong>最后为长期使用负责</strong><span>调试、数据、维护与持续复核</span></div>
           </div>
-        </div>
+        </section>
+
+        <section class="zf-home-capability-spectrum reveal" id="home-capabilities" aria-labelledby="zf-capability-title">
+          <header class="zf-home-capability-head">
+            <div>
+              <p class="zf-home-capability-kicker">RESIDENTIAL ENVIRONMENT SYSTEMS</p>
+              <h2 id="zf-capability-title">一套住宅，六条系统主线</h2>
+            </div>
+            <p>从空气与水的日常感受，到地下空间、设计交付和长期运行，泽丰把分散设备组织成可持续验证的居住环境。</p>
+          </header>
+
+          <div class="zf-home-capability-grid">
+            <a class="zf-home-capability-card is-air" href="#air">
+              <span class="zf-home-capability-no">01</span>
+              <span class="zf-home-capability-symbol" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M8 23c9-9 20-9 29 0s18 9 19-3"/><path d="M8 34c8-7 17-7 25 0s16 7 23-1"/><path d="M8 45c7-5 14-5 21 0s15 5 27-3"/></svg>
+              </span>
+              <span class="zf-home-capability-copy">
+                <small>INDOOR CLIMATE</small>
+                <strong>室内气候</strong>
+                <span>温湿、空气品质与安静体验</span>
+              </span>
+              <span class="zf-home-capability-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="zf-home-capability-card is-five" href="five-constant-system/index.html">
+              <span class="zf-home-capability-no">02</span>
+              <span class="zf-home-capability-symbol" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="7"/><circle cx="32" cy="10" r="4"/><circle cx="53" cy="25" r="4"/><circle cx="45" cy="51" r="4"/><circle cx="19" cy="51" r="4"/><circle cx="11" cy="25" r="4"/><path d="m32 14 0 11M49 27l-10 3M42 47l-6-9M22 47l6-9M15 27l10 3"/></svg>
+              </span>
+              <span class="zf-home-capability-copy">
+                <small>FIVE CONSTANTS</small>
+                <strong>五恒住宅</strong>
+                <span>恒温 · 恒湿 · 恒氧 · 恒洁 · 恒静</span>
+              </span>
+              <span class="zf-home-capability-live">完整专栏</span>
+              <span class="zf-home-capability-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="zf-home-capability-card is-basement" href="#basement-system">
+              <span class="zf-home-capability-no">03</span>
+              <span class="zf-home-capability-symbol" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M8 27 32 10l24 17"/><path d="M13 25v29h38V25"/><path d="M13 37h38"/><path d="M22 46h20"/><path d="M26 54V46M38 54V46"/></svg>
+              </span>
+              <span class="zf-home-capability-copy">
+                <small>BELOW GRADE</small>
+                <strong>地下空间</strong>
+                <span>防潮、防霉与空气组织</span>
+              </span>
+              <span class="zf-home-capability-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="zf-home-capability-card is-water" href="#water">
+              <span class="zf-home-capability-no">04</span>
+              <span class="zf-home-capability-symbol" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M32 7C24 19 15 29 15 40a17 17 0 0 0 34 0C49 29 40 19 32 7Z"/><path d="M24 43c2 5 6 7 11 7"/></svg>
+              </span>
+              <span class="zf-home-capability-copy">
+                <small>WATER SYSTEM</small>
+                <strong>水环境</strong>
+                <span>供水品质、排水安全与防水边界</span>
+              </span>
+              <span class="zf-home-capability-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="zf-home-capability-card is-delivery" href="#delivery-page">
+              <span class="zf-home-capability-no">05</span>
+              <span class="zf-home-capability-symbol" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M11 49V15h42v34Z"/><path d="M19 39 29 29l8 7 10-13"/><path d="M19 21h12"/><path d="M22 55h20"/></svg>
+              </span>
+              <span class="zf-home-capability-copy">
+                <small>DESIGN TO DELIVERY</small>
+                <strong>设计交付</strong>
+                <span>诊断、深化、施工协同与调试验证</span>
+              </span>
+              <span class="zf-home-capability-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="zf-home-capability-card is-lifecycle" href="#project-access">
+              <span class="zf-home-capability-no">06</span>
+              <span class="zf-home-capability-symbol" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M50 21A21 21 0 0 0 15 18"/><path d="m13 9 2 9 9-2"/><path d="M14 43a21 21 0 0 0 35 3"/><path d="m51 55-2-9-9 2"/><path d="M25 32h14M32 25v14"/></svg>
+              </span>
+              <span class="zf-home-capability-copy">
+                <small>LIFECYCLE SERVICE</small>
+                <strong>长期运行</strong>
+                <span>运行复核、维护计划与持续优化</span>
+              </span>
+              <span class="zf-home-capability-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
       </section>
 
-      <section class="home-entry section-shell" id="home">
-        <article class="home-philosophy-intro home-panel reveal">
-          <div class="home-copy">
-            <p class="home-eyebrow">Philosophy · Human First</p>
-            <h2>高端住宅的定义，先看它能否服务于人的健康与舒适</h2>
-            <p>在泽丰看来，高端住宅并不是尺度的夸耀，也不止于装修的繁盛。风格、材料、家具与电器构成了被看见的体面，而真正值得被珍视的，是一个家能否成为安放身体、照料日常、安顿生命的地方。</p>
-            <p>因此，我们理解的住宅机电，并不是附着在豪宅之上的设备集合，而是支撑居住气质的底层秩序。空气、水、温湿、洁净与安宁，这些看不见的基础被长期照料，住宅才会真正拥有深处的健康，也拥有能够久住的舒适。</p>
-          </div>
-          <figure class="home-image breathe-media">
-            <img src="images/philosophy-hero-changsha-day-v1.webp" alt="长沙高层江景大平层住宅白天客厅，通透观景玻璃外是清晰的湘江与城市天际线，年轻女性主人坐在柔软沙发中安静看景" loading="lazy" />
+      <section class="zf-home-story" id="home" aria-label="泽丰住宅理念与项目经验">
+        <header class="zf-philosophy-opening reveal">
+          <figure>
+            <img src="images/home-feelings-night-v4.webp" alt="木质、布艺与柔和灯光构成的安静住宅客厅" loading="lazy" />
           </figure>
-        </article>
-
-        <article class="home-hero home-panel reveal">
-          <div class="home-hero-copy">
-            <p class="home-eyebrow">ZEFENG MEP · Residential Environment Systems</p>
-            <h2>住宅越讲品质，越要把 MEP 机电放在重要位置</h2>
-            <p>装修的美、材料的好、家具与电器的奢华，都不能代替健康与舒适。</p>
-            <p class="home-note">如果空气、水、光、声没有被妥善照料，再华丽的住宅，也很难成为真正好的住宅。</p>
+          <div class="zf-philosophy-opening-copy">
+            <p>RESIDENTIAL MEP PHILOSOPHY</p>
+            <h1>住宅真正的品质<br />始于看不见的环境秩序</h1>
+            <span>装修完成空间的表面，空气、水、光与声共同决定生活能否长期舒适、安静并保持稳定。</span>
+            <ol>
+              <li><b>01</b><strong>身体真实感受</strong><small>舒适从来不是参数孤岛</small></li>
+              <li><b>02</b><strong>环境整体协同</strong><small>空气、水、光与声共同作用</small></li>
+              <li><b>03</b><strong>时间长期验证</strong><small>多年以后依然稳定、安静、可维护</small></li>
+            </ol>
           </div>
-          <figure class="home-hero-media breathe-media">
-            <img src="images/hero.webp" alt="自然光里的高端大平层住宅，空间开阔、安静、有生活气息" />
+        </header>
+
+        <article class="zf-home-human reveal">
+          <figure class="zf-home-human-media">
+            <img src="images/invisible-comfort-green.webp" alt="雨夜木质客厅中安静阅读的居住者" loading="lazy" />
           </figure>
-        </article>
-
-        <article class="home-sanctuary home-panel reveal">
-          <figure class="home-sanctuary-media breathe-media">
-            <img src="images/home-sanctuary-day-v3.webp" alt="白天湖南湖景中式别墅全景，庭院、临水景观与远山层次开阔舒展" loading="lazy" />
-          </figure>
-          <div class="home-sanctuary-copy">
-            <p class="home-eyebrow">Sanctuary · Recovery</p>
-            <h2>家，是让人感受到美好，也让生命更有价值的地方</h2>
-            <p>它不是用来被观看的样子，而是承接日常、照顾家人、安放情绪，让人真正愿意回来的地方。</p>
-            <p class="home-quiet-line">好的住宅，不只是漂亮；它要让每一天都过得更从容、更值得。</p>
+          <div class="zf-home-human-copy">
+            <p class="zf-home-story-kicker">HUMAN FIRST</p>
+            <h2>高端住宅的最终标准<br />仍然是人的感受</h2>
+            <p>材料与陈设完成第一眼的美，空气、水、温湿、洁净与安宁，才决定身体愿不愿意长期住在这里。</p>
+            <blockquote>住宅不是设备的容器，而是照料身体、承接日常、恢复生命节律的环境。</blockquote>
+            <a href="#philosophy">理解泽丰的住宅理念 <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="home-shift home-panel reveal">
-          <figure class="home-image breathe-media">
-            <img src="images/home-shift-qingzhuyuan-v2.webp" alt="长沙青竹园气质的高端高尔夫独栋别墅，现代社区豪宅风格，球道、沙坑与人工湖关系清晰，适合长期稳定居住" loading="lazy" />
-          </figure>
-          <div class="home-copy">
-            <p class="home-eyebrow">A Quiet Shift</p>
-            <h2>很多重要的事，并不在第一眼出现</h2>
-            <p>看得见的部分决定第一眼的美。</p>
-            <p class="home-note">看不见的系统，决定许多年后的生活。</p>
+        <section class="zf-home-senses reveal" aria-labelledby="zf-home-senses-title">
+          <header>
+            <div>
+              <p class="zf-home-story-kicker">DAILY EXPERIENCE</p>
+              <h2 id="zf-home-senses-title">身体每天真正感受的<br />是四种环境结果</h2>
+            </div>
+            <p>这些感受看似独立，背后却共享同一套机电逻辑。它们不是装修完成后的补救项，而应从设计阶段一起被定义。</p>
+          </header>
+          <div class="zf-home-sense-grid">
+            <a class="zf-home-sense-card is-air" href="#air"><span>01</span><small>AIR</small><strong>空气</strong><p>清新、干爽、温和，没有闷与黏。</p></a>
+            <a class="zf-home-sense-card is-water" href="#water"><span>02</span><small>WATER</small><strong>水</strong><p>干净、稳定、安静地到达与离开。</p></a>
+            <a class="zf-home-sense-card is-light" href="#delivery-page"><span>03</span><small>LIGHT</small><strong>光</strong><p>随时间与生活场景自然变化。</p></a>
+            <a class="zf-home-sense-card is-sound" href="#air"><span>04</span><small>SOUND</small><strong>声</strong><p>设备退后，睡眠与专注不被打断。</p></a>
           </div>
-        </article>
+        </section>
 
-        <article class="home-feelings home-panel reveal">
-          <div class="home-copy">
-            <p class="home-eyebrow">Daily Signals</p>
-            <h2>身体会比语言更早察觉</h2>
-            <p>有些变化很轻，不会立刻成为问题，却会慢慢改变家的状态。</p>
+        <section class="zf-home-evidence reveal" aria-labelledby="zf-home-evidence-title">
+          <header>
+            <div>
+              <p class="zf-home-story-kicker">PROJECT EXPERIENCE</p>
+              <h2 id="zf-home-evidence-title">全国成熟经验<br />在湖南本地落地</h2>
+            </div>
+            <p>住宅类型、气候与生活方式各不相同，但对健康、舒适、安静和长期稳定的要求始终一致。</p>
+          </header>
+          <div class="zf-home-evidence-grid" role="tablist" aria-label="按住宅类型查看案例">
+            <button type="button" class="zf-home-evidence-card is-hunan is-active" role="tab" aria-selected="true" aria-controls="home-case-apartment" data-zf-home-case-target="apartment">
+              <img src="images/case-hunan-residences-20260718.jpg" alt="长沙大平层住宅室内场景" loading="lazy" />
+              <span><small>URBAN RESIDENCE</small><strong>大平层</strong><em>空气、水与安静体验的完整协同</em></span>
+            </button>
+            <button type="button" class="zf-home-evidence-card" role="tab" aria-selected="false" aria-controls="home-case-duplex" data-zf-home-case-target="duplex">
+              <img src="images/case-duplex-residence-20260720.jpg" alt="上下两层相连的复式住宅室内场景" loading="lazy" />
+              <span><small>DUPLEX RESIDENCE</small><strong>复式</strong><em>上下层分区、压力与热水路径</em></span>
+            </button>
+            <button type="button" class="zf-home-evidence-card" role="tab" aria-selected="false" aria-controls="home-case-hengyang-villa" data-zf-home-case-target="hengyang-villa">
+              <img src="images/home-courtyard-villa-aerial.webp" alt="衡阳庭院别墅建筑与院落场景" loading="lazy" />
+              <span><small>HENGYANG COURTYARD</small><strong>衡阳别墅</strong><em>庭院生活、厨房补风与全屋水系统</em></span>
+            </button>
+            <button type="button" class="zf-home-evidence-card" role="tab" aria-selected="false" aria-controls="home-case-changsha-detached" data-zf-home-case-target="changsha-detached">
+              <img src="images/case-national-low-density-20260718.jpg" alt="带地下空间的独栋别墅庭院场景" loading="lazy" />
+              <span><small>CHANGSHA DETACHED VILLA</small><strong>长沙独栋别墅</strong><em>全屋系统与地下室环境协同</em></span>
+            </button>
           </div>
-          <div class="home-feeling-wrap">
-            <figure class="home-image breathe-media">
-              <img src="images/home-feelings-night-v4.webp" alt="高层临湘江住宅夜景客厅全景，落地大窗外可俯瞰长沙江景与城市灯火，室内安静舒适、光线柔和克制" loading="lazy" />
-            </figure>
+          <article class="zf-home-case-demo is-active" id="home-case-apartment" role="tabpanel" data-zf-home-case-panel="apartment" aria-labelledby="zf-home-case-apartment-title">
+            <div class="zf-home-case-demo-intro">
+              <p class="zf-home-story-kicker">RESIDENTIAL CASE · CHANGSHA</p>
+              <h3 id="zf-home-case-apartment-title">长沙梅溪湖<br />280㎡改善型大平层</h3>
+              <p>两位成人与一位儿童长期居住。项目在机电深化阶段统一处理梅雨季湿负荷、夜间卧室空气更新、用水压力、排水噪声与热水等待，设备与末端尽量退入吊顶、柜体和设备空间。</p>
+            </div>
+            <div class="zf-home-case-demo-body">
+              <div class="zf-home-case-demo-metrics" aria-label="案例设计关注指标">
+                <span><small>相对湿度</small><strong>50–60%</strong><em>舒适控制区间</em></span>
+                <span><small>卧室 CO₂</small><strong>&lt;1000</strong><em>ppm 趋势目标</em></span>
+                <span><small>316L 给水</small><strong>同程平衡</strong><em>多点用水更稳定</em></span>
+                <span><small>PP 静音排水</small><strong>卧室避让</strong><em>控制排水噪声</em></span>
+                <span><small>背景噪声</small><strong>≤30</strong><em>dB(A) 设计目标</em></span>
+                <span><small>热水等待</small><strong>≤8</strong><em>秒 末端目标</em></span>
+              </div>
+              <div class="zf-home-case-demo-path">
+                <div><small>01 · 项目关注</small><strong>高湿、夜间空气更新、排水噪声、多人同时用水和热水等待不拆开处理</strong></div>
+                <div><small>02 · 空气系统</small><strong>DOAS 新风与温湿去耦，卧室采用低噪送回风组织，并按照人员与作息进行分区控制</strong></div>
+                <div><small>03 · 给排水</small><strong>316L 不锈钢平衡供水结合热水循环；PP 静音排水优化立管位置、横支管坡度与检修边界</strong></div>
+                <div><small>04 · 交付验证</small><strong>记录温湿、CO₂、风量、噪声、末端压力和热水等待时间，形成可复核的运行结果</strong></div>
+              </div>
+            </div>
+          </article>
+          <article class="zf-home-case-demo" id="home-case-duplex" role="tabpanel" data-zf-home-case-panel="duplex" aria-labelledby="zf-home-case-duplex-title" hidden>
+            <div class="zf-home-case-demo-intro">
+              <p class="zf-home-story-kicker">RESIDENTIAL CASE · CHANGSHA</p>
+              <h3 id="zf-home-case-duplex-title">长沙洋湖<br />360㎡复式住宅</h3>
+              <p>上下两层分别承担会客、餐厨与睡眠功能。系统设计重点是解决挑空区域热分层、上下层空气组织差异、立管压力变化，以及远端卫生间热水等待和排水传声问题。</p>
+            </div>
+            <div class="zf-home-case-demo-body">
+              <div class="zf-home-case-demo-metrics" aria-label="复式案例设计关注指标">
+                <span><small>空气分区</small><strong>上下两层</strong><em>独立调节与联动</em></span>
+                <span><small>卧室 CO₂</small><strong>&lt;1000</strong><em>ppm 趋势目标</em></span>
+                <span><small>挑空温差</small><strong>重点校核</strong><em>抑制垂直热分层</em></span>
+                <span><small>316L 给水</small><strong>分层同程</strong><em>平衡末端压力</em></span>
+                <span><small>PP 静音排水</small><strong>立管降噪</strong><em>控制上下层传声</em></span>
+                <span><small>热水等待</small><strong>≤10</strong><em>秒 远端目标</em></span>
+              </div>
+              <div class="zf-home-case-demo-path">
+                <div><small>01 · 空间判断</small><strong>依据上下层功能和挑空关系划分空气区域，不以单一温控器代表整套住宅</strong></div>
+                <div><small>02 · 空气系统</small><strong>DOAS 承担新风、除湿与空气品质，冷暖末端分层控制，挑空区单独校核送回风路径</strong></div>
+                <div><small>03 · 给排水</small><strong>316L 分层平衡供水减少同时用水波动；热水循环覆盖远端，PP 静音排水控制立管与横管传声</strong></div>
+                <div><small>04 · 调试交付</small><strong>分别测量上下层温湿、CO₂、风量、水压和噪声，再完成场景联动与长期运行设定</strong></div>
+              </div>
+            </div>
+          </article>
+          <article class="zf-home-case-demo" id="home-case-hengyang-villa" role="tabpanel" data-zf-home-case-panel="hengyang-villa" aria-labelledby="zf-home-case-hengyang-villa-title" hidden>
+            <div class="zf-home-case-demo-intro">
+              <p class="zf-home-story-kicker">RESIDENTIAL CASE · HENGYANG</p>
+              <h3 id="zf-home-case-hengyang-villa-title">衡阳蒸水南<br />520㎡庭院别墅</h3>
+              <p>地上三层围绕庭院展开，家庭成员长期居住并有较高频率的中式烹饪与聚餐。项目重点协调全屋空气更新、厨房补排风、跨楼层用水压力、生活热水和静音排水，同时让设备与管线不破坏庭院住宅的空间秩序。</p>
+            </div>
+            <div class="zf-home-case-demo-body">
+              <div class="zf-home-case-demo-metrics" aria-label="衡阳别墅案例设计关注指标">
+                <span><small>室内湿度</small><strong>50–60%</strong><em>分层舒适控制</em></span>
+                <span><small>卧室 CO₂</small><strong>&lt;1000</strong><em>ppm 趋势目标</em></span>
+                <span><small>厨房空气</small><strong>补排联动</strong><em>控制负压与串味</em></span>
+                <span><small>316L 给水</small><strong>环状平衡</strong><em>多层同时用水</em></span>
+                <span><small>PP 静音排水</small><strong>专用通气</strong><em>稳定水封与降噪</em></span>
+                <span><small>热水等待</small><strong>≤10</strong><em>秒 远端目标</em></span>
+              </div>
+              <div class="zf-home-case-demo-path">
+                <div><small>01 · 全屋空气</small><strong>DOAS 新风与除湿按楼层、朝向和使用时间分区，卧室、会客厅与茶室分别校核送回风和背景噪声</strong></div>
+                <div><small>02 · 厨房补风</small><strong>油烟排风与有组织补风联动，控制厨房负压、门缝风速和异味扩散，避免大排风破坏全屋空气平衡</strong></div>
+                <div><small>03 · 给排水</small><strong>316L 环状平衡供水配合分区减压和热水循环；PP 静音排水、专用通气与庭院雨水路径统一组织</strong></div>
+                <div><small>04 · 运行交付</small><strong>复核各楼层温湿、CO₂、风量、水压、热水等待与排水噪声，并为过滤、排水和设备维护保留清晰入口</strong></div>
+              </div>
+            </div>
+          </article>
+          <article class="zf-home-case-demo" id="home-case-changsha-detached" role="tabpanel" data-zf-home-case-panel="changsha-detached" aria-labelledby="zf-home-case-changsha-detached-title" hidden>
+            <div class="zf-home-case-demo-intro">
+              <p class="zf-home-story-kicker">RESIDENTIAL CASE · CHANGSHA</p>
+              <h3 id="zf-home-case-changsha-detached-title">长沙谷山<br />680㎡独栋别墅</h3>
+              <p>地上三层与一层地下室同时使用，包含卧室、餐厨、茶室、影音与设备空间。系统需要跨楼层协调空气、水、排水和地下室环境，并为长期维护保留清晰路径。</p>
+            </div>
+            <div class="zf-home-case-demo-body">
+              <div class="zf-home-case-demo-metrics" aria-label="别墅案例设计关注指标">
+                <span><small>室内湿度</small><strong>50–60%</strong><em>分层控制区间</em></span>
+                <span><small>地下室露点</small><strong>持续受控</strong><em>防止表面结露</em></span>
+                <span><small>卧室 CO₂</small><strong>&lt;1000</strong><em>ppm 趋势目标</em></span>
+                <span><small>316L 给水</small><strong>环状平衡</strong><em>多楼层稳定供水</em></span>
+                <span><small>污水提升</small><strong>双泵配置</strong><em>报警与检修边界</em></span>
+                <span><small>PP 静音排水</small><strong>系统降噪</strong><em>立管、通气与支管协同</em></span>
+              </div>
+              <div class="zf-home-case-demo-path">
+                <div><small>01 · 全屋空气</small><strong>DOAS 新风与除湿按楼层和房间用途组织，卧室、影音室与地下空间分别校核风量和噪声</strong></div>
+                <div><small>02 · 给排水</small><strong>316L 环状平衡供水兼顾多楼层压力；PP 静音排水、专用通气与地下室污水提升系统统一深化</strong></div>
+                <div><small>03 · 地下室环境</small><strong>结构防水、外侧防水与有组织排水构成第一道边界，再通过防潮、除湿和持续通风控制含湿量与露点</strong></div>
+                <div><small>04 · 长期运行</small><strong>污水提升采用双泵轮换、液位报警与检修空间；温湿、空气品质、集水与设备状态纳入运行复核</strong></div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="zf-home-consult reveal" aria-labelledby="zf-home-consult-title">
+          <div>
+            <p class="zf-home-story-kicker">START WITH JUDGEMENT</p>
+            <h2 id="zf-home-consult-title">在确定设备之前<br />先判断这套住宅真正需要什么</h2>
           </div>
-        </article>
-
-        <article class="home-mep home-panel reveal">
-          <div class="home-copy">
-            <p class="home-eyebrow">MEP Systems</p>
-            <h2>MEP机电系统决定一个家，是否能够长期稳定运行</h2>
-            <p>它不直接被看到。</p>
-            <p>但持续影响每一天的居住体验。</p>
-          </div>
-          <figure class="home-image breathe-media">
-            <img src="images/philosophy-hunan-villa-v6.webp" alt="湖南山谷自然江景中的高端中式自建别墅，宅院退离江边保持私密与安全，围墙完整，侧门通往墙外观景台，可赏江、品茶、钓鱼" loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="home-courtyard home-panel reveal">
-          <figure class="home-image breathe-media">
-            <img src="images/home-courtyard-villa-aerial.webp" alt="中国高端四合院别墅俯拍全景，院落完整、空间开阔、光影舒展" loading="lazy" />
-          </figure>
-          <div class="home-copy">
-            <p class="home-eyebrow">Shelter · Renewal</p>
-            <h2>住宅是庇护所、是身体修复场、是重塑生命的空间</h2>
-            <p>真正好的住宅，不只是遮风避雨。</p>
-            <p class="home-note">它让身体恢复节律，也让生活重新获得安定与力量。</p>
-          </div>
-        </article>
-
-        <div class="home-philosophy-closing reveal">
-          <p class="home-philosophy-closing-title">住宅的价值，最终还是回到人的身体与日常</p>
-          <span>我们理解的住宅理念，不止于看得见的材质、造型与陈设，而在于空气、水、光、声如何在漫长的生活里安静协同，让人住得健康、舒展，也让家真正成为承接生命的地方。</span>
-        </div>
-
+          <p>从户型、城市、建筑条件和当前项目阶段出发，形成住宅环境系统的初步判断与深化路径。</p>
+          <a href="#project-access">预约住宅机电评估 <span aria-hidden="true">→</span></a>
+        </section>
       </section>
 
       <section class="philosophy section-shell cinematic-panel media-first retired-section" id="philosophy-archive" aria-hidden="true">
@@ -6417,10 +6544,15 @@
 
       <section class="climate section-shell" id="climate">
         <div class="section-heading reveal">
-          <p class="eyebrow">HUNAN CLIMATE · RESIDENTIAL AIR SYSTEM</p>
-          <h2>湖南气候，决定了住宅空气系统该如何开始</h2>
-          <p class="lead">在我们看来，好的住宅，首先应该让人呼吸得健康、舒适而轻松。而在湖南，这件事首先面对的，不是单纯的冷热，而是长期存在的高湿。</p>
-          <p class="climate-lead-sub">高湿先让身体感到闷、黏、沉，久而久之也会让空间出现返潮、结露、发霉与异味。因此，住宅空气系统真正要处理的，是湿负荷、绝对湿度、露点与二氧化碳浓度，也是住宅小气候被建立起来的起点。</p>
+          <p class="eyebrow">HUNAN INDOOR CLIMATE</p>
+          <h2>湖南住宅的空气问题<br /><span>从来不只是冷与热</span></h2>
+          <p class="lead">真正难处理的，是长期高湿、偏高露点，以及关窗之后持续而安静的空气更新。</p>
+          <p class="climate-lead-sub">新风、除湿、温度、过滤和噪声必须被放进同一套空气逻辑，住宅才能形成稳定的小气候。</p>
+          <div class="air-hero-facts" aria-label="湖南住宅空气系统的三个起点">
+            <span><small>01</small><strong>高湿负荷</strong><em>梅雨季持续除湿</em></span>
+            <span><small>02</small><strong>露点风险</strong><em>避免表面结露</em></span>
+            <span><small>03</small><strong>关窗空气</strong><em>持续安静更新</em></span>
+          </div>
         </div>
         <div class="climate-service-matrix reveal" aria-label="湖南住宅空气系统业务范围">
           <a class="climate-service-item" href="five-constant-system/" aria-label="打开五恒系统专栏"><span class="climate-service-icon" style="--service-accent:#2ca9bb;--service-accent-2:#0e6e83;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h6" /><path d="M11 8c1.8 1.2 2.8 2.6 2.8 4.2S12.8 15.2 11 16.4" /><path d="M15.5 6.4C18 8.1 19 10 19 12s-1 3.9-3.5 5.6" /><path d="M8 20h8" /></svg></span><strong>五恒系统</strong></a>
@@ -6621,9 +6753,11 @@
 
       <section class="system-cognition-entry section-shell water-route-page" id="water-problem">
         <div class="water-system-definition-copy reveal">
-          <p class="eyebrow">Water Supply & Drainage System</p>
-          <h1><span>好的住宅，水要在该来的时候从容到达，在该离开的时候安静离开。</span></h1>
-          <p class="water-system-definition-lead">我们理解的住宅给排水，并不是把水送进来、再把水排出去这样简单。真正决定居住感受的，是入口是否干净，末端是否稳定，热水是否及时，排水是否安静，异味与渗漏是否始终被拦在生活之外。水被安顿好之后，人感受到的才会是顺手、洁净、放松，而不是等待、波动和反复的小打断。</p>
+          <div class="zf-route-opening-copy">
+            <p class="eyebrow">Water Supply &amp; Drainage System</p>
+            <h1><span>好的住宅，水要在该来的时候从容到达，在该离开的时候安静离开。</span></h1>
+            <p class="water-system-definition-lead">我们理解的住宅给排水，并不是把水送进来、再把水排出去这样简单。真正决定居住感受的，是入口是否干净，末端是否稳定，热水是否及时，排水是否安静，异味与渗漏是否始终被拦在生活之外。水被安顿好之后，人感受到的才会是顺手、洁净、放松，而不是等待、波动和反复的小打断。</p>
+          </div>
           <div class="water-service-matrix reveal" aria-label="给排水业务范围">
             <div class="water-service-item"><span class="water-service-icon" style="--service-accent:#3f9589;--service-accent-2:#205d57;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M8 8h8" /><path d="M8 16h8" /><path d="M4 9v6" /><path d="M20 9v6" /></svg></span><strong>给排水管路</strong></div>
             <div class="water-service-item"><span class="water-service-icon" style="--service-accent:#2ea7aa;--service-accent-2:#15606c;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s4.5 5 4.5 8.7A4.5 4.5 0 1 1 7.5 11.7C7.5 8 12 3 12 3Z" /><path d="M5 18h14" /><path d="M8 21h8" /></svg></span><strong>净水处理</strong></div>
@@ -7024,9 +7158,11 @@
 
       <section class="section-shell basement-definition" id="basement-definition" data-route-anchor="basement-system">
         <div class="basement-definition-copy reveal">
-          <p class="eyebrow">Basement System · Below-Ground Comfort</p>
-          <h1><span>好的住宅地下室，不是把生活搬到地下，而是让人忘掉它在地下。</span></h1>
-          <p class="basement-definition-lead">这就是我们对住宅地下室的理解。地下空间天然会面对水、湿、冷表面、空气停滞、异味与压迫感，因此它的价值，从来不在于简单增加了一层面积，而在于能否先把这些底层问题安静处理好，再去承接真正的生活。好的地下室，不靠装修掩盖不适，而是让防水、防潮、排水、空气、温湿度、采光与结构边界一起成立，最后留下的，只是干爽、安静、稳定与可久留。</p>
+          <div class="zf-route-opening-copy">
+            <p class="eyebrow">Basement System · Below-Ground Comfort</p>
+            <h1><span>好的住宅地下室，不是把生活搬到地下，而是让人忘掉它在地下。</span></h1>
+            <p class="basement-definition-lead">这就是我们对住宅地下室的理解。地下空间天然会面对水、湿、冷表面、空气停滞、异味与压迫感，因此它的价值，从来不在于简单增加了一层面积，而在于能否先把这些底层问题安静处理好，再去承接真正的生活。好的地下室，不靠装修掩盖不适，而是让防水、防潮、排水、空气、温湿度、采光与结构边界一起成立，最后留下的，只是干爽、安静、稳定与可久留。</p>
+          </div>
           <div class="basement-service-matrix reveal" aria-label="地下室 MEP 业务范围">
             <div class="basement-service-item"><span class="basement-service-icon" style="--service-accent:#27b0c9;--service-accent-2:#0d7085;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13h9" /><path d="M9 8c1.5 1.3 2.3 2.8 2.3 4.6S10.5 16 9 17.2" /><path d="M14 9c1.8 1.1 2.8 2.4 2.8 4S15.8 15.9 14 17" /><path d="M17.5 6.8C20 8.2 21 10.2 21 13s-1 4.8-3.5 6.2" /></svg></span><strong>除湿通风</strong></div>
             <div class="basement-service-item"><span class="basement-service-icon" style="--service-accent:#7f7cda;--service-accent-2:#47459f;" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 19h8" /><path d="M8 11h8" /><path d="M12 5v10" /><path d="M15.5 14.5 12 18l-3.5-3.5" /><rect x="5" y="3" width="14" height="18" rx="2" /></svg></span><strong>污水提升</strong></div>
@@ -8519,7 +8655,8 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260718-high-end-copy" defer></script>
+    <script src="script.js?v=20260719-route-cohesion-v4" defer></script>
+    <script src="page-cohesion-runtime.js?v=20260720-route-cohesion-v6" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");
