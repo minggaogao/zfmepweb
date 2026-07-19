@@ -17,6 +17,133 @@ html body .site-footer-premium {
   color: #1d2422;
 }
 
+html body .footer-signature-band {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(420px, .92fr) minmax(0, 1.08fr);
+  gap: clamp(42px, 6vw, 96px);
+  align-items: end;
+  min-height: 258px;
+  padding: clamp(38px, 4.4vw, 62px);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 30px;
+  color: #f7f3eb;
+  background:
+    radial-gradient(circle at 86% -20%, rgba(96, 177, 185, .22), transparent 36%),
+    radial-gradient(circle at -4% 118%, rgba(184, 137, 85, .24), transparent 38%),
+    linear-gradient(124deg, #292824 0%, #35332e 52%, #26302f 100%);
+  box-shadow: 0 28px 76px rgba(49, 43, 35, .16);
+}
+
+html body .footer-signature-band::before,
+html body .footer-signature-band::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+html body .footer-signature-band::before {
+  right: -5%;
+  bottom: 22%;
+  width: 62%;
+  height: 120px;
+  opacity: .48;
+  background:
+    linear-gradient(174deg, transparent 46%, rgba(103, 202, 214, .52) 47%, transparent 48%),
+    linear-gradient(180deg, transparent 59%, rgba(151, 196, 181, .30) 60%, transparent 61%),
+    linear-gradient(186deg, transparent 71%, rgba(200, 158, 108, .24) 72%, transparent 73%);
+  transform: rotate(-2deg);
+}
+
+html body .footer-signature-band::after {
+  inset: 0;
+  opacity: .1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(110deg, transparent 0 42%, #000 78%, transparent 100%);
+}
+
+html body .footer-signature-copy {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+html body .footer-signature-copy p {
+  margin: 0;
+  color: rgba(174, 219, 217, .84) !important;
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+html body .footer-signature-copy h2 {
+  margin: 0;
+  color: #f8f4ed !important;
+  font-family: "Songti SC", "STSong", serif;
+  font-size: clamp(36px, 3.6vw, 54px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+
+html body .footer-signature-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: 0;
+  border-top: 1px solid rgba(255,255,255,.16);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+html body .footer-signature-principles > span {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  padding: 22px clamp(16px, 2vw, 28px);
+}
+
+html body .footer-signature-principles > span:first-child {
+  padding-left: 0;
+}
+
+html body .footer-signature-principles > span + span {
+  border-left: 1px solid rgba(255,255,255,.12);
+}
+
+html body .footer-signature-principles small,
+html body .footer-signature-principles strong,
+html body .footer-signature-principles em {
+  color: inherit !important;
+}
+
+html body .footer-signature-principles small {
+  color: rgba(151, 215, 211, .66) !important;
+  font-family: var(--font-en);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+html body .footer-signature-principles strong {
+  color: rgba(250,247,240,.94) !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+html body .footer-signature-principles em {
+  color: rgba(239,235,226,.50) !important;
+  font-size: 11px;
+  font-style: normal;
+  line-height: 1.65;
+}
+
 html body .footer-premium-cta {
   position: relative;
   isolation: isolate;
@@ -328,6 +455,11 @@ html body .footer-premium-bottom a {
 }
 
 @media (max-width: 1050px) {
+  html body .footer-signature-band {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
   html body .footer-premium-cta {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -350,6 +482,33 @@ html body .footer-premium-bottom a {
   html body .site-footer-premium {
     width: calc(100vw - 24px);
     margin-top: 56px;
+  }
+
+  html body .footer-signature-band {
+    gap: 28px;
+    padding: 32px 22px 26px;
+    border-radius: 25px;
+  }
+
+  html body .footer-signature-copy h2 {
+    font-size: 31px;
+  }
+
+  html body .footer-signature-principles {
+    grid-template-columns: 1fr;
+  }
+
+  html body .footer-signature-principles > span,
+  html body .footer-signature-principles > span:first-child {
+    grid-template-columns: 32px minmax(0, .72fr) minmax(0, 1fr);
+    gap: 10px;
+    align-items: center;
+    padding: 14px 0;
+  }
+
+  html body .footer-signature-principles > span + span {
+    border-top: 1px solid rgba(255,255,255,.11);
+    border-left: 0;
   }
 
   html body .footer-premium-cta {
