@@ -316,16 +316,17 @@ html body main #landing .zf-home-hero-kicker {
 }
 
 html body main #landing .zf-home-hero-title {
-  max-width: min(760px, 54vw);
-  font-size: clamp(50px, 5vw, 82px);
-  line-height: 1.03;
-  letter-spacing: -.065em;
+  max-width: min(720px, 54vw);
+  font-size: clamp(38px, 3.15vw, 56px);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -.02em;
 }
 
 html body main #landing .zf-home-hero-text {
-  max-width: 610px;
+  max-width: 720px;
   font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 html body main #landing .zf-home-hero-actions {
@@ -953,13 +954,13 @@ html body[data-page="home"] main #home.zf-home-story .zf-home-consult > a {
 
   html body main #landing .zf-home-hero-title {
     max-width: 100%;
-    font-size: 41px;
-    line-height: 1.04;
+    font-size: clamp(30px, 7.8vw, 36px);
+    line-height: 1.16;
   }
 
   html body main #landing .zf-home-hero-text {
-    font-size: 14px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.85;
   }
 
   html body main #landing .zf-home-hero-actions {

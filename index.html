@@ -50,7 +50,7 @@
     />
     <link rel="preload" as="image" href="images/homepage-hero-final/hero-human.webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css?v=20260710-footer-flow-v1" />
-    <link rel="stylesheet" href="launch-polish.css?v=20260719-navigation-visual-v2" />
+    <link rel="stylesheet" href="launch-polish.css?v=20260721-home-closing-v3" />
     <link
       rel="preload"
       href="water-scenes-lock.css?v=20260626-water-fix-v77"
@@ -5382,7 +5382,7 @@
       @media (min-width: 1280px) {
         html body[data-page="home"] {
           --zf-home-stage-width: min(1704px, calc(100vw - 24px));
-          --zf-home-copy-width: min(760px, calc(100vw - 240px));
+          --zf-home-copy-width: min(720px, calc(100vw - 240px));
         }
 
         html body[data-page="home"] main > #landing {
@@ -6018,9 +6018,9 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="home-visual-system.css?v=20260719-home-rebuild-v2" />
-    <link rel="stylesheet" href="page-cohesion-system.css?v=20260720-project-access-contact-v20" />
-    <link rel="stylesheet" href="air-page-hero-lock.css?v=20260720-air-hero-v1" />
+    <link rel="stylesheet" href="home-visual-system.css?v=20260720-home-type-v3" />
+    <link rel="stylesheet" href="page-cohesion-system.css?v=20260721-route-stability-v36" />
+    <link rel="stylesheet" href="air-page-hero-lock.css?v=20260720-air-hero-v2" />
     <link rel="stylesheet" href="navigation-mega-lock.css?v=20260720-nav-mega-v1" />
     <link rel="stylesheet" href="weather-live-status.css?v=20260720-weather-status-v1" />
   </head>
@@ -6089,7 +6089,7 @@
         <a href="#water" data-nav-key="water" aria-haspopup="true" aria-expanded="false">给排水<span class="nav-caret" aria-hidden="true"></span></a>
         <a href="#delivery-page" data-nav-key="delivery" aria-haspopup="true" aria-expanded="false">设计交付<span class="nav-caret" aria-hidden="true"></span></a>
         <a href="#project-access" data-nav-key="access" aria-haspopup="true" aria-expanded="false">专属方案<span class="nav-caret" aria-hidden="true"></span></a>
-        <a href="login/">客户维保</a>
+        <a class="nav-maintenance-entry" href="login/index.html" target="_blank" rel="noopener" aria-label="客户维保中心（新窗口打开）">客户维保<span aria-hidden="true">↗</span></a>
       </nav>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <span></span>
@@ -6320,7 +6320,7 @@
           <header>
             <div>
               <p class="zf-home-story-kicker">PROJECT EXPERIENCE</p>
-              <h2 id="zf-home-evidence-title">全国成熟经验<br />在湖南本地落地</h2>
+              <h2 id="zf-home-evidence-title">成熟系统经验<br />在湖南本地落地</h2>
             </div>
             <p>住宅类型、气候与生活方式各不相同，但对健康、舒适、安静和长期稳定的要求始终一致。</p>
           </header>
@@ -7150,6 +7150,19 @@
       </section>
 
       <section class="system-cognition-logic section-shell image-entry-panel environment-panel logic-panel" id="environment-logic">
+        <div class="zf-air-logic-copy reveal">
+          <p class="eyebrow">Air System Architecture</p>
+          <h2>好空气不是一台设备，<br />而是一条持续运行的空气路径</h2>
+          <p>室外空气进入住宅之后，需要依次经过过滤、温湿度处理、分区输送、污染排出与数据校核。任何一段缺失，最后都会变成闷、黏、直吹、异味或噪声。</p>
+          <a class="zf-air-logic-link" href="five-constant-system/index.html#fc-system">深入了解 DOAS 五恒空气系统 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="zf-air-logic-path reveal" aria-label="住宅空气系统五条连续路径">
+          <article><span>01</span><strong>空气进入</strong><p>过滤室外颗粒物，并按真实人数组织新风量。</p></article>
+          <article><span>02</span><strong>湿度独立</strong><p>不让降温承担全部除湿任务，持续控制露点。</p></article>
+          <article><span>03</span><strong>冷热柔和</strong><p>末端负责冷暖，风速、温差与送风位置共同降低吹感。</p></article>
+          <article><span>04</span><strong>污染离开</strong><p>厨房、卫浴与生活异味沿明确路径排出，不在室内迁移。</p></article>
+          <article><span>05</span><strong>结果可见</strong><p>温湿度、CO₂、颗粒物与噪声被持续观察和复核。</p></article>
+        </div>
       </section>
 
       <section class="systems section-shell" id="systems">
@@ -8384,15 +8397,37 @@
       </section>
 
       <section class="fit section-shell cinematic-panel delivery-prelude" id="fit">
-        <div class="section-copy reveal">
+        <div class="section-copy reveal delivery-hero-copy">
           <p class="eyebrow">Design Before Decoration</p>
-          <h2>好的住宅机电<br />应该在设计阶段<br />先被想清楚</h2>
-          <p>在泽丰看来，住宅的舒适、健康、安静与长期稳定，不是装修快完成时才被想起的一层配置，而是从一开始就要进入建筑、空间与生活逻辑里的基础判断。</p>
-          <p>如果机电被留到最后，空气、水、排水、地下空间与系统维护这些真正决定长期感受的部分，就只能在已经成形的表面之后被动妥协。</p>
-          <blockquote>住宅不是先完成表面，再把系统塞进去；真正成熟的住宅，会先让看不见的部分成立。</blockquote>
-          <figure class="delivery-scene-media reveal">
-            <img src="images/generated-delivery-scenes-v3/design-before-everything-revit-cfd-v2.webp" alt="三屏 MEP 设计工位展示计算表、CAD 平面和 BIM 管线综合" loading="lazy" />
-          </figure>
+          <h2>先定义生活<br />再设计系统</h2>
+          <p class="delivery-hero-lead">住宅的舒适、健康、安静与长期稳定，不是装修结束前补上的设备配置，而是从一开始就进入建筑、空间和生活逻辑的基础判断。</p>
+          <blockquote>看不见的秩序，应该先于看得见的表面成立。</blockquote>
+          <div class="delivery-hero-principles" aria-label="设计阶段的三项核心判断">
+            <span><i>01</i><strong>需求判断</strong><small>先理解家庭与生活方式</small></span>
+            <span><i>02</i><strong>系统边界</strong><small>明确容量、路径与条件</small></span>
+            <span><i>03</i><strong>空间协同</strong><small>让机电进入建筑关系</small></span>
+          </div>
+        </div>
+        <figure class="delivery-scene-media reveal">
+          <img src="images/generated-delivery-scenes-v3/design-before-everything-revit-cfd-v2.webp" alt="三屏 MEP 设计工位展示计算表、CAD 平面和 BIM 管线综合" loading="eager" decoding="async" fetchpriority="high" />
+        </figure>
+      </section>
+
+      <section class="zf-delivery-outputs section-shell" id="delivery-outputs" aria-labelledby="delivery-outputs-title">
+        <header class="zf-delivery-outputs-head reveal">
+          <p class="eyebrow">Visible Deliverables</p>
+          <h2 id="delivery-outputs-title">每一个判断，都要变成可以被施工、校核与维护的成果</h2>
+          <p>交付不是一叠图纸，而是一套把生活目标转译为现场秩序的工作文件。</p>
+        </header>
+        <div class="zf-delivery-output-grid reveal">
+          <article><span>01</span><strong>需求与风险诊断</strong><p>住宅条件、生活方式、环境风险与系统目标。</p></article>
+          <article><span>02</span><strong>系统方案说明</strong><p>空气、水、排水、地下空间与控制策略。</p></article>
+          <article><span>03</span><strong>设备与参数表</strong><p>能力边界、运行区间与关键选型依据。</p></article>
+          <article><span>04</span><strong>机电综合图</strong><p>管线、设备、检修与建筑空间的协同关系。</p></article>
+          <article><span>05</span><strong>节点深化图</strong><p>保温、气密、排水、降噪与安装关键节点。</p></article>
+          <article><span>06</span><strong>施工交底清单</strong><p>现场顺序、专业界面与不可被省略的条件。</p></article>
+          <article><span>07</span><strong>调试验收记录</strong><p>风量、温湿度、压力、噪声和控制逻辑验证。</p></article>
+          <article><span>08</span><strong>运行维护档案</strong><p>耗材、周期、报警与长期优化依据。</p></article>
         </div>
       </section>
 
@@ -8462,6 +8497,42 @@
         <p class="section-bridge reveal">所以，设计与交付在这里并不是两件分开的事：设计先把人的健康、舒适、安静与长期稳定想清楚，交付再把这些判断安静留进房子里。真正完成之后，被记住的不会是图纸和施工，而是空气自然、水路有序、排水安静，生活因此被稳稳托住。</p>
       </section>
 
+      <section class="section-shell cinematic-panel delivery-prelude" id="delivery-brief">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Project Start</p>
+          <h2>项目开始，不是确认设备，而是先把住宅条件、图纸和生活愿望放到同一张桌面上。</h2>
+          <p>朝向、围护、层高、家庭成员、使用节奏与未来的维护方式，都会改变系统判断的起点。真正有价值的前期工作，是把这些条件逐一看清，而不是急着给出一张设备清单。</p>
+          <blockquote>好的项目启动，是让后面每一个专业决定都有来处。</blockquote>
+          <figure class="delivery-scene-media reveal">
+            <img src="images/project-flow-start.webp" alt="顾问与业主围绕住宅平面图、材料和生活需求进行项目启动沟通" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section-shell cinematic-panel delivery-prelude" id="delivery-commissioning">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Commissioning In Real Life</p>
+          <h2>交付之前，每一条空气、水和控制路径，都要在真实运行里被验证。</h2>
+          <p>调试不是设备亮起来的那一刻，而是风量、温湿度、噪声、压差与控制逻辑逐项回到预期的过程。只有现场结果和设计目标一致，系统才真正开始服务生活。</p>
+          <blockquote>验收不是结束，而是长期稳定运行的第一份依据。</blockquote>
+          <figure class="delivery-scene-media reveal">
+            <img src="images/doas-project-delivery-commissioning-20260718.jpg" alt="工程师在已完成的住宅中检测系统运行状态并核对调试数据" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section-shell cinematic-panel delivery-prelude" id="delivery-result">
+        <div class="section-copy reveal">
+          <p class="eyebrow">The Result Lives Here</p>
+          <h2>最后交付的不是一套设备，而是一种能被长期感受、却不必被看见的生活状态。</h2>
+          <p>当空气、水、温湿度、安静与维护秩序都被妥善组织，住宅才能把复杂系统退回背景，让光线、空间与日常重新成为主角。</p>
+          <blockquote>真正成熟的系统，会让居住者只记得生活本身。</blockquote>
+          <figure class="delivery-scene-media reveal">
+            <img src="images/design-delivery-wide-v2.webp" alt="系统稳定运行后的开阔高端住宅生活场景" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
       <section id="project-access" class="project-access-clean">
         <figure class="project-access-ref-hero reveal">
           <img src="images/generated-project-access/project-access-consultation-studio-v4.jpg" alt="住宅式顾问工作室内，机电顾问与业主围绕住宅图纸和 BIM 模型进行项目沟通" loading="eager" fetchpriority="high" decoding="async" width="1919" height="820" />
@@ -8476,6 +8547,29 @@
             <span><i>03</i><strong>系统衔接</strong><em>明确下一步专业工作边界</em></span>
           </div>
         </div>
+
+        <section class="zf-access-solutions reveal" id="project-access-solutions" aria-labelledby="project-access-solutions-title">
+          <header>
+            <p class="eyebrow">Residential Solution Paths</p>
+            <h2 id="project-access-solutions-title">住宅类型不同，系统判断的起点也不同</h2>
+            <p>先选择更接近您的住宅类型，查看我们会优先判断的系统边界。</p>
+          </header>
+          <div class="zf-access-solution-layout">
+            <div class="zf-access-solution-tabs" role="tablist" aria-label="住宅类型">
+              <button type="button" role="tab" aria-selected="true" data-access-solution="flat"><span>01</span><strong>城市大平层</strong><em>高层风压 · 湿度 · 热水等待</em></button>
+              <button type="button" role="tab" aria-selected="false" data-access-solution="duplex"><span>02</span><strong>复式住宅</strong><em>竖向温差 · 分区 · 管线协同</em></button>
+              <button type="button" role="tab" aria-selected="false" data-access-solution="villa"><span>03</span><strong>独栋别墅</strong><em>多层负荷 · 庭院 · 设备空间</em></button>
+              <button type="button" role="tab" aria-selected="false" data-access-solution="basement"><span>04</span><strong>地下空间</strong><em>防潮 · 除湿 · 排水提升</em></button>
+            </div>
+            <article class="zf-access-solution-detail" data-access-solution-detail aria-live="polite">
+              <p>URBAN FLAT</p>
+              <h3>先处理高层住宅里最容易被忽略的环境波动</h3>
+              <div><span>重点判断</span><strong>外窗与风压边界、梅雨季湿负荷、卧室新风、远端热水与静音排水</strong></div>
+              <div><span>系统连接</span><strong>DOAS 新风除湿、柔和冷热末端、316L 平衡供水、热水循环与静音排水</strong></div>
+              <div><span>交付目标</span><strong>空间简洁、设备低存在、运行状态可以被持续验证</strong></div>
+            </article>
+          </div>
+        </section>
 
         <section class="project-access-ref-section reveal" id="project-access-contact">
           <header class="project-access-ref-section-head">
@@ -8661,7 +8755,7 @@
             <a href="#basement-system">地下室</a>
             <a href="#water">给排水</a>
             <a href="#delivery-page">设计交付</a>
-            <a href="login/">客户维保</a>
+            <a href="login/index.html" target="_blank" rel="noopener">客户维保</a>
           </div>
         </nav>
       </div>
@@ -8674,8 +8768,9 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260720-route-story-fix-v4" defer></script>
-    <script src="page-cohesion-runtime.js?v=20260720-project-access-editorial-v11" defer></script>
+    <script src="script.js?v=20260720-scene-browser-v10" defer></script>
+    <script src="page-cohesion-runtime.js?v=20260720-scene-browser-v14" defer></script>
+    <script src="global-structure-v1.js?v=20260721-no-legacy-flash-v19" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");
@@ -8767,24 +8862,22 @@
           const waterMedia = waterScenes.map((scene) => scene.querySelector(".water-proof-media")).filter(Boolean);
           const waterMediaImages = waterMedia.map((media) => media.querySelector("img")).filter(Boolean);
           const deliverySections = Array.from(
-            document.querySelectorAll("body[data-page='delivery'] main > :is(#fit, #constraints, #integration, #delivery, #team-execution, #process)")
+            document.querySelectorAll("body[data-page='delivery'] main > :is(#constraints, #integration, #delivery, #team-execution, #process)")
           );
           const deliveryCopyBlocks = Array.from(
             document.querySelectorAll(
-              "body[data-page='delivery'] main > :is(#fit, #constraints, #integration, #delivery, #team-execution, #process) .section-copy"
+              "body[data-page='delivery'] main > :is(#constraints, #integration, #delivery, #team-execution, #process) .section-copy"
             )
           );
           const deliveryCopyChildren = Array.from(
             document.querySelectorAll(
-              "body[data-page='delivery'] main > :is(#fit, #constraints, #integration, #delivery, #team-execution, #process) .section-copy > :is(.eyebrow, h2, p, blockquote)"
+              "body[data-page='delivery'] main > :is(#constraints, #integration, #delivery, #team-execution, #process) .section-copy > :is(.eyebrow, h2, p, blockquote)"
             )
           );
-          const deliveryFitCopyChildren = Array.from(
-            document.querySelectorAll(
-              "body[data-page='delivery'] main > #fit .section-copy > :is(.eyebrow, h2, p, blockquote)"
-            )
+          const deliveryFitCopyChildren = [];
+          const deliverySceneMedia = Array.from(
+            document.querySelectorAll("body[data-page='delivery'] main > section:not(#fit) .delivery-scene-media")
           );
-          const deliverySceneMedia = Array.from(document.querySelectorAll("body[data-page='delivery'] main .delivery-scene-media"));
           const deliverySceneImages = deliverySceneMedia.map((media) => media.querySelector("img")).filter(Boolean);
           const desktopCopyTargets = [
             climateSection,
@@ -8906,8 +8999,8 @@
             "box-sizing": "border-box"
           });
           applyStyles(homeHeroCopyChildren, {
-            "width": "min(760px, calc(100vw - 240px))",
-            "max-width": "min(760px, calc(100vw - 240px))"
+            "width": "min(720px, calc(100vw - 240px))",
+            "max-width": "min(720px, calc(100vw - 240px))"
           });
           applyStyles(desktopCopyTargets, {
             "width": desktopCopyWidth,

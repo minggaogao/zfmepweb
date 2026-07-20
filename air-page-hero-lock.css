@@ -45,11 +45,11 @@ html body[data-page="systems"] main #climate > .section-heading::after {
 }
 
 html body[data-page="systems"] main #climate > .section-heading > h2 {
-  max-width: 700px !important;
+  max-width: 900px !important;
   margin: 0 !important;
   color: #fff !important;
-  font: 560 clamp(52px, 5vw, 76px)/1.08 "SF Pro Display", "PingFang SC", sans-serif !important;
-  letter-spacing: -0.055em !important;
+  font: 600 clamp(38px, 3.15vw, 56px)/1.16 "SF Pro Display", "PingFang SC", sans-serif !important;
+  letter-spacing: -0.02em !important;
   word-break: keep-all !important;
 }
 
@@ -90,7 +90,8 @@ html body[data-page="systems"] main #climate > .section-heading > .climate-lead-
 
   html body[data-page="systems"] main #climate > .section-heading > h2 {
     max-width: 100% !important;
-    font-size: 39px !important;
+    font-size: clamp(30px, 7.8vw, 36px) !important;
+    line-height: 1.16 !important;
     word-break: keep-all !important;
   }
 }

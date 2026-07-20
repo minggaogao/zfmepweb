@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>住宅维保中心 | ZEFENG MEP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../maintenance-system.css?v=20260720-backend-v1" />
+  </head>
+  <body data-customer-page>
+    <div class="zf-shell">
+      <header class="zf-topbar">
+        <a class="zf-brand" href="../index.html">
+          <img src="../images/zefeng-logo-mark.webp" alt="" />
+          <span><strong>ZEFENG MEP</strong><small>RESIDENTIAL LIFECYCLE SERVICE</small></span>
+        </a>
+        <div class="zf-top-actions">
+          <span class="zf-user"><strong data-user-name>客户</strong><span data-home-name>住宅</span></span>
+          <button class="zf-btn small ghost" type="button" data-logout>退出</button>
+        </div>
+      </header>
+
+      <main class="zf-page">
+        <p class="zf-error" data-page-error></p>
+        <section class="zf-hero">
+          <div class="zf-hero-main">
+            <p class="zf-kicker">Home Lifecycle Service</p>
+            <h1>让家里的每一套系统，始终处在被照看的状态。</h1>
+            <p>设备、耗材、清洁和检测被放进同一条时间线。您只需要看到当下需要处理的事情，其余由泽丰持续记录。</p>
+          </div>
+          <aside class="zf-hero-side">
+            <div>
+              <p class="zf-kicker">Next Service</p>
+              <h2>下一次建议服务</h2>
+              <div class="zf-next-date">07月26日</div>
+              <p style="color:var(--muted);font-size:12px;line-height:1.7">RO前两级滤芯更换<br>污水提升系统季度巡检</p>
+            </div>
+            <a class="zf-btn primary" href="tel:19173101488">联系泽丰预约</a>
+          </aside>
+        </section>
+
+        <section class="zf-metrics" aria-label="住宅维保摘要">
+          <article class="zf-metric"><span>系统</span><strong>4</strong></article>
+          <article class="zf-metric"><span>设备</span><strong>12</strong></article>
+          <article class="zf-metric"><span>即将到期</span><strong>3</strong></article>
+          <article class="zf-metric"><span>已完成服务</span><strong>18</strong></article>
+        </section>
+
+        <div class="zf-grid">
+          <div>
+            <section class="zf-panel">
+              <header class="zf-panel-head">
+                <div><h2>近期需要处理</h2><p>根据设备周期、现场记录和风险等级排序</p></div>
+                <span class="zf-chip warn">3 项待处理</span>
+              </header>
+              <div class="zf-task-list" data-task-list>
+                <article class="zf-task">
+                  <span class="zf-task-mark danger"></span>
+                  <div><strong>RO净水器 · PP棉与前置活性炭</strong><p>厨房水槽下方 · 两支滤芯已超过建议更换日期</p></div>
+                  <time>逾期 2 天</time>
+                </article>
+                <article class="zf-task">
+                  <span class="zf-task-mark warn"></span>
+                  <div><strong>污水提升系统 · 季度巡检</strong><p>负一层设备间 · 主备泵切换、高液位报警与止回阀测试</p></div>
+                  <time>还有 6 天</time>
+                </article>
+                <article class="zf-task">
+                  <span class="zf-task-mark"></span>
+                  <div><strong>新风系统 · 风口清洁</strong><p>全屋 11 个送风口、5 个回风口，包含拆洗与风量复核</p></div>
+                  <time>还有 18 天</time>
+                </article>
+              </div>
+            </section>
+
+            <section class="zf-panel">
+              <header class="zf-panel-head">
+                <div><h2>耗材与部件计划</h2><p>每一支滤芯、每一个部件分别记录</p></div>
+              </header>
+              <div class="zf-table-wrap">
+                <table class="zf-detail-table">
+                  <thead><tr><th>部件 / 规格</th><th>物料条码</th><th>数量</th><th>上次服务</th><th>下次计划</th><th>状态</th></tr></thead>
+                  <tbody data-component-body></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <aside>
+            <section class="zf-panel">
+              <header class="zf-panel-head"><div><h2>住宅设备</h2><p>青竹湖住宅 · 主要机电设备</p></div></header>
+              <div class="zf-device-list" data-device-list></div>
+            </section>
+            <section class="zf-panel">
+              <header class="zf-panel-head"><div><h2>最近服务</h2><p>全过程留档，可随时追溯</p></div></header>
+              <div class="zf-log-list" data-recent-services>
+                <article class="zf-device"><strong>新风初效滤网清洁</strong><p>2026-05-08 · 高工<br>完成2块滤网清洁及设备运行检查</p></article>
+                <article class="zf-device"><strong>地暖采暖季后检查</strong><p>2026-04-12 · 王工<br>完成分集水器、压力及各环路流量检查</p></article>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <script src="../maintenance-system.js?v=20260720-backend-v1"></script>
+  </body>
+</html>

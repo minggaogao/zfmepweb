@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>维保管理 | ZEFENG MEP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../maintenance-system.css?v=20260720-backend-v1" />
+  </head>
+  <body data-admin-page>
+    <header class="zf-topbar">
+      <a class="zf-brand" href="../index.html">
+        <img src="../images/zefeng-logo-mark.webp" alt="" />
+        <span><strong>ZEFENG MEP</strong><small>MAINTENANCE OPERATIONS</small></span>
+      </a>
+      <div class="zf-top-actions">
+        <span class="zf-user"><strong data-user-name>管理员</strong><span>内部维保管理</span></span>
+        <button class="zf-btn small ghost" type="button" data-logout>退出</button>
+      </div>
+    </header>
+
+    <div class="zf-admin-layout">
+      <aside class="zf-side">
+        <nav>
+          <a class="active" href="#overview">今日总览</a>
+          <a href="#customers">客户住宅</a>
+          <a href="device.html">设备台账</a>
+          <a href="device.html#components">部件与耗材</a>
+          <a href="#work-orders">维保计划</a>
+          <a href="#work-orders">服务工单</a>
+          <a href="device.html">设备模板库</a>
+          <a href="#inventory">库存与物料</a>
+          <a href="#customers">账号与权限</a>
+        </nav>
+      </aside>
+
+      <main class="zf-admin-main" id="overview">
+        <p class="zf-error" data-page-error></p>
+        <nav class="zf-mobile-admin-nav" aria-label="手机端后台导航">
+          <a class="active" href="#overview">总览</a>
+          <a href="#customers">客户</a>
+          <a href="device.html">设备录入</a>
+          <a href="#work-orders">工单</a>
+          <a href="#inventory">耗材</a>
+        </nav>
+        <header class="zf-admin-title">
+          <div><p class="zf-kicker">Maintenance Operations</p><h1>住宅机电维保总览</h1><p>从设备部件到现场服务，所有到期事项在这里形成闭环。</p></div>
+          <button class="zf-btn primary" type="button" data-open-modal>建立客户档案</button>
+        </header>
+
+        <section class="zf-metrics">
+          <article class="zf-metric"><span>服务中住宅</span><strong>36</strong></article>
+          <article class="zf-metric"><span>本月待处理</span><strong>18</strong></article>
+          <article class="zf-metric"><span>高风险逾期</span><strong style="color:var(--danger)">2</strong></article>
+          <article class="zf-metric"><span>本周已完成</span><strong>11</strong></article>
+        </section>
+
+        <div class="zf-grid">
+          <div>
+            <section class="zf-panel" id="work-orders">
+              <header class="zf-panel-head">
+                <div><h2>近期工单</h2><p>风险优先，其次按预约与到期时间排序</p></div>
+                <a class="zf-btn small ghost" href="#work-orders">查看全部</a>
+              </header>
+              <div class="zf-task-list">
+                <article class="zf-task"><span class="zf-task-mark danger"></span><div><strong>岳麓山别墅 · 污水提升高液位报警测试</strong><p>Wilo DrainLift SANI-L · 主备泵联动及止回阀检查</p></div><time>今天 14:00</time></article>
+                <article class="zf-task"><span class="zf-task-mark warn"></span><div><strong>青竹湖住宅 · RO滤芯更换</strong><p>PP棉、前置活性炭 · 已自动匹配2项耗材</p></div><time>待预约</time></article>
+                <article class="zf-task"><span class="zf-task-mark"></span><div><strong>梅溪湖住宅 · 新风风口清洁</strong><p>送风口14个、回风口6个 · 清洁后复核风量</p></div><time>07月25日</time></article>
+              </div>
+            </section>
+
+            <section class="zf-panel" id="customers">
+              <header class="zf-panel-head">
+                <div><h2>客户与住宅</h2><p>账号、住宅、系统与设备分层管理</p></div>
+              </header>
+              <div class="zf-table-wrap">
+                <table class="zf-detail-table">
+                  <thead><tr><th>客户 / 账号</th><th>住宅</th><th>系统</th><th>设备</th><th>状态</th><th></th></tr></thead>
+                  <tbody data-customer-body></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <aside>
+            <section class="zf-panel" id="inventory">
+              <header class="zf-panel-head"><div><h2>风险提醒</h2><p>需要优先联系客户</p></div></header>
+              <div class="zf-device-list">
+                <article class="zf-device"><span class="zf-chip danger">溢流风险</span><strong style="margin-top:12px">污水提升系统逾期</strong><p>岳麓山别墅 · 高液位报警已超过复测日期9天</p></article>
+                <article class="zf-device"><span class="zf-chip danger">漏水风险</span><strong style="margin-top:12px">设备间压力异常</strong><p>滨江住宅 · 增压泵近期三次记录压力波动</p></article>
+              </div>
+            </section>
+            <section class="zf-panel">
+              <header class="zf-panel-head"><div><h2>待备耗材</h2><p>根据近期工单自动汇总</p></div></header>
+              <div class="zf-device-list">
+                <article class="zf-device"><strong>G4 初效滤网</strong><p>420×260×20 mm · 需要4件</p></article>
+                <article class="zf-device"><strong>3M SW50 PP棉</strong><p>物料号 3M-SW50-PP5 · 需要2件</p></article>
+                <article class="zf-device"><strong>Wilo 箱体活性炭滤芯</strong><p>DrainLift SANI-L适配 · 需要1件</p></article>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <div class="zf-modal" data-modal>
+      <section class="zf-modal-card" role="dialog" aria-modal="true" aria-labelledby="customer-modal-title">
+        <header class="zf-modal-head"><div><p class="zf-kicker">New Client</p><h2 id="customer-modal-title">建立客户与住宅</h2></div><button class="zf-btn small ghost" type="button" data-close-modal>关闭</button></header>
+        <form data-customer-form>
+          <div class="zf-form-grid">
+            <div class="zf-field"><label for="customer-name">客户称呼</label><input id="customer-name" name="name" required placeholder="例如：王先生" /></div>
+            <div class="zf-field"><label for="customer-id">客户账号</label><input id="customer-id" name="id" required placeholder="ZF-2026-0028" /></div>
+            <div class="zf-field wide"><label for="customer-home">住宅名称</label><input id="customer-home" name="home" required placeholder="例如：青竹湖住宅" /></div>
+            <div class="zf-field"><label for="customer-password">初始密码</label><input id="customer-password" type="password" name="password" required placeholder="首次登录后要求修改" /></div>
+            <div class="zf-field"><label for="customer-role">账号权限</label><select id="customer-role" name="role"><option>业主</option><option>家庭成员</option><option>管家</option></select></div>
+          </div>
+          <p class="zf-error" data-form-error></p>
+          <button class="zf-btn primary" type="submit">创建档案</button>
+        </form>
+      </section>
+    </div>
+    <script src="../maintenance-system.js?v=20260720-backend-v1"></script>
+  </body>
+</html>

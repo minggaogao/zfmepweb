@@ -1826,6 +1826,7 @@ const initPageRouter = () => {
         })
       );
     }
+    window.dispatchEvent(new CustomEvent("zf:routechange", { detail: { page, raw } }));
   };
 
   window.addEventListener("hashchange", applyRoute);
@@ -3189,7 +3190,7 @@ const navigationArchitecture = {
     tone: "water",
     guide: [
       ["#water", "给排水总览", "理解完整住宅水系统的价值"],
-      ["#water-logic", "常见问题", "从生活里的小打断识别系统缺口"],
+      ["#water-logic", "失衡信号", "从生活里的小打断识别系统缺口"],
       ["#water-supply-drainage", "生活水场景", "厨房、卫浴、庭院与地下空间"]
     ],
     specialLabel: "专业专栏",
@@ -3223,7 +3224,7 @@ const navigationArchitecture = {
     description: "项目阶段、建筑条件、生活方式与目标不同，系统路线也应该被重新判断。",
     tone: "access",
     guide: [
-      ["#project-access", "服务说明", "了解泽丰的咨询与服务方式"],
+      ["#project-access-solutions", "住宅类型", "从住宅条件进入系统判断"],
       ["#project-access-contact", "预约咨询", "提交项目基础信息与当前阶段"],
       ["#project-access-network", "服务网络", "长沙展厅、体验空间与湖南服务"],
       ["#project-access-expertise-title", "专业能力", "查看系统设计与交付边界"]
@@ -3248,7 +3249,7 @@ const pageStoryRailData = {
   },
   "water-supply-drainage": {
     label: "住宅水系统",
-    items: [["#water-problem", "用水判断"], ["#water-logic", "系统逻辑"], ["#water-supply-drainage", "生活场景"]]
+    items: [["#water-problem", "用水判断"], ["#water-logic", "失衡信号"], ["#water-supply-drainage", "生活场景"]]
   },
   "basement-system": {
     label: "地下空间",
@@ -3256,11 +3257,11 @@ const pageStoryRailData = {
   },
   delivery: {
     label: "设计交付",
-    items: [["#fit", "前期判断"], ["#constraints", "定义生活"], ["#integration", "系统深化"], ["#delivery", "现场落地"], ["#process", "运行结果"]]
+    items: [["#fit", "前期判断"], ["#delivery-outputs", "交付成果"], ["#delivery-stages", "工作阶段"], ["#process", "运行结果"]]
   },
   "project-access": {
     label: "专属方案",
-    items: [["#project-access", "服务说明"], ["#project-access-contact", "联系预约"], ["#project-access-network", "服务网络"], ["#project-access-expertise-title", "专业能力"]]
+    items: [["#project-access-solutions", "住宅类型"], ["#project-access-contact", "联系预约"], ["#project-access-network", "服务网络"], ["#project-access-expertise-title", "专业能力"]]
   }
 };
 
@@ -3298,6 +3299,7 @@ const initPageStoryRail = () => {
   render();
   window.addEventListener("hashchange", () => requestAnimationFrame(render));
   window.addEventListener("popstate", () => requestAnimationFrame(render));
+  window.addEventListener("zf:routechange", () => requestAnimationFrame(render));
 };
 
 const initNav = () => {
@@ -3456,7 +3458,10 @@ const initNav = () => {
             </div>
           </section>`;
       })
-      .join("")}`;
+      .join("")}
+    <a class="mobile-nav-home mobile-nav-maintenance" href="login/index.html" target="_blank" rel="noopener">
+      <span>客户维保</span><small>独立客户系统 · 新窗口打开 ↗</small>
+    </a>`;
 
   const closeMobileMenu = () => {
     menu.classList.remove("is-open");
@@ -3837,7 +3842,7 @@ const initAccessForms = () => {
       event.preventDefault();
       const input = form.querySelector("input[name='code']");
       const rawCode = input?.value.trim() || "";
-      const target = new URL(form.getAttribute("action") || "login/", window.location.href);
+      const target = new URL(form.getAttribute("action") || "login/index.html", window.location.href);
       if (rawCode) {
         target.searchParams.set("code", rawCode);
       }
@@ -5544,10 +5549,12 @@ const applyGlobalTypographyLock = () => {
   ].join(", ")), {
     "color": "#ffffff",
     "font-family": "\"SF Pro Display\", \"PingFang SC\", \"Noto Sans SC\", sans-serif",
-    "font-size": isMobile ? "39px" : "clamp(44px, 4.8vw, 76px)",
-    "font-weight": "560",
-    "line-height": "1.08",
-    "letter-spacing": "-0.055em",
+    "width": isMobile ? "auto" : "min(900px, 100%)",
+    "max-width": isMobile ? "100%" : "900px",
+    "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+    "font-weight": "600",
+    "line-height": "1.16",
+    "letter-spacing": "-0.02em",
     "word-break": "normal",
     "overflow-wrap": "break-word",
     "text-wrap": "pretty",
@@ -5555,10 +5562,10 @@ const applyGlobalTypographyLock = () => {
   });
 
   setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy h2"), {
-    "width": isMobile ? "auto" : "min(520px, 100%)",
-    "max-width": isMobile ? "none" : "520px",
-    "font-size": isMobile ? "clamp(31px, 9vw, 40px)" : "clamp(42px, 3.8vw, 62px)",
-    "line-height": isMobile ? "1.14" : "1.1",
+    "width": isMobile ? "auto" : "min(720px, 100%)",
+    "max-width": isMobile ? "100%" : "720px",
+    "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+    "line-height": "1.16",
     "word-break": "normal",
     "overflow-wrap": "break-word"
   });
@@ -5572,9 +5579,11 @@ const applyGlobalTypographyLock = () => {
   ].join(", ")), {
     "color": "rgba(255, 255, 255, 0.74)",
     "font-family": "\"PingFang SC\", \"Noto Sans SC\", sans-serif",
-    "font-size": finalRouteRule.bodySize,
+    "width": isMobile ? "100%" : "min(720px, 100%)",
+    "max-width": isMobile ? "100%" : "720px",
+    "font-size": isMobile ? "15px" : "clamp(15px, 1.05vw, 18px)",
     "font-weight": "400",
-    "line-height": finalRouteRule.bodyLineHeight,
+    "line-height": "1.85",
     "letter-spacing": "0.008em",
     "word-break": "normal",
     "overflow-wrap": "break-word",
@@ -5611,8 +5620,9 @@ const applyGlobalTypographyLock = () => {
   });
 
   setLockedStyles($$("body[data-page='systems'] main #climate > .section-heading h2"), {
-    "max-width": isMobile ? "100%" : "760px",
-    "font-size": isMobile ? "39px" : "clamp(42px, 4.1vw, 64px)"
+    "max-width": isMobile ? "100%" : "900px",
+    "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+    "line-height": "1.16"
   });
 
   setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy"), {
@@ -5648,10 +5658,10 @@ const applyGlobalTypographyLock = () => {
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1"), {
     "color": "#172232",
     "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
-    "font-size": isMobile ? "36px" : "clamp(40px, 3.7vw, 58px)",
-    "font-weight": "560",
-    "line-height": "1.08",
-    "letter-spacing": "-0.045em"
+    "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+    "font-weight": "600",
+    "line-height": "1.16",
+    "letter-spacing": "-0.02em"
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro p"), {
@@ -5661,35 +5671,23 @@ const applyGlobalTypographyLock = () => {
     "font-size": isMobile ? "14px" : "clamp(15px, 1.05vw, 17px)",
     "line-height": "1.8"
   });
+
+  // The delivery opening has its own editorial layout. Clear the accumulated
+  // legacy inline locks so the route-specific stylesheet remains authoritative.
+  const deliveryOpening = document.querySelector("body[data-page='delivery'] main > #fit.delivery-prelude");
+  if (deliveryOpening) {
+    deliveryOpening.removeAttribute("style");
+    deliveryOpening.querySelectorAll("*").forEach((node) => node.removeAttribute("style"));
+  }
 };
 
 const applyPageCohesionInlineLock = () => {
   const compact = window.matchMedia("(max-width: 760px)").matches;
 
   setLockedStyles($$("body[data-page='systems'] main #climate > .section-heading h2"), {
-    "max-width": compact ? "100%" : "760px",
-    "font-size": compact ? "39px" : "clamp(42px, 4.1vw, 64px)",
-    "line-height": "1.08"
-  });
-
-  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy"), {
-    "min-height": compact ? "0" : "clamp(590px, 49vw, 760px)",
-    "padding": compact
-      ? "0 0 38px"
-      : "clamp(46px, 6vw, 92px) 0 clamp(46px, 6vw, 92px) clamp(46px, 6vw, 92px)",
-    "overflow": "hidden",
-    "border-radius": compact ? "24px" : "clamp(24px, 2.4vw, 36px)",
-    "color": "#ffffff",
-    "background": "radial-gradient(circle at 8% 12%, rgba(57, 99, 255, 0.24), transparent 28%), #111a2a",
-    "box-shadow": "0 34px 90px rgba(17, 26, 42, 0.16)"
-  });
-
-  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy > :not(figure)"), {
-    "grid-column": "1",
-    "width": compact ? "auto" : "min(500px, 100%)",
-    "max-width": compact ? "none" : "500px",
-    "margin-left": compact ? "28px" : "0",
-    "margin-right": compact ? "28px" : "clamp(28px, 4vw, 64px)"
+    "max-width": compact ? "100%" : "900px",
+    "font-size": compact ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+    "line-height": "1.16"
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-hero img"), {
@@ -5705,10 +5703,10 @@ const applyPageCohesionInlineLock = () => {
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1"), {
     "color": "#172232",
     "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
-    "font-size": compact ? "36px" : "clamp(40px, 3.7vw, 58px)",
-    "font-weight": "560",
-    "line-height": "1.08",
-    "letter-spacing": "-0.045em"
+    "font-size": compact ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+    "font-weight": "600",
+    "line-height": "1.16",
+    "letter-spacing": "-0.02em"
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1 span"), {
@@ -5726,6 +5724,12 @@ const applyPageCohesionInlineLock = () => {
     "font-size": compact ? "14px" : "clamp(15px, 1.05vw, 17px)",
     "line-height": "1.8"
   });
+
+  const deliveryOpening = document.querySelector("body[data-page='delivery'] main > #fit.delivery-prelude");
+  if (deliveryOpening) {
+    deliveryOpening.removeAttribute("style");
+    deliveryOpening.querySelectorAll("*").forEach((node) => node.removeAttribute("style"));
+  }
 };
 
 renderDimensions();

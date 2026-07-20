@@ -1,0 +1,11 @@
+.git
+.wrangler
+node_modules
+functions
+db
+package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+wrangler.toml
+wrangler.*.jsonc
+**/*.md

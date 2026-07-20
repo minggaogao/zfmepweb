@@ -17,6 +17,14 @@ html body .site-footer-premium {
   color: #1d2422;
 }
 
+html body[data-page="home"] main > #home.zf-home-story {
+  margin-bottom: clamp(38px, 4vw, 64px) !important;
+}
+
+html body[data-page="home"] .site-footer-premium {
+  margin-top: 0 !important;
+}
+
 html body .footer-signature-band {
   position: relative;
   isolation: isolate;

@@ -44,35 +44,9 @@
     setImportant(
       document.querySelectorAll("body[data-page='systems'] main #climate > .section-heading h2"),
       {
-        "max-width": compact ? "100%" : "700px",
-        "font-size": compact ? "39px" : "clamp(52px, 5vw, 76px)",
-        "line-height": "1.08"
-      }
-    );
-
-    setImportant(
-      document.querySelectorAll("body[data-page='delivery'] main > #fit > .section-copy"),
-      {
-        "min-height": compact ? "0" : "clamp(590px, 49vw, 760px)",
-        "padding": compact
-          ? "0 0 38px"
-          : "clamp(46px, 6vw, 92px) 0 clamp(46px, 6vw, 92px) clamp(46px, 6vw, 92px)",
-        "overflow": "hidden",
-        "border-radius": compact ? "24px" : "clamp(24px, 2.4vw, 36px)",
-        "color": "#ffffff",
-        "background": "radial-gradient(circle at 8% 12%, rgba(57, 99, 255, 0.24), transparent 28%), #111a2a",
-        "box-shadow": "0 34px 90px rgba(17, 26, 42, 0.16)"
-      }
-    );
-
-    setImportant(
-      document.querySelectorAll("body[data-page='delivery'] main > #fit > .section-copy > :not(figure)"),
-      {
-        "grid-column": "1",
-        "width": compact ? "auto" : "min(500px, 100%)",
-        "max-width": compact ? "none" : "500px",
-        "margin-left": compact ? "28px" : "0",
-        "margin-right": compact ? "28px" : "clamp(28px, 4vw, 64px)"
+        "max-width": compact ? "100%" : "900px",
+        "font-size": compact ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
+        "line-height": "1.16"
       }
     );
 

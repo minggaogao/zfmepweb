@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>设备录入 | ZEFENG MEP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../maintenance-system.css?v=20260720-backend-v1" />
+  </head>
+  <body data-device-entry>
+    <header class="zf-topbar">
+      <a class="zf-brand" href="../"><img src="../images/zefeng-logo-mark.webp" alt="" /><span><strong>ZEFENG MEP</strong><small>MAINTENANCE OPERATIONS</small></span></a>
+      <div class="zf-top-actions"><span class="zf-user"><strong data-user-name>管理员</strong><span>精细设备台账</span></span><button class="zf-btn small ghost" type="button" data-logout>退出</button></div>
+    </header>
+
+    <div class="zf-admin-layout">
+      <aside class="zf-side">
+        <nav>
+          <a href="./">今日总览</a>
+          <a href="./">客户住宅</a>
+          <a class="active" href="device.html">设备台账</a>
+          <a href="device.html">部件与耗材</a>
+          <a href="./">维保计划</a>
+          <a href="./">服务工单</a>
+          <a href="device.html">设备模板库</a>
+          <a href="./">库存与物料</a>
+          <a href="./">账号与权限</a>
+        </nav>
+      </aside>
+
+      <main class="zf-admin-main">
+        <nav class="zf-mobile-admin-nav" aria-label="手机端后台导航">
+          <a href="./">总览</a>
+          <a href="./#customers">客户</a>
+          <a class="active" href="device.html">设备录入</a>
+          <a href="./#work-orders">工单</a>
+          <a href="./#inventory">耗材</a>
+        </nav>
+        <header class="zf-admin-title">
+          <div><p class="zf-kicker">Equipment Registry</p><h1>建立设备与部件档案</h1><p>主机、部件和耗材分别编号，确保每一项都有准确型号、条码和独立维保周期。</p></div>
+          <a class="zf-btn ghost" href="./">返回总览</a>
+        </header>
+
+        <form class="zf-panel" data-device-form>
+          <h2 class="zf-subtitle">所属住宅与系统</h2>
+          <p class="zf-supporting">先确定设备属于哪一套住宅和哪条机电系统，后续工单与客户权限将自动继承。</p>
+          <div class="zf-form-grid">
+            <div class="zf-field"><label for="home">客户住宅</label><select id="home" name="home" required><option value="">请选择住宅</option><option>青竹湖住宅 · 王先生</option><option>梅溪湖住宅 · 陈女士</option><option>岳麓山别墅 · 周先生</option></select></div>
+            <div class="zf-field"><label for="system">系统分类</label><select id="system" name="system" required><option value="">请选择系统</option><option>给水与净水</option><option>排水与污水提升</option><option>风系统</option><option>冷暖系统</option><option>控制与联动</option></select></div>
+          </div>
+
+          <div class="zf-section-divider" id="components"></div>
+          <h2 class="zf-subtitle">主设备信息</h2>
+          <p class="zf-supporting">厂家条码、设备序列号和泽丰内部编号分别保存，不能相互替代。</p>
+          <div class="zf-form-grid">
+            <div class="zf-field"><label for="device-type">设备类型</label><input id="device-type" name="type" required placeholder="例如：全热交换新风机" /></div>
+            <div class="zf-field"><label for="brand">品牌</label><input id="brand" name="brand" required placeholder="例如：Panasonic" /></div>
+            <div class="zf-field"><label for="model">完整型号</label><input id="model" name="model" required placeholder="例如：FY-E35PMA" /></div>
+            <div class="zf-field"><label for="serial">序列号 SN</label><input id="serial" name="serial" required placeholder="铭牌上的唯一序列号" /></div>
+            <div class="zf-field"><label for="manufacturer-barcode">厂家条码</label><input id="manufacturer-barcode" name="manufacturerBarcode" placeholder="支持扫码枪直接录入" /></div>
+            <div class="zf-field"><label for="zefeng-code">泽丰设备编号</label><input id="zefeng-code" name="zefengCode" required value="ZF-AIR-028-01" /></div>
+            <div class="zf-field"><label for="location">安装位置</label><input id="location" name="location" required placeholder="例如：负一层设备间" /></div>
+            <div class="zf-field"><label for="commissioned">启用日期</label><input id="commissioned" type="date" name="commissioned" required /></div>
+            <div class="zf-field"><label for="warranty">质保到期</label><input id="warranty" type="date" name="warranty" /></div>
+            <div class="zf-field"><label for="state">运行状态</label><select id="state" name="state"><option>正常运行</option><option>调试中</option><option>暂停使用</option><option>故障</option><option>待更换</option></select></div>
+          </div>
+
+          <div class="zf-section-divider"></div>
+          <h2 class="zf-subtitle">部件与耗材明细</h2>
+          <p class="zf-supporting">每个滤网、滤芯、泵、阀门和传感器都可以独立设置型号、条码、数量与周期。同型号设备可保存为模板，下次直接套用。</p>
+          <div class="zf-component-editor" data-component-editor></div>
+          <div class="zf-editor-actions">
+            <button class="zf-btn ghost" type="button" data-add-component>＋ 添加部件或耗材</button>
+            <button class="zf-btn primary" type="submit">保存完整设备档案</button>
+          </div>
+          <p class="zf-save-note" data-save-note>设备及部件明细已经保存，并生成了独立维保计划。</p>
+        </form>
+      </main>
+    </div>
+
+    <template data-component-template>
+      <div class="zf-component-row">
+        <div class="zf-field"><label>类别</label><select name="componentKind"><option>耗材</option><option>部件</option><option>检测点</option><option>清洁点位</option></select></div>
+        <div class="zf-field"><label>名称</label><input name="componentName" required placeholder="初效滤网" /></div>
+        <div class="zf-field"><label>型号 / 规格</label><input name="componentSpec" required placeholder="G4 / 420×260×20" /></div>
+        <div class="zf-field"><label>数量</label><input name="componentQuantity" type="number" min="1" value="1" required /></div>
+        <div class="zf-field"><label>维保周期（月）</label><input name="componentCycle" type="number" min="1" value="3" required /></div>
+        <button class="zf-btn small ghost" type="button" data-remove-component>移除</button>
+        <div class="zf-field" style="grid-column:1/-1"><label>部件 / 物料条码</label><input name="componentBarcode" placeholder="厂家料号或内部物料编码" /></div>
+      </div>
+    </template>
+    <script src="../maintenance-system.js?v=20260720-backend-v1"></script>
+    <script src="device-entry.js?v=20260720-backend-v1"></script>
+  </body>
+</html>
