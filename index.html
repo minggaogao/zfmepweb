@@ -41,9 +41,6 @@
         const key = location.hash.replace("#", "") || "home";
         const page = routes[key] || "home";
         document.documentElement.dataset.page = page;
-        if (page === "delivery" || page === "systems") {
-          document.documentElement.classList.add("zf-route-structure-pending");
-        }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -6023,7 +6020,7 @@
       }
     </style>
     <link rel="stylesheet" href="home-visual-system.css?v=20260720-home-type-v3" />
-    <link rel="stylesheet" href="page-cohesion-system.css?v=20260721-route-stability-v36" />
+    <link rel="stylesheet" href="page-cohesion-system.css?v=20260721-direct-layout-v37" />
     <link rel="stylesheet" href="air-page-hero-lock.css?v=20260720-air-hero-v2" />
     <link rel="stylesheet" href="navigation-mega-lock.css?v=20260720-nav-mega-v1" />
     <link rel="stylesheet" href="weather-live-status.css?v=20260720-weather-status-v1" />
@@ -8774,7 +8771,7 @@
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
     <script src="script.js?v=20260720-scene-browser-v10" defer></script>
     <script src="page-cohesion-runtime.js?v=20260720-scene-browser-v14" defer></script>
-    <script src="global-structure-v1.js?v=20260721-no-legacy-flash-v19" defer></script>
+    <script src="global-structure-v1.js?v=20260721-direct-layout-v20" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");

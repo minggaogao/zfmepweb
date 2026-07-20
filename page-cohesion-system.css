@@ -3510,17 +3510,93 @@ html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, 
   box-shadow: none !important;
 }
 
-html.zf-route-structure-pending body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result),
-html.zf-route-structure-pending body[data-page="systems"] main > :is(#climate, #environment-problem, #environment-logic, #systems) {
-  visibility: hidden !important;
-}
-
 html body[data-page="delivery"] main {
   background:
     radial-gradient(circle at 4% 12%, rgba(0, 210, 196, .23), transparent 25%),
     radial-gradient(circle at 94% 31%, rgba(119, 77, 255, .20), transparent 29%),
     radial-gradient(circle at 76% 78%, rgba(255, 116, 74, .16), transparent 26%),
-    linear-gradient(135deg, #f7f7f1 0%, #f4f9f8 44%, #f9f3f8 100%) !important;
+  linear-gradient(135deg, #f7f7f1 0%, #f4f9f8 44%, #f9f3f8 100%) !important;
+}
+
+html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) {
+  position: relative !important;
+  width: min(1216px, calc(100vw - 64px)) !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: clamp(28px, 4vw, 64px) auto 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+html body[data-page="delivery"] main > :is(#delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) {
+  display: none !important;
+}
+
+html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) > .section-copy {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #182033 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) .delivery-scene-media {
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: clamp(28px, 3vw, 42px) 0 0 !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  background: #101b2d !important;
+}
+
+html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) .delivery-scene-media img {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  filter: saturate(.98) contrast(1.02) brightness(.96) !important;
+  border-radius: inherit !important;
+}
+
+html body[data-page="delivery"] main > #fit {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body[data-page="delivery"] main > #fit > .delivery-scene-media {
+  order: 1 !important;
+  margin-top: 0 !important;
+}
+
+html body[data-page="delivery"] main > #fit > .delivery-hero-copy {
+  order: 2 !important;
+  margin-top: clamp(36px, 4vw, 58px) !important;
+}
+
+@media (max-width: 760px) {
+  html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) {
+    width: calc(100vw - 34px) !important;
+  }
+
+  html body[data-page="delivery"] main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result) .delivery-scene-media {
+    border-radius: 24px !important;
+  }
 }
 
 /* Delivery needs a visible body of evidence before the reader opens a stage. */

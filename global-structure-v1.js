@@ -47,17 +47,6 @@
   const activeSceneState = {};
   let initializedPage = null;
   let settleTimer;
-  const transitionPages = new Set(["delivery", "delivery-page", "air", "systems"]);
-
-  const beginStructureTransition = () => {
-    document.documentElement.classList.add("zf-route-structure-pending");
-  };
-
-  const endStructureTransition = () => {
-    window.requestAnimationFrame(() => {
-      document.documentElement.classList.remove("zf-route-structure-pending");
-    });
-  };
 
   const normalizeDeliveryStages = () => {
     if (document.body.dataset.page !== "delivery") return;
@@ -399,7 +388,6 @@
       deliveryOutputs.style.setProperty("display", "block", "important");
       deliveryOutputs.style.setProperty("height", "auto", "important");
     }
-    endStructureTransition();
   };
 
   const settleLayout = () => {
@@ -416,20 +404,9 @@
   else start();
 
   window.addEventListener("hashchange", () => {
-    beginStructureTransition();
     window.requestAnimationFrame(init);
     settleLayout();
   });
-  document.addEventListener("click", (event) => {
-    const link = event.target.closest("a[href^='#']");
-    const target = link?.getAttribute("href")?.slice(1);
-    if (!transitionPages.has(target)) return;
-    beginStructureTransition();
-    window.requestAnimationFrame(() => {
-      init();
-      settleLayout();
-    });
-  }, true);
   window.addEventListener("resize", () => {
     lockDeliveryEditorialLayout();
     lockAirHeroSpacing();
