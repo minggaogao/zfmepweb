@@ -92,34 +92,39 @@
     setImportant(
       document.querySelectorAll("body[data-page='project-access'] #project-access .project-access-ref-intro"),
       {
-        "position": "absolute",
-        "top": compact ? "178px" : "clamp(220px, 22vw, 320px)",
+        "position": "relative",
+        "top": "auto",
         "right": "auto",
         "bottom": "auto",
-        "left": compact ? "28px" : "clamp(44px, 6vw, 94px)",
-        "width": compact ? "calc(100% - 56px)" : "min(620px, calc(100% - 120px))",
-        "margin": "0",
-        "padding": compact ? "0 0 0 18px" : "0 0 0 24px",
+        "left": "auto",
+        "width": compact ? "calc(100% - 28px)" : "min(1480px, calc(100% - 96px))",
+        "max-width": "1480px",
+        "margin": compact ? "32px auto 0" : "clamp(42px, 4vw, 56px) auto 0",
+        "padding": compact ? "0 10px" : "0 clamp(18px, 2.4vw, 38px)",
         "border": "0",
-        "border-left": "2px solid rgba(126, 233, 221, 0.94)",
+        "border-left": "0",
         "border-radius": "0",
         "background": "transparent",
         "box-shadow": "none",
         "text-align": "left",
         "backdrop-filter": "none",
-        "-webkit-backdrop-filter": "none"
+        "-webkit-backdrop-filter": "none",
+        "display": "grid",
+        "grid-template-columns": compact ? "minmax(0, 1fr)" : "minmax(280px, 0.78fr) minmax(360px, 1.22fr)",
+        "align-items": "center",
+        "gap": compact ? "16px" : "clamp(40px, 5vw, 78px)"
       }
     );
 
     setImportant(
       document.querySelectorAll("body[data-page='project-access'] #project-access .project-access-ref-intro h1"),
       {
-        "color": "#ffffff",
+        "color": "#172232",
         "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
-        "font-size": compact ? "38px" : "clamp(46px, 4.5vw, 66px)",
+        "font-size": compact ? "36px" : "clamp(40px, 3.7vw, 58px)",
         "font-weight": "560",
-        "line-height": "1.05",
-        "letter-spacing": "-0.055em"
+        "line-height": "1.08",
+        "letter-spacing": "-0.045em"
       }
     );
 
@@ -127,9 +132,9 @@
       document.querySelectorAll("body[data-page='project-access'] #project-access .project-access-ref-intro p"),
       {
         "max-width": "520px",
-        "margin": "18px 0 0",
-        "color": "rgba(255, 255, 255, 0.72)",
-        "font-size": compact ? "13px" : "clamp(14px, 1.1vw, 17px)",
+        "margin": "0",
+        "color": "rgba(23, 34, 50, 0.68)",
+        "font-size": compact ? "14px" : "clamp(15px, 1.05vw, 17px)",
         "line-height": compact ? "1.65" : "1.8"
       }
     );

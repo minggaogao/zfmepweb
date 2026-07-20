@@ -3269,7 +3269,8 @@ const initPageStoryRail = () => {
   if (!main) return;
 
   const render = () => {
-    const page = document.body.dataset.page;
+    const raw = window.location.hash.replace("#", "") || "home";
+    const page = routeAliases[raw] || (pageRoutes[raw] ? raw : "home");
     const data = pageStoryRailData[page];
     let rail = $("[data-page-story-rail]");
 
@@ -3296,6 +3297,7 @@ const initPageStoryRail = () => {
 
   render();
   window.addEventListener("hashchange", () => requestAnimationFrame(render));
+  window.addEventListener("popstate", () => requestAnimationFrame(render));
 };
 
 const initNav = () => {
@@ -5552,6 +5554,15 @@ const applyGlobalTypographyLock = () => {
     "text-rendering": "optimizeLegibility"
   });
 
+  setLockedStyles($$("body[data-page='delivery'] main > #fit > .section-copy h2"), {
+    "width": isMobile ? "auto" : "min(520px, 100%)",
+    "max-width": isMobile ? "none" : "520px",
+    "font-size": isMobile ? "clamp(31px, 9vw, 40px)" : "clamp(42px, 3.8vw, 62px)",
+    "line-height": isMobile ? "1.14" : "1.1",
+    "word-break": "normal",
+    "overflow-wrap": "break-word"
+  });
+
   setLockedStyles($$([
     "body[data-page='systems'] main > #climate > .section-heading :is(.lead, .climate-lead-sub)",
     "body[data-page='basement-system'] main > #basement-definition .basement-definition-lead",
@@ -5635,19 +5646,19 @@ const applyGlobalTypographyLock = () => {
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1"), {
-    "color": "#ffffff",
+    "color": "#172232",
     "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
-    "font-size": isMobile ? "42px" : "clamp(44px, 5vw, 74px)",
+    "font-size": isMobile ? "36px" : "clamp(40px, 3.7vw, 58px)",
     "font-weight": "560",
-    "line-height": "1.05",
-    "letter-spacing": "-0.055em"
+    "line-height": "1.08",
+    "letter-spacing": "-0.045em"
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro p"), {
     "max-width": "580px",
-    "margin": "24px 0 0",
-    "color": "rgba(255, 255, 255, 0.72)",
-    "font-size": isMobile ? "14px" : "clamp(14px, 1.1vw, 17px)",
+    "margin": "0",
+    "color": "rgba(23, 34, 50, 0.68)",
+    "font-size": isMobile ? "14px" : "clamp(15px, 1.05vw, 17px)",
     "line-height": "1.8"
   });
 };
@@ -5692,27 +5703,27 @@ const applyPageCohesionInlineLock = () => {
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1"), {
-    "color": "#ffffff",
+    "color": "#172232",
     "font-family": "\"SF Pro Display\", \"PingFang SC\", sans-serif",
-    "font-size": compact ? "42px" : "clamp(44px, 5vw, 74px)",
+    "font-size": compact ? "36px" : "clamp(40px, 3.7vw, 58px)",
     "font-weight": "560",
-    "line-height": "1.05",
-    "letter-spacing": "-0.055em"
+    "line-height": "1.08",
+    "letter-spacing": "-0.045em"
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro h1 span"), {
     "display": "block",
-    "margin-top": "12px",
-    "color": "#7ee9dd",
+    "margin-top": "10px",
+    "color": "#396df1",
     "font-size": "12px",
     "letter-spacing": "0.12em"
   });
 
   setLockedStyles($$("body[data-page='project-access'] #project-access .project-access-ref-intro p"), {
     "max-width": "580px",
-    "margin": "24px 0 0",
-    "color": "rgba(255, 255, 255, 0.72)",
-    "font-size": compact ? "14px" : "clamp(14px, 1.1vw, 17px)",
+    "margin": "0",
+    "color": "rgba(23, 34, 50, 0.68)",
+    "font-size": compact ? "14px" : "clamp(15px, 1.05vw, 17px)",
     "line-height": "1.8"
   });
 };
