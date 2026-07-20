@@ -6022,6 +6022,7 @@
     <link rel="stylesheet" href="page-cohesion-system.css?v=20260720-page-cohesion-v7" />
     <link rel="stylesheet" href="air-page-hero-lock.css?v=20260720-air-hero-v1" />
     <link rel="stylesheet" href="navigation-mega-lock.css?v=20260720-nav-mega-v1" />
+    <link rel="stylesheet" href="weather-live-status.css?v=20260720-weather-status-v1" />
   </head>
   <body>
     <script>
@@ -6659,8 +6660,14 @@
               <input type="hidden" data-dew-input value="" />
             </div>
             <div class="dewpoint-head">
-              <span>今日气候（湖南长沙）</span>
+              <span data-weather-heading>今日气候（湖南长沙）</span>
               <strong data-weather-value hidden>29.8℃ · RH 78%</strong>
+            </div>
+            <div class="weather-live-status" data-weather-status data-state="loading" role="status" aria-live="polite">
+              <i aria-hidden="true"></i>
+              <span data-weather-status-text>正在连接实时气象</span>
+              <time data-weather-updated></time>
+              <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer" aria-label="查看 Open-Meteo 气象数据来源">Open-Meteo</a>
             </div>
             <div class="psychrometric-results" aria-live="polite">
               <div class="psychrometric-metric">
@@ -8655,7 +8662,7 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260719-route-cohesion-v4" defer></script>
+    <script src="script.js?v=20260720-weather-status-v1" defer></script>
     <script src="page-cohesion-runtime.js?v=20260720-route-cohesion-v6" defer></script>
     <script>
       (() => {

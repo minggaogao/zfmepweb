@@ -3051,14 +3051,56 @@ const updateDewTool = () => {
   renderDewBar(dew);
 };
 
+const setWeatherStatus = (state, updatedTime = "") => {
+  const status = $("[data-weather-status]");
+  const statusText = $("[data-weather-status-text]");
+  const updated = $("[data-weather-updated]");
+  const heading = $("[data-weather-heading]");
+  if (!status || !statusText || !updated || !heading) return;
+
+  status.dataset.state = state;
+  document.documentElement.dataset.weatherSource = state;
+
+  if (state === "live") {
+    heading.textContent = "今日气候（湖南长沙）";
+    statusText.textContent = "实时数据";
+    updated.textContent = updatedTime ? `更新 ${updatedTime}` : "刚刚更新";
+    updated.dateTime = updatedTime || "";
+    return;
+  }
+
+  if (state === "reference") {
+    heading.textContent = "长沙气候参考（季节样本）";
+    statusText.textContent = "实时气象暂不可用";
+    updated.textContent = "当前为参考值";
+    updated.removeAttribute("datetime");
+    return;
+  }
+
+  heading.textContent = "今日气候（湖南长沙）";
+  statusText.textContent = "正在连接实时气象";
+  updated.textContent = "";
+  updated.removeAttribute("datetime");
+};
+
 const initWeather = async () => {
   if (window.matchMedia("(max-width: 760px)").matches) {
     $(".dewpoint-calculator")?.removeAttribute("open");
   }
+  setWeatherStatus("loading");
   updateDewTool();
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 8000);
   try {
+    const forceReferenceForLocalQA =
+      ["localhost", "127.0.0.1"].includes(window.location.hostname) &&
+      new URLSearchParams(window.location.search).has("weather-reference-test");
+    if (forceReferenceForLocalQA) throw new Error("local weather fallback test");
     const url = "https://api.open-meteo.com/v1/forecast?latitude=28.23&longitude=112.94&current=temperature_2m,relative_humidity_2m&timezone=Asia%2FShanghai";
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      signal: controller.signal,
+      cache: "no-store"
+    });
     if (!response.ok) throw new Error("weather unavailable");
     const data = await response.json();
     const temp = data.current?.temperature_2m;
@@ -3070,11 +3112,20 @@ const initWeather = async () => {
       $("[data-weather-value]").textContent = `${temp.toFixed(1)}℃ · RH ${Math.round(rh)}%`;
     }
     updateDewTool();
+    const updatedTime = typeof data.current?.time === "string"
+      ? data.current.time.slice(11, 16)
+      : new Intl.DateTimeFormat("zh-CN", { hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
+    setWeatherStatus("live", updatedTime);
   } catch {
+    $("[data-temp]").value = "29.8";
+    $("[data-rh]").value = "78";
     if ($("[data-weather-value]")) {
       $("[data-weather-value]").textContent = "29.8℃ · RH 78%";
     }
     updateDewTool();
+    setWeatherStatus("reference");
+  } finally {
+    window.clearTimeout(timeout);
   }
 };
 
