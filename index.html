@@ -39,7 +39,11 @@
           "project-access-expertise-title": "project-access"
         };
         const key = location.hash.replace("#", "") || "home";
-        document.documentElement.dataset.page = routes[key] || "home";
+        const page = routes[key] || "home";
+        document.documentElement.dataset.page = page;
+        if (page === "delivery" || page === "systems") {
+          document.documentElement.classList.add("zf-route-structure-pending");
+        }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
