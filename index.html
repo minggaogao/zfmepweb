@@ -43,6 +43,71 @@
         document.documentElement.dataset.page = page;
       })();
     </script>
+    <style id="zf-delivery-first-paint">
+      html[data-page="delivery"] body main > #fit {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: min(1216px, calc(100vw - 64px)) !important;
+        min-height: 0 !important;
+        margin: clamp(28px, 4vw, 64px) auto 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: transparent !important;
+      }
+
+      html[data-page="delivery"] body main > #fit > .delivery-scene-media {
+        position: relative !important;
+        order: 1 !important;
+        inset: auto !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: 16 / 9 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        border-radius: 30px !important;
+        background: #101b2d !important;
+      }
+
+      html[data-page="delivery"] body main > #fit > .delivery-scene-media img {
+        position: static !important;
+        inset: auto !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: inherit !important;
+      }
+
+      html[data-page="delivery"] body main > #fit > .delivery-hero-copy {
+        position: relative !important;
+        order: 2 !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        margin: clamp(36px, 4vw, 58px) 0 0 !important;
+        padding: 0 !important;
+        color: #182033 !important;
+        background: transparent !important;
+      }
+
+      html[data-page="delivery"] body main > #fit > .delivery-hero-copy :is(h2, p, blockquote) {
+        color: #182033 !important;
+        text-shadow: none !important;
+      }
+
+      @media (max-width: 760px) {
+        html[data-page="delivery"] body main > #fit {
+          width: calc(100vw - 34px) !important;
+        }
+
+        html[data-page="delivery"] body main > #fit > .delivery-scene-media {
+          border-radius: 24px !important;
+        }
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
