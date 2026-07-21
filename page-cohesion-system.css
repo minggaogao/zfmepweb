@@ -1334,7 +1334,44 @@ html body main .zf-home-case-demo-intro > small {
 
 html body main .zf-home-case-demo-body {
   display: grid;
-  gap: 28px;
+  align-content: center;
+}
+
+/* Homepage cases show lived results; technical specification remains on the delivery page. */
+html body main .zf-home-case-demo-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+html body main .zf-home-case-demo-outcomes > span {
+  display: grid;
+  align-content: start;
+  min-height: 178px;
+  padding: 24px 21px;
+  border: 1px solid rgba(74, 104, 168, 0.12);
+  border-top: 3px solid var(--case-accent, #5374bc);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 12px 28px rgba(39, 57, 103, 0.05);
+}
+
+html body main .zf-home-case-demo-outcomes small {
+  color: var(--case-accent, #5374bc);
+  font: 650 10px/1.2 "SF Pro Text", "PingFang SC", sans-serif;
+  letter-spacing: 0;
+}
+
+html body main .zf-home-case-demo-outcomes strong {
+  margin-top: 16px;
+  color: #17233a;
+  font: 600 clamp(18px, 1.55vw, 24px)/1.25 "SF Pro Display", "PingFang SC", sans-serif;
+}
+
+html body main .zf-home-case-demo-outcomes em {
+  margin-top: 9px;
+  color: rgba(23, 35, 58, 0.58);
+  font: normal 400 13px/1.6 "SF Pro Text", "PingFang SC", sans-serif;
 }
 
 html body main .zf-home-case-demo-metrics {
@@ -1526,6 +1563,14 @@ html body[data-page="project-access"] #project-access .project-access-ref-intro 
 
   html body main .zf-home-case-demo-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  html body main .zf-home-case-demo-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  html body main .zf-home-case-demo-outcomes > span {
+    min-height: 0;
   }
 
   html body main .zf-home-evidence-card::before {
