@@ -206,29 +206,59 @@
     });
     const opening = document.querySelector("main > #fit");
     setImportantStyles(opening, {
-      display: "flex",
-      "flex-direction": "column",
+      position: "relative",
+      display: "grid",
+      "grid-template-columns": "minmax(0, 1fr)",
+      "grid-template-rows": "minmax(clamp(650px, 52vw, 880px), auto) auto",
+      "min-height": "clamp(650px, 52vw, 880px)",
       gap: "0",
       "row-gap": "0",
-      "column-gap": "0"
+      "column-gap": "0",
+      overflow: "hidden",
+      "border-radius": isMobile ? "24px" : "clamp(24px, 2.4vw, 36px)",
+      background: "#111a20"
     });
-    setImportantStyles(opening?.querySelector(":scope > .delivery-scene-media"), { order: "1" });
+    setImportantStyles(opening?.querySelector(":scope > .delivery-scene-media"), {
+      position: "relative",
+      "z-index": "1",
+      "grid-column": "1",
+      "grid-row": "1",
+      width: "100%",
+      height: "100%",
+      "min-height": "inherit",
+      "aspect-ratio": "auto",
+      margin: "0",
+      order: "initial",
+      "border-radius": "inherit"
+    });
     setImportantStyles(opening?.querySelector(":scope > .section-copy"), {
-      order: "2",
+      position: "relative",
+      "z-index": "2",
+      "grid-column": "1",
+      "grid-row": "1",
+      display: "grid",
+      "align-content": isMobile ? "end" : "center",
+      "justify-items": "start",
+      order: "initial",
       width: "100%",
       "max-width": "none",
+      "min-height": "inherit",
       margin: "0",
-      padding: isMobile ? "34px 24px 38px" : "clamp(44px, 4.5vw, 70px)",
-      "border-radius": isMobile ? "0 0 8px 8px" : "0 0 8px 8px",
+      padding: isMobile ? "44px 24px 28px" : "clamp(58px, 6vw, 96px) clamp(44px, 6.4vw, 108px)",
+      "border-radius": "inherit",
       color: "#f7fbfa",
-      background: "#173f4b"
+      background: isMobile
+        ? "linear-gradient(0deg, rgba(10, 18, 22, .98) 0%, rgba(10, 18, 22, .84) 58%, rgba(10, 18, 22, .18) 100%)"
+        : "linear-gradient(90deg, rgba(10, 18, 22, .96) 0%, rgba(10, 18, 22, .84) 32%, rgba(10, 18, 22, .36) 58%, rgba(10, 18, 22, .06) 82%, rgba(10, 18, 22, 0) 100%), linear-gradient(0deg, rgba(10, 18, 22, .46) 0%, rgba(10, 18, 22, 0) 54%)"
     });
     setImportantStyles(opening?.querySelector(":scope > .delivery-scene-media"), {
       margin: "0",
-      "border-radius": "8px 8px 0 0"
+      "border-radius": "inherit"
     });
     setImportantStyles(opening?.querySelector(":scope > .zf-delivery-optimization"), {
-      order: "3"
+      "grid-column": "1",
+      "grid-row": "2",
+      order: "initial"
     });
     const optimization = opening?.querySelector(":scope > .zf-delivery-optimization");
     setImportantStyles(optimization, {

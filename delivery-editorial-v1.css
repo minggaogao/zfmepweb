@@ -12,6 +12,210 @@ html body[data-page="delivery"] {
     var(--de-paper) !important;
 }
 
+/* Delivery opening: one cinematic scene, aligned with the air-page visual language. */
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude {
+  position: relative !important;
+  display: grid !important;
+  grid-template: 1fr / minmax(0, 1fr) !important;
+  min-height: clamp(650px, 52vw, 880px) !important;
+  overflow: hidden !important;
+  border-radius: clamp(24px, 2.4vw, 36px) !important;
+  background: #111a20 !important;
+  box-shadow: 0 34px 90px rgba(17, 26, 32, 0.18) !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-scene-media {
+  position: relative !important;
+  z-index: 1 !important;
+  grid-area: 1 / 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: inherit !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  border-radius: inherit !important;
+  overflow: hidden !important;
+  background: #111a20 !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-scene-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 50% !important;
+  border-radius: inherit !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-hero-copy {
+  position: relative !important;
+  z-index: 2 !important;
+  grid-area: 1 / 1 !important;
+  display: grid !important;
+  align-content: center !important;
+  justify-items: start !important;
+  width: 100% !important;
+  min-height: inherit !important;
+  margin: 0 !important;
+  padding: clamp(58px, 6vw, 96px) clamp(44px, 6.4vw, 108px) !important;
+  border: 0 !important;
+  border-radius: inherit !important;
+  color: #fff !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 18, 22, .96) 0%,
+      rgba(10, 18, 22, .84) 32%,
+      rgba(10, 18, 22, .36) 58%,
+      rgba(10, 18, 22, .06) 82%,
+      rgba(10, 18, 22, 0) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(10, 18, 22, .46) 0%,
+      rgba(10, 18, 22, 0) 54%
+    ) !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > .eyebrow {
+  width: min(720px, 100%) !important;
+  max-width: 720px !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  color: #f5b94f !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+  letter-spacing: .14em !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > h2 {
+  width: min(760px, 100%) !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: "SF Pro Display", "PingFang SC", "Noto Sans SC", sans-serif !important;
+  font-size: clamp(42px, 4vw, 60px) !important;
+  font-weight: 600 !important;
+  line-height: 1.14 !important;
+  letter-spacing: -.025em !important;
+  white-space: normal !important;
+  text-wrap: balance !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > .delivery-hero-lead {
+  width: min(720px, 100%) !important;
+  max-width: 720px !important;
+  margin: 26px 0 0 !important;
+  color: rgba(255, 255, 255, .78) !important;
+  font-size: clamp(15px, 1.05vw, 18px) !important;
+  line-height: 1.78 !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > blockquote {
+  width: min(720px, 100%) !important;
+  max-width: 720px !important;
+  margin: 22px 0 0 !important;
+  padding: 0 0 0 20px !important;
+  border: 0 !important;
+  border-left: 3px solid #f5b94f !important;
+  color: rgba(255, 255, 255, .92) !important;
+  font-size: clamp(15px, 1.04vw, 17px) !important;
+  line-height: 1.65 !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles {
+  position: relative !important;
+  z-index: 3 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  width: min(920px, 100%) !important;
+  max-width: 920px !important;
+  margin: clamp(34px, 4vw, 54px) 0 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
+  border-radius: 20px !important;
+  background: rgba(12, 18, 23, .76) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .2) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span {
+  min-height: 98px !important;
+  padding: 20px 24px !important;
+  border: 0 !important;
+  border-right: 1px solid rgba(255, 255, 255, .12) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:last-child {
+  border-right: 0 !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles :is(i, strong, small) {
+  position: relative !important;
+  color: #fff !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles i {
+  color: #f5b94f !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles small {
+  color: rgba(255, 255, 255, .58) !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude {
+    min-height: 760px !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-hero-copy {
+    align-content: end !important;
+    padding: 44px 24px 28px !important;
+    background:
+      linear-gradient(0deg, rgba(10, 18, 22, .98) 0%, rgba(10, 18, 22, .84) 58%, rgba(10, 18, 22, .18) 100%) !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > h2 {
+    font-size: clamp(32px, 8.2vw, 42px) !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > .delivery-hero-lead {
+    margin-top: 18px !important;
+    font-size: 14px !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > blockquote {
+    margin-top: 16px !important;
+    font-size: 14px !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles {
+    margin-top: 24px !important;
+    grid-template-columns: 1fr !important;
+    border-radius: 16px !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span {
+    min-height: 62px !important;
+    padding: 12px 16px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
 html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles {
   gap: clamp(12px, 1.5vw, 22px) !important;
   border: 0 !important;
@@ -452,5 +656,41 @@ html body[data-page="delivery"] .zf-delivery-output-grid p {
     width: calc(100vw - 28px) !important;
     padding: 48px 22px !important;
     border-radius: 28px 10px 28px 10px !important;
+  }
+}
+
+/* Keep the opening principles inside one continuous glass rail. */
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles {
+  gap: 0 !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span,
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:nth-child(2) {
+  min-height: 98px !important;
+  padding: 20px 24px !important;
+  border: 0 !important;
+  border-right: 1px solid rgba(255, 255, 255, .12) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:last-child {
+  border-right: 0 !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span,
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:nth-child(2) {
+    min-height: 62px !important;
+    padding: 12px 16px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+  }
+
+  html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:last-child {
+    border-bottom: 0 !important;
   }
 }
