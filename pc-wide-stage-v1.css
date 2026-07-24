@@ -84,57 +84,6 @@
     max-width: none !important;
   }
 
-  /* Air / Hunan climate: keep the scene wide while copy remains readable. */
-  html body[data-page="systems"] main > section#climate.climate.section-shell {
-    width: var(--zf-pc-stage) !important;
-    max-width: none !important;
-    margin-inline: auto !important;
-  }
-
-  html body[data-page="systems"] main > section#climate.climate.section-shell > :is(
-    .climate-stage,
-    .climate-living-scene
-  ) {
-    width: 100% !important;
-    max-width: none !important;
-    margin-inline: 0 !important;
-    padding-inline: 0 !important;
-  }
-
-  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-stage,
-  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-living-scene {
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  html body[data-page="systems"] main #climate :is(
-    .climate-map,
-    .climate-living-media
-  ) {
-    width: 100% !important;
-    max-width: none !important;
-    margin-inline: 0 !important;
-  }
-
-  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-stage .climate-map,
-  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-living-scene > .climate-living-media {
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  html body[data-page="systems"] main #climate .climate-living-copy {
-    width: min(46rem, calc(100% - 96px)) !important;
-    max-width: 46rem !important;
-    margin-left: 48px !important;
-    margin-right: auto !important;
-  }
-
   /* Basement opening: a slightly taller cinematic crop avoids a flattened wide-screen read. */
   html body[data-page="basement-system"] main > #basement-definition .basement-context-media--ground {
     aspect-ratio: 16 / 10 !important;
@@ -149,21 +98,22 @@
   }
 
   /* Route openings: protect left-side white copy without greying the whole image. */
-  html body[data-page="water-supply-drainage"] main #water-problem .zf-route-opening-copy::after,
-  html body[data-page="basement-system"] main #basement-definition .zf-route-opening-copy::after {
+  html body[data-page="water-supply-drainage"] main #water-problem#water-problem .zf-route-opening-copy.zf-route-opening-copy::after,
+  html body[data-page="basement-system"] main #basement-definition#basement-definition .zf-route-opening-copy.zf-route-opening-copy::after {
     background:
       linear-gradient(
         90deg,
         rgba(7, 13, 23, 0.96) 0%,
-        rgba(7, 13, 23, 0.82) 36%,
-        rgba(7, 13, 23, 0.28) 64%,
-        rgba(7, 13, 23, 0.04) 100%
+        rgba(7, 13, 23, 0.76) 28%,
+        rgba(7, 13, 23, 0.16) 48%,
+        rgba(7, 13, 23, 0) 66%,
+        rgba(7, 13, 23, 0) 100%
       ),
       linear-gradient(
         0deg,
-        rgba(7, 13, 23, 0.48) 0%,
-        rgba(7, 13, 23, 0.05) 52%,
-        rgba(7, 13, 23, 0.1) 100%
+        rgba(7, 13, 23, 0.24) 0%,
+        rgba(7, 13, 23, 0.03) 28%,
+        rgba(7, 13, 23, 0) 48%
       ) !important;
   }
 
@@ -171,5 +121,27 @@
   html body .site-footer-premium {
     width: var(--zf-pc-stage) !important;
     max-width: none !important;
+  }
+}
+
+/* Desktop route imagery: keep the mask under copy only, including 1280px PC viewports. */
+@media (min-width: 1024px) {
+  html body[data-page="water-supply-drainage"] main #water-problem#water-problem .zf-route-opening-copy.zf-route-opening-copy::after,
+  html body[data-page="basement-system"] main #basement-definition#basement-definition .zf-route-opening-copy.zf-route-opening-copy::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 13, 23, 0.96) 0%,
+        rgba(7, 13, 23, 0.76) 28%,
+        rgba(7, 13, 23, 0.16) 48%,
+        rgba(7, 13, 23, 0) 66%,
+        rgba(7, 13, 23, 0) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(7, 13, 23, 0.24) 0%,
+        rgba(7, 13, 23, 0.03) 28%,
+        rgba(7, 13, 23, 0) 48%
+      ) !important;
   }
 }
