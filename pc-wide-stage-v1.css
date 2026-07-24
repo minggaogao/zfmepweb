@@ -148,6 +148,25 @@
     object-position: 50% 50% !important;
   }
 
+  /* Route openings: protect left-side white copy without greying the whole image. */
+  html body[data-page="water-supply-drainage"] main #water-problem .zf-route-opening-copy::after,
+  html body[data-page="basement-system"] main #basement-definition .zf-route-opening-copy::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 13, 23, 0.96) 0%,
+        rgba(7, 13, 23, 0.82) 36%,
+        rgba(7, 13, 23, 0.28) 64%,
+        rgba(7, 13, 23, 0.04) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(7, 13, 23, 0.48) 0%,
+        rgba(7, 13, 23, 0.05) 52%,
+        rgba(7, 13, 23, 0.1) 100%
+      ) !important;
+  }
+
   /* Footer follows the same stage on every route. */
   html body .site-footer-premium {
     width: var(--zf-pc-stage) !important;
