@@ -39,8 +39,8 @@
       insertBefore: "#constraints",
       selector: "main > :is(#constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result)",
       eyebrow: "Delivery Stage Browser",
-      title: "从定义生活到验证运行，按阶段查看我们的工作",
-      labels: ["定义生活", "项目启动", "系统深化", "设计落地", "施工协同", "调试验证", "运行复核", "长期交付"],
+      title: "从一户一方案到长期运行，看见专业如何形成闭环",
+      labels: ["需求与边界", "现场勘察", "计算与建模", "图纸与交底", "自有施工", "检测与调试", "安全文明", "售后运维"],
       order: ["constraints", "delivery-brief", "integration", "delivery", "team-execution", "delivery-commissioning", "process", "delivery-result"]
     }
   ];
@@ -71,16 +71,30 @@
   const lockDeliveryEditorialLayout = () => {
     if (document.body.dataset.page !== "delivery") return;
     const isMobile = window.innerWidth <= 760;
+    const mediaLeftStages = new Set(["delivery-brief", "delivery", "delivery-commissioning", "delivery-result"]);
+    const stageAccents = {
+      constraints: "#0d9f91",
+      "delivery-brief": "#d89a20",
+      integration: "#2f68d8",
+      delivery: "#d95757",
+      "team-execution": "#7659c9",
+      "delivery-commissioning": "#0e91a3",
+      process: "#d87520",
+      "delivery-result": "#2d9568"
+    };
     const sections = Array.from(document.querySelectorAll("main > :is(#fit, #constraints, #delivery-brief, #integration, #delivery, #team-execution, #delivery-commissioning, #process, #delivery-result)"));
     sections.forEach((section) => {
       const hidden = section.classList.contains("is-scene-browser-hidden");
+      const isOpening = section.id === "fit";
+      const mediaOnLeft = mediaLeftStages.has(section.id);
+      const accent = stageAccents[section.id] || "#0d7772";
       setImportantStyles(section, {
-        display: section.id === "fit" ? "block" : (hidden ? "none" : "block"),
+        display: isOpening ? "block" : (hidden ? "none" : "block"),
         position: "relative",
-        width: isMobile ? "calc(100vw - 34px)" : "min(1216px, calc(100vw - 64px))",
+        width: isMobile ? "calc(100vw - 34px)" : "min(1704px, calc(100vw - 48px))",
         "max-width": "none",
         "min-height": "0",
-        margin: "clamp(28px, 4vw, 64px) auto 0",
+        margin: "clamp(56px, 6vw, 88px) auto 0",
         padding: "0",
         overflow: "visible",
         border: "0",
@@ -90,12 +104,17 @@
       const copy = section.querySelector(":scope > .section-copy");
       setImportantStyles(copy, {
         position: "relative",
-        display: "block",
+        display: isOpening || isMobile ? "block" : "grid",
+        "grid-template-columns": isOpening || isMobile ? "none" : "minmax(390px, .9fr) minmax(0, 1.1fr)",
+        "column-gap": isOpening || isMobile ? "0" : "clamp(42px, 5vw, 82px)",
+        "row-gap": isOpening || isMobile ? "0" : "0",
+        "align-items": isOpening || isMobile ? "initial" : "center",
         width: "100%",
         "max-width": "none",
         "min-height": "0",
         margin: "0",
-        padding: "0",
+        padding: isOpening || isMobile ? "0" : "clamp(30px, 3vw, 44px) 0 0",
+        "border-top": isOpening || isMobile ? "0" : `3px solid ${accent}`,
         color: "#182033",
         background: "transparent",
         overflow: "visible"
@@ -104,40 +123,55 @@
         setImportantStyles(node, {
           position: "relative",
           "z-index": "auto",
-          width: isMobile ? "calc(100% - 44px)" : "min(720px, 100%)",
-          "max-width": isMobile ? "calc(100% - 44px)" : "720px",
+          width: isOpening ? "min(920px, 100%)" : (isMobile ? "calc(100% - 44px)" : "100%"),
+          "max-width": isOpening ? "920px" : (isMobile ? "calc(100% - 44px)" : "none"),
           "margin-left": "0",
           "margin-right": "0",
+          "grid-column": isOpening || isMobile ? "auto" : (mediaOnLeft ? "2" : "1"),
           color: "#182033",
           "text-align": "left"
         });
       });
       setImportantStyles(copy?.querySelector(":scope > .eyebrow"), {
-        color: "rgba(24, 68, 76, 0.66)",
+        color: accent,
+        "grid-row": isOpening || isMobile ? "auto" : "1",
         "margin-top": "0",
         "margin-bottom": "14px"
       });
       setImportantStyles(copy?.querySelector(":scope > h2"), {
         color: "#182033",
-        "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
-        "line-height": "1.16",
+        "grid-row": isOpening || isMobile ? "auto" : "2",
+        "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(30px, 2.5vw, 40px)",
+        "font-weight": "520",
+        "line-height": "1.36",
+        "letter-spacing": "0",
         "margin-top": "0",
-        "margin-bottom": "18px"
+        "margin-bottom": "22px"
       });
-      copy?.querySelectorAll(":scope > p:not(.eyebrow), :scope > blockquote").forEach((node) => {
+      copy?.querySelectorAll(":scope > p:not(.eyebrow)").forEach((node) => {
         setImportantStyles(node, {
+          "grid-row": isOpening || isMobile ? "auto" : "3",
           color: "rgba(24, 32, 51, 0.72)",
-          "font-size": "15px",
-          "line-height": "1.85",
+          "font-size": "16px",
+          "line-height": "1.95",
           "margin-top": "0",
-          "margin-bottom": "12px",
+          "margin-bottom": "16px",
           "text-shadow": "none"
         });
       });
       setImportantStyles(copy?.querySelector(":scope > blockquote"), {
+        "grid-row": isOpening || isMobile ? "auto" : "5",
         padding: "0 0 0 18px",
-        "border-left": "2px solid #87c9c9",
+        color: "rgba(24, 32, 51, 0.78)",
+        "font-size": "15px",
+        "line-height": "1.85",
+        "margin-top": "0",
+        "margin-bottom": "0",
+        "border-left": `3px solid ${accent}`,
         background: "transparent"
+      });
+      setImportantStyles(copy?.querySelector(":scope > .delivery-stage-proof"), {
+        "grid-row": isOpening || isMobile ? "auto" : "4"
       });
       const media = section.querySelector(":scope .delivery-scene-media");
       setImportantStyles(media, {
@@ -145,12 +179,15 @@
         "z-index": "auto",
         inset: "auto",
         display: "block",
+        "grid-column": isOpening || isMobile ? "auto" : (mediaOnLeft ? "1" : "2"),
+        "grid-row": isOpening || isMobile ? "auto" : "1 / span 5",
         width: "100%",
+        "max-width": "none",
         height: "auto",
         "min-height": "0",
-        "aspect-ratio": "16 / 9",
-        margin: "clamp(28px, 3vw, 42px) 0 0",
-        "border-radius": isMobile ? "24px" : "30px",
+        "aspect-ratio": isOpening ? (isMobile ? "4 / 3" : "2.2 / 1") : (isMobile ? "16 / 9" : "3 / 2"),
+        margin: isOpening || isMobile ? "clamp(30px, 4vw, 48px) 0 0" : "0",
+        "border-radius": isMobile ? "8px" : "8px",
         overflow: "hidden",
         background: "#101b2d"
       });
@@ -162,7 +199,7 @@
         height: "100%",
         "min-height": "0",
         "object-fit": "cover",
-        filter: "saturate(0.98) contrast(1.02) brightness(0.96)",
+        filter: "saturate(1.04) contrast(1.02) brightness(0.98)",
         "border-radius": "inherit"
       });
       setImportantStyles(section.querySelector(":scope > .section-bridge"), { display: "none" });
@@ -170,12 +207,75 @@
     const opening = document.querySelector("main > #fit");
     setImportantStyles(opening, {
       display: "flex",
-      "flex-direction": "column"
+      "flex-direction": "column",
+      gap: "0",
+      "row-gap": "0",
+      "column-gap": "0"
     });
     setImportantStyles(opening?.querySelector(":scope > .delivery-scene-media"), { order: "1" });
     setImportantStyles(opening?.querySelector(":scope > .section-copy"), {
       order: "2",
-      "margin-top": "clamp(36px, 4vw, 58px)"
+      width: "100%",
+      "max-width": "none",
+      margin: "0",
+      padding: isMobile ? "34px 24px 38px" : "clamp(44px, 4.5vw, 70px)",
+      "border-radius": isMobile ? "0 0 8px 8px" : "0 0 8px 8px",
+      color: "#f7fbfa",
+      background: "#173f4b"
+    });
+    setImportantStyles(opening?.querySelector(":scope > .delivery-scene-media"), {
+      margin: "0",
+      "border-radius": "8px 8px 0 0"
+    });
+    setImportantStyles(opening?.querySelector(":scope > .zf-delivery-optimization"), {
+      order: "3"
+    });
+    const optimization = opening?.querySelector(":scope > .zf-delivery-optimization");
+    setImportantStyles(optimization, {
+      color: "#182033",
+      background: "#ffffff"
+    });
+    setImportantStyles(optimization?.querySelector(":scope > header h2"), {
+      color: "#182033",
+      "text-shadow": "none"
+    });
+    setImportantStyles(optimization?.querySelector(":scope > header > p:last-child"), {
+      color: "rgba(24, 32, 51, 0.68)",
+      "text-shadow": "none"
+    });
+    setImportantStyles(optimization?.querySelector(":scope > .zf-delivery-optimization-equation"), {
+      color: "rgba(24, 32, 51, 0.78)",
+      "text-shadow": "none"
+    });
+    optimization?.querySelectorAll(".zf-delivery-optimization-flow p").forEach((node) => {
+      setImportantStyles(node, {
+        color: "rgba(24, 32, 51, 0.66)",
+        "text-shadow": "none"
+      });
+    });
+    setImportantStyles(opening?.querySelector(".delivery-hero-copy > .eyebrow"), {
+      width: "100%",
+      "max-width": "none",
+      color: "#f1b94a"
+    });
+    setImportantStyles(opening?.querySelector(".delivery-hero-copy > h2"), {
+      width: "100%",
+      "max-width": "none",
+      color: "#ffffff",
+      "font-size": isMobile ? "clamp(32px, 8.6vw, 40px)" : "clamp(42px, 4vw, 58px)",
+      "line-height": "1.22",
+      "white-space": isMobile ? "normal" : "nowrap"
+    });
+    setImportantStyles(opening?.querySelector(".delivery-hero-copy > .delivery-hero-lead"), {
+      width: isMobile ? "100%" : "min(840px, 100%)",
+      "max-width": isMobile ? "100%" : "840px",
+      color: "rgba(247, 251, 250, 0.82)"
+    });
+    setImportantStyles(opening?.querySelector(".delivery-hero-copy > blockquote"), {
+      width: isMobile ? "100%" : "min(840px, 100%)",
+      "max-width": isMobile ? "100%" : "840px",
+      color: "#ffffff",
+      "border-left": "3px solid #f1b94a"
     });
     const principles = opening?.querySelector(".delivery-hero-principles");
     setImportantStyles(principles, {
@@ -183,22 +283,23 @@
       "grid-template-columns": isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))",
       gap: "0",
       width: "100%",
-      "max-width": "720px",
+      "max-width": "none",
       margin: "30px 0 0",
-      color: "#182033",
-      "border-top": "1px solid rgba(24, 32, 51, 0.14)",
-      "border-bottom": "1px solid rgba(24, 32, 51, 0.14)"
+      color: "#f7fbfa",
+      "border-top": "1px solid rgba(247, 251, 250, 0.2)",
+      "border-bottom": "1px solid rgba(247, 251, 250, 0.2)"
     });
-    principles?.querySelectorAll(":scope > span").forEach((item) => {
+    const principleAccents = ["#f1b94a", "#74d3c8", "#ff8d76"];
+    principles?.querySelectorAll(":scope > span").forEach((item, index) => {
       setImportantStyles(item, {
         padding: isMobile ? "14px 0" : "16px 18px",
-        color: "#182033",
-        "border-right": isMobile ? "0" : "1px solid rgba(24, 32, 51, 0.14)",
-        "border-bottom": isMobile ? "1px solid rgba(24, 32, 51, 0.14)" : "0"
+        color: "#f7fbfa",
+        "border-right": isMobile ? "0" : "1px solid rgba(247, 251, 250, 0.18)",
+        "border-bottom": isMobile ? "1px solid rgba(247, 251, 250, 0.18)" : "0"
       });
-      setImportantStyles(item.querySelector("i"), { color: "#397a7c" });
-      setImportantStyles(item.querySelector("strong"), { color: "#182033" });
-      setImportantStyles(item.querySelector("small"), { color: "rgba(24, 32, 51, 0.58)" });
+      setImportantStyles(item.querySelector("i"), { color: principleAccents[index] || "#74d3c8" });
+      setImportantStyles(item.querySelector("strong"), { color: "#ffffff" });
+      setImportantStyles(item.querySelector("small"), { color: "rgba(247, 251, 250, 0.66)" });
     });
   };
 
@@ -241,10 +342,9 @@
       <header class="zf-scene-browser-head">
         <p>${config.eyebrow}</p>
         <h2>${config.title}</h2>
-        <span>点击切换 · 当前仅展开一个场景</span>
+        <span>${config.id === "delivery-stages" ? "选择阶段，一次查看一个章节" : "点击切换 · 当前仅展开一个场景"}</span>
       </header>
       <div class="zf-scene-browser-tabs" role="tablist"></div>
-      ${config.id === "delivery-stages" ? '<div class="zf-delivery-stage-gallery" aria-label="设计交付阶段画廊"></div>' : ''}
     `;
 
     anchor.parentNode.insertBefore(nav, anchor);
@@ -404,6 +504,10 @@
   else start();
 
   window.addEventListener("hashchange", () => {
+    window.requestAnimationFrame(init);
+    settleLayout();
+  });
+  window.addEventListener("zf:routechange", () => {
     window.requestAnimationFrame(init);
     settleLayout();
   });

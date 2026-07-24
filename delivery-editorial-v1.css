@@ -1,0 +1,456 @@
+/* Delivery editorial override — expressive typography without report-like rules. */
+html body[data-page="delivery"] {
+  --de-ink: #152b38;
+  --de-paper: #f7f4ee;
+  --de-blue: #dfeaf7;
+  --de-mint: #dceee6;
+  --de-sand: #f3e5c7;
+  --de-coral: #f6d8cf;
+  background:
+    radial-gradient(circle at 4% 24%, rgba(48, 147, 159, .08), transparent 28%),
+    radial-gradient(circle at 94% 50%, rgba(231, 157, 76, .09), transparent 30%),
+    var(--de-paper) !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles {
+  gap: clamp(12px, 1.5vw, 22px) !important;
+  border: 0 !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span {
+  min-height: 122px !important;
+  padding: 22px 24px !important;
+  border: 0 !important;
+  border-radius: 24px 8px 24px 8px !important;
+  background: rgba(255, 255, 255, .08) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-principles > span:nth-child(2) {
+  transform: none !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization {
+  padding: clamp(76px, 7vw, 118px) clamp(46px, 6vw, 104px) clamp(82px, 7vw, 120px) !important;
+  border: 0 !important;
+  border-radius: 0 0 48px 48px !important;
+  background:
+    radial-gradient(circle at 84% 20%, rgba(99, 186, 172, .16), transparent 32%),
+    #fffdf8 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization::before {
+  content: "01  /  判断" !important;
+  top: 42px !important;
+  right: 6vw !important;
+  color: rgba(31, 125, 127, .5) !important;
+  font-size: 12px !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization > header {
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr) !important;
+  column-gap: clamp(52px, 6vw, 88px) !important;
+  align-items: center !important;
+}
+
+html body[data-page="delivery"] main > #fit .zf-delivery-optimization > header h2 {
+  max-width: 650px !important;
+  font-size: clamp(44px, 4vw, 62px) !important;
+  line-height: 1.13 !important;
+  letter-spacing: -.045em !important;
+  text-wrap: balance !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization > header > p:last-child {
+  max-width: 420px !important;
+  padding-top: 32px !important;
+  font-size: 16px !important;
+  line-height: 2.05 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-equation {
+  gap: 10px 18px !important;
+  max-width: 1080px !important;
+  margin-top: clamp(64px, 7vw, 110px) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: clamp(18px, 1.55vw, 24px) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-equation span {
+  display: block !important;
+  flex-basis: 100% !important;
+  margin: 0 0 12px !important;
+  font-size: clamp(44px, 5.4vw, 82px) !important;
+  letter-spacing: -.055em !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-flow {
+  gap: clamp(18px, 2.2vw, 34px) !important;
+  align-items: start !important;
+  margin-top: clamp(54px, 6vw, 96px) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-flow article,
+html body[data-page="delivery"] .zf-delivery-optimization-flow article:first-child,
+html body[data-page="delivery"] .zf-delivery-optimization-flow article:last-child {
+  min-height: 300px !important;
+  padding: 30px 30px 34px !important;
+  border: 0 !important;
+  border-radius: 36px 12px 36px 12px !important;
+  background: var(--de-sand) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-flow article:nth-child(2) {
+  margin-top: 44px !important;
+  background: var(--de-blue) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-flow article:nth-child(3) {
+  margin-top: 14px !important;
+  background: var(--de-mint) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-flow i {
+  margin-bottom: 46px !important;
+  color: rgba(21, 43, 56, .32) !important;
+  font-family: "Noto Serif SC", serif !important;
+  font-size: 44px !important;
+  line-height: 1 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-optimization-flow strong {
+  font-size: clamp(23px, 1.8vw, 30px) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic,
+html body[data-page="delivery"] .zf-delivery-method,
+html body[data-page="delivery"] .zf-delivery-outputs {
+  width: min(1340px, calc(100vw - 80px)) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic {
+  padding: clamp(74px, 7vw, 118px) clamp(42px, 5vw, 80px) !important;
+  border-radius: 52px 16px 52px 16px !important;
+  background:
+    radial-gradient(circle at 90% 12%, rgba(85, 136, 207, .14), transparent 34%),
+    #f0eee8 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic h2,
+html body[data-page="delivery"] .zf-delivery-method h2 {
+  font-size: clamp(46px, 4vw, 62px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -.045em !important;
+  white-space: normal !important;
+  text-wrap: balance !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic > header {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr) !important;
+  column-gap: clamp(52px, 6vw, 84px) !important;
+  align-items: end !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic > header > p:last-child {
+  max-width: 430px !important;
+  justify-self: end !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-scope {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-scope > p {
+  align-items: flex-end !important;
+  margin-bottom: 30px !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-scope > p strong {
+  max-width: 420px !important;
+  font-family: "Noto Serif SC", serif !important;
+  font-size: clamp(25px, 2vw, 32px) !important;
+  line-height: 1.45 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-scope > div {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  border: 0 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-scope > div > span,
+html body[data-page="delivery"] .zf-delivery-product-scope > div > span:first-child,
+html body[data-page="delivery"] .zf-delivery-product-scope > div > span:last-child {
+  display: grid !important;
+  grid-template-columns: 26px auto !important;
+  flex: 1 1 180px !important;
+  padding: 18px 20px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, .72) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  border: 0 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid article,
+html body[data-page="delivery"] .zf-delivery-product-grid article:first-child,
+html body[data-page="delivery"] .zf-delivery-product-grid article:last-child {
+  min-height: 0 !important;
+  padding: 34px 36px 38px !important;
+  border: 0 !important;
+  border-radius: 12px 34px 12px 34px !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid article:first-child {
+  grid-column: span 6 !important;
+  display: grid !important;
+  grid-template-columns: .42fr 1fr 1fr !important;
+  gap: 32px !important;
+  background: var(--de-sand) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid article:nth-child(2) {
+  grid-column: span 3 !important;
+  background: var(--de-blue) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid article:last-child {
+  grid-column: span 3 !important;
+  background: var(--de-mint) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid article:first-child span,
+html body[data-page="delivery"] .zf-delivery-product-grid article:first-child p {
+  margin: 0 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-grid strong {
+  font-family: "Noto Serif SC", serif !important;
+  font-size: clamp(24px, 1.9vw, 30px) !important;
+  line-height: 1.45 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic > blockquote,
+html body[data-page="delivery"] .zf-delivery-method-rule {
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #173e49 !important;
+  color: #fff !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-product-logic > blockquote span {
+  color: rgba(255,255,255,.68) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method {
+  margin-top: clamp(100px, 9vw, 154px) !important;
+  padding: clamp(82px, 8vw, 126px) clamp(42px, 5vw, 76px) !important;
+  border: 0 !important;
+  border-radius: 16px 52px 16px 52px !important;
+  background: #fffdf8 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-sequence {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  border: 0 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-sequence article {
+  min-height: 250px !important;
+  padding: 34px 36px 38px !important;
+  border: 0 !important;
+  border-radius: 34px 12px 34px 12px !important;
+  background: var(--de-sand) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-sequence article:nth-child(2) {
+  background: var(--de-coral) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-sequence article:nth-child(3) {
+  grid-column: auto !important;
+  margin-left: 0 !important;
+  background: var(--de-mint) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-sequence article::before {
+  display: none !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-sequence span {
+  display: block !important;
+  margin-bottom: 42px !important;
+  font-family: "Noto Serif SC", serif !important;
+  font-size: 42px !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-method-rule {
+  width: 100% !important;
+  margin: 34px 0 0 !important;
+  padding: 18px 30px !important;
+  text-align: center !important;
+}
+
+html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs {
+  gap: 10px !important;
+  padding: 10px !important;
+  border: 0 !important;
+  border-radius: 30px !important;
+  background: rgba(255,255,255,.65) !important;
+}
+
+html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs button,
+html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs button:nth-child(n) {
+  padding: 16px 14px !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  background: transparent !important;
+}
+
+html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs button:hover,
+html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs button.is-active {
+  color: #fff !important;
+  background: #173e49 !important;
+  box-shadow: 0 12px 30px rgba(23, 62, 73, .18) !important;
+}
+
+html body[data-page="delivery"] .delivery-stage-proof {
+  gap: 10px !important;
+  margin: 10px 0 26px !important;
+}
+
+html body[data-page="delivery"] .delivery-stage-proof span {
+  min-height: 38px !important;
+  padding: 9px 16px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  color: #173e49 !important;
+  background: var(--de-mint) !important;
+}
+
+html body[data-page="delivery"] .delivery-stage-proof span:nth-child(2) {
+  background: var(--de-sand) !important;
+}
+
+html body[data-page="delivery"] .delivery-stage-proof span:nth-child(3) {
+  background: var(--de-coral) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-outputs {
+  padding: clamp(76px, 7vw, 118px) clamp(42px, 5vw, 80px) !important;
+  border-radius: 52px 16px 52px 16px !important;
+  background: #e8efec !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-outputs-head h2 {
+  max-width: 980px !important;
+  font-size: clamp(48px, 4.4vw, 70px) !important;
+  line-height: 1.14 !important;
+  letter-spacing: -.045em !important;
+  white-space: normal !important;
+  text-wrap: balance !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-output-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-output-grid article,
+html body[data-page="delivery"] .zf-delivery-output-grid article:first-child,
+html body[data-page="delivery"] .zf-delivery-output-grid article:last-child {
+  position: relative !important;
+  min-height: 280px !important;
+  padding: 36px 38px !important;
+  border: 0 !important;
+  border-radius: 38px 12px 38px 12px !important;
+  overflow: hidden !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-output-grid article:nth-child(2),
+html body[data-page="delivery"] .zf-delivery-output-grid article:nth-child(3) {
+  transform: none !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-output-grid article > span {
+  position: absolute !important;
+  top: 16px !important;
+  right: 22px !important;
+  margin: 0 !important;
+  color: rgba(21,43,56,.08) !important;
+  font-family: "Noto Serif SC", serif !important;
+  font-size: 96px !important;
+  line-height: 1 !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-output-grid strong {
+  position: relative !important;
+  font-family: "Noto Serif SC", serif !important;
+  font-size: clamp(24px, 1.8vw, 30px) !important;
+}
+
+html body[data-page="delivery"] .zf-delivery-output-grid p {
+  position: relative !important;
+  max-width: 440px !important;
+}
+
+@media (max-width: 900px) {
+  html body[data-page="delivery"] .zf-delivery-optimization > header,
+  html body[data-page="delivery"] .zf-delivery-product-logic > header,
+  html body[data-page="delivery"] .zf-delivery-method-intro {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="delivery"] .zf-delivery-optimization > header > p:last-child,
+  html body[data-page="delivery"] .zf-delivery-product-logic > header > p:last-child,
+  html body[data-page="delivery"] .zf-delivery-method-intro > p:last-child {
+    grid-column: 1 !important;
+    margin-top: 24px !important;
+  }
+
+  html body[data-page="delivery"] .zf-delivery-optimization-flow,
+  html body[data-page="delivery"] .zf-delivery-method-sequence,
+  html body[data-page="delivery"] .zf-delivery-output-grid,
+  html body[data-page="delivery"] .zf-delivery-product-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body[data-page="delivery"] .zf-delivery-product-grid article,
+  html body[data-page="delivery"] .zf-delivery-product-grid article:first-child,
+  html body[data-page="delivery"] .zf-delivery-product-grid article:nth-child(2),
+  html body[data-page="delivery"] .zf-delivery-product-grid article:last-child,
+  html body[data-page="delivery"] .zf-delivery-method-sequence article:nth-child(3) {
+    grid-column: 1 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  html body[data-page="delivery"] .zf-delivery-product-grid article:first-child {
+    display: block !important;
+  }
+
+  html body[data-page="delivery"] .zf-delivery-optimization-flow article:nth-child(n),
+  html body[data-page="delivery"] .zf-delivery-output-grid article:nth-child(n) {
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+
+  html body[data-page="delivery"] .zf-delivery-product-logic,
+  html body[data-page="delivery"] .zf-delivery-method,
+  html body[data-page="delivery"] .zf-delivery-outputs {
+    width: calc(100vw - 28px) !important;
+    padding: 48px 22px !important;
+    border-radius: 28px 10px 28px 10px !important;
+  }
+}

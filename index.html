@@ -30,9 +30,14 @@
           "basement-sport-layer": "basement-system",
           "delivery-page": "delivery",
           delivery: "delivery",
+          "delivery-outputs": "delivery",
+          constraints: "delivery",
+          "delivery-brief": "delivery",
           integration: "delivery",
           "team-execution": "delivery",
+          "delivery-commissioning": "delivery",
           process: "delivery",
+          "delivery-result": "delivery",
           "project-access": "project-access",
           "project-access-contact": "project-access",
           "project-access-network": "project-access",
@@ -4775,7 +4780,7 @@
       html body[data-page="systems"] main > section:not(#climate):not(#environment-problem):not(#environment-logic):not(#systems),
       html body[data-page="water-supply-drainage"] main > section:not(#water-problem):not(#water-logic):not(#water-system-simulator-entry):not(#water-supply-drainage),
       html body[data-page="basement-system"] main > section:not(#basement-definition):not(#basement-problem):not(#basement-logic):not(#basement-lifting):not(#basement-sport-layer):not(#basement-reading-layer):not(#basement-dining-layer):not(#basement-tea-room-layer):not(#basement-cigar-layer):not(#basement-wine-layer):not(#basement-game-layer):not(#basement-party-layer):not(#basement-meditation-layer):not(#basement-summary),
-      html body[data-page="delivery"] main > section:not(#fit):not(#constraints):not(#integration):not(#delivery):not(#team-execution):not(#process) {
+      html body[data-page="delivery"] main > section:not(#fit):not(#delivery-product-logic):not(#delivery-outputs):not(#delivery-method):not(#constraints):not(#delivery-brief):not(#integration):not(#delivery):not(#team-execution):not(#delivery-commissioning):not(#process):not(#delivery-result) {
         display: none !important;
       }
 
@@ -4925,7 +4930,7 @@
       html[data-page="systems"] body main > section:not(#climate):not(#environment-problem):not(#environment-logic):not(#systems),
       html[data-page="water-supply-drainage"] body main > section:not(#water-problem):not(#water-logic):not(#water-system-simulator-entry):not(#water-supply-drainage),
       html[data-page="basement-system"] body main > section:not(#basement-definition):not(#basement-problem):not(#basement-logic):not(#basement-lifting):not(#basement-sport-layer):not(#basement-reading-layer):not(#basement-dining-layer):not(#basement-tea-room-layer):not(#basement-cigar-layer):not(#basement-wine-layer):not(#basement-game-layer):not(#basement-party-layer):not(#basement-meditation-layer):not(#basement-summary),
-      html[data-page="delivery"] body main > section:not(#fit):not(#constraints):not(#integration):not(#delivery):not(#team-execution):not(#process) {
+      html[data-page="delivery"] body main > section:not(#fit):not(#delivery-product-logic):not(#delivery-outputs):not(#delivery-method):not(#constraints):not(#delivery-brief):not(#integration):not(#delivery):not(#team-execution):not(#delivery-commissioning):not(#process):not(#delivery-result) {
         display: none !important;
       }
 
@@ -6085,10 +6090,11 @@
       }
     </style>
     <link rel="stylesheet" href="home-visual-system.css?v=20260720-home-type-v3" />
-    <link rel="stylesheet" href="page-cohesion-system.css?v=20260721-direct-layout-v37" />
+    <link rel="stylesheet" href="page-cohesion-system.css?v=20260724-delivery-closed-loop-v43" />
     <link rel="stylesheet" href="air-page-hero-lock.css?v=20260720-air-hero-v2" />
     <link rel="stylesheet" href="navigation-mega-lock.css?v=20260720-nav-mega-v1" />
     <link rel="stylesheet" href="weather-live-status.css?v=20260720-weather-status-v1" />
+    <link rel="stylesheet" href="delivery-editorial-v1.css?v=20260724-symmetry-audit-v3" />
   </head>
   <body>
     <script>
@@ -6107,6 +6113,14 @@
           "basement-system": "basement-system",
           "delivery-page": "delivery",
           delivery: "delivery",
+          "delivery-outputs": "delivery",
+          constraints: "delivery",
+          "delivery-brief": "delivery",
+          integration: "delivery",
+          "team-execution": "delivery",
+          "delivery-commissioning": "delivery",
+          process: "delivery",
+          "delivery-result": "delivery",
           "project-access": "project-access"
         };
         const key = location.hash.replace("#", "") || "home";
@@ -8429,7 +8443,7 @@
       <section class="fit section-shell cinematic-panel delivery-prelude" id="fit">
         <div class="section-copy reveal delivery-hero-copy">
           <p class="eyebrow">Design Before Decoration</p>
-          <h2>先定义生活<br />再设计系统</h2>
+          <h2>先定义生活，再设计系统</h2>
           <p class="delivery-hero-lead">住宅的舒适、健康、安静与长期稳定，不是装修结束前补上的设备配置，而是从一开始就进入建筑、空间和生活逻辑的基础判断。</p>
           <blockquote>看不见的秩序，应该先于看得见的表面成立。</blockquote>
           <div class="delivery-hero-principles" aria-label="设计阶段的三项核心判断">
@@ -8439,89 +8453,167 @@
           </div>
         </div>
         <figure class="delivery-scene-media reveal">
-          <img src="images/generated-delivery-scenes-v3/design-before-everything-revit-cfd-v2.webp" alt="三屏 MEP 设计工位展示计算表、CAD 平面和 BIM 管线综合" loading="eager" decoding="async" fetchpriority="high" />
+          <img src="images/generated-delivery-residential-v1/delivery-hero-engineering-studio-v2.webp" alt="住宅机电团队通过负荷计算、气流模拟与 BIM 综合设计 316L 给水、PP 排水和暖通系统" width="1858" height="846" loading="eager" decoding="async" fetchpriority="high" />
         </figure>
+        <div class="zf-delivery-optimization reveal" aria-labelledby="delivery-optimization-title">
+          <header>
+            <p class="eyebrow">Design Is Optimization</p>
+            <h2 id="delivery-optimization-title">在给定的极限条件下，求住宅机电的最优解</h2>
+            <p>住宅设计从来不是在无限空间和无限预算里选择设备。家庭需求、气候、围护、层高、设备位置、声学目标、参考预算与维护条件共同限定边界，设计能力体现在这些条件同时存在时，仍能找到可建造、可验证、可长期运行的系统解。</p>
+          </header>
+          <p class="zf-delivery-optimization-equation"><span>一户一方案</span><b>不是</b>套用品牌与模块，<b>而是</b>在需求、建筑条件与参考预算内，用专业判断完成定制。</p>
+          <div class="zf-delivery-optimization-flow" aria-label="从给定条件到最优解的设计过程">
+            <article>
+              <i>01</i>
+              <strong>读懂这一户</strong>
+              <p>家庭成员、生活方式、身体感受、湖南气候、建筑边界与参考预算共同构成设计起点。</p>
+            </article>
+            <article>
+              <i>02</i>
+              <strong>用专业完成定制</strong>
+              <p>不按品牌预设系统路线，而是在负荷、容量、路径、噪声、能耗、可靠性和施工界面之间完成权衡。</p>
+            </article>
+            <article>
+              <i>03</i>
+              <strong>适合，就是最优</strong>
+              <p>方案本身没有高低之分，也不以设备多少、品牌或价格定义优劣；只判断它是否适合这套住宅，并能否长期兑现目标。</p>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <section class="zf-delivery-outputs section-shell" id="delivery-outputs" aria-labelledby="delivery-outputs-title">
-        <header class="zf-delivery-outputs-head reveal">
-          <p class="eyebrow">Visible Deliverables</p>
-          <h2 id="delivery-outputs-title">每一个判断，都要变成可以被施工、校核与维护的成果</h2>
-          <p>交付不是一叠图纸，而是一套把生活目标转译为现场秩序的工作文件。</p>
+      <section class="zf-delivery-product-logic section-shell" id="delivery-product-logic" aria-labelledby="delivery-product-title">
+        <header class="reveal">
+          <p class="eyebrow">Technology Service, Not Brand Sales</p>
+          <h2 id="delivery-product-title">产品不是方案的起点，适合这一户的技术路径才是。</h2>
+          <p>住宅系统以 316L 不锈钢生活给水、PP 生活排水与暖通为明确技术边界；设备、阀件、控制与辅材仍需结合这一户的真实条件完成专业筛选，而不是由品牌或固定模块预设答案。</p>
         </header>
-        <div class="zf-delivery-output-grid reveal">
-          <article><span>01</span><strong>需求与风险诊断</strong><p>住宅条件、生活方式、环境风险与系统目标。</p></article>
-          <article><span>02</span><strong>系统方案说明</strong><p>空气、水、排水、地下空间与控制策略。</p></article>
-          <article><span>03</span><strong>设备与参数表</strong><p>能力边界、运行区间与关键选型依据。</p></article>
-          <article><span>04</span><strong>机电综合图</strong><p>管线、设备、检修与建筑空间的协同关系。</p></article>
-          <article><span>05</span><strong>节点深化图</strong><p>保温、气密、排水、降噪与安装关键节点。</p></article>
-          <article><span>06</span><strong>施工交底清单</strong><p>现场顺序、专业界面与不可被省略的条件。</p></article>
-          <article><span>07</span><strong>调试验收记录</strong><p>风量、温湿度、压力、噪声和控制逻辑验证。</p></article>
-          <article><span>08</span><strong>运行维护档案</strong><p>耗材、周期、报警与长期优化依据。</p></article>
+        <div class="zf-delivery-product-scope reveal" aria-label="住宅机电产品筛选的完整范围">
+          <p><strong>产品的范围，远不止一台设备。</strong><span>设备、管材管件、阀门、控制与辅材共同决定系统是否可靠。</span></p>
+          <div>
+            <span><i>01</i><strong>设备</strong><small>能力 · 能效 · 噪声 · 维护</small></span>
+            <span><i>02</i><strong>管材管件</strong><small>材质 · 压温 · 卫生 · 连接</small></span>
+            <span><i>03</i><strong>阀门</strong><small>调节 · 平衡 · 隔断 · 检修</small></span>
+            <span><i>04</i><strong>控制</strong><small>传感 · 协议 · 逻辑 · 联动</small></span>
+            <span><i>05</i><strong>辅材</strong><small>保温 · 支吊架 · 减振 · 密封</small></span>
+          </div>
         </div>
+        <div class="zf-delivery-product-grid reveal">
+          <article>
+            <span>01 / FAIR CHOICE</span>
+            <strong>保留公平选择，而不是先定品牌再解释方案</strong>
+            <p>在相同需求、建筑条件、参考预算、性能目标和维护要求下比较不同技术路径，让选择依据可以被看见。</p>
+            <small>全球主流暖通品牌 · 行业专业品牌 · 多路径比选</small>
+          </article>
+          <article>
+            <span>02 / PRODUCT SCREENING</span>
+            <strong>我们不生产产品，专业价值在于筛选与适配</strong>
+            <p>围绕 316L 给水、PP 排水与住宅暖通，从设备、管材管件、阀门、控制和辅材的性能、兼容性、施工条件与长期服务逐项筛选。</p>
+            <small>316L 给水 · PP 排水 · 住宅暖通 · 长期可靠性</small>
+          </article>
+          <article>
+            <span>03 / ENGINEERING APPLICATION</span>
+            <strong>好产品只有被正确应用，才能成为好系统</strong>
+            <p>产品选型必须进入负荷、水力、风量和流量计算，进入 BIM 与节点设计，接受规范施工、系统调试和实测结果的共同验证。</p>
+            <small>国家标准与规范 · 施工工艺 · 标准调试 · 实测记录</small>
+          </article>
+        </div>
+        <figure class="delivery-scene-media reveal">
+          <img src="images/generated-delivery-residential-v1/delivery-product-selection-library-v1.webp" alt="工程师对住宅 316L 给水、PP 排水与暖通材料进行系统化技术筛选" width="1672" height="941" loading="lazy" decoding="async" />
+        </figure>
+        <blockquote class="reveal"><strong>我们的定位是技术服务公司，不是品牌代理营销公司。</strong><span>选择产品、应用技术、组织施工并验证结果，才是完整责任。</span></blockquote>
+      </section>
+
+      <section class="zf-delivery-method" id="delivery-method" aria-labelledby="delivery-method-title">
+        <div class="zf-delivery-method-intro reveal">
+          <p class="eyebrow">Design Directs Construction</p>
+          <h2 id="delivery-method-title">设计指导施工，施工还原设计</h2>
+          <p>这句话定义了住宅机电从图纸走向居住结果的责任关系。设计以现行国家标准和工程规范为底线，把目标、参数、空间边界与关键节点表达成现场能够执行和检查的条件；施工再通过放样、样板、过程检查、隐蔽验收与标准调试逐项还原。</p>
+        </div>
+        <div class="zf-delivery-method-sequence reveal" aria-label="从设计到运行验证的方法闭环">
+          <article>
+            <span>01</span>
+            <strong>设计把目标变成条件</strong>
+            <p>从生活需求和建筑条件出发，完成负荷、容量、路径、控制与专业界面的计算和判断。</p>
+            <small>负荷计算 · 系统参数 · 综合图 · 关键节点</small>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>施工把条件变成现场</strong>
+            <p>在封闭之前完成定位、样板、界面与偏差复核，让每一项隐蔽关系都有检查依据。</p>
+            <small>放样复核 · 样板确认 · 过程检查 · 隐蔽验收</small>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>调试让结果回到设计</strong>
+            <p>以风量、水力、温湿度、噪声和控制逻辑验证运行结果，而不是以设备通电代替交付。</p>
+            <small>系统平衡 · 逻辑验证 · 性能记录 · 运维档案</small>
+          </article>
+        </div>
+        <p class="zf-delivery-method-rule reveal">现场变更必须回到设计复核，设计判断必须接受运行结果检验。</p>
       </section>
 
       <section class="constraints section-shell cinematic-panel delivery-prelude" id="constraints">
         <div class="section-copy reveal">
-          <p class="eyebrow">Define The Life First</p>
-          <h2>设计不是先选设备，而是先定义这个家要如何服务人的呼吸、用水、停留与日常。</h2>
-          <p>好的住宅机电，从来不是品牌、产品和材料的堆叠，而是先回答一个更根本的问题: 这个住宅要把怎样的身体感受和生活秩序留给人。</p>
-          <p>这些内容先被说清楚，后面的系统选择、容量判断、路径组织和控制逻辑才会有真正依据。否则看起来是在做设计，实际上只是把零散设备拼成一套表面完整的方案。</p>
-          <blockquote>系统的第一层意义，不是设备先进，而是让这个家适合人长期居住。</blockquote>
+          <p class="eyebrow">01 / Needs &amp; Boundaries</p>
+          <h2>先把这一户住宅的需求与边界定义清楚，设计才有准确起点。</h2>
+          <p>家庭成员、生活方式、健康关注、湖南气候、建筑条件、参考预算与长期维护要求共同构成输入。系统路线不由品牌预设，而由这些真实条件推导。</p>
+          <div class="delivery-stage-proof" aria-label="需求与边界阶段的工作内容"><span>家庭需求访谈</span><span>建筑条件核验</span><span>参考预算边界</span></div>
+          <blockquote>一户一方案，不是增加设备，而是让每一项选择都适合这一户。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/generated-delivery-scenes-v3/define-good-mep.webp" alt="业主、设计师与 MEP 顾问围绕住宅图纸和生活需求进行定义会议" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-needs-and-boundaries-v1.webp" alt="家庭成员与住宅机电工程师围绕平面图定义生活需求和系统边界" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>
 
       <section class="section-shell cinematic-panel delivery-prelude" id="integration">
         <div class="section-copy reveal">
-          <p class="eyebrow">Systems Enter Architecture</p>
-          <h2>真正的设计，不是把系统附着在住宅里，而是让系统从一开始进入建筑、空间和生活动线。</h2>
-          <p>舒适不是被一点点堆出来的，而是建筑、机电、室内、景观与使用场景的顺序被理清之后，自然显现出来的结果。</p>
-          <p>空气、水、排水、设备间、检修边界、吊顶关系与噪声控制，都属于同一套判断。设计阶段要做的不是简单确认“可不可做”，而是提前看见那些最终会影响居住感受的隐蔽关系。</p>
-          <blockquote>好的住宅，并不是设备很多的住宅，而是身体进去之后愿意慢慢放松下来的住宅。</blockquote>
+          <p class="eyebrow">03 / Engineering Calculation &amp; BIM</p>
+          <h2>设计不是经验估算，而是用专业计算与数字模型把判断做实。</h2>
+          <p>以 InstalSystem 5、Revit、SketchUp 等专业工具完成热负荷、水力、管径、阻力、风量与流量计算，并通过 BIM 建模校核净高、检修空间和专业碰撞，让设备选型与管线路径都有依据。</p>
+          <div class="delivery-stage-proof" aria-label="计算与建模阶段的工作内容"><span>负荷与水力计算</span><span>风量流量校核</span><span>BIM 碰撞检查</span></div>
+          <blockquote>计算决定能力边界，模型提前发现冲突，图纸才有资格指导现场。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/generated-delivery-scenes-v3/order-of-comfort.webp" alt="团队在 CFD 工作站前检查住宅气流、温度和舒适度模拟结果" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-engineering-calculation-bim-v1.webp" alt="工程师通过计算与 BIM 协同设计住宅 316L 给水、PP 排水和暖通系统" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>
 
       <section class="delivery section-shell visual-story cinematic-panel" id="delivery">
         <div class="section-copy reveal">
-          <p class="eyebrow">Why Many Projects Lose Their Original Quality</p>
-          <h2>很多住宅不是没有投入，而是进入现场之后，最初的设计判断没有被完整守住。</h2>
-          <p>同样的设备、同样的品牌，甚至同样的图纸，放进不同的项目里，最后的体感可以完全不同。差异往往不在某一个单点，而在设计、勘察、施工组织、节点理解和后期调试之间，是否始终维持同一套标准。</p>
-          <p>一旦这条链条开始松动，最先失去的不是表面的完成度，而是风感、噪声、湿度、排水气味、热水等待、设备维护和长期稳定性这些真正影响生活的部分。</p>
-          <blockquote>设计如果不能被守到现场，它就只是停留在纸面上的一种理想。</blockquote>
+          <p class="eyebrow">04 / Drawings &amp; Technical Briefing</p>
+          <h2>计算结果必须被翻译成现场看得懂、做得到、查得出的施工条件。</h2>
+          <p>综合点位、管线标高、设备基础、检修边界、控制逻辑与关键节点被落实到施工图、BIM 模型、节点详图和交底清单中，并通过样板确认统一做法。</p>
+          <div class="delivery-stage-proof" aria-label="图纸与交底阶段的工作内容"><span>机电综合图</span><span>关键节点详图</span><span>交底与样板确认</span></div>
+          <blockquote>设计指导施工，首先意味着设计必须给出足够清楚的现场语言。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/generated-delivery-scenes-v3/delivery-gives-design-weight.webp" alt="装修中的住宅现场团队核对图纸和平板上的 MEP 路由叠图" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-technical-briefing-v1.webp" alt="住宅机电团队对照图纸、BIM 与 316L 给水、PP 排水、暖通实体样板进行技术交底" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>
 
       <section class="section-shell cinematic-panel delivery-prelude" id="team-execution">
         <div class="section-copy reveal">
-          <p class="eyebrow">Team Keeps The Standard Alive</p>
-          <h2>图纸给出方向，真正把结果做出来的，是一支能长期守住标准的团队。</h2>
-          <p>住宅机电的复杂，不在某一台设备，而在它横跨需求理解、现场勘察、方案推演、计算校核、管线组织、施工节点、检查、调试和后续维护。</p>
-          <p>每一步都需要有人真正看见问题，也真正对结果负责。隐蔽工程最后比拼的不是谁说得更专业，而是谁能够把复杂关系组织成一种稳定秩序。</p>
-          <blockquote>隐蔽工程的竞争，本质上不是设备的竞争，而是团队判断力与执行秩序的竞争。</blockquote>
+          <p class="eyebrow">05 / Direct Construction Team</p>
+          <h2>优秀设计由自有施工团队还原，责任不在层层转包中被稀释。</h2>
+          <p>设计工程师、项目负责人和专业施工团队围绕同一套图纸与标准工作；从放样、材料进场、工序检查到隐蔽验收，成熟的工程管理把人员、进度、界面和质量组织成可追溯的现场秩序。</p>
+          <div class="delivery-stage-proof" aria-label="自有施工阶段的工作内容"><span>自有专业团队</span><span>工序与界面管理</span><span>巡检与隐蔽验收</span></div>
+          <blockquote>施工还原设计，依靠的不是口号，而是同一团队对标准持续负责。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/generated-delivery-scenes-v3/people-make-the-difference-bim-real-v2.webp" alt="多角色团队在会议室围绕 BIM 管线模型、计算表和图纸协同讨论" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-direct-construction-team-v1.webp" alt="自有住宅机电团队按图压接 316L 给水、安装 PP 排水并固定暖通风管" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>
 
       <section class="process section-shell visual-story media-first process-story cinematic-panel" id="process">
         <div class="section-copy reveal">
-          <p class="eyebrow">From Need To Reality</p>
-          <h2>设计的价值，不在图纸本身，而在于它最后能否被安静、准确、长久地还原进生活。</h2>
-          <p>从理解需求、判断条件，到方案、计算、模拟、施工配合与现场确认，真正重要的工作，几乎都发生在那些未来会被藏起来的地方。</p>
-          <p>也正因为它们会消失在表面之后，所以在消失之前，更要被认真看清。当这一整条路径被守住，最后留下的不是某一张图纸，而是一种稳定的居住结果。</p>
-          <blockquote>设计定义秩序，交付守住秩序，而真正被记住的，是生活因此变得更完整。</blockquote>
+          <p class="eyebrow">07 / Safety, Protection &amp; Records</p>
+          <h2>专业交付不仅看隐蔽后的结果，也看施工过程是否安全、文明、可追溯。</h2>
+          <p>进场交底、临电与动火管理、粉尘控制、材料分区、成品保护和每日收尾共同守住住宅现场；关键工序、隐蔽节点、压力测试与变更复核均留下影像和记录。</p>
+          <div class="delivery-stage-proof" aria-label="安全文明阶段的工作内容"><span>安全技术交底</span><span>文明施工与成品保护</span><span>隐蔽影像与变更留痕</span></div>
+          <blockquote>看不见的工程，更需要用看得见的过程证明。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/generated-delivery-scenes-v3/from-need-to-reality.webp" alt="未封板前的住宅工地中团队核对图纸、检查表和现场标记" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-safe-clean-site-v1.webp" alt="住宅机电施工现场完成材料分区、成品保护、集尘作业、压力测试与影像留档" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
         <p class="section-bridge reveal">所以，设计与交付在这里并不是两件分开的事：设计先把人的健康、舒适、安静与长期稳定想清楚，交付再把这些判断安静留进房子里。真正完成之后，被记住的不会是图纸和施工，而是空气自然、水路有序、排水安静，生活因此被稳稳托住。</p>
@@ -8529,37 +8621,57 @@
 
       <section class="section-shell cinematic-panel delivery-prelude" id="delivery-brief">
         <div class="section-copy reveal">
-          <p class="eyebrow">Project Start</p>
-          <h2>项目开始，不是确认设备，而是先把住宅条件、图纸和生活愿望放到同一张桌面上。</h2>
-          <p>朝向、围护、层高、家庭成员、使用节奏与未来的维护方式，都会改变系统判断的起点。真正有价值的前期工作，是把这些条件逐一看清，而不是急着给出一张设备清单。</p>
-          <blockquote>好的项目启动，是让后面每一个专业决定都有来处。</blockquote>
+          <p class="eyebrow">02 / Survey &amp; Data Collection</p>
+          <h2>现场勘察不是简单量尺寸，而是把设计所需的真实条件收集完整。</h2>
+          <p>复核原始图纸、结构与围护，测量层高、竖井、设备间和管线路径，并核对电力、给排水、室外机位、噪声敏感区及其他专业接口，形成基础数据与风险清单。</p>
+          <div class="delivery-stage-proof" aria-label="现场勘察阶段的工作内容"><span>图纸与现场复核</span><span>空间和机位测量</span><span>风险与界面清单</span></div>
+          <blockquote>数据不完整，后面的计算越精细，偏差也可能越确定。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/project-flow-start.webp" alt="顾问与业主围绕住宅平面图、材料和生活需求进行项目启动沟通" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-site-survey-v1.webp" alt="工程师在住宅毛坯现场使用激光测距与平板复核层高、梁位和设备路径" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>
 
       <section class="section-shell cinematic-panel delivery-prelude" id="delivery-commissioning">
         <div class="section-copy reveal">
-          <p class="eyebrow">Commissioning In Real Life</p>
-          <h2>交付之前，每一条空气、水和控制路径，都要在真实运行里被验证。</h2>
-          <p>调试不是设备亮起来的那一刻，而是风量、温湿度、噪声、压差与控制逻辑逐项回到预期的过程。只有现场结果和设计目标一致，系统才真正开始服务生活。</p>
-          <blockquote>验收不是结束，而是长期稳定运行的第一份依据。</blockquote>
+          <p class="eyebrow">06 / Tools, Measurement &amp; Commissioning</p>
+          <h2>专业工具保证施工精度，检测仪器让运行结果可以被验证。</h2>
+          <p>施工按工序配置喜利得、RIDGID、Milwaukee、DEWALT、Makita 等专业工具；调试与验收使用声级计、热成像仪、温湿度记录仪、风量罩、差压仪和超声波流量计，并完成 316L 给水压力与流量复核、PP 排水通球和灌水检查，逐项验证暖通、给水、排水与控制逻辑。</p>
+          <div class="delivery-stage-proof" aria-label="检测与调试阶段的工作内容"><span>专业施工工具</span><span>暖通与给水实测</span><span>PP 排水通球灌水</span></div>
+          <blockquote>设备通电不等于交付，实测结果回到设计目标才算完成。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/doas-project-delivery-commissioning-20260718.jpg" alt="工程师在已完成的住宅中检测系统运行状态并核对调试数据" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-measurement-commissioning-v1.webp" alt="工程师使用风量罩和超声波流量计验证住宅暖通与 316L 给水系统" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>
 
       <section class="section-shell cinematic-panel delivery-prelude" id="delivery-result">
         <div class="section-copy reveal">
-          <p class="eyebrow">The Result Lives Here</p>
-          <h2>最后交付的不是一套设备，而是一种能被长期感受、却不必被看见的生活状态。</h2>
-          <p>当空气、水、温湿度、安静与维护秩序都被妥善组织，住宅才能把复杂系统退回背景，让光线、空间与日常重新成为主角。</p>
-          <blockquote>真正成熟的系统，会让居住者只记得生活本身。</blockquote>
+          <p class="eyebrow">08 / Handover &amp; After-sales</p>
+          <h2>交付不是离场，而是把系统带入长期稳定运行的开始。</h2>
+          <p>竣工图、设备参数、调试记录、隐蔽影像、保修资料和维护要求形成完整档案；使用培训、周期巡检、故障响应与后续优化让问题有依据可查、有人持续负责。</p>
+          <div class="delivery-stage-proof" aria-label="售后运维阶段的工作内容"><span>竣工与调试档案</span><span>使用培训和维护计划</span><span>巡检、响应与持续优化</span></div>
+          <blockquote>真正成熟的系统，不只在交付当天成立，也在多年运行后保持秩序。</blockquote>
           <figure class="delivery-scene-media reveal">
-            <img src="images/design-delivery-wide-v2.webp" alt="系统稳定运行后的开阔高端住宅生活场景" loading="lazy" />
+            <img src="images/generated-delivery-residential-v1/delivery-aftercare-operation-v1.webp" alt="工程师在住宅交付后复测运行状态并向住户说明竣工档案和维护计划" width="1536" height="1024" loading="lazy" decoding="async" />
           </figure>
+        </div>
+      </section>
+
+      <section class="zf-delivery-outputs section-shell" id="delivery-outputs" aria-labelledby="delivery-outputs-title">
+        <header class="zf-delivery-outputs-head reveal">
+          <p class="eyebrow">Visible Deliverables</p>
+          <h2 id="delivery-outputs-title">让每一个判断，都成为可以被验证的交付成果</h2>
+          <p>交付不是一叠图纸，而是一套把需求、计算、施工与运行结果连接起来的完整依据。</p>
+        </header>
+        <figure class="delivery-scene-media reveal">
+          <img src="images/generated-delivery-residential-v1/delivery-visible-deliverables-v1.webp" alt="住宅 316L 给水、PP 排水与暖通系统从计算图纸到调试运维的完整交付证据链" width="1672" height="941" loading="lazy" decoding="async" />
+        </figure>
+        <div class="zf-delivery-output-grid reveal">
+          <article><span>01</span><div><strong>需求、边界与方案</strong><p>从住宅条件、生活方式与环境风险出发，在多条技术路径中形成适合这一户的系统方案。</p><small>需求诊断 · 多路径比选 · 系统方案说明</small></div></article>
+          <article><span>02</span><div><strong>计算、选型与设计</strong><p>把能力边界、产品筛选和空间关系落实为有计算依据、可复核的设计文件。</p><small>负荷与水力计算 · 选型参数 · BIM 综合</small></div></article>
+          <article><span>03</span><div><strong>交底、施工与记录</strong><p>明确关键节点、专业界面与现场顺序，让设计判断在自有团队的施工中被完整还原。</p><small>节点深化 · 施工交底 · 隐蔽验收记录</small></div></article>
+          <article><span>04</span><div><strong>调试、验收与运维</strong><p>用暖通实测、316L 给水压力与流量复核、PP 排水通球灌水检查验证结果，并为长期维护留下完整依据。</p><small>系统实测 · 给排水验收 · 竣工档案 · 维护计划</small></div></article>
         </div>
       </section>
 
@@ -8739,25 +8851,13 @@
       </section>
     </main>
 
-    <footer class="site-footer-premium" aria-labelledby="footer-signature-title">
-      <section class="footer-signature-band">
-        <div class="footer-signature-copy">
-          <p>INVISIBLE ORDER · PRECISE LIVING</p>
-          <h2 id="footer-signature-title">把复杂留在系统里，<br />把安静还给生活</h2>
-        </div>
-        <div class="footer-signature-principles" aria-label="泽丰住宅机电服务原则">
-          <span><small>01</small><strong>先理解生活</strong><em>再定义系统目标</em></span>
-          <span><small>02</small><strong>把专业做深</strong><em>让复杂隐于空间</em></span>
-          <span><small>03</small><strong>对结果负责</strong><em>从设计走到长期运行</em></span>
-        </div>
-      </section>
-
+    <footer class="site-footer-premium" aria-labelledby="footer-brand-title">
       <div class="footer-premium-grid">
         <section class="footer-premium-brand" aria-label="关于泽丰">
           <div class="footer-premium-lockup">
             <img src="images/zefeng-logo-mark.webp" alt="" width="700" height="512" decoding="async" />
             <span>
-              <strong>ZEFENG MEP</strong>
+              <strong id="footer-brand-title">ZEFENG MEP</strong>
               <small>HIGH-END RESIDENTIAL MEP SYSTEMS</small>
             </span>
           </div>
@@ -8798,9 +8898,9 @@
     </footer>
 
     <noscript>请启用 JavaScript 查看完整的系统卡片、露点体感工具与折叠内容。</noscript>
-    <script src="script.js?v=20260720-scene-browser-v10" defer></script>
+    <script src="script.js?v=20260724-delivery-residential-v19" defer></script>
     <script src="page-cohesion-runtime.js?v=20260720-scene-browser-v14" defer></script>
-    <script src="global-structure-v1.js?v=20260721-direct-layout-v20" defer></script>
+    <script src="global-structure-v1.js?v=20260724-delivery-closed-loop-v25" defer></script>
     <script>
       (() => {
         const desktopQuery = window.matchMedia("(min-width: 1280px)");
@@ -9350,6 +9450,9 @@
 
         const scheduleDesktopVisualLock = (mode = "default") => {
           clearDesktopVisualLockTimers();
+          // The delivery route has its own editorial layout lock. The legacy
+          // desktop pass otherwise overwrites it several times after first load.
+          if (document.body.dataset.page === "delivery") return;
           const delays =
             mode === "route"
               ? [0, 140]

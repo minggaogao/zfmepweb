@@ -1642,7 +1642,20 @@ const pageRoutes = {
     "basement-meditation-layer",
     "basement-summary"
   ],
-  delivery: ["fit", "constraints", "integration", "delivery", "team-execution", "process"],
+  delivery: [
+    "fit",
+    "delivery-product-logic",
+    "delivery-outputs",
+    "delivery-method",
+    "constraints",
+    "delivery-brief",
+    "integration",
+    "delivery",
+    "team-execution",
+    "delivery-commissioning",
+    "process",
+    "delivery-result"
+  ],
   "project-access": ["project-access"]
 };
 
@@ -1652,6 +1665,11 @@ const routeAliases = {
   air: "systems",
   water: "water-supply-drainage",
   "delivery-page": "delivery",
+  "delivery-outputs": "delivery",
+  "delivery-method": "delivery",
+  "delivery-stages": "delivery",
+  constraints: "delivery",
+  "delivery-brief": "delivery",
   "environment-problem": "systems",
   "environment-logic": "systems",
   "air-feeling-bridge": "systems",
@@ -1665,7 +1683,9 @@ const routeAliases = {
   "basement-sport-layer": "basement-system",
   integration: "delivery",
   "team-execution": "delivery",
+  "delivery-commissioning": "delivery",
   process: "delivery",
+  "delivery-result": "delivery",
   "project-access-contact": "project-access",
   "project-access-network": "project-access",
   "project-access-expertise-title": "project-access"
@@ -1721,6 +1741,10 @@ const initPageRouter = () => {
   };
 
   const refreshRouteTypography = () => {
+    // The delivery route is finalized by global-structure-v1.js after routing.
+    // Its legacy typography pass removes the editorial inline layout on the
+    // next frame, which makes a direct first load differ from a refresh.
+    if (document.body.dataset.page === "delivery") return;
     if (typeof applyGlobalTypographyLock !== "function") return;
     applyGlobalTypographyLock();
     if (typeof applyPageCohesionInlineLock === "function") {
@@ -3257,7 +3281,7 @@ const pageStoryRailData = {
   },
   delivery: {
     label: "设计交付",
-    items: [["#fit", "前期判断"], ["#delivery-outputs", "交付成果"], ["#delivery-stages", "工作阶段"], ["#process", "运行结果"]]
+    items: [["#fit", "设计起点"], ["#delivery-outputs", "交付成果"], ["#delivery-method", "设计与施工"], ["#delivery-stages", "工作阶段"]]
   },
   "project-access": {
     label: "专属方案",
@@ -3288,11 +3312,15 @@ const initPageStoryRail = () => {
       main.prepend(rail);
     }
 
+    const currentHref = `#${raw}`;
+    const matchedIndex = data.items.findIndex(([href]) => href === currentHref);
+    const activeIndex = matchedIndex >= 0 ? matchedIndex : 0;
+
     rail.dataset.tone = page;
     rail.innerHTML = `
       <strong>${data.label}</strong>
       <div>
-        ${data.items.map(([href, label], index) => `<a href="${href}"><i>${String(index + 1).padStart(2, "0")}</i><span>${label}</span></a>`).join("")}
+        ${data.items.map(([href, label], index) => `<a href="${href}"${index === activeIndex ? ' class="is-active" aria-current="location"' : ""}><i>${String(index + 1).padStart(2, "0")}</i><span>${label}</span></a>`).join("")}
       </div>`;
   };
 
@@ -3405,6 +3433,7 @@ const initNav = () => {
   desktopTriggers.forEach((trigger) => {
     trigger.addEventListener("mouseenter", () => openMega(trigger));
     trigger.addEventListener("focus", () => openMega(trigger));
+    trigger.addEventListener("click", () => closeMega(true));
     trigger.addEventListener("keydown", (event) => {
       if (event.key === "ArrowDown") {
         event.preventDefault();
@@ -5760,6 +5789,9 @@ applyPageCohesionInlineLock();
 $$("[data-temp], [data-rh], [data-dew-input]").forEach((input) => input.addEventListener("input", updateDewTool));
 let typographyLockTimer = null;
 const scheduleTypographyLock = (delay = 60) => {
+  // The delivery route is owned by global-structure-v1.js. Reapplying this
+  // legacy lock after load makes its first paint differ from the settled page.
+  if (document.body.dataset.page === "delivery") return;
   if (typographyLockTimer) {
     window.clearTimeout(typographyLockTimer);
   }
