@@ -18,6 +18,9 @@
   html body .site-header .nav-mega-intro {
     border: 0 !important;
     background:
+      radial-gradient(circle at 86% 18%, rgba(79, 173, 166, 0.24), transparent 30%),
+      linear-gradient(148deg, #263437, #182326) !important;
+    background:
       radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--nav-accent) 38%, transparent), transparent 30%),
       linear-gradient(148deg, #263437, #182326) !important;
     box-shadow:
