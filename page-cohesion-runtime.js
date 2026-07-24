@@ -14,8 +14,8 @@
       document.querySelectorAll("body[data-page='systems'] main > #climate"),
       {
         "box-sizing": "border-box",
-        "width": compact ? "calc(100vw - 20px)" : "calc(100vw - 48px)",
-        "max-width": compact ? "calc(100vw - 20px)" : "1704px",
+        "width": compact ? "calc(100vw - 20px)" : "calc(100vw - 72px)",
+        "max-width": compact ? "calc(100vw - 20px)" : "none",
         "margin-left": "auto",
         "margin-right": "auto",
         "grid-template-columns": "minmax(0, 1fr)",

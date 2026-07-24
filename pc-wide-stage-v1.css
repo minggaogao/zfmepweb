@@ -12,9 +12,24 @@
     max-width: none !important;
   }
 
+  html body[data-page="home"] main > #home.zf-home-story {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
   html body[data-page="home"] main #landing .zf-home-narrative-bridge {
     width: var(--zf-pc-stage-soft) !important;
     max-width: none !important;
+  }
+
+  html body[data-page="home"] main #home.zf-home-story > :is(
+    .zf-home-evidence,
+    .zf-home-consult
+  ) {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
   }
 
   html body[data-page="home"] main #landing .zf-home-narrative-bridge > div:first-child {
@@ -67,6 +82,57 @@
   html body[data-page="project-access"] #project-access-solutions.zf-access-solutions {
     width: var(--zf-pc-stage) !important;
     max-width: none !important;
+  }
+
+  /* Air / Hunan climate: keep the scene wide while copy remains readable. */
+  html body[data-page="systems"] main > section#climate.climate.section-shell {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  html body[data-page="systems"] main > section#climate.climate.section-shell > :is(
+    .climate-stage,
+    .climate-living-scene
+  ) {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+  }
+
+  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-stage,
+  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-living-scene {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  html body[data-page="systems"] main #climate :is(
+    .climate-map,
+    .climate-living-media
+  ) {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+
+  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-stage .climate-map,
+  html body[data-page="systems"] main > section#climate.climate.section-shell > .climate-living-scene > .climate-living-media {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  html body[data-page="systems"] main #climate .climate-living-copy {
+    width: min(46rem, calc(100% - 96px)) !important;
+    max-width: 46rem !important;
+    margin-left: 48px !important;
+    margin-right: auto !important;
   }
 
   /* Footer follows the same stage on every route. */
