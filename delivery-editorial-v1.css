@@ -529,7 +529,7 @@ html body[data-page="delivery"] .zf-delivery-product-logic > blockquote span {
 }
 
 html body[data-page="delivery"] .zf-delivery-method {
-  margin-top: clamp(100px, 9vw, 154px) !important;
+  margin-top: clamp(64px, 5.6vw, 88px) !important;
   padding: clamp(82px, 8vw, 126px) clamp(42px, 5vw, 76px) !important;
   border: 0 !important;
   border-radius: 16px 52px 16px 52px !important;
@@ -585,6 +585,10 @@ html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs {
   border: 0 !important;
   border-radius: 30px !important;
   background: rgba(255,255,255,.65) !important;
+}
+
+html body[data-page="delivery"] #delivery-stages.zf-scene-browser {
+  margin-top: clamp(68px, 6vw, 92px) !important;
 }
 
 html body[data-page="delivery"] #delivery-stages .zf-scene-browser-tabs button,
