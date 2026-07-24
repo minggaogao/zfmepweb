@@ -1,0 +1,77 @@
+/* PC wide-stage unification: full visual fields, restrained reading measures. */
+@media (min-width: 1440px) {
+  :root {
+    --zf-pc-stage: calc(100vw - 72px);
+    --zf-pc-stage-soft: calc(100vw - 144px);
+  }
+
+  /* Homepage */
+  html body[data-page="home"] main #landing .zf-home-system-reveal,
+  html body[data-page="home"] main #landing .zf-home-capability-spectrum {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+  }
+
+  html body[data-page="home"] main #landing .zf-home-narrative-bridge {
+    width: var(--zf-pc-stage-soft) !important;
+    max-width: none !important;
+  }
+
+  html body[data-page="home"] main #landing .zf-home-narrative-bridge > div:first-child {
+    justify-self: start;
+  }
+
+  html body[data-page="home"] main #landing .zf-home-narrative-copy {
+    justify-self: end;
+  }
+
+  /* Philosophy: widen the scene, not the paragraph measure. */
+  html body[data-page="philosophy"] main > #home.zf-home-story,
+  html body[data-page="philosophy"] main #home > :is(
+    .zf-philosophy-opening,
+    .zf-home-human,
+    .zf-home-senses
+  ) {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+  }
+
+  /* Delivery: one continuous wide visual stage. */
+  html body[data-page="delivery"] main > #fit,
+  html body[data-page="delivery"] main > :is(
+    #constraints,
+    #delivery-brief,
+    #integration,
+    #delivery,
+    #team-execution,
+    #delivery-commissioning,
+    #process,
+    #delivery-result
+  ),
+  html body[data-page="delivery"] :is(
+    .zf-delivery-product-logic,
+    .zf-delivery-method,
+    .zf-delivery-outputs,
+    #delivery-stages
+  ) {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+  }
+
+  html body[data-page="delivery"] #delivery-stages.zf-scene-browser {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+  }
+
+  /* Project access solution selector. */
+  html body[data-page="project-access"] #project-access-solutions.zf-access-solutions {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+  }
+
+  /* Footer follows the same stage on every route. */
+  html body .site-footer-premium {
+    width: var(--zf-pc-stage) !important;
+    max-width: none !important;
+  }
+}

@@ -91,7 +91,7 @@
       setImportantStyles(section, {
         display: isOpening ? "block" : (hidden ? "none" : "block"),
         position: "relative",
-        width: isMobile ? "calc(100vw - 34px)" : "min(1704px, calc(100vw - 48px))",
+        width: isMobile ? "calc(100vw - 34px)" : "calc(100vw - 72px)",
         "max-width": "none",
         "min-height": "0",
         margin: "clamp(56px, 6vw, 88px) auto 0",
