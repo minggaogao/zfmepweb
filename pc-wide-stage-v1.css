@@ -135,6 +135,19 @@
     margin-right: auto !important;
   }
 
+  /* Basement opening: a slightly taller cinematic crop avoids a flattened wide-screen read. */
+  html body[data-page="basement-system"] main > #basement-definition .basement-context-media--ground {
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  html body[data-page="basement-system"] main > #basement-definition .basement-context-media--ground > img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+    object-position: 50% 50% !important;
+  }
+
   /* Footer follows the same stage on every route. */
   html body .site-footer-premium {
     width: var(--zf-pc-stage) !important;

@@ -5648,6 +5648,13 @@ const applyGlobalTypographyLock = () => {
     "overflow": "hidden"
   });
 
+  setLockedStyles(
+    $$("body[data-page='basement-system'] main > #basement-definition .basement-context-media--ground"),
+    {
+      "aspect-ratio": isMobile ? "16 / 9" : "16 / 10"
+    }
+  );
+
   setLockedStyles($$("body[data-page='systems'] main #climate > .section-heading h2"), {
     "max-width": isMobile ? "100%" : "900px",
     "font-size": isMobile ? "clamp(30px, 7.8vw, 36px)" : "clamp(38px, 3.15vw, 56px)",
