@@ -237,8 +237,10 @@
       "grid-column": "1",
       "grid-row": "1",
       display: "grid",
+      "grid-template-columns": isMobile ? "minmax(0, 1fr)" : "minmax(0, 560px)",
       "align-content": isMobile ? "end" : "center",
       "justify-items": "start",
+      "justify-content": "start",
       order: "initial",
       width: "100%",
       "max-width": "none",
@@ -285,25 +287,25 @@
     });
     setImportantStyles(opening?.querySelector(".delivery-hero-copy > .eyebrow"), {
       width: "100%",
-      "max-width": "none",
+      "max-width": isMobile ? "100%" : "560px",
       color: "#f1b94a"
     });
     setImportantStyles(opening?.querySelector(".delivery-hero-copy > h2"), {
       width: "100%",
-      "max-width": "none",
+      "max-width": isMobile ? "100%" : "560px",
       color: "#ffffff",
-      "font-size": isMobile ? "clamp(32px, 8.6vw, 40px)" : "clamp(42px, 4vw, 58px)",
-      "line-height": "1.22",
-      "white-space": isMobile ? "normal" : "nowrap"
+      "font-size": isMobile ? "clamp(30px, 8vw, 38px)" : "clamp(36px, 3vw, 50px)",
+      "line-height": "1.18",
+      "white-space": "normal"
     });
     setImportantStyles(opening?.querySelector(".delivery-hero-copy > .delivery-hero-lead"), {
-      width: isMobile ? "100%" : "min(840px, 100%)",
-      "max-width": isMobile ? "100%" : "840px",
+      width: "100%",
+      "max-width": isMobile ? "100%" : "560px",
       color: "rgba(247, 251, 250, 0.82)"
     });
     setImportantStyles(opening?.querySelector(".delivery-hero-copy > blockquote"), {
-      width: isMobile ? "100%" : "min(840px, 100%)",
-      "max-width": isMobile ? "100%" : "840px",
+      width: "100%",
+      "max-width": isMobile ? "100%" : "560px",
       color: "#ffffff",
       "border-left": "3px solid #f1b94a"
     });
@@ -313,7 +315,7 @@
       "grid-template-columns": isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))",
       gap: "0",
       width: "100%",
-      "max-width": "none",
+      "max-width": isMobile ? "100%" : "560px",
       margin: "30px 0 0",
       color: "#f7fbfa",
       "border-top": "1px solid rgba(247, 251, 250, 0.2)",

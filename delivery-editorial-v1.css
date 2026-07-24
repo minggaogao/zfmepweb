@@ -52,8 +52,10 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-her
   z-index: 2 !important;
   grid-area: 1 / 1 !important;
   display: grid !important;
+  grid-template-columns: minmax(0, 560px) !important;
   align-content: center !important;
   justify-items: start !important;
+  justify-content: start !important;
   width: 100% !important;
   min-height: inherit !important;
   margin: 0 !important;
@@ -80,8 +82,8 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-her
 }
 
 html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > .eyebrow {
-  width: min(720px, 100%) !important;
-  max-width: 720px !important;
+  width: 100% !important;
+  max-width: 560px !important;
   margin: 0 0 20px !important;
   padding: 0 !important;
   color: #f5b94f !important;
@@ -91,12 +93,12 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-
 }
 
 html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > h2 {
-  width: min(760px, 100%) !important;
-  max-width: 760px !important;
+  width: 100% !important;
+  max-width: 560px !important;
   margin: 0 !important;
   color: #fff !important;
   font-family: "SF Pro Display", "PingFang SC", "Noto Sans SC", sans-serif !important;
-  font-size: clamp(42px, 4vw, 60px) !important;
+  font-size: clamp(36px, 3vw, 50px) !important;
   font-weight: 600 !important;
   line-height: 1.14 !important;
   letter-spacing: -.025em !important;
@@ -105,8 +107,8 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-
 }
 
 html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > .delivery-hero-lead {
-  width: min(720px, 100%) !important;
-  max-width: 720px !important;
+  width: 100% !important;
+  max-width: 560px !important;
   margin: 26px 0 0 !important;
   color: rgba(255, 255, 255, .78) !important;
   font-size: clamp(15px, 1.05vw, 18px) !important;
@@ -114,8 +116,8 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-
 }
 
 html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-copy > blockquote {
-  width: min(720px, 100%) !important;
-  max-width: 720px !important;
+  width: 100% !important;
+  max-width: 560px !important;
   margin: 22px 0 0 !important;
   padding: 0 0 0 20px !important;
   border: 0 !important;
@@ -131,8 +133,8 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 0 !important;
-  width: min(920px, 100%) !important;
-  max-width: 920px !important;
+  width: 100% !important;
+  max-width: 560px !important;
   margin: clamp(34px, 4vw, 54px) 0 0 !important;
   overflow: hidden !important;
   border: 1px solid rgba(255, 255, 255, .16) !important;
@@ -179,6 +181,7 @@ html body[data-page="delivery"] main > #fit.fit.delivery-prelude .delivery-hero-
 
   html body[data-page="delivery"] main > #fit.fit.delivery-prelude > .delivery-hero-copy {
     align-content: end !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     padding: 44px 24px 28px !important;
     background:
       linear-gradient(0deg, rgba(10, 18, 22, .98) 0%, rgba(10, 18, 22, .84) 58%, rgba(10, 18, 22, .18) 100%) !important;
