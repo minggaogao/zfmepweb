@@ -5600,6 +5600,16 @@ const applyGlobalTypographyLock = () => {
   });
 
   setLockedStyles($$([
+    "body[data-page='basement-system'] main > #basement-definition .basement-definition-copy h1",
+    "body[data-page='water-supply-drainage'] main > #water-problem .water-system-definition-copy h1"
+  ].join(", ")), {
+    "width": isMobile ? "auto" : "min(820px, 100%)",
+    "max-width": isMobile ? "100%" : "820px",
+    "font-size": isMobile ? "clamp(29px, 7.2vw, 34px)" : "clamp(34px, 2.75vw, 50px)",
+    "line-height": "1.18"
+  });
+
+  setLockedStyles($$([
     "body[data-page='systems'] main > #climate > .section-heading :is(.lead, .climate-lead-sub)",
     "body[data-page='basement-system'] main > #basement-definition .basement-definition-lead",
     "body[data-page='water-supply-drainage'] main > #water-problem .water-system-definition-lead",
@@ -5618,6 +5628,15 @@ const applyGlobalTypographyLock = () => {
     "overflow-wrap": "break-word",
     "text-wrap": "pretty",
     "text-rendering": "optimizeLegibility"
+  });
+
+  setLockedStyles($$([
+    "body[data-page='basement-system'] main > #basement-definition .basement-definition-lead",
+    "body[data-page='water-supply-drainage'] main > #water-problem .water-system-definition-lead"
+  ].join(", ")), {
+    "width": isMobile ? "100%" : "min(640px, 100%)",
+    "max-width": isMobile ? "100%" : "640px",
+    "line-height": "1.75"
   });
 
   setLockedStyles($$([
